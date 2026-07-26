@@ -201,7 +201,8 @@ def main():
     reached = g[g.group == "target_reached"].copy()
     failed  = g[g.group == "failed_trades"].copy()
     print(f"[build] target_reached={len(reached)} vs failed_trades={len(failed)} (disjoint)")
-    assert len(reached) == 52 and len(failed) == 40, "ARM DRIFT"
+    if MONTH == "2025-10":
+        assert len(reached) == 52 and len(failed) == 40, "ARM DRIFT"
     # arm labels: "reached"=runners, "loser"=non-runners(failed) — reuse so downstream code is identical
     arms = pd.concat([failed.assign(arm="loser"), reached.assign(arm="reached")])
 
