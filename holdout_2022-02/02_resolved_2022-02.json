@@ -1,0 +1,245 @@
+{
+  "month": "2022-02",
+  "front_contract": "ESH2",
+  "windowed_parquet": "/Volumes/2TB-Lexar/tslwrb_windowed/mbp10_ESH2_2022-02_windowed.parquet",
+  "rows_written": 117429046,
+  "pre_entry_min": 60,
+  "post_exit_min": 5,
+  "active_days": [
+    "2022-02-01",
+    "2022-02-02",
+    "2022-02-03",
+    "2022-02-04",
+    "2022-02-07",
+    "2022-02-08",
+    "2022-02-09",
+    "2022-02-10",
+    "2022-02-11",
+    "2022-02-14",
+    "2022-02-15",
+    "2022-02-16",
+    "2022-02-17",
+    "2022-02-18",
+    "2022-02-22",
+    "2022-02-23",
+    "2022-02-24",
+    "2022-02-25",
+    "2022-02-28"
+  ],
+  "per_file": {
+    "glbx-mdp3-20220201.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 652217,
+        "ESM2": 587,
+        "ESU2": 46,
+        "ESZ2": 2
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220202.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 680215,
+        "ESM2": 818,
+        "ESU2": 22
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220203.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 635520,
+        "ESM2": 582,
+        "ESU2": 14,
+        "ESZ2": 1
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220204.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 636174,
+        "ESM2": 700,
+        "ESU2": 18
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220206.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 13676,
+        "ESM2": 28
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220207.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 529795,
+        "ESM2": 524,
+        "ESU2": 10
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220208.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 616870,
+        "ESM2": 405,
+        "ESU2": 27
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220209.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 790567,
+        "ESM2": 880,
+        "ESU2": 11,
+        "ESZ2": 1
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220210.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 804490,
+        "ESM2": 837,
+        "ESU2": 16,
+        "ESH3": 1
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220211.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 617103,
+        "ESM2": 702,
+        "ESU2": 20,
+        "ESH3": 3
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220213.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 27137,
+        "ESM2": 98
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220214.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 425087,
+        "ESM2": 550,
+        "ESU2": 35
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220215.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 572339,
+        "ESM2": 900,
+        "ESU2": 175
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220216.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 616252,
+        "ESM2": 477,
+        "ESU2": 7
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220217.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 613384,
+        "ESM2": 918,
+        "ESU2": 31
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220218.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 604423,
+        "ESM2": 995,
+        "ESU2": 55
+      },
+      "n_symbols_seen": 10
+    },
+    "glbx-mdp3-20220220.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 21045,
+        "ESM2": 119,
+        "ESU2": 4
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220221.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 457698,
+        "ESM2": 1706,
+        "ESU2": 37
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220222.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 436904,
+        "ESM2": 1514,
+        "ESU2": 55,
+        "ESZ2": 1
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220223.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 608670,
+        "ESM2": 1008,
+        "ESU2": 58
+      },
+      "n_symbols_seen": 11
+    },
+    "glbx-mdp3-20220224.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 557372,
+        "ESM2": 4501,
+        "ESU2": 79,
+        "ESZ2": 1
+      },
+      "n_symbols_seen": 13
+    },
+    "glbx-mdp3-20220225.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 455157,
+        "ESM2": 2993,
+        "ESU2": 30,
+        "ESZ2": 1,
+        "ESH3": 1
+      },
+      "n_symbols_seen": 12
+    },
+    "glbx-mdp3-20220227.mbp-10.dbn.zst": {
+      "front": "ESH2",
+      "outright_volume": {
+        "ESH2": 76887,
+        "ESM2": 796,
+        "ESU2": 16
+      },
+      "n_symbols_seen": 11
+    }
+  }
+}

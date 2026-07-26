@@ -17,3 +17,7 @@ chunk_rows          = 1000000
 resolve_sample_rows = 5000000
 tick                = 0.25
 recon_tol_ticks     = 1
+
+[run.resolved]
+contract = "ESH2"
+windowed_parquet = "/Volumes/2TB-Lexar/tslwrb_windowed/mbp10_ESH2_2022-02_windowed.parquet"

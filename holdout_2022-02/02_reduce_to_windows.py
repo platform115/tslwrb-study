@@ -56,6 +56,10 @@ def build_window_intervals(episodes_path: str, month: str, pre_min: int, post_mi
     ep = pd.read_parquet(episodes_path)
     lo = pd.Timestamp(f"{month}-01", tz="UTC"); hi = pd.Timestamp(_month_end(month), tz="UTC")
     ep = ep[(ep["first_entry_utc"] >= lo) & (ep["first_entry_utc"] < hi)].copy()
+    bad = ep["first_entry_utc"].isna() | ep["last_exit_utc"].isna()
+    if bad.any():
+        print(f"[warn] dropping {int(bad.sum())} episode(s) with NaT entry/exit (pre-registered data-integrity exclusion)")
+        ep = ep[~bad].copy()
     if ep.empty:
         raise SystemExit(f"[FATAL] no episodes found in {month}; check config[paths].episodes")
     ep["w_start"] = ep["first_entry_utc"] - pd.Timedelta(minutes=pre_min)
