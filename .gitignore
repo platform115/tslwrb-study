@@ -1,0 +1,14 @@
+# Environment
+venv/
+__pycache__/
+*.pyc
+
+# Big data — never commit. Raw DBN pulls and windowed parquet live on the SSD.
+*.dbn
+*.dbn.zst
+*.parquet
+data/            # if you symlink the SSD dir to ./data
+
+# OS noise
+.DS_Store
+.venv/

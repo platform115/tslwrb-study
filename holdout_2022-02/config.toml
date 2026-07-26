@@ -1,0 +1,19 @@
+# tslwrb-study — Feb-2022 HOLDOUT config (sibling of the October configs; both untouched)
+# [run.resolved] is INTENTIONALLY ABSENT until 02/03 gates pass (02 prints the block to paste).
+# Front-month hypothesis on record: ESH2 — DO NOT ASSUME; 02 resolves by volume.
+
+[paths]
+mbp10_dir   = "/Volumes/2TB-Lexar/GLBX-20260607-UDES9FRSPK"
+episodes    = "/Users/joshhall/Developer/Projects/es-trading-agent-v3/Data/processed/chatlogs/tsl_episodes_clean.parquet"
+es_1m_front = "/Users/joshhall/Developer/Projects/es-trading-agent-v3/Data/processed/es/es_1m_front.parquet"
+es_5m_front = "/Users/joshhall/Developer/Projects/es-trading-agent-v3/Data/processed/es/es_5m_front.parquet"
+out_dir     = "/Volumes/2TB-Lexar/tslwrb_windowed"
+
+[run]
+month               = "2022-02"
+pre_entry_min       = 60
+post_exit_min       = 5
+chunk_rows          = 1000000
+resolve_sample_rows = 5000000
+tick                = 0.25
+recon_tol_ticks     = 1

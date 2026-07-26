@@ -1,0 +1,742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tslwrb-study · Tests Index</title>
+<style>
+  :root{
+    --ground:#eceff1; --panel:#ffffff; --ink:#161b21; --muted:#5d6975;
+    --line:#d6dce1; --line-soft:#e6eaed;
+    --flow:#0f766e;        /* live channel  */
+    --flow-soft:#d7ece8;
+    --book:#64748b;        /* dead channel  */
+    --book-soft:#e4e8ec;
+    --regime:#9a6a2f;      /* vx/vol channel */
+    --regime-soft:#efe3d2;
+    --frozen:#0f766e; --null:#7c8794; --retired:#aab2ba;
+    --cand:#0f766e; --synth:#3a4a78; --synth-soft:#dfe4f1; --pending:#8a6d3b; --pending-soft:#f0e7d6;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.5;
+    padding:clamp(20px,4vw,56px);
+  }
+  .wrap{max-width:1180px;margin:0 auto}
+
+  /* ---- masthead ---- */
+  header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:6px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  h1{font-size:clamp(26px,4vw,40px);line-height:1.05;margin:0;font-weight:680;letter-spacing:-.01em}
+  h1 .sub{display:block;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--muted);margin-top:10px;text-transform:none}
+
+  /* ---- ledger summary ---- */
+  .ledger{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:16px 0 28px}
+  .ledger b{color:var(--ink);font-weight:600}
+  .ledger .sep{color:var(--line)}
+
+  /* ---- table ---- */
+  .scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line)}
+  thead th{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);text-align:left;font-weight:600;
+    padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap;
+    background:#f7f9fa;position:sticky;top:0;
+  }
+  tbody td{padding:14px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr{transition:background .12s ease}
+  tbody tr:hover{background:#f6f9f9}
+  tbody tr:focus-within{background:#f1f7f6;outline:2px solid var(--flow);outline-offset:-2px}
+
+  /* channel spine — the signature device */
+  td.spine{padding:0;width:5px}
+  tr[data-ch="flow"] td.spine{background:var(--flow)}
+  tr[data-ch="book"] td.spine{background:var(--book)}
+  tr[data-ch="regime"] td.spine{background:var(--regime)}
+  tr[data-ch="none"] td.spine{background:var(--line)}
+  tr[data-ch="movement"] td.spine{background:#4f46e5}
+  tr[data-ch="outcome"] td.spine{background:#7c3aed}
+  tr[data-ch="exit"] td.spine{background:#be123c}
+
+  td.idx{font-family:var(--mono);font-size:15px;font-weight:600;white-space:nowrap;width:46px;color:var(--ink)}
+  td.name a{font-family:var(--mono);font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  td.name a:hover,td.name a:focus{color:var(--flow);border-color:var(--flow)}
+  td.name span.nolink{font-family:var(--mono);font-size:13.5px;font-weight:600;color:var(--ink)}
+  td.name .file{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:6px;word-break:break-all}
+
+  ul{margin:0;padding:0;list-style:none}
+  li{position:relative;padding-left:13px;margin:0 0 5px;font-size:13px;line-height:1.42}
+  li:last-child{margin-bottom:0}
+  li::before{content:"–";position:absolute;left:0;color:var(--muted)}
+  td.metric li{font-family:var(--mono);font-size:12px}
+  .num{font-family:var(--mono);font-weight:600}
+  .pos{color:var(--flow)} .neg{color:var(--muted)}
+
+  /* chips */
+  .chip{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;
+    text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;font-weight:600}
+  .chip.frozen{background:var(--flow);color:#fff}
+  .chip.null{background:transparent;color:var(--null);border:1px solid var(--line)}
+  .chip.retired{background:transparent;color:var(--retired);border:1px dashed var(--line)}
+  .chip.flow{background:var(--flow-soft);color:var(--flow)}
+  .chip.book{background:var(--book-soft);color:var(--book)}
+  .chip.regime{background:var(--regime-soft);color:var(--regime)}
+  .chip.candidate{background:transparent;color:var(--cand);border:1px solid var(--cand)}
+  .chip.synth{background:var(--synth-soft);color:var(--synth)}
+  .chip.pending{background:var(--pending-soft);color:var(--pending);border:1px dashed var(--pending)}
+  .chip.movement{background:#eef0fb;color:#4f46e5}
+  .chip.outcome{background:#f3effd;color:#7c3aed}
+  .chip.exit{background:#fdeef0;color:#be123c}
+
+  /* footnotes */
+  footer{margin-top:24px;font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6}
+  footer p{margin:0 0 6px}
+  footer .tag{color:var(--ink);font-weight:600}
+
+  /* responsive: stack to cards */
+  @media(max-width:860px){
+    thead{display:none}
+    table,tbody,tr,td{display:block;width:100%}
+    table{border:none;background:transparent}
+    tbody tr{background:var(--panel);border:1px solid var(--line);margin-bottom:14px;position:relative;padding-left:5px}
+    td.spine{position:absolute;left:0;top:0;bottom:0;height:auto;width:5px}
+    tbody td{border-bottom:1px solid var(--line-soft);padding:11px 14px 11px 18px}
+    tbody td:last-child{border-bottom:none}
+    tbody td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:10px;
+      letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    td.idx{font-size:18px}
+    td.idx::before{content:"Test"}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker">tslwrb-study · MBP-10 exit-timing research</p>
+    <h1>Tests Index
+      <span class="sub">Reverse-engineering wrbtrader's ES exit timing · ESZ5 · Oct-2025 discovery</span>
+    </h1>
+  </header>
+
+  <div class="ledger">
+    <span><b>10</b> tests run</span><span class="sep">/</span>
+    <span><b>2</b> frozen candidates</span><span class="sep">/</span>
+    <span><b>1</b> exit candidate</span><span class="sep">/</span>
+    <span><b>6</b> null</span><span class="sep">/</span>
+    <span><b>1</b> pending</span><span class="sep">/</span>
+    <span>book channel <b>closed</b></span><span class="sep">/</span>
+    <span>flow channel <b>live</b></span><span class="sep">/</span>
+    <span>stall-vs-reach: <b>1</b> candidate (velocity_ratio)</span><span class="sep">/</span>
+    <span><b>1</b> weak (hurst)</span><span class="sep">/</span>
+    <span>exit sweep <b>discretionary</b></span><span class="sep">/</span>
+    <span>06-14: <b>fav_net_vel</b> candidate #2 (ρ vs VR ≈ 0)</span><span class="sep">/</span>
+    <span>S3/S1 null → mechanism: <b>retention, not takeoff</b>; VR = immediate-pace change</span><span class="sep">/</span>
+    <span>S4/S4b: <b>no-follow-through, not give-back</b> (fade robust-null ×7); signal accrues ~20s+</span><span class="sep">/</span>
+    <span>S6/S6b robust-null: gross favorable identical — <b>difference is the adverse offset</b>; mechanism prose demoted (0-for-2 predictions)</span>
+  </div>
+
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>#</th>
+        <th>Test</th>
+        <th>Status</th>
+        <th>Channel</th>
+        <th>What it tested</th>
+        <th>Result</th>
+        <th>Groups</th>
+        <th>Windows</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- 01 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">01</td>
+        <td class="name" data-label="Test"><a href="./favorable_aggression_spec.md">favorable_aggression</a><span class="file">favorable_aggression_spec.md</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Oriented signed aggressor delta/sec in the pre-anchor window</li><li>Does favorable aggression separate runners from non-runners?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Primary 52v40 <span class="num">0.576</span></li><li>Excl-22 (30v40) <span class="num neg">0.359</span> — reverses</li><li>Mild lean was label-coupling; design negative</li></ul></td>
+        <td data-label="Groups"><ul><li>52 reached / 40 failed</li><li>+ excl entry-bar-pt1 (30/40)</li></ul></td>
+        <td data-label="Windows"><ul><li>≤3×1m bars before anchor</li><li>entry-floored, anchor excluded</li></ul></td>
+      </tr>
+
+      <!-- 02 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">02</td>
+        <td class="name" data-label="Test"><a href="./02_favorable_aggression_cut_time_matched_REPRODUCTION_spec.md">favorable_aggression_cut_time_matched</a><span class="file">02_favorable_aggression_cut_time_matched_REPRODUCTION_spec.md</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Symmetric-anchor variant of 01 (Design A)</li><li>Removes the asymmetric-anchor confound by matching elapsed time</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Per-cut <span class="num">0.569</span>, CI <span class="num">[0.459, 0.674]</span></li><li>Straddles 0.5 — near-null, not carried forward</li></ul></td>
+        <td data-label="Groups"><ul><li>52 reached / 40 failed</li><li>Design A risk-set (matched τ)</li></ul></td>
+        <td data-label="Windows"><ul><li>60s trailing, cut-time-matched</li></ul></td>
+      </tr>
+
+      <!-- 03 -->
+      <tr data-ch="book">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">03</td>
+        <td class="name" data-label="Test"><a href="./03_queue_imbalance_slope_REPRODUCTION_spec.md">queue_imbalance_slope</a><span class="file">03_queue_imbalance_slope_REPRODUCTION_spec.md</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip book">Book</span></td>
+        <td data-label="What it tested"><ul><li>Slope of oriented queue-imbalance across the window</li><li>Book support fading = stall?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Primary <span class="num">0.436</span> / Design A <span class="num">0.458</span></li><li>All ≤0.5 — slope does not separate</li><li>Book signal ~1s, chance by 60s</li></ul></td>
+        <td data-label="Groups"><ul><li>52 reached / 40 failed</li><li>+ excl-22; Design A</li></ul></td>
+        <td data-label="Windows"><ul><li>≤3×1m bars before anchor</li><li>60s trailing (Design A)</li></ul></td>
+      </tr>
+
+      <!-- 04 -->
+      <tr data-ch="book">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">04</td>
+        <td class="name" data-label="Test"><a href="./04_refill_resiliency_REPRODUCTION_spec.md">refill_resiliency</a><span class="file">04_refill_resiliency_REPRODUCTION_spec.md</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip book">Book</span></td>
+        <td data-label="What it tested"><ul><li>Does supporting-side liquidity refill less before failures?</li><li>Refill-ratio (inferred resiliency / absorption)</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Primary <span class="num">0.506</span> / Design A <span class="num">0.549</span></li><li>refill_ratio ~1.00 both groups</li><li>No resiliency-stall signature</li></ul></td>
+        <td data-label="Groups"><ul><li>52 reached / 40 failed</li><li>+ excl-22; Design A</li></ul></td>
+        <td data-label="Windows"><ul><li>≤3×1m bars before anchor</li><li>60s trailing (Design A)</li></ul></td>
+      </tr>
+
+      <!-- 05 -->
+      <tr data-ch="book">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">05</td>
+        <td class="name" data-label="Test"><a href="./05_book_points_against_trade_REPRODUCTION_spec.md">book_points_against_trade</a><span class="file">05_book_points_against_trade_REPRODUCTION_spec.md</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip book">Book</span></td>
+        <td data-label="What it tested"><ul><li>Does oriented book direction point against non-runners more?</li><li>L1 level & slope across three windows</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Slope dead at L1 (<span class="num">0.44–0.52</span>)</li><li>In-trade level lean <span class="num">~0.58</span>, CI to 0.499</li><li>Self-check ~0 — channel not operating</li></ul></td>
+        <td data-label="Groups"><ul><li>52 reached / 40 failed</li><li>+ excl-22; Design A</li></ul></td>
+        <td data-label="Windows"><ul><li>Three 180s per-second: A1 pre-entry, A2 in-trade, B no-floor</li></ul></td>
+      </tr>
+
+      <!-- 06 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06</td>
+        <td class="name" data-label="Test"><a href="./FROZEN_in_trade_flow_exhaustion_HOLDOUT_spec.md">in_trade_flow_exhaustion</a><span class="file">FROZEN_in_trade_flow_exhaustion_HOLDOUT_spec.md</span></td>
+        <td data-label="Status"><span class="chip frozen">Frozen</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Does directional flow fade in-trade before adverse (losing) trades?</li><li>Exit-anchored, realized-trade channel</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Channel live (self-check <span class="num pos">+0.72</span>)</li><li>Design A level <span class="num pos">0.712</span>, CI <span class="num">[0.555, 0.844]</span></li><li>Loser-specific; small n — promising, not proven</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 non-loser reached</li><li>loser spine (de-duped)</li></ul></td>
+        <td data-label="Windows"><ul><li>Design A cut-time-matched (primary)</li><li>A1 / A2 / B 180s context</li></ul></td>
+      </tr>
+
+      <!-- 06b -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06b</td>
+        <td class="name" data-label="Test"><a href="./FROZEN_early_flow_confirmation_HOLDOUT_spec.md">early_flow_confirmation</a><span class="file">FROZEN_early_flow_confirmation_HOLDOUT_spec.md</span></td>
+        <td data-label="Status"><span class="chip frozen">Frozen</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Does flow building in the first 60s confirm a runner?</li><li>Entry-anchored, forward-predictive</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Early level <span class="num pos">0.672</span>, CI <span class="num">[0.580, 0.759]</span></li><li>Independent of 06 (complementary)</li><li>Best-conditioned window; promising, not proven</li></ul></td>
+        <td data-label="Groups"><ul><li>52 reached / 40 failed</li><li>disjoint, no de-dupe</li></ul></td>
+        <td data-label="Windows"><ul><li>Early [entry, +60s) forward (primary)</li><li>A1 / A2 / B context</li></ul></td>
+      </tr>
+
+      <!-- 06-7 / S1 — kept context (body-progress underlies the combined rule) -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-7</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-7_wrb_progress.md">wrb_body_progress · S1</a><span class="file">SPEC_06-7_wrb_progress.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Favorable net displacement by entry+τ ÷ prior-3-bar max body</li><li>Slow-flat-dud detector (forward, @60s)</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Clean OPEN @60s <span class="num pos">~0.82</span> (ALL 0.852 / OPEN 0.817)</li><li>Calibration clean & monotone; boundary ~0.5</li><li>Read early (half losers gone by ~105s)</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 reached (clean)</li></ul></td>
+        <td data-label="Windows"><ul><li>Forward, still-open @60s</li></ul></td>
+      </tr>
+
+      <!-- 06-8 / S2 redundancy -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-8</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-8_redundancy.md">adverse_excursion · S2 (redundancy)</a><span class="file">SPEC_06-8_redundancy.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Max adverse excursion (pts) vs S1 — independent?</li><li>Fast-violent + late-reversal detector</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>corr(S1,S2) <span class="num">+0.03</span> — INDEPENDENT</li><li>S2 alone ~0.77; complementary to S1</li><li>S1 owns slow duds, S2 owns fast/late</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 reached (clean)</li></ul></td>
+        <td data-label="Windows"><ul><li>Path-based (max over [entry,exit])</li></ul></td>
+      </tr>
+
+      <!-- 06-9 range compression null -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-9</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-9_range_compression.md">range_compression</a><span class="file">SPEC_06-9_range_compression.md</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Developing per-second range ÷ prior-bar range</li><li>Does volatility compression precede cuts?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Clean @60s <span class="num">0.573</span>, CI <span class="num">[0.388, 0.750]</span></li><li>Spans 0.5; redundant w/ S1 direction</li><li>Raw volatility adds nothing — closed</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 reached (clean)</li></ul></td>
+        <td data-label="Windows"><ul><li>Forward, still-open @60s</li></ul></td>
+      </tr>
+
+      <!-- 06-10 WHG gap-capture setup -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-10</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-10_whg_gap_capture%20-%20SETUP%20CANDIDATE.md">whg_gap_capture</a><span class="file">SPEC_06-10_whg_gap_capture - SETUP CANDIDATE.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Setup cand.</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>WRB hidden-gap arrival as entry setup; gap-traverse exit read</li><li>Per WRB_Definition.txt geometry</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Real ENTRY setup (~34/mo, 4 losers of 34)</li><li>Gap = launch level (median traverse 1.67×)</li><li>EXIT-prediction NULL — parked for entries work</li></ul></td>
+        <td data-label="Groups"><ul><li>~34 gap-arrival trades</li><li>5m WHG, inside+near+pointed-through</li></ul></td>
+        <td data-label="Windows"><ul><li>2-day validity; early gap-progress @60s</li></ul></td>
+      </tr>
+
+      <!-- 06-11 VWAP baseline candidate -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-11</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-11_vwap_baseline.md">vwap_baseline · z-VWAP</a><span class="file">SPEC_06-11_vwap_baseline.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Exit cand.</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Distance from rolling VWAP (z-scored) as a baseline competitor</li><li>Generic, NOT a WRB-method signal</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>z-score N=20 @60s <span class="num pos">~0.78</span> clean, mono calibration</li><li>Stronger at SHORT N (smooth decay, not a spike)</li><li>corr w/ S1 <span class="num">+0.56</span> — overlaps; redundant-in-combo</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 reached (clean)</li><li>pt1 null</li></ul></td>
+        <td data-label="Windows"><ul><li>Forward, still-open @60s; rolling N (plateau ~15–20)</li></ul></td>
+      </tr>
+
+      <!-- 06-12 combined rule synthesis -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-12</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-12_combined_rule.md">combined_rule · union + ladder</a><span class="file">SPEC_06-12_combined_rule.md</span></td>
+        <td data-label="Status"><span class="chip synth">Synthesis</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>S1 / S2 / z-VWAP combined: coverage vs winner-kill</li><li>Union, OR-pairs, majority, AND-pairs, unanimous</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num pos">S1 OR S2</span> = efficient frontier: 100% clean coverage @ <span class="num">34%</span> winner-kill</li><li>VWAP redundant-for-coverage; majority/AND dominated</li><li>Loss-boundary ≫ target-boundary · net P&L <span class="num neg">UNMEASURED</span></li></ul></td>
+        <td data-label="Groups"><ul><li>clean 16/47 + pt1 40/52</li></ul></td>
+        <td data-label="Windows"><ul><li>@60s (S1/VWAP) + path (S2); indicative thresholds</li></ul></td>
+      </tr>
+
+      <!-- 06-13 loser submodes — pending -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-13</td>
+        <td class="name" data-label="Test"><span class="nolink">loser_submodes</span><span class="file">test_loser_submodes.py · SPEC pending</span></td>
+        <td data-label="Status"><span class="chip pending">Pending run</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Are the 16 losers TWO failure modes (fast-violent vs slow-flat) or one skewed population?</li><li>Hold-time × adverse-shape × S1/S2 split</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Built, NOT yet run</li><li>Quick peek: dense ≤2min cluster + thin tail → leans one skewed population (unconfirmed)</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers</li></ul></td>
+        <td data-label="Windows"><ul><li>Hold-time + path adverse</li></ul></td>
+      </tr>
+
+      <!-- 07 VX level — regime channel, null -->
+      <tr data-ch="regime">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">07</td>
+        <td class="name" data-label="Test"><a href="./SPEC_07_vx_level_entry.md">vx_level_entry · #2</a><span class="file">SPEC_07_vx_level_entry.md</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip regime">Regime</span></td>
+        <td data-label="What it tested"><ul><li>Front-month VX FUTURES level at entry (vol regime proxy, NOT spot VIX)</li><li>Does entry vol-level separate cut vs reached?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>clean <span class="num">0.539</span>, CI <span class="num">[0.387, 0.680]</span> · pt1 <span class="num">0.502</span>, CI <span class="num">[0.409, 0.591]</span></li><li>Medians ~identical (18.3 / 18.6) — null</li><li>Null within Oct's narrow vol band (17.6–23.8); 92/92 covered</li></ul></td>
+        <td data-label="Groups"><ul><li>clean 16/47 + pt1 40/52</li></ul></td>
+        <td data-label="Windows"><ul><li>Front-VX close at/before entry; CBOE-rule roll</li></ul></td>
+      </tr>
+
+
+      <!-- A1 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">A1</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-A_exit_microstructure.md">sign_persistence</a><span class="file">sign_persistence.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Lag-1 oriented trade-sign autocorrelation (rho1)</li><li>Exit-anchored matched-elapsed (design b)</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>rho1 <span class="num">0.542</span></li><li>clean null</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>exit-trailing 60s, matched</li></ul></td>
+      </tr>
+
+      <!-- A2 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">A2</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-A_exit_microstructure.md">sign_persistence_dfa</a><span class="file">sign_persistence_dfa.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>DFA Hurst of sign series (Lillo &amp; Farmer)</li><li>Long-memory of flow signs at exit</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>hurst <span class="num">0.562</span></li><li>clean null</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>exit-trailing 60s, matched</li></ul></td>
+      </tr>
+
+      <!-- A3 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">A3</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-A_exit_microstructure.md">intensity</a><span class="file">intensity.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Trades/sec level &amp; within-window slope</li><li>'Tape goes quiet' before exit?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>level <span class="num">0.756</span> PEEKED+regime</li><li>slope {N('0.545')}; NOT absorption</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>exit-trailing 60s</li></ul></td>
+      </tr>
+
+      <!-- A4 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">A4</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-A_exit_microstructure.md">impact</a><span class="file">impact.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>|net mid move|/trade (Amihud, Kyle λ)</li><li>Stalls absorb (churn, no progress)?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num">0.529</span></li><li>effort &amp; result scale together</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>exit-trailing 60s</li></ul></td>
+      </tr>
+
+      <!-- A5 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">A5</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-A_exit_microstructure.md">efficiency_ratio</a><span class="file">efficiency_ratio.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Kaufman efficiency ratio on per-second mid</li><li>Reach trends / stall chops at exit?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num">0.477</span></li><li>both arms choppy</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>exit-trailing 60s</li></ul></td>
+      </tr>
+
+      <!-- B1 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">B1</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-B_forward_structure.md">forward_battery</a><span class="file">forward_battery.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Entry-forward τ=30s pooled feature battery</li><li>Early flow predicts reach vs stall?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>all straddle 0.5 (hurst <span class="num">0.612</span>)</li><li>no clear at 30s</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward 30s pooled</li></ul></td>
+      </tr>
+
+      <!-- B2 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">B2</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-B_forward_structure.md">forward_sweep</a><span class="file">forward_sweep.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Cand · weak</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Window sweep 60–300s, capped vs survivors</li><li>Leakage-free survivors-only control</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>hurst clears 120s-surv <span class="num">0.657</span> [0.507,0.795]</li><li>reach&gt;stall all 8 reads (mean .600)</li></ul></td>
+        <td data-label="Groups"><ul><li>13 stall / 41 reach (120s surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+
+      <!-- B3 -->
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">B3</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-B_forward_structure.md">structure_family</a><span class="file">structure_family.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>flow_consistency (ER on cum signed flow); impact</li><li>Early flow organized one-way?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>flow_consistency <span class="num">0.612</span> leaner</li><li>impact flat → magnitude CLOSED</li></ul></td>
+        <td data-label="Groups"><ul><li>13 stall / 41 reach (120s surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+
+      <!-- C1 -->
+      <tr data-ch="outcome">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">C1</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-C_continuous_outcome.md">continuous_outcome</a><span class="file">continuous_outcome.py</span></td>
+        <td data-label="Status"><span class="chip retired">Withdrawn</span></td>
+        <td data-label="Channel"><span class="chip outcome">Outcome</span></td>
+        <td data-label="What it tested"><ul><li>Spearman early-30s feats vs MFE &amp; time-to-pt1</li><li>Did the binary pt1 threshold hide graded signal?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>flow_level <span class="num neg">-0.46</span> · ER <span class="num neg">-0.36</span> vs time-to-pt1</li><li>apparent speed lead — see C2</li></ul></td>
+        <td data-label="Groups"><ul><li>47 reach (speed); 76 (MFE)</li></ul></td>
+        <td data-label="Windows"><ul><li>early 30s → graded outcome</li></ul></td>
+      </tr>
+
+      <!-- C2 -->
+      <tr data-ch="outcome">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">C2</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-C_continuous_outcome.md">speed_leads_robustness</a><span class="file">speed_leads_robustness.py</span></td>
+        <td data-label="Status"><span class="chip retired">Artifact</span></td>
+        <td data-label="Channel"><span class="chip outcome">Outcome</span></td>
+        <td data-label="What it tested"><ul><li>Clean-subset τ-sweep + distance partial</li><li>Does the speed lead survive clean windows?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>clean subset <span class="num">+0.26/+0.40/+0.12</span> → null</li><li>WITHDRAWN: pt1 at/before entry (look-ahead); distance not confound</li></ul></td>
+        <td data-label="Groups"><ul><li>47 reach (clean 25/21/11)</li></ul></td>
+        <td data-label="Windows"><ul><li>pt1_open_el ≥ τ</li></ul></td>
+      </tr>
+
+      <!-- D1 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D1</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">range_expansion</a><span class="file">range_expansion.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>range[fwd]/range[pre]; within-window accel</li><li>Reach&gt;stall early range expansion?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>expansion_ratio <span class="num">0.594</span>/<span class="num">0.598</span> lean</li><li>CI through 0.5; within_accel null</li></ul></td>
+        <td data-label="Groups"><ul><li>24 stall / 45 reach (60s surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+
+      <!-- D2 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D2</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">velocity_acceleration</a><span class="file">velocity_acceleration.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Per-sec path-length fwd ÷ pre-entry pace (unsigned)</li><li>Reach&gt;stall (stallers decelerate vs own pace)?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>τ=60 <span class="num">0.660</span> [0.522,0.788] — CLEARS</li><li>the study's ONE surviving candidate</li></ul></td>
+        <td data-label="Groups"><ul><li>24 stall / 45 reach (60s surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+
+      <!-- D3 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D3</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">velocity_ratio_confirm</a><span class="file">velocity_ratio_confirm.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Confirmed</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Jackknife + label-permutation + decomposition</li><li>Is the 0.660 clear robust / not a fluke?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>jackknife min <span class="num">0.645</span>; perm p=<span class="num">0.014</span></li><li>stall frac&lt;1 = 0.62 vs reach 0.44 (decelerate)</li></ul></td>
+        <td data-label="Groups"><ul><li>24 stall / 45 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+
+      <!-- D4 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D4</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">variance_ratio</a><span class="file">variance_ratio.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Lo–MacKinlay VR (trend vs chop) — independent check</li><li>Reach trends / stall chops?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num neg">0.353</span>/<span class="num">0.540</span> wrong-way</li><li>SPEED not shape; velocity stands alone</li></ul></td>
+        <td data-label="Groups"><ul><li>24 stall / 45 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+
+      <!-- D5 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D5</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">velocity_ratio_sweep</a><span class="file">velocity_ratio_sweep.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Bounded</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Forward window sweep 60/90/120, fixed-60s pre-norm</li><li>Does the deceleration signal strengthen with window?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num">0.660</span>/<span class="num">0.660</span>/<span class="num">0.629</span> stable</li><li>raw fwd wrong-way → signal lives in normalization</li></ul></td>
+        <td data-label="Groups"><ul><li>24/18/13 stall · 45/42/41 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+
+      <!-- E1 -->
+      <tr data-ch="exit">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">E1</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-E_exit_window.md">exit_velocity</a><span class="file">exit_velocity.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip exit">Exit</span></td>
+        <td data-label="What it tested"><ul><li>Velocity decel into exit; exit vel vs pre-entry</li><li>Does movement die before a stall-bail?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>exit_decel <span class="num">0.514</span>/<span class="num">0.535</span> null</li><li>vel_norm 0.637 = entry signal re-expressed</li></ul></td>
+        <td data-label="Groups"><ul><li>24 stall / 45 reach (hold≥2W)</li></ul></td>
+        <td data-label="Windows"><ul><li>[exit−W, exit], W=30/60</li></ul></td>
+      </tr>
+
+      <!-- E2 -->
+      <tr data-ch="exit">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">E2</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-E_exit_window.md">give_back</a><span class="file">give_back.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip exit">Exit</span></td>
+        <td data-label="What it tested"><ul><li>Give-back fraction of MFE peak; time-since-peak</li><li>Bails when open profit erodes (Sweeney)?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>give_back_frac <span class="num">0.287</span> but CONSTRUCTION</li><li>stall band WIDE (IQR .60) → no rule</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>whole-trade</li></ul></td>
+      </tr>
+
+      <!-- E3 -->
+      <tr data-ch="exit">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">E3</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-E_exit_window.md">stagnation</a><span class="file">stagnation.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip exit">Exit</span></td>
+        <td data-label="What it tested"><ul><li>Fraction of life making no new favorable high</li><li>Gives up after enough dead time (time-stop)?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num">0.553</span>/<span class="num">0.569</span> null</li><li>both arms ~0.93 (tight at shared value)</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>whole-trade + back-half</li></ul></td>
+      </tr>
+
+      <!-- E4 -->
+      <tr data-ch="exit">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">E4</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-E_exit_window.md">exit_reversal</a><span class="file">exit_reversal.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip exit">Exit</span></td>
+        <td data-label="What it tested"><ul><li>Adverse move &amp; retrace-from-local-peak into exit</li><li>Exits on the turn / a soft-stop level?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>adverse <span class="num">0.555</span>/<span class="num">0.590</span>; retrace <span class="num">0.506</span></li><li>wide band → no soft-stop → DISCRETIONARY</li></ul></td>
+        <td data-label="Groups"><ul><li>29 stall / 47 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>[exit−W, exit], W=30/60</li></ul></td>
+      </tr>
+
+      <!-- S2 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S2</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S2_directional_velocity.md">s2_directional_velocity</a><span class="file">s2_directional_velocity.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>SIGNED favorable velocity: net-rate + peak-rate, raw + pre-norm (4 cols)</li><li>Capped windows (B-design) + survivor anti-circularity control</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>fav_net_vel <span class="num">0.700</span> / surv <span class="num">0.669</span> [0.527,0.800] — CLEARS</li><li>primary fav_peak_vel NULL; τ=30 null; ρ(net,VR)=+0.01</li></ul></td>
+        <td data-label="Groups"><ul><li>47 reach / 29 stall; surv 45/24</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, min(entry+60s, exit)]</li></ul></td>
+      </tr>
+
+      <!-- S2c -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S2c</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S2_directional_velocity.md">fav_net_vel_confirm</a><span class="file">fav_net_vel_confirm.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Confirmed</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Jackknife + permutation + decomposition + independence CI + stratified VR</li><li>Is the clear robust, and a distinct axis from velocity_ratio?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>jk min <span class="num">0.655</span>; perm p=<span class="num">0.0093</span>; ρ CI [−0.22,+0.24]</li><li>reach 76% net-positive @60s vs stall 50% — cut-side asymmetry</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (survivors)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s]</li></ul></td>
+      </tr>
+
+      <!-- S3 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S3</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S3_time_to_ticks.md">s3_time_to_ticks</a><span class="file">s3_time_to_ticks.py</span></td>
+        <td data-label="Status"><span class="chip null">Null</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>First-passage time to +4/+8/ATRrel favorable ticks, 60/90/120s</li><li>Attainment-fraction + time-among-attainers (separate reads)</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>PRIMARY: attain <span class="num">0.71 vs 0.71</span>; time AUC <span class="num neg">0.572</span> wrong-way lean</li><li>takeoff speed is NOT the difference → pop-and-fade vs retain</li></ul></td>
+        <td data-label="Groups"><ul><li>47 reach / 29 stall; surv per H</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, min(entry+H, exit)]</li></ul></td>
+      </tr>
+
+      <!-- S3b -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S3b</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S3_time_to_ticks.md">s3b_atr5_variant</a><span class="file">s3b_atr5_variant.py</span></td>
+        <td data-label="Status"><span class="chip retired">Weak · post-hoc</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>ATRrel lookback 20→5 — post-hoc 2nd look, logged as such</li><li>ATR(5)≈ATR(20) in size (13.2 vs 12.5, ρ+0.88)</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>SURV@60 grazes: diff <span class="num">+0.21</span> [+0.01,+0.40]</li><li>3 stall attainers; no 90/120 replication → NO candidate; ATRrel closed @k=1.0</li></ul></td>
+        <td data-label="Groups"><ul><li>47 reach / 29 stall</li></ul></td>
+        <td data-label="Windows"><ul><li>ATRrel cells only</li></ul></td>
+      </tr>
+
+      <!-- S1 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S1</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S1_baseline_velocity.md">s1_baseline_velocity</a><span class="file">s1_baseline_velocity.py</span></td>
+        <td data-label="Status"><span class="chip null">Null · localizing</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>VR's numerator ÷ session-scale baselines (ATR20/ATR5/30-min path)</li><li>Normalizer-robustness experiment on velocity_ratio</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>PRIMARY <span class="num">0.509</span>; all 12 cells null (prediction on record: hit)</li><li>brackets VR: signal = change vs IMMEDIATE 60s pace only</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (surv@60)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, min(entry+τ, exit)], τ=60/30</li></ul></td>
+      </tr>
+
+      <!-- S4 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S4</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S4_speed_profile.md">s4_speed_profile</a><span class="file">s4_speed_profile.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Refinement</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>DIRECTIONAL profile: follow-through leg (h2) + fade Δ (H2−H1)</li><li>Pointed test of pop-and-fade; differences not ratios; raw only</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>h2_net_vel <span class="num">0.669</span> [0.516,0.808] clears; fade <span class="num">0.551</span> NULL</li><li>ρ(h2,fnv)=+0.67 indeterminate/component → refinement of #2, no 3rd candidate</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s] split 30/30</li></ul></td>
+      </tr>
+
+      <!-- S4b -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S4b</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S4_speed_profile.md">s4b_boundary_sweep</a><span class="file">s4b_boundary_sweep.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Lead · sweep</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Split-boundary sensitivity b=15…45s — post-hoc-motivated, rule fixed pre-output</li><li>Does any boundary revive fade / extend h2?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>fade: ALL-NULL ×7 → <b>robust-null</b>; h1: all-null (first ~20s uninformative)</li><li>h2 REGION [15–30], peak b=20 {N('0.722')} → lead, Feb list, found-by-sweep</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s], b swept</li></ul></td>
+      </tr>
+
+      <!-- S6 -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S6</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S6_impulse_grind.md">s6_impulse_grind</a><span class="file">s6_impulse_grind.py</span></td>
+        <td data-label="Status"><span class="chip null">Robust-null</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Concentration: max favorable run ÷ total favorable, GRID 2 rules × 3 floors</li><li>Direction unregistered; tunables tested not decided</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num">0.559–0.594</span> ×6, no clears, rules agree</li><li>TEXTURE: gross favorable IDENTICAL (7.0/7.0 max run, 24.5/24.8 total) → all difference = adverse offset</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s]</li></ul></td>
+      </tr>
+
+      <!-- S6b -->
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S6b</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S6_impulse_grind.md">s6b_burst_timing</a><span class="file">s6b_burst_timing.py</span></td>
+        <td data-label="Status"><span class="chip null">Robust-null</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>WHEN the max favorable run occurs — 3 anchors × 2 rules</li><li>Registered dir: reach later (mechanism-derived)</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num">0.415–0.456</span> ×6 — leans OPPOSITE registered dir</li><li>mechanism forecast 0-for-2 → prose demoted; ρ vs fnv +0.00 (orthogonal null)</li></ul></td>
+        <td data-label="Groups"><ul><li>43 reach / 24 stall (floor-ok surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s]</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <footer>
+    <p><span class="tag">Channel spine:</span> teal = realized trade-flow (live) · slate = resting book-direction (closed) · ochre = VX/vol regime · indigo = price-movement · violet = continuous-outcome · rose = exit-window sweep.</p>
+    <p><span class="tag">Status:</span> Frozen = pre-registered holdout candidate · Candidate = promising, not frozen (config not yet locked) · Synthesis = combination of candidates · Null = CI straddles 0.5 · Pending = built, not yet run · all results October in-sample (discovery), not validated.</p>
+    <p><span class="tag">Scratched:</span> a P&L-magnitude test (06-12) was withdrawn for mechanical errors — its numbers/conclusions are void and intentionally undocumented. Combined-rule net P&L value remains UNMEASURED.</p>
+    <p><span class="tag">Retired:</span> book-direction channel falsified by 03/05; a scheduled book_direction_change test was not run (no row).</p>
+    <p><span class="tag">Links:</span> hrefs assume .md files sit alongside this page in /Tests. Many now live in sub-folders (06-7…06-13 under 06_trade_flow_exhaustion_CANDIDATE/, 07 under 07_vx_regime/) — update each href to match, or hoist.</p>
+    <p><span class="tag">Stall-vs-reach (06-13):</span> a 2nd boundary — target_reached (47) vs below_target_win stall (29). One candidate, <b>velocity_ratio</b> @ τ=60 (AUC 0.660 [0.522,0.788]; jackknife min 0.645; perm p=0.014; stallers decelerate vs their pre-entry pace) — modest, normalization-dependent, uncorroborated by trend-shape. The 4-probe EXIT sweep (E1–E4) found no consistent mechanical trigger → the cut/hold-a-winner decision is DISCRETIONARY. Next vein: entry-determination / higher-TF &amp; WRB structure / conditional gating.</p>
+    <p><span class="tag">Discretionary factors (06-14):</span> S2 directional velocity — <b>fav_net_vel</b> @ τ=60 confirmed as candidate #2 (AUC 0.669 [0.527,0.800] survivors; jackknife min 0.655; perm p=0.0093). Quasi-independent of velocity_ratio (ρ +0.01 [−0.22,+0.24]); decomposition asymmetric (reach 76% net-positive at 60s vs stall 50%) → a no-progress-is-bad signal. Primary fav_peak_vel null. October in-sample; Feb holdout pending. Backlog: S3 time-to-N-ticks next (redundancy vs fav_net_vel is the central read).</p>
+
+    <p><span class="tag">Speed family S3/S1:</span> S3 first-passage NULL on the primary cell (attainment 0.71 vs 0.71 identical; time-among-attainers leans wrong-way — stalls hit +4tk in 8s median vs reach 12s) → takeoff speed is not the difference. S3b ATR(5) post-hoc variant: one grazing survivor clear (+0.21 [+0.01,+0.40], 3 stall attainers, no replication) → weak, no candidate, ATRrel closed. S1 session-baseline velocity: clean null across 12 cells → localizes velocity_ratio to <b>change vs the immediate 60s pre-entry pace</b> (raw wrong-way / session-normalized null / immediate-pace-normalized 0.660). Composite mechanism after 4 speed probes (CORRECTED by S4/S4b): <b>reaches follow through, stalls flatline</b> — the earlier "pop-and-fade" phrasing was disconfirmed by its pointed test (fade null at the 30/30 split AND robust-null across all 7 boundaries; stall H2 median ~0.00, flat not negative — coherent with the two exit-window give-back nulls, SR-E). Discriminative displacement accrues from ~20s onward (h1 null at every boundary). Next: S6 (impulse-vs-grind).</p>
+    <p><span class="tag">S4/S4b:</span> h2_net_vel (follow-through leg) clears (0.669; sweep region [15–30]s, peak b=20 0.722) but is a component of fav_net_vel (ρ +0.67, indeterminate) → logged as a <b>refinement</b> of candidate #2 plus a <b>found-by-sweep lead</b> (h2@b=20) for the Feb holdout list — the lead may just be fav_net_vel sharpened; ρ unmeasured, expected high. fade_delta: robust-null. h1: null everywhere → first ~20s carry no signal.</p>
+    <p><span class="tag">S6/S6b:</span> concentration and burst-timing both robust-null (12 cells). The decisive descriptive: reach and stall have IDENTICAL gross favorable movement (max run 7.0 vs 7.0tk; 10 vs 10 runs; total 24.5 vs 24.8tk) — the entire reach/stall difference is the <b>adverse offset</b>. Burst-timing leaned opposite its mechanism-derived registration (stall bursts later) → the mechanism narrative is hereby a description of the two clearing features (fav_net_vel, h2), not a generative model; its feature predictions are 0-for-2. T-DF04 (ATRrel) relabeled lead-weak → Feb list per exploration framing. F1 remaining: S5 (WRB speed-congruence), then the family closes.</p>
+  </footer>
+
+</div>
+</body>
+</html>

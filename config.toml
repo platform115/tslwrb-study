@@ -1,0 +1,25 @@
+# tslwrb-study — Stage 0 config
+# Read with stdlib tomllib. Hand-set the [paths] and [run] dials.
+# The resolved contract is NOT set here by hand — script 02 writes it to a
+# machine-readable sidecar (02_resolved_<month>.json) that 03 reads.
+# (See note in 02_reduce_to_windows.py on why we don't have a script edit this file.)
+
+[paths]
+mbp10_dir   = "/Volumes/2TB-Lexar/GLBX-20260606-B8YDY9S86Q"      # raw .dbn.zst live here (read-only source)
+episodes    = "/Users/joshhall/Developer/Projects/es-trading-agent-v3/Data/processed/chatlogs/tsl_episodes_clean.parquet"  # <-- point at your processed/ copy
+es_1m_front = "/Users/joshhall/Developer/Projects/es-trading-agent-v3/Data/processed/es/es_1m_front.parquet"         # <-- point at your processed/ copy
+es_5m_front = "/Users/joshhall/Developer/Projects/es-trading-agent-v3/Data/processed/es/es_5m_front.parquet"         # <-- point at your processed/ copy
+out_dir     = "/Volumes/2TB-Lexar/tslwrb_windowed"               # windowed parquet + summaries land here (gitignored)
+
+[run]
+month               = "2025-10"   # which month of MBP-10 we are reducing
+pre_entry_min       = 60          # data kept before first entry  (pad reaches into Globex by design)
+post_exit_min       = 5           # data kept after last exit
+chunk_rows          = 1000000     # to_df(count=) streaming chunk size; lower this if RAM-pressured
+resolve_sample_rows = 5000000     # early-exit cap for front-month resolution pass (per file)
+tick                = 0.25        # ES tick
+recon_tol_ticks     = 1           # reconciliation tolerance in ticks (revisit to 2 only if 03 says so)
+
+[run.resolved]
+contract = "ESZ5"
+windowed_parquet = "/Volumes/2TB-Lexar/tslwrb_windowed/mbp10_ESZ5_2025-10_windowed.parquet"

@@ -1,0 +1,145 @@
+# WRB and WRB Hidden Gap (WHG) Identification Reference
+
+## Purpose
+This defines the rules for identifying Wide Range Bodies (WRBs) and
+WRB Hidden Gaps on ES futures using M.A. Perry's WRB Analysis methodology.
+It is the single source of truth for all WRB-related scripts, agents, and
+notebooks in this project.
+
+Source: M.A. Perry, WRBAnalysis.com — publicly documented methodology.
+No rules in this document are invented. If a rule is not sourced from
+Perry's documented work, it is marked [PROJECT CONVENTION] and explained.
+
+---
+
+## 1. Core Definitions
+
+### 1.1 Candlestick Body
+The body of a candlestick is defined as the absolute distance between
+open and close prices, regardless of direction.
+
+    body_size = abs(close - open)
+
+This is NOT the total range (high - low). Wicks are excluded from body
+measurement. This distinction is critical — a bar with a large total range
+but small body is NOT a WRB.
+
+### 1.2 Wide Range Body (WRB)
+A bar is a WRB if its body is strictly larger than the bodies of each of
+the three immediately preceding bars.
+
+    is_wrb = (
+        body[i] > body[i-1] AND
+        body[i] > body[i-2] AND
+        body[i] > body[i-3]
+    )
+
+Requirements:
+- The WRB can be bullish (close > open) or bearish (close < open).
+  Direction is recorded but does not affect WRB qualification.
+- A doji (open == close, body = 0) cannot be a WRB.
+
+### 1.3 WRB Direction
+    bullish_wrb = is_wrb AND close > open
+    bearish_wrb = is_wrb AND close < open
+
+### 1.4 WRB Hidden Gap (WHG)
+The WRB Hidden Gap is the price zone inside the WRB body that was NOT
+traded through by ANY of the three prior bars.
+
+Specifically: it is the region inside the WRB body that lies beyond the
+highest high (for bullish) or lowest low (for bearish) of the three
+prior bars' bodies.
+
+For a BULLISH WRB:
+    prior_body_high = max(max(open[i-1], close[i-1]),
+                          max(open[i-2], close[i-2]),
+                          max(open[i-3], close[i-3]))
+
+    whg_bottom = prior_body_high
+    whg_top    = close[i]          ← top of WRB body
+
+    WHG exists if: whg_top > whg_bottom (there is unfilled space)
+    WHG zone: [whg_bottom, whg_top]
+
+For a BEARISH WRB:
+    prior_body_low = min(min(open[i-1], close[i-1]),
+                         min(open[i-2], close[i-2]),
+                         min(open[i-3], close[i-3]))
+
+    whg_top    = prior_body_low
+    whg_bottom = close[i]          ← bottom of WRB body
+
+    WHG exists if: whg_bottom < whg_top (there is unfilled space)
+    WHG zone: [whg_bottom, whg_top]
+
+A WRB does not always produce a WHG. A WRB without a WHG is still a WRB.
+A WHG cannot exist without a WRB.
+
+### 1.5 WHG Fill Status
+A WHG is considered FILLED when subsequent price action trades completely
+through the WHG zone — meaning a bar's range (high to low, including wicks)
+covers the entire zone from whg_bottom to whg_top.
+
+    filled = (subsequent_bar.high >= whg_top AND
+              subsequent_bar.low  <= whg_bottom)
+
+[PROJECT CONVENTION] Fill status is tracked as:
+    UNFILLED  — no subsequent bar has traded through the full zone
+    PARTIAL   — price has entered the zone but not fully covered it
+    FILLED    — price has fully covered the zone
+
+---
+
+## 2. Primary Analysis Timeframe
+
+Can be any time frame
+
+---
+
+## 3. Output Schema ideas which might be of use
+
+
+    ts_event        datetime UTC    bar timestamp
+    session_date    date            trading date (CT)
+    symbol          str             front-month contract
+    timeframe       str             "30m", "15m", etc.
+    open            float           bar open
+    high            float           bar high
+    low             float           bar low
+    close           float           bar close
+    volume          int             bar volume
+    body_size       float           abs(close - open)
+    prior_body_max  float           max body of prior 3 bars
+    direction       str             "bullish" | "bearish"
+    has_whg         bool            True if WHG exists
+    whg_top         float | None    top of WHG zone
+    whg_bottom      float | None    bottom of WHG zone
+    whg_size        float | None    whg_top - whg_bottom
+    whg_fill_status str | None      "UNFILLED" | "PARTIAL" | "FILLED"
+    is_roll_day     bool            True if bar is on a contract roll date
+    session         str             always "RTH" in this output
+
+---
+
+
+
+
+## 4. Known Edge Cases
+
+### Roll Day WRBs
+Bars where is_roll_day=True may show anomalous body sizes due to the
+price gap between contracts at roll. These are valid bars in the data
+but should be flagged and reviewed / categorised separately in backtesting.
+
+### Identical Body Sizes
+If body[i] == body[i-1], the bar does NOT qualify as a WRB.
+The condition is strictly greater than (>), not greater than or equal (>=).
+
+### Zero-Body Bars (Doji)
+body_size == 0 cannot be a WRB. These bars are skipped in identification.
+They can appear in the prior 3 bars without issue.
+
+## 5. Targets - WRB pt1m pt2, and pt3
+WRB pt1 is defined as the WRB which occurs in the direction of the trade after the trade has been entered.
+pt1 = the first 1m WRB in the trade's direction (bullish=long, bearish=short) with ts_event ≥ entry-minute (entry bar may qualify). It completes at ts_event + 60s. A trade is target_reached if still open at pt1 completion, else failed_trades. (Also update WRB_Definition.txt §5 itself — it's the single source for WRB defs.)
