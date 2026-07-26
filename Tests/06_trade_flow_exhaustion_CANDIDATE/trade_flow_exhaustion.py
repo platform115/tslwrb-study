@@ -42,10 +42,14 @@ memory-safe single streamed pass. Relies on CURRENT_STATE conventions.
 import argparse, tomllib
 import numpy as np, pandas as pd
 
-INSTRUMENT_ID = 294973
+import os as _os
+INSTRUMENT_ID = int(_os.environ.get("TSLWRB_IID", "294973"))
 TS_COL = "ts_event"; ACT = "action"; SIDE = "side"; SZ = "size"
 BID_PX0, ASK_PX0 = "bid_px_00", "ask_px_00"
-WRB_TF, MONTH, SYMBOL = "1m", "2025-10", "ESZ5"
+WRB_TF = "1m"
+MONTH = _os.environ.get("TSLWRB_MONTH", "2025-10")
+SYMBOL = _os.environ.get("TSLWRB_SYMBOL", "ESZ5")
+print(f"[env] MONTH={MONTH} SYMBOL={SYMBOL} INSTRUMENT_ID={INSTRUMENT_ID}", flush=True)
 WINDOW_S = 180; TICK = 0.25
 MAX_GAP_S = 120; ROLL_JUMP_TICKS = 40
 M = lambda n: pd.Timedelta(minutes=n); S = lambda n: pd.Timedelta(seconds=n)
@@ -95,6 +99,7 @@ def read_per_second(windowed, t_min, t_max):
     and mid (last per second). Memory-safe single streamed pass. ~256k rows/month."""
     import pyarrow.parquet as pq, pyarrow as pa
     need = [TS_COL, ACT, SIDE, SZ, BID_PX0, ASK_PX0, "instrument_id"]
+    assert MONTH in str(windowed), f"[env-mismatch] MONTH={MONTH} but parquet={windowed}"
     pf = pq.ParquetFile(windowed)
     miss = [c for c in need if c not in set(pf.schema_arrow.names)]
     if miss:
@@ -191,7 +196,8 @@ def main():
     print(f"[build] losers={len(losers)} (in reached={int((losers.group=='target_reached').sum())}, "
           f"in failed={int((losers.group=='failed_trades').sum())}) | "
           f"comparison non-loser reached={len(reached_nonloser)}")
-    assert len(losers) == 16 and len(reached_nonloser) == 47, "ROUND-1 ARM DRIFT"
+    if MONTH == "2025-10":
+        assert len(losers) == 16 and len(reached_nonloser) == 47, "ROUND-1 ARM DRIFT"
 
     arms = pd.concat([losers.assign(arm="loser"), reached_nonloser.assign(arm="reached")])
 

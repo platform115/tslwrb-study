@@ -29,9 +29,12 @@ _sys.path.insert(0, _os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)
 import argparse, tomllib
 import pandas as pd, numpy as np
 
-INSTRUMENT_ID = 294973
-LO = pd.Timestamp("2025-10-01", tz="UTC"); HI = pd.Timestamp("2025-11-01", tz="UTC")
-MONTH = "2025-10"
+import os as _os
+INSTRUMENT_ID = int(_os.environ.get("TSLWRB_IID", "294973"))
+MONTH = _os.environ.get("TSLWRB_MONTH", "2025-10")
+SYMBOL = _os.environ.get("TSLWRB_SYMBOL", "ESZ5")
+print(f"[env] MONTH={MONTH} SYMBOL={SYMBOL} INSTRUMENT_ID={INSTRUMENT_ID}", flush=True)
+LO = pd.Timestamp(f"{MONTH}-01", tz="UTC"); HI = LO + pd.offsets.MonthBegin(1)
 
 
 def identify_whg(df):

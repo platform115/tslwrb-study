@@ -38,8 +38,12 @@ import numpy as np, pandas as pd
 
 from trade_flow_exhaustion import build_groups, S, M
 
-INSTRUMENT_ID = 294973
-LO = pd.Timestamp("2025-10-01", tz="UTC"); HI = pd.Timestamp("2025-11-01", tz="UTC")
+import os as _os
+INSTRUMENT_ID = int(_os.environ.get("TSLWRB_IID", "294973"))
+MONTH = _os.environ.get("TSLWRB_MONTH", "2025-10")
+SYMBOL = _os.environ.get("TSLWRB_SYMBOL", "ESZ5")
+print(f"[env] MONTH={MONTH} SYMBOL={SYMBOL} INSTRUMENT_ID={INSTRUMENT_ID}", flush=True)
+LO = pd.Timestamp(f"{MONTH}-01", tz="UTC"); HI = LO + pd.offsets.MonthBegin(1)
 TAUS = [60, 120, 180, 300, 480]; TAU_PRIMARY = 180
 TF_DUR = {"1m": 60, "5m": 300}
 
@@ -86,7 +90,7 @@ def main():
 
     g, es1m = load_groups(args.config, args.wrb)
     bsec, bhi, blo = load_1m_bars(es1m)
-    tables = {tf: pd.read_parquet(_os.path.join(args.whg_dir, f"whg_{tf}_2025-10.parquet")) for tf in TF_DUR}
+    tables = {tf: pd.read_parquet(_os.path.join(args.whg_dir, f"whg_{tf}_{MONTH}.parquet")) for tf in TF_DUR}
 
     for tf in ["1m", "5m"]:
         whg = tables[tf]

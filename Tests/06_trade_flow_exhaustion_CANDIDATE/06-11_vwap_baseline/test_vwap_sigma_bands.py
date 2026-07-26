@@ -32,8 +32,12 @@ import numpy as np, pandas as pd
 import horse_race_spine as spine
 from trade_flow_exhaustion import build_groups, read_per_second, S, M
 
-INSTRUMENT_ID = 294973
-LO = pd.Timestamp("2025-10-01", tz="UTC"); HI = pd.Timestamp("2025-11-01", tz="UTC")
+import os as _os
+INSTRUMENT_ID = int(_os.environ.get("TSLWRB_IID", "294973"))
+MONTH = _os.environ.get("TSLWRB_MONTH", "2025-10")
+SYMBOL = _os.environ.get("TSLWRB_SYMBOL", "ESZ5")
+print(f"[env] MONTH={MONTH} SYMBOL={SYMBOL} INSTRUMENT_ID={INSTRUMENT_ID}", flush=True)
+LO = pd.Timestamp(f"{MONTH}-01", tz="UTC"); HI = LO + pd.offsets.MonthBegin(1)
 N = 20; TAU = 60
 BANDS = [(-np.inf, 0.0, "<=0sigma (below VWAP)"), (0.0, 1.0, "0-1sigma"),
          (1.0, 2.0, "1-2sigma"), (2.0, np.inf, ">2sigma (extended)")]

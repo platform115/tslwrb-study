@@ -55,7 +55,7 @@ import argparse
 import numpy as np
 import pandas as pd
 
-from trade_flow_exhaustion import (S, TICK, MAX_GAP_S, ROLL_JUMP_TICKS, INSTRUMENT_ID,
+from trade_flow_exhaustion import (S, TICK, MAX_GAP_S, ROLL_JUMP_TICKS, INSTRUMENT_ID, MONTH,
                                    TS_COL, ACT, SIDE, SZ, BID_PX0, ASK_PX0)
 from horse_race_spine import rank_auc
 from sign_persistence import build_arms, persistence_stats
@@ -73,6 +73,7 @@ N_MIN = 10
 def read_trade_full(windowed, t_min, t_max):
     import pyarrow.parquet as pq, pyarrow as pa
     need = [TS_COL, ACT, SIDE, SZ, BID_PX0, ASK_PX0, "instrument_id"]
+    assert MONTH in str(windowed), f"[env-mismatch] MONTH={MONTH} but parquet={windowed}"
     pf = pq.ParquetFile(windowed)
     miss = [c for c in need if c not in set(pf.schema_arrow.names)]
     if miss:

@@ -36,8 +36,12 @@ import numpy as np, pandas as pd
 
 from trade_flow_exhaustion import build_groups
 
-INSTRUMENT_ID = 294973
-LO = pd.Timestamp("2025-10-01", tz="UTC"); HI = pd.Timestamp("2025-11-01", tz="UTC")
+import os as _os
+INSTRUMENT_ID = int(_os.environ.get("TSLWRB_IID", "294973"))
+MONTH = _os.environ.get("TSLWRB_MONTH", "2025-10")
+SYMBOL = _os.environ.get("TSLWRB_SYMBOL", "ESZ5")
+print(f"[env] MONTH={MONTH} SYMBOL={SYMBOL} INSTRUMENT_ID={INSTRUMENT_ID}", flush=True)
+LO = pd.Timestamp(f"{MONTH}-01", tz="UTC"); HI = LO + pd.offsets.MonthBegin(1)
 TF_DUR = {"1m": 60, "5m": 300}
 WINDOWS_DAYS = [1, 2, 3]
 NEAR_TICKS = 8          # 8 ticks = 2.0 pts on ES (0.25/tick); "near" bucket. Diagnostic only.
