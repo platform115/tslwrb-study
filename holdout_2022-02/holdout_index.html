@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>tslwrb-study · Holdout Index (Feb)</title>
+<style>
+  :root{
+    --ground:#eceff1; --panel:#ffffff; --ink:#161b21; --muted:#5d6975;
+    --line:#d6dce1; --line-soft:#e6eaed;
+    --flow:#0f766e;        /* live channel  */
+    --flow-soft:#d7ece8;
+    --book:#64748b;        /* dead channel  */
+    --book-soft:#e4e8ec;
+    --regime:#9a6a2f;      /* vx/vol channel */
+    --regime-soft:#efe3d2;
+    --frozen:#0f766e; --null:#7c8794; --retired:#aab2ba;
+    --cand:#0f766e; --synth:#3a4a78; --synth-soft:#dfe4f1; --pending:#8a6d3b; --pending-soft:#f0e7d6;
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Liberation Mono",monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:var(--sans); font-size:15px; line-height:1.5;
+    padding:clamp(20px,4vw,56px);
+  }
+  .wrap{max-width:1180px;margin:0 auto}
+
+  /* ---- masthead ---- */
+  header{border-bottom:2px solid var(--ink);padding-bottom:18px;margin-bottom:6px}
+  .kicker{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+  h1{font-size:clamp(26px,4vw,40px);line-height:1.05;margin:0;font-weight:680;letter-spacing:-.01em}
+  h1 .sub{display:block;font-family:var(--mono);font-size:13px;font-weight:500;letter-spacing:.02em;color:var(--muted);margin-top:10px;text-transform:none}
+
+  /* ---- ledger summary ---- */
+  .ledger{display:flex;flex-wrap:wrap;gap:8px 22px;font-family:var(--mono);font-size:12.5px;color:var(--muted);margin:16px 0 28px}
+  .ledger b{color:var(--ink);font-weight:600}
+  .ledger .sep{color:var(--line)}
+
+  /* ---- table ---- */
+  .scroll{overflow-x:auto}
+  table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line)}
+  thead th{
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--muted);text-align:left;font-weight:600;
+    padding:12px 14px;border-bottom:1px solid var(--line);white-space:nowrap;
+    background:#f7f9fa;position:sticky;top:0;
+  }
+  tbody td{padding:14px;border-bottom:1px solid var(--line-soft);vertical-align:top}
+  tbody tr:last-child td{border-bottom:none}
+  tbody tr{transition:background .12s ease}
+  tbody tr:hover{background:#f6f9f9}
+  tbody tr:focus-within{background:#f1f7f6;outline:2px solid var(--flow);outline-offset:-2px}
+
+  /* channel spine — the signature device */
+  td.spine{padding:0;width:5px}
+  tr[data-ch="flow"] td.spine{background:var(--flow)}
+  tr[data-ch="book"] td.spine{background:var(--book)}
+  tr[data-ch="regime"] td.spine{background:var(--regime)}
+  tr[data-ch="none"] td.spine{background:var(--line)}
+  tr[data-ch="movement"] td.spine{background:#4f46e5}
+  tr[data-ch="outcome"] td.spine{background:#7c3aed}
+  tr[data-ch="exit"] td.spine{background:#be123c}
+
+  td.idx{font-family:var(--mono);font-size:15px;font-weight:600;white-space:nowrap;width:46px;color:var(--ink)}
+  td.name a{font-family:var(--mono);font-size:13.5px;font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:1px}
+  td.name a:hover,td.name a:focus{color:var(--flow);border-color:var(--flow)}
+  td.name span.nolink{font-family:var(--mono);font-size:13.5px;font-weight:600;color:var(--ink)}
+  td.name .file{display:block;font-family:var(--mono);font-size:10.5px;color:var(--muted);margin-top:6px;word-break:break-all}
+
+  ul{margin:0;padding:0;list-style:none}
+  li{position:relative;padding-left:13px;margin:0 0 5px;font-size:13px;line-height:1.42}
+  li:last-child{margin-bottom:0}
+  li::before{content:"–";position:absolute;left:0;color:var(--muted)}
+  td.metric li{font-family:var(--mono);font-size:12px}
+  .num{font-family:var(--mono);font-weight:600}
+  .pos{color:var(--flow)} .neg{color:var(--muted)}
+
+  /* chips */
+  .chip{display:inline-block;font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;
+    text-transform:uppercase;padding:3px 8px;border-radius:2px;white-space:nowrap;font-weight:600}
+  .chip.frozen{background:var(--flow);color:#fff}
+  .chip.null{background:transparent;color:var(--null);border:1px solid var(--line)}
+  .chip.retired{background:transparent;color:var(--retired);border:1px dashed var(--line)}
+  .chip.flow{background:var(--flow-soft);color:var(--flow)}
+  .chip.book{background:var(--book-soft);color:var(--book)}
+  .chip.regime{background:var(--regime-soft);color:var(--regime)}
+  .chip.candidate{background:transparent;color:var(--cand);border:1px solid var(--cand)}
+  .chip.synth{background:var(--synth-soft);color:var(--synth)}
+  .chip.pending{background:var(--pending-soft);color:var(--pending);border:1px dashed var(--pending)}
+  .chip.movement{background:#eef0fb;color:#4f46e5}
+  .chip.outcome{background:#f3effd;color:#7c3aed}
+  .chip.exit{background:#fdeef0;color:#be123c}
+
+  /* footnotes */
+  footer{margin-top:24px;font-family:var(--mono);font-size:11.5px;color:var(--muted);line-height:1.6}
+  footer p{margin:0 0 6px}
+  footer .tag{color:var(--ink);font-weight:600}
+
+  /* responsive: stack to cards */
+  @media(max-width:860px){
+    thead{display:none}
+    table,tbody,tr,td{display:block;width:100%}
+    table{border:none;background:transparent}
+    tbody tr{background:var(--panel);border:1px solid var(--line);margin-bottom:14px;position:relative;padding-left:5px}
+    td.spine{position:absolute;left:0;top:0;bottom:0;height:auto;width:5px}
+    tbody td{border-bottom:1px solid var(--line-soft);padding:11px 14px 11px 18px}
+    tbody td:last-child{border-bottom:none}
+    tbody td::before{content:attr(data-label);display:block;font-family:var(--mono);font-size:10px;
+      letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+    td.idx{font-size:18px}
+    td.idx::before{content:"Test"}
+  }
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <p class="kicker">tslwrb-study · MBP-10 exit-timing research</p>
+    <h1>Holdout Index
+      <span class="sub">Non-null tests carried from Oct-2025 discovery · Feb-2022 holdout ADJUDICATED (T-DF10–24)</span>
+    </h1>
+  </header>
+
+  <div class="ledger">
+    <span><b>15</b>/16 rows run on Feb-2022 (T-DF10–24)</span><span class="sep">/</span>
+    <span><b>7</b> confirmed</span><span class="sep">/</span>
+    <span><b>2</b> confirmed-weak</span><span class="sep">/</span>
+    <span><b>4</b> rejected</span><span class="sep">/</span>
+    <span><b>2</b> family/null-replicated</span><span class="sep">/</span>
+    <span><b>1</b> on hold (loser_submodes)</span><span class="sep">/</span>
+    <span>verdict pattern: <b>directional signals confirmed, unsigned-pace rejected</b></span><span class="sep">/</span>
+    <span>combined S1∨S2: <b>90% coverage / 25% winner-kill</b> · net P&L UNMEASURED</span>
+  </div>
+
+  <div class="scroll">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>#</th>
+        <th>Test</th>
+        <th>Status</th>
+        <th>Feb-2022 Verdict</th>
+        <th>Channel</th>
+        <th>What it tested</th>
+        <th>Result</th>
+        <th>Groups</th>
+        <th>Windows</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06</td>
+        <td class="name" data-label="Test"><a href="./FROZEN_in_trade_flow_exhaustion_HOLDOUT_spec.md">in_trade_flow_exhaustion</a><span class="file">FROZEN_in_trade_flow_exhaustion_HOLDOUT_spec.md</span></td>
+        <td data-label="Status"><span class="chip frozen">Frozen</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF10 · 0.805</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Does directional flow fade in-trade before adverse (losing) trades?</li><li>Exit-anchored, realized-trade channel</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Channel live (self-check <span class="num pos">+0.72</span>)</li><li>Design A level <span class="num pos">0.712</span>, CI <span class="num">[0.555, 0.844]</span></li><li>Loser-specific; small n — promising, not proven</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 non-loser reached</li><li>loser spine (de-duped)</li></ul></td>
+        <td data-label="Windows"><ul><li>Design A cut-time-matched (primary)</li><li>A1 / A2 / B 180s context</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06b</td>
+        <td class="name" data-label="Test"><a href="./FROZEN_early_flow_confirmation_HOLDOUT_spec.md">early_flow_confirmation</a><span class="file">FROZEN_early_flow_confirmation_HOLDOUT_spec.md</span></td>
+        <td data-label="Status"><span class="chip frozen">Frozen</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF11 · 0.683</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Does flow building in the first 60s confirm a runner?</li><li>Entry-anchored, forward-predictive</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Early level <span class="num pos">0.672</span>, CI <span class="num">[0.580, 0.759]</span></li><li>Independent of 06 (complementary)</li><li>Best-conditioned window; promising, not proven</li></ul></td>
+        <td data-label="Groups"><ul><li>52 reached / 40 failed</li><li>disjoint, no de-dupe</li></ul></td>
+        <td data-label="Windows"><ul><li>Early [entry, +60s) forward (primary)</li><li>A1 / A2 / B context</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-7</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-7_wrb_progress.md">wrb_body_progress · S1</a><span class="file">SPEC_06-7_wrb_progress.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF21 · 0.871</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Favorable net displacement by entry+τ ÷ prior-3-bar max body</li><li>Slow-flat-dud detector (forward, @60s)</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Clean OPEN @60s <span class="num pos">~0.82</span> (ALL 0.852 / OPEN 0.817)</li><li>Calibration clean & monotone; boundary ~0.5</li><li>Read early (half losers gone by ~105s)</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 reached (clean)</li></ul></td>
+        <td data-label="Windows"><ul><li>Forward, still-open @60s</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-8</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-8_redundancy.md">adverse_excursion · S2 (redundancy)</a><span class="file">SPEC_06-8_redundancy.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF20 · complementary</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Max adverse excursion (pts) vs S1 — independent?</li><li>Fast-violent + late-reversal detector</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>corr(S1,S2) <span class="num">+0.03</span> — INDEPENDENT</li><li>S2 alone ~0.77; complementary to S1</li><li>S1 owns slow duds, S2 owns fast/late</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 reached (clean)</li></ul></td>
+        <td data-label="Windows"><ul><li>Path-based (max over [entry,exit])</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-10</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-10_whg_gap_capture%20-%20SETUP%20CANDIDATE.md">whg_gap_capture</a><span class="file">SPEC_06-10_whg_gap_capture - SETUP CANDIDATE.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Setup cand.</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip candidate">Confirmed-weak</span><span class="file">T-DF22 · setup holds</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>WRB hidden-gap arrival as entry setup; gap-traverse exit read</li><li>Per WRB_Definition.txt geometry</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Real ENTRY setup (~34/mo, 4 losers of 34)</li><li>Gap = launch level (median traverse 1.67×)</li><li>EXIT-prediction NULL — parked for entries work</li></ul></td>
+        <td data-label="Groups"><ul><li>~34 gap-arrival trades</li><li>5m WHG, inside+near+pointed-through</li></ul></td>
+        <td data-label="Windows"><ul><li>2-day validity; early gap-progress @60s</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-11</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-11_vwap_baseline.md">vwap_baseline · z-VWAP</a><span class="file">SPEC_06-11_vwap_baseline.md</span></td>
+        <td data-label="Status"><span class="chip candidate">Exit cand.</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip candidate">Confirmed-weak</span><span class="file">T-DF23 · 0.633, subsumed by S1</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Distance from rolling VWAP (z-scored) as a baseline competitor</li><li>Generic, NOT a WRB-method signal</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>z-score N=20 @60s <span class="num pos">~0.78</span> clean, mono calibration</li><li>Stronger at SHORT N (smooth decay, not a spike)</li><li>corr w/ S1 <span class="num">+0.56</span> — overlaps; redundant-in-combo</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers vs 47 reached (clean)</li><li>pt1 null</li></ul></td>
+        <td data-label="Windows"><ul><li>Forward, still-open @60s; rolling N (plateau ~15–20)</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-12</td>
+        <td class="name" data-label="Test"><a href="./SPEC_06-12_combined_rule.md">combined_rule · union + ladder</a><span class="file">SPEC_06-12_combined_rule.md</span></td>
+        <td data-label="Status"><span class="chip synth">Synthesis</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF24 · 90%/25%</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>S1 / S2 / z-VWAP combined: coverage vs winner-kill</li><li>Union, OR-pairs, majority, AND-pairs, unanimous</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num pos">S1 OR S2</span> = efficient frontier: 100% clean coverage @ <span class="num">34%</span> winner-kill</li><li>VWAP redundant-for-coverage; majority/AND dominated</li><li>Loss-boundary ≫ target-boundary · net P&L <span class="num neg">UNMEASURED</span></li></ul></td>
+        <td data-label="Groups"><ul><li>clean 16/47 + pt1 40/52</li></ul></td>
+        <td data-label="Windows"><ul><li>@60s (S1/VWAP) + path (S2); indicative thresholds</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">06-13</td>
+        <td class="name" data-label="Test"><span class="nolink">loser_submodes</span><span class="file">test_loser_submodes.py · SPEC pending</span></td>
+        <td data-label="Status"><span class="chip pending">Pending run</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip pending">On hold</span><span class="file">no committed code</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Are the 16 losers TWO failure modes (fast-violent vs slow-flat) or one skewed population?</li><li>Hold-time × adverse-shape × S1/S2 split</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>Built, NOT yet run</li><li>Quick peek: dense ≤2min cluster + thin tail → leans one skewed population (unconfirmed)</li></ul></td>
+        <td data-label="Groups"><ul><li>16 losers</li></ul></td>
+        <td data-label="Windows"><ul><li>Hold-time + path adverse</li></ul></td>
+      </tr>
+      <tr data-ch="flow">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">B2</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-B_forward_structure.md">forward_sweep</a><span class="file">forward_sweep.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Cand · weak</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip null">Rejected</span><span class="file">T-DF17 · hurst 0.460</span></td>
+        <td data-label="Channel"><span class="chip flow">Flow</span></td>
+        <td data-label="What it tested"><ul><li>Window sweep 60–300s, capped vs survivors</li><li>Leakage-free survivors-only control</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>hurst clears 120s-surv <span class="num">0.657</span> [0.507,0.795]</li><li>reach&gt;stall all 8 reads (mean .600)</li></ul></td>
+        <td data-label="Groups"><ul><li>13 stall / 41 reach (120s surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D2</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">velocity_acceleration</a><span class="file">velocity_acceleration.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip null">Rejected/null</span><span class="file">T-DF16 · accel null, VR dead</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Per-sec path-length fwd ÷ pre-entry pace (unsigned)</li><li>Reach&gt;stall (stallers decelerate vs own pace)?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>τ=60 <span class="num">0.660</span> [0.522,0.788] — CLEARS</li><li>the study's ONE surviving candidate</li></ul></td>
+        <td data-label="Groups"><ul><li>24 stall / 45 reach (60s surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D3</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">velocity_ratio_confirm</a><span class="file">velocity_ratio_confirm.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Confirmed</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip null">Rejected</span><span class="file">T-DF12 · 0.440 inverted</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Jackknife + label-permutation + decomposition</li><li>Is the 0.660 clear robust / not a fluke?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>jackknife min <span class="num">0.645</span>; perm p=<span class="num">0.014</span></li><li>stall frac&lt;1 = 0.62 vs reach 0.44 (decelerate)</li></ul></td>
+        <td data-label="Groups"><ul><li>24 stall / 45 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">D5</td>
+        <td class="name" data-label="Test"><a href="./06-13_stall_vs_reach/SPEC_SR-D_price_movement.md">velocity_ratio_sweep</a><span class="file">velocity_ratio_sweep.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Bounded</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip null">Rejected</span><span class="file">T-DF19 · null all cells</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Forward window sweep 60/90/120, fixed-60s pre-norm</li><li>Does the deceleration signal strengthen with window?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li><span class="num">0.660</span>/<span class="num">0.660</span>/<span class="num">0.629</span> stable</li><li>raw fwd wrong-way → signal lives in normalization</li></ul></td>
+        <td data-label="Groups"><ul><li>24/18/13 stall · 45/42/41 reach</li></ul></td>
+        <td data-label="Windows"><ul><li>entry-forward, survivors</li></ul></td>
+      </tr>
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S2</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S2_directional_velocity.md">s2_directional_velocity</a><span class="file">s2_directional_velocity.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Candidate</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF13/15 · fav_net_vel 0.649</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>SIGNED favorable velocity: net-rate + peak-rate, raw + pre-norm (4 cols)</li><li>Capped windows (B-design) + survivor anti-circularity control</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>fav_net_vel <span class="num">0.700</span> / surv <span class="num">0.669</span> [0.527,0.800] — CLEARS</li><li>primary fav_peak_vel NULL; τ=30 null; ρ(net,VR)=+0.01</li></ul></td>
+        <td data-label="Groups"><ul><li>47 reach / 29 stall; surv 45/24</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, min(entry+60s, exit)]</li></ul></td>
+      </tr>
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S2c</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S2_directional_velocity.md">fav_net_vel_confirm</a><span class="file">fav_net_vel_confirm.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Confirmed</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF13 · 0.649</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Jackknife + permutation + decomposition + independence CI + stratified VR</li><li>Is the clear robust, and a distinct axis from velocity_ratio?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>jk min <span class="num">0.655</span>; perm p=<span class="num">0.0093</span>; ρ CI [−0.22,+0.24]</li><li>reach 76% net-positive @60s vs stall 50% — cut-side asymmetry</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (survivors)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s]</li></ul></td>
+      </tr>
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S4</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S4_speed_profile.md">s4_speed_profile</a><span class="file">s4_speed_profile.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Refinement</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed (family)</span><span class="file">T-DF18 · h2 0.630</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>DIRECTIONAL profile: follow-through leg (h2) + fade Δ (H2−H1)</li><li>Pointed test of pop-and-fade; differences not ratios; raw only</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>h2_net_vel <span class="num">0.669</span> [0.516,0.808] clears; fade <span class="num">0.551</span> NULL</li><li>ρ(h2,fnv)=+0.67 indeterminate/component → refinement of #2, no 3rd candidate</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s] split 30/30</li></ul></td>
+      </tr>
+      <tr data-ch="movement">
+        <td class="spine"></td>
+        <td class="idx" data-label="#">S4b</td>
+        <td class="name" data-label="Test"><a href="./06-14_discretionary_factors/SPEC_DF-S4_speed_profile.md">s4b_boundary_sweep</a><span class="file">s4b_boundary_sweep.py</span></td>
+        <td data-label="Status"><span class="chip candidate">Lead · sweep</span></td>
+        <td data-label="Feb-2022 Verdict"><span class="chip frozen">Confirmed</span><span class="file">T-DF14 · 0.618</span></td>
+        <td data-label="Channel"><span class="chip movement">Movement</span></td>
+        <td data-label="What it tested"><ul><li>Split-boundary sensitivity b=15…45s — post-hoc-motivated, rule fixed pre-output</li><li>Does any boundary revive fade / extend h2?</li></ul></td>
+        <td class="metric" data-label="Result"><ul><li>fade: ALL-NULL ×7 → <b>robust-null</b>; h1: all-null (first ~20s uninformative)</li><li>h2 REGION [15–30], peak b=20 {N('0.722')} → lead, Feb list, found-by-sweep</li></ul></td>
+        <td data-label="Groups"><ul><li>45 reach / 24 stall (surv)</li></ul></td>
+        <td data-label="Windows"><ul><li>[entry, entry+60s], b swept</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <footer>
+    <p><span class="tag">Channel spine:</span> teal = realized trade-flow (live) · slate = resting book-direction (closed) · ochre = VX/vol regime · indigo = price-movement · violet = continuous-outcome · rose = exit-window sweep.</p>
+    <p><span class="tag">Status:</span> Frozen = pre-registered holdout candidate · Candidate = promising, not frozen (config not yet locked) · Synthesis = combination of candidates · Null = CI straddles 0.5 · Pending = built, not yet run · all results October in-sample (discovery), not validated.</p>
+    <p><span class="tag">Scratched:</span> a P&L-magnitude test (06-12) was withdrawn for mechanical errors — its numbers/conclusions are void and intentionally undocumented. Combined-rule net P&L value remains UNMEASURED.</p>
+    <p><span class="tag">Links:</span> hrefs assume .md files sit alongside this page in /Tests. Many now live in sub-folders (06-7…06-13 under 06_trade_flow_exhaustion_CANDIDATE/, 07 under 07_vx_regime/) — update each href to match, or hoist.</p>
+    <p><span class="tag">Provenance:</span> filtered from tests_index.html (43 rows, current through T-DF09). Rule: Null and Retired/Withdrawn excluded; Frozen, Candidate, Synthesis, and Pending carried. Original row numbers preserved for traceability to the source index.</p>
+    <p><span class="tag">Carried with caveats:</span> combined_rule (Synthesis) — the rule structure carries, but its 06-12 P&L numbers are void per the Scratched note; on the holdout it is evaluated fresh from its component candidates' frozen specs, with net P&L still UNMEASURED going in. loser_submodes (Pending) — built, never run in October; its holdout run is a FIRST run, not a validation, and must be read as such.</p>
+    <p><span class="tag">Holdout discipline:</span> Feb-2022 · front month resolved by VOLUME, not assumed · each test re-run exactly per its linked .md spec (frozen windows, thresholds, seeds) · pre-registered pass bars apply · confirmed/rejected set only after these runs. Note: the Feb list in the handoff also names non-row items found inside these tests (h2@b=20 lead inside s4b; ATRrel@60 lead-weak inside s3b's family) — those ride with their parent spec, not as separate rows.</p>
+    <p><span class="tag">Feb-2022 adjudication:</span> ESH2 · iid 5782 · 213 usable episodes (223 − 8 Feb-28 pre-registered − 2 NaT-exit) · arms 91 reach / 72 stall / 60 losers · frozen specs where they existed (T-DF10/11), pre-declared bars logged in registry notes where they did not (T-DF12+, declared before each number) · details in HOLDOUT_FINDINGS_2022-02.md · registry rows T-DF10–24.</p>
+  </footer>
+
+</div>
+</body>
+</html>
