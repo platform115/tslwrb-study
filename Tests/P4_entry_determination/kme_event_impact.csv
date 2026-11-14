@@ -1,0 +1,101 @@
+cls,n,median_tk,mean_tk,x_baseline,ranked,tier
+FOMC Economic Projections,20,87.5,84.65,21.875,True,A
+CPI m/m,52,72.5,104.46153846153847,18.125,True,A
+Core CPI m/m,52,72.5,104.46153846153847,18.125,True,A
+CPI y/y,53,72.0,102.90566037735849,18.0,True,A
+Core CPI y/y,53,72.0,103.0377358490566,18.0,True,A
+FOMC Statement,39,47.0,59.61538461538461,11.75,True,A
+Federal Funds Rate,39,47.0,59.61538461538461,11.75,True,A
+Average Hourly Earnings m/m,57,45.0,59.87719298245614,11.25,True,A
+Non-Farm Employment Change,57,45.0,59.87719298245614,11.25,True,A
+Unemployment Rate,57,45.0,59.87719298245614,11.25,True,A
+FOMC Press Conference,39,33.0,38.76923076923077,8.25,True,A
+Core PPI m/m,57,31.0,38.1578947368421,7.75,True,A
+PPI m/m,57,31.0,38.1578947368421,7.75,True,A
+ISM Services PMI,58,27.5,34.793103448275865,6.875,True,A
+Final Manufacturing PMI,58,27.0,27.06896551724138,6.75,True,A
+Core PCE Price Index m/m,57,24.0,29.50877192982456,6.0,True,A
+Personal Income m/m,57,24.0,29.50877192982456,6.0,True,A
+Personal Spending m/m,57,24.0,29.50877192982456,6.0,True,A
+Prelim UoM Consumer Sentiment,55,23.0,27.236363636363638,5.75,True,A
+Prelim UoM Inflation Expectations,55,23.0,27.236363636363638,5.75,True,A
+Advance GDP Price Index q/q,19,21.0,24.842105263157894,5.25,True,A
+Advance GDP q/q,19,21.0,24.842105263157894,5.25,True,A
+JOLTS Job Openings,58,21.0,26.844827586206897,5.25,True,A
+ISM Manufacturing PMI,58,19.5,26.655172413793103,4.875,True,A
+ISM Manufacturing Prices,58,19.5,26.655172413793103,4.875,True,A
+Construction Spending m/m,56,19.0,24.428571428571427,4.75,True,A
+Revised UoM Consumer Sentiment,59,19.0,24.949152542372882,4.75,True,A
+Revised UoM Inflation Expectations,59,19.0,24.949152542372882,4.75,True,A
+Employment Cost Index q/q,20,18.5,28.55,4.625,True,A
+Factory Orders m/m,59,18.0,24.220338983050848,4.5,True,A
+Flash Manufacturing PMI,56,18.0,22.535714285714285,4.5,True,A
+Flash Services PMI,55,18.0,22.927272727272726,4.5,True,A
+Treasury Sec Yellen Speaks,27,18.0,19.51851851851852,4.5,True,A
+Final Wholesale Inventories m/m,58,17.5,22.637931034482758,4.375,True,A
+RCM/TIPP Economic Optimism,58,17.5,23.96551724137931,4.375,True,A
+Fed Chairman Powell Testifies,24,17.0,25.208333333333332,4.25,True,A
+CB Consumer Confidence,58,16.0,22.896551724137932,4.0,True,A
+FOMC Meeting Minutes,37,16.0,17.45945945945946,4.0,True,A
+Business Inventories m/m,53,15.0,18.0188679245283,3.75,True,A
+Chicago PMI,58,15.0,19.379310344827587,3.75,True,A
+30-y Bond Auction,57,14.0,18.596491228070175,3.5,True,A
+Final GDP Price Index q/q,20,14.0,19.35,3.5,True,A
+Final GDP q/q,20,14.0,19.8,3.5,True,A
+NAHB Housing Market Index,51,14.0,17.176470588235293,3.5,True,A
+Prelim GDP Price Index q/q,19,14.0,16.526315789473685,3.5,True,A
+Prelim GDP q/q,19,14.0,16.526315789473685,3.5,True,A
+Unemployment Claims,251,13.0,21.99601593625498,3.25,True,A
+Revised Nonfarm Productivity q/q,20,12.5,17.25,3.125,True,A
+Revised Unit Labor Costs q/q,20,12.5,17.25,3.125,True,A
+10-y Bond Auction,53,12.0,16.150943396226417,3.0,True,A
+Building Permits,55,12.0,14.4,3.0,True,A
+Final Services PMI,57,12.0,18.596491228070175,3.0,True,A
+Goods Trade Balance,58,12.0,15.051724137931034,3.0,True,A
+Housing Starts,55,12.0,14.4,3.0,True,A
+Prelim Wholesale Inventories m/m,53,12.0,15.20754716981132,3.0,True,A
+Richmond Manufacturing Index,57,12.0,19.280701754385966,3.0,True,A
+ADP Non-Farm Employment Change,56,11.5,13.964285714285714,2.875,True,A
+Philly Fed Manufacturing Index,58,11.5,16.93103448275862,2.875,True,A
+CB Leading Index m/m,57,11.0,20.140350877192983,2.75,True,A
+Core Durable Goods Orders m/m,59,11.0,13.94915254237288,2.75,True,A
+Crude Oil Inventories,248,11.0,15.471774193548388,2.75,True,A
+Durable Goods Orders m/m,59,11.0,13.94915254237288,2.75,True,A
+Existing Home Sales,58,11.0,17.82758620689655,2.75,True,A
+Federal Budget Balance,53,11.0,17.245283018867923,2.75,True,A
+Loan Officer Survey,20,10.5,13.4,2.625,True,A
+Pending Home Sales m/m,58,10.5,15.068965517241379,2.625,True,A
+Beige Book,39,10.0,13.256410256410257,2.5,True,A
+Empire State Manufacturing Index,49,10.0,23.367346938775512,2.5,True,A
+Mortgage Delinquencies,19,10.0,16.210526315789473,2.5,True,A
+Natural Gas Storage,251,10.0,16.067729083665338,2.5,True,A
+FOMC Financial Stability Report,10,9.5,10.7,2.375,True,A
+Consumer Credit m/m,57,9.0,10.385964912280702,2.25,True,A
+Core Retail Sales m/m,53,9.0,15.150943396226415,2.25,True,A
+FOMC Member Speaks,1176,9.0,14.183673469387756,2.25,True,A
+Import Prices m/m,55,9.0,10.89090909090909,2.25,True,A
+New Home Sales,55,9.0,15.472727272727273,2.25,True,A
+Retail Sales m/m,53,9.0,15.150943396226415,2.25,True,A
+TIC Long-Term Purchases,57,9.0,10.87719298245614,2.25,True,A
+Trade Balance,59,9.0,12.186440677966102,2.25,True,A
+Treasury Currency Report,9,9.0,14.555555555555555,2.25,True,A
+Fed Monetary Policy Report,8,8.5,20.5,2.125,True,A
+Prelim Nonfarm Productivity q/q,19,8.0,8.31578947368421,2.0,True,A
+Prelim Unit Labor Costs q/q,19,8.0,8.31578947368421,2.0,True,A
+Current Account,20,7.5,9.1,1.875,True,B
+ADP Weekly Employment Change,19,7.0,10.578947368421053,1.75,True,B
+Capacity Utilization Rate,51,7.0,8.27450980392157,1.75,True,B
+Cleveland Fed Inflation Expectations,13,7.0,13.923076923076923,1.75,True,B
+HPI m/m,58,7.0,8.224137931034482,1.75,True,B
+Industrial Production m/m,51,7.0,8.27450980392157,1.75,True,B
+President Speaks,111,7.0,14.711711711711711,1.75,True,B
+S&P/CS Composite-20 HPI y/y,58,7.0,8.241379310344827,1.75,True,B
+Challenger Job Cuts y/y,58,6.0,8.706896551724139,1.5,True,B
+NFIB Small Business Index,55,5.0,7.581818181818182,1.25,True,B
+API Weekly Statistical Bulletin,237,3.0,4.025316455696203,0.75,True,C
+Fed Gov Nomination Hearings,3,16.0,20.333333333333332,4.0,False,unranked
+Fed Announcement,1,5.0,5.0,1.25,False,unranked
+Prelim Benchmark Payrolls Revision,5,5.0,6.0,1.25,False,unranked
+Bank Stress Test Results,4,4.0,3.75,1.0,False,unranked
+Fed Chair (any),1,1.0,1.0,0.25,False,unranked
+Fed Chairman Warsh Testifies,1,0.0,0.0,0.0,False,unranked
