@@ -66,6 +66,24 @@ P4.2 entry characterization (descriptive — this folder's `p4_2_entry_context.p
   to travel into it). Taken-vs-skipped comparisons are fair because the same mechanics
   apply to both sides; absolute fill-state shares are not evidence by themselves.
 
+## Multi-timeframe zone result (2026-11-14, p4_2b)
+- User: the trader alternates 1/3/5/10/15-minute charts for zones -> all five measured.
+- Convention set: fill state for every zone timeframe is judged on completed 1-minute
+  bars (strictest reading of "a bar's range covers the whole zone").
+- FINDING: nearest-zone presence and fill state are AMBIENT at every timeframe.
+  Entries vs 4,000 random flat desk-window moments: inside-or-near 99/95/92/90/85%
+  (entries) vs 98/95/93/88/86% (baseline) across 1/3/5/10/15m; fill-state splits
+  nearly identical too. His entry moments do not differ from random moments on these
+  measures. Consequence for P4.4 and for any strategy signal: nothing can be built on
+  "a zone exists" or "the zone is filled/unfilled" alone. Candidate signals must be
+  RELATIVE: properties of the specific triggering WRB/zone (size, news-proximity,
+  cross-timeframe confluence, direction agreement) compared taken-vs-skipped.
+- CAUTION, flagged before P4.3 locks anything: the WRB-timing nomination (61% of
+  entries within 5 min of a same-direction WRB completing) has NOT yet had the same
+  baseline check - same-direction WRBs complete every ~7-8 min, so a random moment
+  may also often be "within 5 min". Run the identical baseline on it before treating
+  timing as a trigger.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
