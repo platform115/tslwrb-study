@@ -120,6 +120,27 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
 - Next: pre-registered probes with AUC + confidence intervals, one registry row each:
   kme_born (all-events width, W grid 5/15/30), n_htf_overlap(_dir), body_tk.
 
+## Trader-stated mechanism #2 + taken-trade anatomy (2026-11-14, p4_5a)
+- USER (citing the trader's own repeated claims): a KME occurs -> a WRB forms at or
+  minutes after it -> the TOP and BOTTOM of that WRB's body become the price levels
+  where his interest concentrates.
+- Anatomy of all 313 taken trades (taken-only template BY DESIGN; the test is applying
+  it to matching non-entered moments + reserved years):
+  * 73% of entries have a 1m reaction WRB (formed <=30 min after an event) before them,
+    but in AGGREGATE entries sit far from it (median 71 min later, 36 ticks from the
+    nearest body edge, mostly beyond the range) - old reaction bars are not where he
+    enters.
+  * The FRESH subset carries the template: entries within 30 min of the reaction WRB
+    (n=84, ~27% of all entries): median 9 ticks from a body edge; at 4-tick tolerance
+    30% sit AT an edge (bottom 23% / top 7%) and 13% inside - and on the 5m reaction
+    bar (n=40) 66% are in or at the body. Side matches the reaction WRB 60%.
+  * Bottom-edge preference noted but NOT yet side-split (long/short composition could
+    produce it mechanically) - check before building it into a rule.
+- TEMPLATE (draft, for forward application): event -> WRB within 30 min -> entry
+  within ~30 min of that WRB, at/inside its body, favoring the lower edge, side
+  agreeing with the WRB. Next step: find ALL moments matching this chain in the two
+  months, measure how often he entered vs not, then the reserved years.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
