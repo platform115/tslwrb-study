@@ -59,42 +59,38 @@ def nearest_wrb(wrb_m, T, P, side, same_dir):
 
 
 # ---------- B. nearest live zone at T ----------
-def zone_dead_by(bars, top, bottom, t_formed, T):
-    """True if any single bar in (t_formed, T) covers the whole zone."""
-    b = bars[(bars.ts_event > t_formed) & (bars.ts_event < T)]
-    if b.empty:
-        return False
-    return bool(((b.high >= top) & (b.low <= bottom)).any())
-
-
 def nearest_live_zone(whg_m, bars_m, T, P, side, kme_ts, bar_sec=60):
+    """Nearest zone formed in the last ZONE_VALID_DAYS, REGARDLESS of fill status
+    (user-confirmed 2026-11-14: he sometimes trades zones already filled, so fill
+    state is recorded, never used as a filter). Fill state at T, canonical per
+    WRB_Definition.txt 1.5: filled = ONE bar's range covers the whole zone;
+    partial = price entered the zone (incl. top+bottom touched in different bars);
+    unfilled = untouched. Judged on completed 1m bars after the zone's bar completes."""
     w = whg_m[(whg_m.ts_event >= T - pd.Timedelta(days=ZONE_VALID_DAYS)) &
               (whg_m.ts_event + pd.Timedelta(seconds=bar_sec) <= T) & whg_m.has_whg]
-    best = None
-    for _, z in w.iloc[::-1].iterrows():                      # newest first
-        if zone_dead_by(bars_m, z.whg_top, z.whg_bottom, z.ts_event, T):
-            continue
-        if z.whg_bottom <= P <= z.whg_top:
-            d = 0.0
-        else:
-            d = min(abs(P - z.whg_top), abs(P - z.whg_bottom)) / TICK
-        if best is None or d < best["dist_tk"]:
-            best = dict(dist_tk=d, top=z.whg_top, bottom=z.whg_bottom,
-                        formed=z.ts_event, direction=z.direction)
-        if best and best["dist_tk"] == 0.0:
-            break
-    if best is None:
-        return dict(zone_status="none", zone_dist_tk=np.nan, zone_age_min=np.nan,
+    if w.empty:
+        return dict(zone_status="none", zone_fill="", zone_dist_tk=np.nan, zone_age_min=np.nan,
                     zone_pointed=False, zone_form_to_news_min=np.nan)
-    status = "inside" if best["dist_tk"] == 0 else ("near" if best["dist_tk"] <= NEAR_TK else "far")
-    pointed = (best["top"] >= P) if side == "long" else (best["bottom"] <= P)
-    age = (T - best["formed"]).total_seconds() / 60
+    top = w.whg_top.to_numpy(); bot = w.whg_bottom.to_numpy()
+    dist = np.where(P < bot, bot - P, np.where(P > top, P - top, 0.0)) / TICK
+    j = int(np.flatnonzero(dist == dist.min())[-1])        # nearest; tie -> newest
+    z = w.iloc[j]
+    b = bars_m[(bars_m.ts_event >= z.ts_event + pd.Timedelta(seconds=bar_sec)) &
+               (bars_m.ts_event + pd.Timedelta(seconds=60) <= T)]
+    if len(b) and bool(((b.high >= z.whg_top) & (b.low <= z.whg_bottom)).any()):
+        fill = "filled"
+    elif len(b) and bool(((b.high >= z.whg_bottom) & (b.low <= z.whg_top)).any()):
+        fill = "partial"
+    else:
+        fill = "unfilled"
+    status = "inside" if dist[j] == 0 else ("near" if dist[j] <= NEAR_TK else "far")
+    pointed = (z.whg_top >= P) if side == "long" else (z.whg_bottom <= P)
+    age = (T - z.ts_event).total_seconds() / 60
     if len(kme_ts):
-        dmin = np.abs((kme_ts - best["formed"]).dt.total_seconds()) / 60
-        form_news = float(np.min(dmin))
+        form_news = float(np.min(np.abs((kme_ts - z.ts_event).dt.total_seconds()) / 60))
     else:
         form_news = np.nan
-    return dict(zone_status=status, zone_dist_tk=best["dist_tk"], zone_age_min=age,
+    return dict(zone_status=status, zone_fill=fill, zone_dist_tk=float(dist[j]), zone_age_min=age,
                 zone_pointed=bool(pointed), zone_form_to_news_min=form_news)
 
 
@@ -205,10 +201,13 @@ def run(repo):
         print(f"price distance to that WRB's close (ticks):      p25/med/p75 = {q(d.wrb_same_dist_tk)}")
         for tf in ("z1m", "z5m"):
             s = d[f"{tf}_status"].value_counts(normalize=True).round(2).to_dict()
+            at_zone = d[d[f"{tf}_status"].isin(["inside", "near"])]
+            f = at_zone[f"{tf}_fill"].value_counts(normalize=True).round(2).to_dict()
             pt = d.loc[d[f"{tf}_status"] != "none", f"{tf}_pointed"].mean()
-            print(f"zone ({tf[1:]}): {s}  | pointed-through where a zone exists: {pt:.0%}"
-                  f"  | zone age min med: {d[f'{tf}_age_min'].median():.0f}"
-                  f"  | zone-formed-to-news min med: {d[f'{tf}_form_to_news_min'].median():.0f}")
+            print(f"zone ({tf[1:]}): position {s}")
+            print(f"   fill state when at a zone (inside/near, n={len(at_zone)}): {f}"
+                  f"  | pointed-through: {pt:.0%}  | age min med: {d[f'{tf}_age_min'].median():.0f}"
+                  f"  | formed-to-news min med: {d[f'{tf}_form_to_news_min'].median():.0f}")
         print(f"ticks to: prev-day high {q(d.d_prev_high_tk)}  low {q(d.d_prev_low_tk)}  "
               f"close {q(d.d_prev_close_tk)}  today's open {q(d.d_open_tk)}  round-10 {q(d.d_round10_tk)}")
         print(f"minutes to news: before {q(d.news_before_min)}  after {q(d.news_after_min)}"
@@ -236,12 +235,19 @@ def selftest():
     whg = pd.DataFrame(dict(ts_event=[t0 + pd.Timedelta(minutes=10)], has_whg=True,
                             whg_top=[5004.0], whg_bottom=[5002.0], direction=["bullish"]))
     z = nearest_live_zone(whg, bars, T, 5003.0, "long", pd.Series([], dtype="datetime64[ns, UTC]"))
-    print(f"  zone inside: {z['zone_status']} pointed={z['zone_pointed']}")
-    assert z["zone_status"] == "inside" and z["zone_pointed"]
+    print(f"  zone inside: {z['zone_status']} fill={z['zone_fill']} pointed={z['zone_pointed']}")
+    assert z["zone_status"] == "inside" and z["zone_fill"] == "unfilled" and z["zone_pointed"]
     bars2 = bars.copy()
-    bars2.loc[12, ["high", "low"]] = [5005.0, 5001.0]      # one bar covers whole zone -> dead
+    bars2.loc[12, ["high", "low"]] = [5005.0, 5001.0]      # one bar sweeps whole zone
     z2 = nearest_live_zone(whg, bars2, T, 5003.0, "long", pd.Series([], dtype="datetime64[ns, UTC]"))
-    assert z2["zone_status"] == "none"; print("  traded-through zone -> none OK")
+    assert z2["zone_status"] == "inside" and z2["zone_fill"] == "filled"
+    print("  single-bar sweep -> still nearest, fill=filled OK")
+    bars3 = bars.copy()
+    bars3.loc[12, ["high", "low"]] = [5005.0, 5003.5]      # touches top only
+    bars3.loc[13, ["high", "low"]] = [5003.0, 5001.0]      # later bar touches bottom only
+    z3 = nearest_live_zone(whg, bars3, T, 5003.0, "long", pd.Series([], dtype="datetime64[ns, UTC]"))
+    assert z3["zone_fill"] == "partial"
+    print("  top+bottom in DIFFERENT bars -> partial (letter of the definition) OK")
     r = ref_prices(bars, T, 5003.0)
     assert r["d_round10_tk"] == 12.0 and r["d_open_tk"] == 12.0
     print(f"  round-10 distance 12 tk OK, open distance 12 tk OK")

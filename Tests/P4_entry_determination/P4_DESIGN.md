@@ -39,12 +39,34 @@ P4.2 entry characterization (descriptive — this folder's `p4_2_entry_context.p
 → P4.4 probes (one registry row each; news-width grid per decision 3)
 → P4.5 entry-rule synthesis → validation on reserved years → P&L test in the backtester.
 
+## Zone fill rule — RESOLVED 2026-11-14 (user decision)
+- The 2x disagreement was traced to one rule: WHEN a zone counts as filled. The written
+  definition (WRB_Definition.txt 1.5) says ONE bar's range must sweep the whole zone;
+  the October probe's CODE instead killed a zone once price had touched above the top
+  and below the bottom in different bars. Evidence: swapping only that rule reproduced
+  the probe's numbers from this script (1m: 61% -> 29% inside).
+- User (trader knowledge): the fill rule is real, but he sometimes still trades zones
+  that are already filled. DECISION: single-bar sweep is the canonical fill definition,
+  and fill status is a RECORDED PROPERTY (unfilled / partial / filled at entry), never
+  a filter on which zones count. Boundary case: top and bottom touched in different
+  bars with no single-bar sweep = partial, by the letter of the definition.
+- Provenance footnote (not a retraction): SPEC_06-10's gap-arrival population and
+  T-DF22's holdout verdict were computed under the stricter cumulative rule,
+  consistently in both months - they stand as findings about that construction.
+- Open residual (low priority): 5m counts don't fully reconcile even under the
+  cumulative rule; chase only if 5m zone work becomes load-bearing.
+
+## Known measurement limits (recorded before any probe runs)
+- "Inside some zone formed in the last 2 days" is true for ~93% of his entries at 1m -
+  and very likely for most random moments too (zones form ~200+/day; nearest-zone age
+  median is 12 min). Zone PRESENCE is near-universal and discriminates nothing by
+  itself; only zone PROPERTIES compared taken-vs-skipped (fill state, age, timeframe,
+  pointed-through) can carry signal.
+- Being inside a zone mechanically raises the chance it is already "partial" (price had
+  to travel into it). Taken-vs-skipped comparisons are fair because the same mechanics
+  apply to both sides; absolute fill-state shares are not evidence by themselves.
+
 ## Open items
-- **MUST RECONCILE before P4.3 locks anything:** this script finds ~61-64% of entries
-  INSIDE a live zone; the October zone work (probe_whg_arrival, SPEC_06-10) reported
-  only ~32-42% inside-or-near on the same months. Two implementations of "live zone at
-  entry" disagree by roughly 2x. Diff the two scripts, find the definitional difference,
-  and decide which is right - neither number is usable until then.
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
 - Zone tables (`whg_*_2025-10/2022-02.parquet`) are derived files present in the working
