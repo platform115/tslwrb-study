@@ -12,3 +12,9 @@ data/            # if you symlink the SSD dir to ./data
 # OS noise
 .DS_Store
 .venv/
+
+# EXCEPTION (2026-11-14): small derived inputs are committed, checksummed —
+# lets the linked session run bar-level research. Raw data stays banned.
+!Data/
+!Data/inputs/
+!Data/inputs/*.parquet
