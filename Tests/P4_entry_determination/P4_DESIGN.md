@@ -121,9 +121,13 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
   kme_born (all-events width, W grid 5/15/30), n_htf_overlap(_dir), body_tk.
 
 ## Trader-stated mechanism #2 + taken-trade anatomy (2026-11-14, p4_5a)
-- USER (citing the trader's own repeated claims): a KME occurs -> a WRB forms at or
-  minutes after it -> the TOP and BOTTOM of that WRB's body become the price levels
-  where his interest concentrates.
+- USER (citing the trader's own repeated claims, clarified 2026-11-14): a KME occurs
+  -> a WRB forms DURING or minutes after it -> the TOP and BOTTOM of that WRB's body
+  become the price levels where his interest concentrates — **mostly on the 1-minute
+  chart, sometimes 3-minute, mostly 1-minute**. ("During" is covered by the code: any
+  WRB whose bar completes after the event moment counts, including the bar the event
+  lands inside.) Consequence: 1m is the PRIMARY chart for this mechanism, 3m the
+  secondary; 5m/15m kept only as context.
 - Anatomy of all 313 taken trades (taken-only template BY DESIGN; the test is applying
   it to matching non-entered moments + reserved years):
   * 73% of entries have a 1m reaction WRB (formed <=30 min after an event) before them,
@@ -134,12 +138,23 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
     (n=84, ~27% of all entries): median 9 ticks from a body edge; at 4-tick tolerance
     30% sit AT an edge (bottom 23% / top 7%) and 13% inside - and on the 5m reaction
     bar (n=40) 66% are in or at the body. Side matches the reaction WRB 60%.
-  * Bottom-edge preference noted but NOT yet side-split (long/short composition could
-    produce it mechanically) - check before building it into a rule.
-- TEMPLATE (draft, for forward application): event -> WRB within 30 min -> entry
-  within ~30 min of that WRB, at/inside its body, favoring the lower edge, side
-  agreeing with the WRB. Next step: find ALL moments matching this chain in the two
-  months, measure how often he entered vs not, then the reserved years.
+  * 3m chart (added after the user's clarification): a 3m reaction WRB exists before
+    81% of entries, but in aggregate entries sit far from it too (median 34 ticks);
+    the fresh 3m subset is small (n=56) and shows more "inside the body" (33-43%)
+    than at-edge behavior. 1m remains the carrier, matching the user's "mostly 1min".
+  * SIDE-SPLIT CHECK (fresh 1m subset, 4-tick tolerance): the bottom-edge preference
+    holds on BOTH sides — longs: 26% AT-bottom vs 11% AT-top (n=35); shorts: 20%
+    AT-bottom vs 4% AT-top (n=49). So it is NOT just long/short composition. Caveat:
+    n is small; treated as a template detail, not a cleared finding.
+- TEMPLATE (draft, for forward application): event -> 1m WRB completing within 30 min
+  (during or after) -> entry within ~30 min of that WRB, at/inside its body, favoring
+  the lower edge, side agreeing with the WRB. PRE-REGISTERED as T-EN05 (edge distance,
+  taken vs skipped, 1m primary / 3m secondary) and T-EN06 (forward application: firing
+  rate, his take rate vs base rate, untaken matches described) in the registry before
+  any taken-vs-skipped statistic on these quantities is computed. Honest provenance,
+  recorded in both rows: the hypotheses were sharpened by looking at the taken trades
+  (p4_5a), so same-months results are internal-consistency checks; the reserved years
+  are the real test.
 
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.

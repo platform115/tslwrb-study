@@ -38,7 +38,7 @@ from p4_3_confluence_news import news_sets  # noqa: E402
 TICK = 0.25
 REACT_MIN = 30          # WRB must complete within this many minutes after the event
 TOLS = [2, 4, 8]        # "AT the edge" tolerance grid, ticks
-TFS_ANAT = [1, 5, 15]
+TFS_ANAT = [1, 3, 5, 15]   # user clarification: 1m primary, 3m secondary are HIS charts for this
 
 
 def wrb_bodies(bars: pd.DataFrame) -> pd.DataFrame:
@@ -99,7 +99,7 @@ def run(repo):
                               body_top=lambda d: np.maximum(d.open, d.close))
                       [["ts_event", "direction", "body_bottom", "body_top"]]
                       .sort_values("ts_event")}
-        for tf in (5, 15):
+        for tf in (3, 5, 15):
             wtab[tf] = wrb_bodies(resample(bars_m, tf))
         print(f"[{month}] entries={len(e)} WRBs 1m/5m/15m="
               f"{len(wtab[1])}/{len(wtab[5])}/{len(wtab[15])}")
@@ -144,6 +144,15 @@ def run(repo):
         for tol in TOLS:
             loc = has[f"tf{tf}_loc_tol{tol}"].value_counts(normalize=True).round(2).to_dict()
             print(f"  position vs body (tol {tol} tk): {loc}")
+    print("\n--- side-split check (is the bottom-edge preference just long/short mix?) ---")
+    for tf in (1, 3):
+        h = df[(df[f"tf{tf}_has_react"] == True) & (df[f"tf{tf}_wrb_to_entry_min"] <= 30)]  # noqa: E712
+        for side in ("long", "short"):
+            hs = h[h.side == side]
+            if len(hs) < 8:
+                print(f"  {tf}m {side}: n={len(hs)} (too few)"); continue
+            loc = hs[f"tf{tf}_loc_tol4"].value_counts(normalize=True).round(2).to_dict()
+            print(f"  {tf}m {side} (n={len(hs)}): {loc}")
     print("\nREAD: taken-only template by design - no baseline here. The next step applies")
     print("this template to matching moments he did NOT enter; only that comparison (and")
     print("the reserved years) says whether the template has selective power.")
