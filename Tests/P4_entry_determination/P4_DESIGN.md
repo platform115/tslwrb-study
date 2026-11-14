@@ -104,6 +104,22 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
   and the >=20tk width. Units bug (parquet us vs ns) was found and fixed in this
   pipeline before these numbers; fix verified by selftest + manual probe.
 
+## P4.3 locked + first taken-vs-skipped readout (2026-11-14, p4_3b)
+- LOCKED: signal = flat, desk-window 1m WRB completion; taken = same-direction entry
+  within 5 min (15-min cross-check kept). 1,865 signals: 179 taken, 1,686 skipped;
+  60-62% of his entries are matched by a signal (the rest recorded, not dropped).
+- Descriptive splits (formal tests pending): KME-born signals (completed within
+  minutes after ANY scheduled event - the user's reading that effectively all events
+  matter is what carries it; the >=20tk width is too thin here) are taken at roughly
+  DOUBLE the base rate: e.g. within-15-min-of-event signals ~17% taken vs ~9% for the
+  rest. Higher-timeframe zone overlap of the signal's own zone leans positive
+  (3.27 vs 2.86 of 4 TFs; direction-matched 2.85 vs 2.52) - the user's confluence
+  intuition shows daylight at SIGNAL level where presence-counting showed none.
+  Body size mild (13 vs 11 ticks). "At an older KME-born level" null AS DEFINED
+  (>=20tk-born levels only; may deserve the all-events width before closing).
+- Next: pre-registered probes with AUC + confidence intervals, one registry row each:
+  kme_born (all-events width, W grid 5/15/30), n_htf_overlap(_dir), body_tk.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
