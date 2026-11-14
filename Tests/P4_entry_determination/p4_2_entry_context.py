@@ -70,7 +70,7 @@ def nearest_live_zone(whg_m, bars_m, T, P, side, kme_ts, bar_sec=60):
               (whg_m.ts_event + pd.Timedelta(seconds=bar_sec) <= T) & whg_m.has_whg]
     if w.empty:
         return dict(zone_status="none", zone_fill="", zone_dist_tk=np.nan, zone_age_min=np.nan,
-                    zone_pointed=False, zone_form_to_news_min=np.nan)
+                    zone_pointed=False, zone_form_to_news_min=np.nan, zone_dir="")
     top = w.whg_top.to_numpy(); bot = w.whg_bottom.to_numpy()
     dist = np.where(P < bot, bot - P, np.where(P > top, P - top, 0.0)) / TICK
     j = int(np.flatnonzero(dist == dist.min())[-1])        # nearest; tie -> newest
@@ -91,7 +91,8 @@ def nearest_live_zone(whg_m, bars_m, T, P, side, kme_ts, bar_sec=60):
     else:
         form_news = np.nan
     return dict(zone_status=status, zone_fill=fill, zone_dist_tk=float(dist[j]), zone_age_min=age,
-                zone_pointed=bool(pointed), zone_form_to_news_min=form_news)
+                zone_pointed=bool(pointed), zone_form_to_news_min=form_news,
+                zone_dir=str(z.direction))
 
 
 # ---------- C. reference prices ----------

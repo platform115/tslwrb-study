@@ -84,6 +84,26 @@ P4.2 entry characterization (descriptive — this folder's `p4_2_entry_context.p
   may also often be "within 5 min". Run the identical baseline on it before treating
   timing as a trigger.
 
+## Baseline verdicts on the candidate factors (2026-11-14, p4_3)
+All measured identically for 313 entries vs 4,000 random flat desk-window moments.
+- WRB timing, any direction: AMBIENT (78% vs 75% within 5 min of a completion) - dead.
+- WRB timing, direction-matched: REAL BUT MODEST - 61% of entries within 5 min of a
+  same-direction completion vs 46% at random moments (random side). Survives as a
+  trigger component, downgraded from "strong".
+- Cross-timeframe confluence BY COUNTING (inside a zone on how many of 1/3/5/10/15m):
+  NULL - mean 4.25 vs 4.23; direction-matched 1.96 vs 2.11. Counting presence across
+  timeframes inherits the ambience of presence. The user's confluence intuition gets
+  its fair test at SIGNAL level instead (the triggering WRB's zone vs higher-TF zones,
+  taken vs skipped) - presence-counting was the wrong operationalization, and this
+  null does not close that question.
+- NEWS-FORMED ZONES: the clearest positive gap so far. Share of points whose nearest
+  1m zone formed within 30 min AFTER a >=20-tick event: entries 7% vs baseline 2%
+  (3m: 4% vs 1%; all-events width 1m: 26% vs 19%; >=45tk too rare to read; 5-15m no
+  gap). Minority behavior (~22 trades) but the largest relative enrichment measured.
+  Directly supports the trader's stated KME-weighting of zones, at short timeframes
+  and the >=20tk width. Units bug (parquet us vs ns) was found and fixed in this
+  pipeline before these numbers; fix verified by selftest + manual probe.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
