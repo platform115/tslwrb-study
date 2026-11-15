@@ -439,6 +439,30 @@ No frozen rule changed; the protocol already reads both pools.
    CI; PASS = pooled CI excludes 50% and point >= 60%.
 6. One shot: no re-tuning after seeing validation data; misses recorded as-is.
 
+## VALIDATION PART 1 — 2021-09 + 2024-11 (2026-11-15, p4_20, one shot, T-EN23)
+- Construction gates passed before touching reserved data: WRB rebuild EXACT
+  (0 diff both discovery months); zone rebuild 0 missing / <=2 boundary extras.
+  No-pressure cutoffs fixed on discovery first (v5: 2 of 5, v6: 4 of 8).
+- 2021-09 (848 signals, 68 taken): v5-noflow lift 1.58x [1.15,2.01] CLEARS;
+  v6-noflow 1.54x [1.08,2.03] CLEARS - inside the ceiling-predicted 1.4-2x band.
+- 2024-11 (539 signals, 37 taken): 1.09x/1.18x, CIs cross 1 - nothing visible
+  at this n, in the thinned-trading era (the standing 2023+ caution).
+- DIRECTION RULE travels best: follow-the-last-5-min-move agrees 79.8% (2021-09)
+  and 67.7% (2024-11) vs 72% discovery.
+- Recorded as-is, no retuning. Full-rule (with pressure) read follows on these
+  same months when the user's tick downloads land. Pooled PASS still open.
+
+## His last words before entries (2026-11-15, full history)
+- 71% of all 4,842 entries have a message within the prior 15 min (median 2.4 min).
+- MAJOR FIND: he POSTS HIS OWN KME LIST EVERY MORNING ("KME's today @ 1030am,
+  1100am, 1105am, 1pm, 2pm est") - the Perry-named event list (approach C of
+  decision 3) exists after all, per day, in his own messages, parseable. NEXT:
+  extract his daily lists -> a fourth news width = "HIS list".
+- He names "the Key KME WRB Zone" with R and S levels, verbatim - the mechanism's
+  vocabulary; which zone was "Key" per day is also potentially extractable.
+- Over-represented last words: trail/stop/picked (exit talk), squeeze, shadow,
+  expecting, ranging, fighting - squeeze and shadow recur yet again.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
