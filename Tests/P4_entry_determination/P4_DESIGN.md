@@ -156,6 +156,24 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
   (p4_5a), so same-months results are internal-consistency checks; the reserved years
   are the real test.
 
+## Terminology settled + two further pre-registered tests (2026-11-15, user)
+- VOCABULARY (user asked for the right collective term; documented precedent used, no
+  invented words): per Tharp (1999), the simultaneous state items — event occurred,
+  reaction WRB exists, zone presence, price speed — are SETUP CONDITIONS; the single
+  event that times the entry (a signal WRB completing) is the TRIGGER; several
+  conditions true at once is CONFLUENCE (already in use here).
+- User (2026-11-15), three additions: (a) he sometimes enters INSIDE a WRB zone
+  expecting a traverse to its edge and/or beyond -> T-EN07, registered on BOTH
+  readings of "zone" (WHG gap zone and reaction-WRB body; user chose both since his
+  usage may blur them); (b) post-KME WRBs on 1m/3m are the most interesting objects
+  to him — already covered by T-EN01 (cleared) + T-EN05/06, nothing new registered;
+  (c) the exit work's speed-type attributes may be part of the entry signal ->
+  T-EN08, TRAILING speed only (the holdout-confirmed exit feature fav_net_vel is
+  post-entry — reusing it for entries would be lookahead), read jointly with the
+  already-cleared body-size cell T-EN03.
+- STATUS: T-EN07/T-EN08 rows are in the registry with directions fixed; the RUN is
+  held for user review (user decision 2026-11-15).
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
