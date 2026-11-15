@@ -223,6 +223,24 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
   AT edges (T-EN04, T-EN05) and room-ahead (T-EN07) do not separate taken from
   skipped. What remains open before synthesis: trailing flow (T-EN09).
 
+## T-EN09 result — trailing oriented flow (2026-11-15, p4_7_trailing_flow.py)
+- DATA: per-second aggressor flow reduced on the user's Mac from the windowed
+  MBP-10 extracts (both months verified present on the drive), committed as
+  Data/inputs/flow_per_sec_*.parquet with checksums; reduction script committed
+  (reduce_flow_device.py). Same construction as the exit program's flow tests.
+- ANATOMY (taken trades, oriented by trade side): the 60-min profile before his
+  entries is flat noise until the FINAL 5-minute bucket, which jumps to a median
+  +1.04 (Oct) / +1.58 (Feb) contracts/sec in his direction; flow leans his way at
+  68-70% of entries. The flow signature is immediate, not a slow build.
+- PROBE: flow_5m (primary) CLEARS - 0.562 [0.516,0.607], positive in both months
+  (0.596 / 0.545). flow_15m null (0.509). CANDIDATE.
+- CAVEATS recorded: (1) 30% of skipped windows -> NaN via the gap tripwire (early
+  desk-window signals sit near the extract boundary) vs 2% of taken, so the valid
+  skipped pool skews later-in-day; (2) the orientation caveat (signal-direction
+  vs chosen-side) stands; (3) flow_5m vs trailing-speed correlation unexamined -
+  the synthesis step must check which of T-EN01/02/03/08/09 are the same thing
+  measured twice before combining.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.

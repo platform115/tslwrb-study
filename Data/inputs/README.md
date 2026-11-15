@@ -14,3 +14,10 @@ windowed parquets, scraped chat HTML) remains banned from git — SSD/local only
 
 Copies here are snapshots: if a source regenerates, re-copy + update CHECKSUMS.sha256
 in the same commit. Verify: `shasum -a 256 -c CHECKSUMS.sha256`
+
+- `flow_per_sec_2025-10.parquet` / `flow_per_sec_2022-02.parquet` — per-second
+  aggressor flow (buyv, sellv, mid last), instrument-filtered (ESZ5 294973 /
+  ESH2 5782), reduced 2026-11-15 on the user's Mac from the windowed MBP-10
+  extracts by `Tests/P4_entry_determination/reduce_flow_device.py`. Oct 256,482
+  rows; Feb 334,944 rows. Coverage = the exit program's trade windows
+  (60 min before first entry -> 5 min after last exit, per day).
