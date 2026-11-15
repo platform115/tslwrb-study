@@ -403,6 +403,22 @@ testing discipline is the quality gate, not the product.
   (0.271) < v5 (0.289); the additions' evidence is control-based (twins), which
   in-sample F1 cannot see. BOTH rules go to validation; neither preferred.
 
+## Present-only re-score of the whole entry battery (2026-11-15, user question)
+All earlier taken-vs-skipped verdicts used a skipped pool ~half-diluted by
+absence. Re-scored side by side on the verifiably-present pool (964 signals,
+130 taken, base 13.5%):
+- ROBUST (clear on both pools): event recency 0.546 · body size 0.567 ·
+  tape speed 0.618/0.611 (the most robust family).
+- FRAGILE (no longer clear at half the sample, point estimates nearly
+  unchanged): zone agreement 0.559->0.541 · flow 0.562->0.551. Power loss vs
+  dilution undecidable at this n - part of flow's full-pool strength WAS his
+  presence (flow availability correlates with him being there). Both stay in
+  the frozen rules; validation (~4,500 trades) resolves.
+- NULLS CONFIRMED clean: at-older-level 0.498 · edge distance 0.551 (presence
+  was NOT what held the levels claim back - the twins result remains its only
+  support) · room-ahead 0.516/0.529.
+No frozen rule changed; the protocol already reads both pools.
+
 ## VALIDATION PROTOCOL — FROZEN, one shot (awaiting user go)
 1. Validation set: every episode month EXCEPT Oct-2025 and Feb-2022 (includes
    rest of 2022; 2021 from May; 2023; 2024; 2025 ex-Oct). ~4,500 trades.
