@@ -267,6 +267,34 @@ testing discipline is the quality gate, not the product.
 - NEXT: validation on the reserved years (2021/2023/2024) with Stage-0-style
   gates, then P&L in the backtester (phase plan 6b).
 
+## Score v2/v3 + direction (2026-11-15, user corrections; p4_9, p4_9b, p4_10)
+- USER: (1) the >=3-higher-timeframes zone requirement was overkill - his small
+  charts (1/3/5m) should carry it; (2) the pooled-median tick thresholds were
+  arbitrary; (3) review what price action set his direction.
+- v2 (literal implementation) tested WORSE: any-of-3m/5m zones are near-ambient
+  (81% of signals), and sizing vs a 20-bar average turned slightly backwards
+  because that average is already elevated right after news - the exact moments
+  he trades. Recorded, not hidden.
+- v3 (repair, keeps the intent): zones on BOTH 3m and 5m; body and 5-min ground
+  each measured against the PRIOR SESSION's median (trailing, self-calibrating,
+  computable live - which v1's pooled medians were not, a flaw now recorded).
+  v3 k>=4: captures 45% of his entries at 1.7x his base rate (Oct 2.3x / Feb
+  1.5x) - comparable to v1 on the discovery months with no hidden month-level
+  peek. FROZEN for validation. Weak spot: the tape condition is true for 91% of
+  signals; validation decides whether it stays. Rule iteration STOPS here (three
+  versions on the same two months is already a fitting risk).
+- DIRECTION (p4_10, all 313 entries): he trades WITH the immediate move.
+  Side agrees with the last 5-min move 71.6% (Oct 73 / Feb 71), with 5-min
+  aggressor flow 71.1%, with the 20-bar VWAP side 72.5% (Oct only 63). Agreement
+  decays with horizon (15-min 63%, 30/60-min ~57-59%); session VWAP ~noise;
+  reaction-WRB direction 58%. Longs enter ABOVE the reaction body (63%), shorts
+  BELOW (48%): the body's top/bottom acts as a BREAKOUT reference - direction =
+  the side price broke toward. SIDE-RULE CANDIDATE: direction of the last
+  5 minutes' move, flow sign as confirmation.
+- The draft strategy now has all three parts: WHEN/WHERE = score v3 >= 4,
+  WHICH WAY = last-5-min move direction. Next: reserved-years validation of
+  both, then P&L in the backtester.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
