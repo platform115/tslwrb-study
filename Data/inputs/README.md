@@ -28,3 +28,10 @@ in the same commit. Verify: `shasum -a 256 -c CHECKSUMS.sha256`
   corpus via es-trading-agent-v3 `chatlog-scraper/tsl_data/export_messages.py`
   (1,312 HTML files; ~81 non-chat-log topics skipped). The room is effectively
   his narration log (median 24 of 30 daily messages are his).
+
+- `flow_per_sec_2021-09_full.parquet` / `flow_per_sec_2024-11_full.parquet` —
+  FULL-MONTH per-second aggressor flow (no trade-window boundaries), reduced
+  2026-11-15 on the user's Mac from freshly purchased daily MBP-10 batch zips
+  by `/Volumes/2TB-Lexar/make_flow_validation.py` (front contract auto-resolved
+  by last-3-day volume: ESZ1 / ESZ4; identity gate vs committed bars: mid
+  tracks closes within half a tick). 1.36M / 1.40M rows.
