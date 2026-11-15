@@ -295,6 +295,34 @@ testing discipline is the quality gate, not the product.
   WHICH WAY = last-5-min move direction. Next: reserved-years validation of
   both, then P&L in the backtester.
 
+## REORIENTATION ON RECORD + full parameter search (2026-11-15, user; p4_11)
+- USER, standing: "The goal is to find what actually works, not to prove or
+  disprove various ideas." The two discovery months are the SEARCH set - optimize
+  freely there; the reserved years (2021/2023/2024), spent sparingly, are the
+  proof. In-sample numbers after a search are optimistic by construction;
+  shrinkage at validation is expected and is not failure. The earlier
+  "stop tweaking to avoid curve-fitting" stance is superseded by this frame
+  (train/search vs held-out test - Lopez de Prado 2018).
+- p4_11: exhaustive grid over EVERY rule variable (event window, zone-agreement
+  form, body multiplier, tape window + multiplier, flow threshold, cutoff) -
+  19,635 evaluations, objective declared first (max F1, both months above base,
+  >=30 flagged).
+- FINDING: the six-condition family saturates at F1 ~0.26; the search's best
+  (0.266) barely beats hand-built v1 (0.262). More tuning inside this family
+  will not move discovery-month performance; gains now come from validation
+  (or new components), not more search.
+- FROZEN v4 (argmax of the declared objective): event within 60 min · zone on
+  any of 3m/5m (the user's any-of reading wins once the other conditions are
+  tight) · body >= 2x prior-session median WRB body · 3-min ground covered
+  >= 1.5x prior-session median · flow > 0 · template minute · 4 of 6 required.
+  Flags 369 signals, captures 41% of his entries at 19.8% precision (2.1x base).
+- FRONTIER (for choosing the strategy's selectivity later): 2.7x at 21% capture,
+  2.4x at 30%, 2.1x at 41%, 1.8x at 51%.
+- Both-months filter turned out non-binding (all configs pass) because every
+  condition leans positive in both months - verified directly, not a bug.
+- Parked: sweep of the template's internal windows (reaction <=30 min, at-body
+  tolerance 4 tk, 30-min after-window); flow data for validation years.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
