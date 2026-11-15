@@ -346,6 +346,27 @@ testing discipline is the quality gate, not the product.
 - Candidate v6 ingredients for validation alongside v5 (not yet searched): the
   flow upper bound and the 0.8x tape cut.
 
+## Reverse-engineering pass 2: ceiling, SHAP, twins, near-misses (2026-11-15)
+- CEILING (p4_15, day-held-out): the 23 features support at most ~0.24 F1 across
+  days - BELOW the rule's in-sample 0.289. The feature table is essentially
+  exhausted; remaining gains live in data we don't have (desk presence, his
+  context read). EXPECTATION SET: v5's 2.4x should be expected to land ~1.4-2x
+  on the reserved years; that is calibration, not failure.
+- SHAP: flow_5m is the #1 reason for 84% of his taken signals. The entry
+  decision is, first and foremost, a flow decision.
+- MATCHED TWINS (p4_16): two things the rule misses, now rescued as candidates:
+  (1) taken signals sit 7.6 ticks CLOSER to the reaction-WRB edge than their
+  near-identical untaken twins (p=0.004) - the user's levels claim holds once
+  known factors are controlled; (2) 10-minute-chart zone overlap differs at
+  p=0.0001 - the 10m chart adds information the 3m/5m-only condition drops.
+  Both are v6 candidate conditions, to be judged at validation.
+- NEAR-MISSES: benign - the strongest false alarms sit a median 10.7 minutes
+  from his real entries on normal days: timing jitter around true moments, not
+  a wrong pattern. No new veto beyond the flow ceiling echo (12% vs 0% above
+  the ~4.6 threshold).
+- STATUS: entry discovery is COMPLETE pending validation. Frozen v5 + candidate
+  v6 ingredients (edge proximity, 10m overlap, flow ceiling, 0.8x tape cut).
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
