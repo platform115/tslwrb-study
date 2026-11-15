@@ -103,7 +103,42 @@ def score_all_completions(repo, month, sym):
             not (np.isfinite(fl15) and fl15 > FLOW15_CAP),
             bool(lag15[ib] > ref15l[ib]) if np.isfinite(ref15l[ib]) else False,
         ])
-        rows.append(dict(month=month, comp_ns=cns, direction=w.direction.iloc[i], score=score, c1_news=bool(mins <= 15), uref=pr * TICK if np.isfinite(pr) else np.nan))
+        hi_b = float(bars.high.iloc[ib]); lo_b = float(bars.low.iloc[ib])
+        op_b = float(bars.open.iloc[ib]); cl_b = float(bars.close.iloc[ib])
+        bt, bb_ = max(op_b, cl_b), min(op_b, cl_b)
+        rngs = (bars.high - bars.low).to_numpy()
+        decl = 0
+        for kk in range(ib - 1, max(ib - 7, 0), -1):
+            if rngs[kk] < rngs[kk + 1] or True:
+                pass
+        # consecutive declining 1m ranges strictly before the signal bar
+        decl = 0
+        kk = ib - 1
+        while kk > 0 and rngs[kk] < rngs[kk - 1]:
+            decl += 1; kk -= 1
+        conds = [mins <= 15,
+                 bool(ov[3][i] | ov[5][i]),
+                 np.isfinite(pr) and abs(w.close.iloc[i] - w.open.iloc[i]) / TICK >= 2.0 * pr,
+                 bool(tr5.iloc[ib] >= 1.5 * ref5.iloc[ib]) if np.isfinite(ref5.iloc[ib]) else False,
+                 np.isfinite(fl5) and fl5 > 2.0,
+                 c6,
+                 bool(w1 and min(abs(P - w1["top"]), abs(P - w1["bottom"])) / TICK <= E_TK),
+                 bool(ov[10][i]),
+                 not (np.isfinite(fl15) and fl15 > FLOW15_CAP),
+                 bool(lag15[ib] > ref15l[ib]) if np.isfinite(ref15l[ib]) else False]
+        rows.append(dict(month=month, comp_ns=cns, direction=w.direction.iloc[i], score=score,
+                         c1_news=bool(mins <= 15), uref=pr * TICK if np.isfinite(pr) else np.nan,
+                         **{f"k{j+1}": bool(v) for j, v in enumerate(conds)},
+                         mins_since=mins if np.isfinite(mins) else np.nan,
+                         flow5=fl5, flow15=fl15,
+                         edge_tk=(min(abs(P - w1["top"]), abs(P - w1["bottom"])) / TICK) if w1 else np.nan,
+                         body_r=(abs(cl_b - op_b) / TICK / pr) if np.isfinite(pr) and pr > 0 else np.nan,
+                         tape_r=float(tr5.iloc[ib] / ref5.iloc[ib]) if np.isfinite(ref5.iloc[ib]) and ref5.iloc[ib] > 0 else np.nan,
+                         lag15_r=float(lag15[ib] / ref15l[ib]) if np.isfinite(ref15l[ib]) and ref15l[ib] > 0 else np.nan,
+                         tod=pd.Timestamp(cns, tz="UTC").hour + pd.Timestamp(cns, tz="UTC").minute / 60,
+                         ush_tk=(hi_b - bt) / TICK, lsh_tk=(bb_ - lo_b) / TICK,
+                         shadow_r=((hi_b - bt) + (bb_ - lo_b)) / max(abs(cl_b - op_b), TICK),
+                         contr_n=decl))
     return pd.DataFrame(rows)
 
 
