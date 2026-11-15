@@ -463,6 +463,26 @@ No frozen rule changed; the protocol already reads both pools.
 - Over-represented last words: trail/stop/picked (exit talk), squeeze, shadow,
   expecting, ranging, fighting - squeeze and shadow recur yet again.
 
+## VALIDATION VERDICT — BOTH RULES PASS (2026-11-15, T-EN24)
+- All 58 reserved months (24,843 signals, 2,073 taken; 2023-12 excluded with
+  reason: mid-month roll, 7 trades). Frozen protocol, one shot.
+- v5-noflow 1.48x [1.41,1.55] · v6-noflow 1.51x [1.43,1.59] pooled — PASS at the
+  pre-registered bar, landing inside the ceiling-predicted 1.4-2x band. EVERY
+  year clears individually, including thinned 2023-24 (weaker there, as the
+  caution predicted). Present-only: 1.30x/1.32x. v6 > v5 overall and clearly in
+  2024 — the twins/tree additions travel.
+- DIRECTION RULE: 70.2% pooled over 3,680 entries; 67-72% in every year — PASS.
+- Protocol amendment rule recorded (user): criteria may be changed openly when
+  obviously warranted — amendment recorded, then re-tested on fresh/other data;
+  what is banned is silent post-hoc bending.
+- HIS KME LIST extracted (p4_21): 63 distinct named events across 153 posted
+  days (Crude Oil Inventories 27x at the top, matching his volatility-spike
+  quote); saved as Data/inputs/his_kme_times.parquet = the fourth news width.
+- Still open: pressure-condition validation on the two purchased tick months
+  (device VM has 3GB RAM - full-day MBP-10 won't fit; plan: stage day files to
+  the cloud container in <=500MB batches, reduce to per-second flow, delete,
+  repeat); then the profit test.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
