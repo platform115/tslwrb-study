@@ -241,6 +241,32 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
   the synthesis step must check which of T-EN01/02/03/08/09 are the same thing
   measured twice before combining.
 
+## P4.8 synthesis — THE DRAFT ENTRY RULE (2026-11-15, p4_8_synthesis.py)
+Orientation per user (2026-11-15, standing): the goal is a rule that WORKS; the
+testing discipline is the quality gate, not the product.
+- Six deterministic conditions, one per cleared component (thresholds = pooled
+  medians or zero, fixed before combined results were seen):
+  C1 signal completed <=15 min after a scheduled event
+  C2 signal's zone overlaps direction-matched zones on >=3 higher timeframes
+  C3 signal body >= 11 ticks (pooled median)
+  C4 trailing 5-min path >= 62 ticks (pooled median)
+  C5 trailing 5-min oriented flow > 0 (unknown counts as false)
+  C6 completion minute is a template minute (event -> reaction WRB -> price at body)
+- SCORE WORKS: take rate rises monotonically 1.1% (score 0) -> 28.3% (score 5).
+- DRAFT RULE, frozen for validation: "selective" = score >= 4 (captures 41% of his
+  entries at 19.3% take rate, 2.0x base) · "broad" = score >= 3 (68% at 14.9%, 1.6x).
+- What matters most (added take rate on top of >=3 other conditions): flow +12.1pts,
+  event recency +8.5, template +7.8, tape speed +6.0; body (+2.2) is nearly
+  redundant with tape speed (rho 0.61), and event recency overlaps template
+  (rho 0.54). A compact 4-condition version (drop C3, merge C1 into C6) is the
+  natural simplification IF validation supports the full score first.
+- Honest limits: built on the discovery months; Feb lift weaker than Oct
+  (1.3-1.6x vs 2.1-2.9x — Feb's base take rate is higher); captures the WHEN/WHERE
+  of his entries, not the side (side agreement with the reaction WRB was only 57%).
+  Side selection is still an open question for the user's own strategy.
+- NEXT: validation on the reserved years (2021/2023/2024) with Stage-0-style
+  gates, then P&L in the backtester (phase plan 6b).
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
