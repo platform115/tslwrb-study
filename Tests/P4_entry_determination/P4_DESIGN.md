@@ -193,6 +193,36 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
   exit, so they cover the desk-window signals. They live on the user's Mac drive;
   Feb-2022 extract existence is verified at run time, not assumed.
 
+## T-EN05..08 results (2026-11-15, p4_6_template.py)
+- T-EN05 (distance to reaction-WRB body edge): NULL at the rule's letter — 1m primary
+  0.553 [0.500,0.606], CI lower edge exactly 0.500. Direction right (taken median
+  19 tk from an edge vs 30 tk skipped) but does not clear; 3m null. The LEVELS claim
+  survives only as a weak lean, not a cleared trigger component.
+- T-EN06 (template forward application): CANDIDATE. Template minutes (event ->
+  reaction WRB -> price at/inside its body) are 5.5% of flat desk minutes, and his
+  entry rate on them is 23.0% vs 10.8% elsewhere — 2.13x, holding in both months.
+  90 distinct opportunities, 70% entered. BUT side agreement with the reaction WRB
+  is only 57%: the template says WHEN AND WHERE he engages, not WHICH WAY. By
+  construction this is internal consistency (template came from his trades);
+  reserved years are the test.
+- T-EN07 (room ahead inside zone/body): NULL both cells (0.511 / 0.535). Room-ahead
+  is not how he selects. Secondary descriptive, kept for the exit linkage: once IN
+  a matched trade, the far edge of the interval was reached 84% (zone) / 83% (body)
+  of the time — consistent with his stated traverse EXPECTATION, but it shows up as
+  trade management/outcome, not entry selection.
+- T-EN08 (trailing tape speed): CANDIDATE, the cleanest support for the user's
+  speed intuition. 60s path 0.609, 5m path 0.620 (best entry cell so far), 5m net
+  0.584 — all clear. Speed-since-event and absolute VWAP stretch null. 5m path
+  clearing above single-bar measures says surrounding speed adds beyond the signal
+  bar's own size; joint read with body_tk (T-EN03) still owed.
+- Measurement choice recorded pre-stats (p4_6 docstring): both arms use the signal
+  WRB's own direction as the side (it IS the trade side for taken signals by
+  construction) — supersedes the "seeded random side" wording in the T-EN07 row.
+- Current cleared entry picture: KME-born timing (T-EN01) + trailing speed (T-EN08)
+  + the T-EN06 template + HTF overlap (T-EN02, weak) + body size (T-EN03). Levels
+  AT edges (T-EN04, T-EN05) and room-ahead (T-EN07) do not separate taken from
+  skipped. What remains open before synthesis: trailing flow (T-EN09).
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
