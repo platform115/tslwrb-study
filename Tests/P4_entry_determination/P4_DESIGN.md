@@ -174,6 +174,25 @@ All measured identically for 313 entries vs 4,000 random flat desk-window moment
 - STATUS: T-EN07/T-EN08 rows are in the registry with directions fixed; the RUN is
   held for user review (user decision 2026-11-15).
 
+## Exit-confirmed patterns re-aimed at the time BEFORE entry (2026-11-15, user)
+- USER: the patterns the exit work confirmed should be measured in the time leading
+  up to his entries - taken trades first, skipped pool as yardstick only. A registry
+  sweep (prompted by the user catching an incomplete keyword search) found these
+  exit-side survivors beyond plain speed:
+  * oriented order flow - T-DF10 0.805 / T-DF11 0.683 on holdout (best of program)
+  * z-VWAP stretch - T-DF23 0.633 confirmed-weak
+  * WRB body progress (T-DF21 0.871) + gap capture (T-DF22) - traverse behavior,
+    already encoded in T-EN06/T-EN07, not re-registered
+  * Hurst persistence sign (T-SR08 0.657, candidate-weak, never holdout-tested) -
+    NOT registered; weak pedigree, revisit only if the flow/speed cells disappoint.
+- Registered: T-EN09 (trailing oriented flow, 5-min primary; real aggressor-signed
+  flow from the windowed tick extracts, NOT a bar proxy) and a vwap_z cell amended
+  into the still-unrun T-EN08. Lookahead guard stated in both: only trailing windows
+  ending at the entry/signal moment; nothing measured after it.
+- DATA: the windowed extracts keep 60 min before first entry -> 5 min after last
+  exit, so they cover the desk-window signals. They live on the user's Mac drive;
+  Feb-2022 extract existence is verified at run time, not assumed.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
