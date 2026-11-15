@@ -388,6 +388,41 @@ testing discipline is the quality gate, not the product.
   3,173 msgs, volatility 1,267, zone 1,063) - deeper text mining is available
   later; "back" (1,014 msgs) enables explicit absence tracking.
 
+## His stated attention + v6 freeze (2026-11-15, p4_18/p4_19)
+- VOCABULARY MINING: his "speed" is a VOLATILITY-STATE CYCLE in his own words -
+  contracting (247x) = stand aside, increasing/spike (201x/spike-paired 272x) =
+  act; the KME -> volatility-spike link stated verbatim. Two NEW measurement
+  targets from his words: cross-market volatility agreement (he stands aside on
+  "poor volatility correlations" between ES/NQ/YM - needs NQ/YM bars) and
+  "shadow intervals" (wick-based structures, 183 mentions - computable from
+  bars we hold). Logged for post-validation work.
+- v6 FROZEN: v5 + within-24tk-of-reaction-edge + 10m-zone overlap + 15-min-flow-
+  below-4.6 veto + volatility-already-up, require 6 of 10. C10's sign was
+  corrected before freezing (first framed as quiet-then-burst; data and his
+  narration both said contraction = stands aside) - recorded. In-sample v6
+  (0.271) < v5 (0.289); the additions' evidence is control-based (twins), which
+  in-sample F1 cannot see. BOTH rules go to validation; neither preferred.
+
+## VALIDATION PROTOCOL — FROZEN, one shot (awaiting user go)
+1. Validation set: every episode month EXCEPT Oct-2025 and Feb-2022 (includes
+   rest of 2022; 2021 from May; 2023; 2024; 2025 ex-Oct). ~4,500 trades.
+2. Per month, mechanically: front contract + roll-day exclusion as standing;
+   desk windows and the LOCKED signal definition (p4_3b) unchanged; v5 and v6
+   computed at their frozen settings.
+3. Flow conditions are uncomputable without tick data: the all-months read uses
+   pre-registered NO-FLOW subscores (v5 minus C5; v6 minus C5/C9), each with its
+   cutoff fixed on the DISCOVERY months before any validation data is touched.
+   The full rules get their read on the three purchased months when they arrive.
+4. Reads, pre-registered: per year and pooled, on ALL signals and PRESENT-ONLY
+   (chat presence; coverage is 100% of trading days): lift = flagged precision /
+   base take rate, bootstrap 95% CI (seed 0, 10k).
+   PASS = pooled lift CI excludes 1.0 AND point estimate >= 1.3x (the ceiling
+   test says expecting the in-sample 2.3-2.4x to survive would be dishonest).
+   2023 caution stands (behavior change year, 398 trades).
+5. Direction rule (follow the last-5-min move): agreement per year + pooled with
+   CI; PASS = pooled CI excludes 50% and point >= 60%.
+6. One shot: no re-tuning after seeing validation data; misses recorded as-is.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
