@@ -323,6 +323,29 @@ testing discipline is the quality gate, not the product.
 - Parked: sweep of the template's internal windows (reaction <=30 min, at-body
   tolerance 4 tk, 30-min after-window); flow data for validation years.
 
+## Reverse-engineering pass (2026-11-15, user; p4_12/13/14)
+- USER: build size references from the CURRENT day's tape (pre-session bars fine,
+  no session anchoring -> all references are plain trailing windows), and let the
+  entries themselves pick the variables instead of us proposing ideas.
+- p4_12 (140,723-evaluation search with the new same-day references): improvement.
+  FROZEN v5: event within 15 min · zone on 3m or 5m · body >= 2x prior session's
+  median WRB body · 5-min ground >= 1.5x the trailing-2-hour median · flow > 2
+  contracts/sec · template minute · any 3 of 6. Captures 40% of his entries at
+  22.6% precision; Oct 3.2x / Feb 1.9x. Same-day reference wins for TAPE,
+  yesterday's for BAR SIZE. New frontier: 2.9x@21% ... 1.9x@52%.
+- p4_13 (decision tree + feature ranking, 23 features): flow dominates (5-min and
+  15-min both at the top). NEW: (1) an UPPER bound - 15-min flow > ~4.6 -> 0/59
+  taken: when the move is already loud and long underway, he stands aside; entry
+  flow must be FRESH, not sustained; (2) distance to the reaction-WRB edge ranks
+  #4 - the levels claim carries nonlinear value the linear test missed; (3) the
+  tree puts the tape cut at ~0.8x typical pace (near-normal is enough), not 1.5x.
+  Caveat on record: the tree's root split (flow-data-missing -> never taken) is
+  partly mechanical (missing = mostly the pre-first-trade hour).
+- p4_14 (clustering the 179 taken signals): NO distinct entry types (silhouette
+  0.197, weak) - one population, graded intensity. Single-rule structure stands.
+- Candidate v6 ingredients for validation alongside v5 (not yet searched): the
+  flow upper bound and the 0.8x tape cut.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
