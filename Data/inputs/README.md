@@ -21,3 +21,10 @@ in the same commit. Verify: `shasum -a 256 -c CHECKSUMS.sha256`
   extracts by `Tests/P4_entry_determination/reduce_flow_device.py`. Oct 256,482
   rows; Feb 334,944 rows. Coverage = the exit program's trade windows
   (60 min before first entry -> 5 min after last exit, per day).
+
+- `wrb_messages.parquet` / `chat_activity.parquet` — the trader's full forum-chat
+  message stream (31,838 messages, 2021-05..2026-06, trade calls tagged) and
+  per-minute room message counts, exported 2026-11-15 from the user's scraped
+  corpus via es-trading-agent-v3 `chatlog-scraper/tsl_data/export_messages.py`
+  (1,312 HTML files; ~81 non-chat-log topics skipped). The room is effectively
+  his narration log (median 24 of 30 daily messages are his).

@@ -367,6 +367,27 @@ testing discipline is the quality gate, not the product.
 - STATUS: entry discovery is COMPLETE pending validation. Frozen v5 + candidate
   v6 ingredients (edge proximity, 10m overlap, flow ceiling, 0.8x tape cut).
 
+## His own words: chat-log alignment (2026-11-15, p4_17 + export_messages.py)
+- His full forum narration exported (31,838 messages, trade calls tagged, 100% of
+  trading days covered; committed to Data/inputs with checksums). The room is his
+  monologue: median 24 of 30 daily messages are his.
+- PRESENCE, finally measured (resolves standing caveat 2): take rate 13.5% when he
+  had messaged within 30 min vs 5.4% when the keyboard was quiet; AUC 0.656 -
+  among the strongest single features found. Roughly half the skipped pool sits in
+  quiet-keyboard stretches: the skip side was heavily diluted by absence, exactly
+  as suspected. Adding presence lifts the honest ceiling 0.237 -> 0.252.
+- USE: presence is HIS behavior - it cannot be a live input to the user's
+  strategy. Its role is research hygiene: validation will be read both on all
+  signals AND on the present-only pool ("definitely seen", decision 2's reserved
+  variant). On present-only signals, v5's precision rises to 27.4% (2.0x the
+  present-only base of 13.5%) - when he was at the keyboard, more than 1 in 4
+  rule-flagged signals became trades.
+- His pre-entry vocabulary is the method verbatim: hidden / gap / levels / fast /
+  through / southward over-represented 2-3.5x in the 15 min before entries
+  (small counts; descriptive). Corpus-wide the method vocabulary is rich (wrb
+  3,173 msgs, volatility 1,267, zone 1,063) - deeper text mining is available
+  later; "back" (1,014 msgs) enables explicit absence tracking.
+
 ## Open items
 - Perry-named event list (approach C) — pending user finding it in source material.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
