@@ -55,6 +55,9 @@ def run_leg2(bars, pre, fb, fill, long, p, start_j, e_uref=None):
             xp = stop
             if p.get("gapfill"):            # realistic: bar opens beyond stop -> open
                 xp = min(stop, o[j]) if long else max(stop, o[j])
+            if "_audit" in p:               # tally: was this a gap-through fill?
+                p["_audit"].append(abs(xp - stop) > 1e-9 if p.get("gapfill")
+                                   else (o[j] < stop if long else o[j] > stop))
             return xp, j, ("faststop" if early else "stop")
         if j > fb and isw[j] and ((wdir[j] == "bullish") == long):
             n_pt += 1

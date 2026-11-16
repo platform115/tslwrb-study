@@ -86,8 +86,30 @@ def run(repo):
     print("optimistic bound. Next: per-second mid data can pin the true fill between.")
 
 
+def audit(repo):
+    """How many stop-type exits were actually gap-through (mis-priced before)?"""
+    es = pd.read_parquet(os.path.join(repo, "Data/inputs/es_1m_front.parquet"))
+    sig = pd.read_csv(os.path.join(HERE, "p4_36_all_signals.csv"))
+    tally = []
+    p = {**V11, "gapfill": True, "_audit": tally}
+    a, _ = simulate(es, sig, p)
+    ins = list(tally); tally.clear()
+    oosx = {}
+    for month in ("2021-09", "2024-11"):
+        oos(repo, month, {**BASE, **p})
+        oosx[month] = list(tally); tally.clear()
+    print("v11, share of STOP-type exits (early cut / full stop / follow-stop) where")
+    print("the bar OPENED beyond the stop (i.e., the fill was previously mis-priced):")
+    print(f"  in-sample:  {int(np.sum(ins))}/{len(ins)} = {np.mean(ins):.0%}")
+    for m, v in oosx.items():
+        print(f"  {m}:   {int(np.sum(v))}/{len(v)} = {np.mean(v):.0%}")
+    print("Close-based exits (pt ladder, time stop, session end) fill at the bar close")
+    print("and were never affected; within-bar stop touches were priced correctly.")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--audit", action="store_true")
     a = ap.parse_args()
-    run(a.repo)
+    audit(a.repo) if a.audit else run(a.repo)
