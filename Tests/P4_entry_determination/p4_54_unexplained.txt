@@ -1,0 +1,1003 @@
+
+=== 2025-10 2025-10-01 13:48:40 HIS short @ 6719.0 pnl +6.5 ===
+  4 min after KME | at 56% of day range | his-exit:48tk his-entry:41tk firstWRB-1m:18tk
+  13:48 [entry] Shorts Emini ES @ 6719.00 -> large size
+  13:48 10 contracts
+  13:48 poor entry
+  13:49 [exit] Covered all Emini ES Short @ 6712.50 --> + 6.5
+  13:49 WRB pt1 reached
+  13:49 early exit
+  13:50 [entry] Shorts Emini ES @ 6709.00 -> large size
+  13:50 10 contracts re-entry
+  13:50 [exit] Covered all Emini ES Short @ 6707.50 --> + 1.5
+  13:51 bailed...entry was during a formation of a WRB interval that looked like it was going to form a WRB Hidden GAP near the S area of the most recent Up WRB Hidden Gap interval
+
+=== 2025-10 2025-10-01 16:28:13 HIS long @ 6743.75 pnl +10.0 ===
+  13 min after KME | at 91% of day range | firstWRB-1m:4tk firstWRB-10m:4tk allWRB-10m:4tk
+  16:28 [entry] Long Emini ES @ 6743.75 -> large size
+  16:28 10 contracts
+
+=== 2025-10 2025-10-03 14:05:19 HIS short @ 6775.0 pnl -1.2 ===
+  5 min after KME | at 21% of day range | his-exit:30tk his-entry:21tk firstWRB-1m:10tk firstWRB-5m:21tk firstWRB-10m:12tk allWRB-10m:12tk
+  14:03 price action nearing the S area of the most recent Up WRB Hidden GAP interval
+  14:04 Long Shadow interval forming
+  14:05 [entry] Shorts Emini ES @ 6775.00 -> large size
+  14:05 10 contracts
+  14:05 early entry
+  14:07 [exit] Covered all Emini ES Short @ 6776.25 --> - 1.25
+  14:07 [entry] Long Emini ES @ 6777.00 -> large size
+  14:07 10 contracts
+  14:08 sneaky bounce
+  14:09 [exit] Exited all Emini ES Long @ 6775.50 --> - 1.5
+  14:09 Emini NQ is weak
+  14:10 that strange bounce again
+
+=== 2025-10 2025-10-09 14:36:19 HIS short @ 6775.0 pnl +3.8 ===
+  6 min after KME | at 3% of day range | firstWRB-1m:18tk firstWRB-5m:5tk
+  14:35 Thursday October 9th 2025
+  14:35 Good morning
+  14:36 [entry] Shorts Emini ES @ 6775.00 -> large size
+  14:36 10 contracts
+  14:36 intuition trade
+
+=== 2025-10 2025-10-09 15:26:05 HIS short @ 6781.0 pnl +10.8 ===
+  56 min after KME | at 30% of day range | his-exit:39tk his-entry:24tk firstWRB-1m:3tk firstWRB-5m:3tk firstWRB-10m:3tk allWRB-10m:3tk
+  15:24 CAC40 and DAX futures poor price action today too
+  15:26 [entry] Shorts Emini ES @ 6781.00 -> large size
+  15:26 10 contracts
+  15:26 poor entry :(
+  15:30 volatility increasing
+
+=== 2025-10 2025-10-09 17:30:13 HIS short @ 6763.5 pnl -1.5 ===
+  29 min after KME | at 3% of day range | his-exit:11tk his-entry:9tk firstWRB-1m:6tk firstWRB-5m:48tk firstWRB-10m:14tk allWRB-10m:14tk
+  17:21 [exit] Exited all Emini ES Long @ 6767.00 --> + 1.25
+  17:22 trail stop picked
+  17:22 Long Upper Shadow interval
+  17:23 [entry] Long Emini ES @ 6766.75 -> large size
+  17:23 10 contracts re-entry
+  17:25 [exit] Exited all Emini ES Long @ 6766.25 --> - 0.5
+  17:25 bailed
+  17:30 [entry] Shorts Emini ES @ 6763.50 -> large size
+  17:30 10 contracts
+  17:31 [exit] Covered all Emini ES Short @ 6765.00 --> - 1.5
+  17:33 [entry] Long Emini ES @ 6765.00 -> large size
+  17:33 10 contracts and I'm starting to have internet connection problems :(
+
+=== 2025-10 2025-10-14 14:20:23 HIS long @ 6646.75 pnl +72.5 ===
+  95 min after KME | at 96% of day range | his-exit:5tk his-entry:15tk
+  14:14 [entry] Long Emini ES @ 6643.00 -> large size
+  14:14 10 contracts
+  14:15 [exit] Exited all Emini ES Long @ 6645.50 --> + 2.5
+  14:15 bailed...not a WRB pt1
+  14:18 price action bouncing around a lot
+  14:20 [entry] Long Emini ES @ 6646.75 -> large size
+  14:20 10 contracts
+  14:20 intuition trade
+
+=== 2025-10 2025-10-16 13:49:00 HIS short @ 6733.75 pnl +6.2 ===
+  49 min after KME | at 45% of day range | firstWRB-1m:31tk firstWRB-5m:18tk firstWRB-10m:9tk allWRB-10m:9tk
+  13:44 October 16th Thursday 2025
+  13:44 Good morning
+  13:44 I was not here yesterday due to personal reasons
+  13:49 [entry] Shorts Emini ES @ 6733.75 -> large size
+  13:49 10 contracts
+  13:50 Broker sent out an alert about the temporary margin increase requirements are now back to normal
+  13:51 So far, looks like they spooke too early...volatility has been increasing fast
+  13:52 [exit] Covered all Emini ES Short @ 6727.50 --> + 6.25
+  13:53 bailed...not a WRB pt1 after I saw the formation of a Long Lower Shadow interval
+
+=== 2025-10 2025-10-17 13:51:57 HIS long @ 6665.0 pnl +17.2 ===
+  952 min after KME | at 74% of day range | his-exit:35tk his-entry:16tk
+  13:44 [exit] Covered all Emini ES Short @ 6644.75 --> + 24.25
+  13:45 +WRB pt1 reached
+  13:51 geeesh...price counter-thrusting back up towards 6669.00
+  13:51 That's a ton of volatility
+  13:51 [entry] Long Emini ES @ 6665.00 -> large size
+  13:52 10 contracts
+  13:52 intuition trade
+  13:55 [exit] Exited all Emini ES Long @ 6682.25 --> + 17.25
+  13:56 bailed...not a WRB pt1
+
+=== 2025-10 2025-10-17 14:12:45 HIS long @ 6679.5 pnl +16.8 ===
+  973 min after KME | at 88% of day range | his-exit:11tk his-entry:42tk
+  14:09 Price action starting to settle down
+  14:10 VIX still high but now ranging a little
+  14:12 [entry] Long Emini ES @ 6679.50 -> large size
+  14:12 10 contracts
+  14:16 [exit] Exited all Emini ES Long @ 6696.25 --> + 16.75
+  14:16 bailed...not a WRB pt1
+
+=== 2025-10 2025-10-21 13:48:52 HIS short @ 6767.0 pnl +1.0 ===
+  49 min after KME | at 11% of day range | firstWRB-1m:28tk firstWRB-5m:18tk firstWRB-10m:15tk allWRB-10m:15tk
+  13:48 Tuesday October 21st 2025
+  13:48 Good morning
+  13:48 [entry] Shorts Emini ES @ 6767.00 -> large size
+  13:48 10 contracts
+  13:49 [exit] Covered all Emini ES Short @ 6766.00 --> + 1
+  13:50 bailed...long lower shadow interval appeared
+
+=== 2025-10 2025-10-24 13:50:10 HIS short @ 6826.0 pnl +1.2 ===
+  5 min after KME | at 60% of day range | his-exit:18tk his-entry:39tk firstWRB-1m:13tk
+  13:50 [entry] Shorts Emini ES @ 6826.00 -> large size
+  13:50 10 contracts
+  13:50 poor entry
+  13:52 [exit] Covered all Emini ES Short @ 6824.75 --> + 1.25
+  13:52 trail stop picked
+
+=== 2025-10 2025-10-27 14:13:09 HIS short @ 6887.75 pnl +5.8 ===
+  4333 min after KME | at 69% of day range | his-exit:18tk his-entry:13tk
+  14:13 [entry] Shorts Emini ES @ 6887.75 -> large size
+  14:13 10 contracts
+
+=== 2025-10 2025-10-28 16:34:45 HIS long @ 6920.0 pnl +18.8 ===
+  155 min after KME | at 63% of day range | 
+  16:34 [entry] Long Emini ES @ 6920.00 -> large size
+  16:34 10 contracts
+  16:35 price fighting hard to move up the range of the big Long Upper Shadow interval
+
+=== 2025-10 2025-10-29 13:39:28 HIS long @ 6943.5 pnl -1.0 ===
+  1029 min after KME | at 76% of day range | 
+  13:39 [entry] Long Emini ES @ 6943.50 -> large size
+  13:39 10 contracts
+  13:40 [exit] Exited all Emini ES Long @ 6942.50 --> - 1
+  13:41 [entry] Long Emini ES @ 6943.00 -> large size
+  13:41 10 contracts re-entry
+
+=== 2025-10 2025-10-29 18:05:13 HIS short @ 6933.5 pnl +1.2 ===
+  5 min after KME | at 18% of day range | firstWRB-1m:8tk
+  18:05 [entry] Shorts Emini ES @ 6933.50 -> large size
+  18:05 10 contracts
+  18:06 [exit] Covered all Emini ES Short @ 6932.25 --> + 1.25
+
+=== 2025-10 2025-10-29 19:02:03 HIS short @ 6915.5 pnl +3.8 ===
+  32 min after KME | at 48% of day range | his-exit:54tk his-entry:72tk firstWRB-1m:21tk firstWRB-5m:77tk firstWRB-10m:77tk allWRB-10m:77tk
+  19:00 price action fought hard to move back UP into the range of the big Down WRB Hidden GAP of the Fed Rate Announcement
+  19:02 [entry] Shorts Emini ES @ 6915.50 -> large size
+  19:02 10 contracts
+  19:02 intuition trade
+  19:03 [exit] Covered all Emini ES Short @ 6911.75 --> + 3.75
+
+=== 2025-10 2025-10-29 19:45:03 HIS long @ 6908.5 pnl +11.8 ===
+  75 min after KME | at 38% of day range | his-exit:13tk his-entry:28tk
+  19:45 [entry] Long Emini ES @ 6908.50 -> large size
+  19:45 10 contracts
+  19:49 [exit] Exited all Emini ES Long @ 6920.25 --> + 11.75
+  19:49 +WRB pt1 reached
+  19:49 Ok...I'm done trading for the day
+  19:49 Take care and see you tomorrow
+
+=== 2025-10 2025-10-31 16:28:03 HIS long @ 6868.0 pnl +7.8 ===
+  28 min after KME | at 25% of day range | firstWRB-1m:4tk firstWRB-5m:5tk firstWRB-10m:8tk allWRB-10m:8tk
+  16:18 Friday October 31st 2025
+  16:18 Good afternoon and its Halloween :)
+  16:28 [entry] Long Emini ES @ 6868.00 -> large size
+  16:28 10 contracts
+
+=== 2022-02 2022-02-01 14:35:27 HIS long @ 4510.0 pnl -3.2 ===
+  1175 min after KME | at 76% of day range | his-exit:21tk his-entry:29tk
+  14:32 [entry] Shorts Emini ES @ 4502.75 -> medium size
+  14:32 5 contracts
+  14:34 [exit] Covered all Emini ES Short @ 4504.75 --> - 2
+  14:35 [entry] Long Emini ES @ 4510.00 -> medium size
+  14:35 5 contracts
+  14:37 [exit] Exited all Emini ES Long @ 4506.75 --> - 3.25
+  14:38 [entry] Long Emini ES @ 4512.50 -> medium size
+  14:39 5 contracts re-entry
+  14:40 [exit] Exited all Emini ES Long @ 4509.75 --> - 2.75
+  14:40 punks
+
+=== 2022-02 2022-02-01 14:38:53 HIS long @ 4512.5 pnl -2.8 ===
+  1179 min after KME | at 87% of day range | his-exit:23tk his-entry:10tk
+  14:32 [entry] Shorts Emini ES @ 4502.75 -> medium size
+  14:32 5 contracts
+  14:34 [exit] Covered all Emini ES Short @ 4504.75 --> - 2
+  14:35 [entry] Long Emini ES @ 4510.00 -> medium size
+  14:35 5 contracts
+  14:37 [exit] Exited all Emini ES Long @ 4506.75 --> - 3.25
+  14:38 [entry] Long Emini ES @ 4512.50 -> medium size
+  14:39 5 contracts re-entry
+  14:40 [exit] Exited all Emini ES Long @ 4509.75 --> - 2.75
+  14:40 punks
+  14:41 [entry] Long Emini ES @ 4511.25 -> small size
+  14:41 [exit] Exited all Emini ES Long @ 4508.75 --> - 2.5
+  14:42 5 contracts
+  14:42 :(
+  14:43 [entry] Shorts Emini ES @ 4501.50 -> medium size
+  14:43 5 contracts poor entry
+
+=== 2022-02 2022-02-01 14:43:03 HIS short @ 4501.5 pnl +2.5 ===
+  1183 min after KME | at 16% of day range | his-exit:13tk his-entry:5tk
+  14:34 [exit] Covered all Emini ES Short @ 4504.75 --> - 2
+  14:35 [entry] Long Emini ES @ 4510.00 -> medium size
+  14:35 5 contracts
+  14:37 [exit] Exited all Emini ES Long @ 4506.75 --> - 3.25
+  14:38 [entry] Long Emini ES @ 4512.50 -> medium size
+  14:39 5 contracts re-entry
+  14:40 [exit] Exited all Emini ES Long @ 4509.75 --> - 2.75
+  14:40 punks
+  14:41 [entry] Long Emini ES @ 4511.25 -> small size
+  14:41 [exit] Exited all Emini ES Long @ 4508.75 --> - 2.5
+  14:42 5 contracts
+  14:42 :(
+  14:43 [entry] Shorts Emini ES @ 4501.50 -> medium size
+  14:43 5 contracts poor entry
+
+=== 2022-02 2022-02-01 15:22:46 HIS long @ 4497.5 pnl +0.8 ===
+  23 min after KME | at 58% of day range | his-exit:6tk his-entry:16tk firstWRB-1m:16tk firstWRB-5m:19tk firstWRB-10m:7tk allWRB-10m:7tk
+  15:16 [entry] Shorts Emini ES @ 4490.75 -> medium size
+  15:16 4 contracts
+  15:17 :(
+  15:18 [exit] Covered all Emini ES Short @ 4493.25 --> - 2.5
+  15:19 [entry] Shorts Emini ES @ 4489.25 -> medium size
+  15:20 2+2 contracts
+  15:20 [exit] Covered all Emini ES Short @ 4492.50 --> - 3.25
+  15:21 [entry] Shorts Emini ES @ 4492.50 -> medium size
+  15:21 2+2 contracts
+  15:22 [exit] Covered all Emini ES Short @ 4494.50 --> - 2
+  15:22 [entry] Long Emini ES @ 4497.50 -> medium size
+  15:22 2+2 contracts
+  15:26 [exit] Exited all Emini ES Long @ 4498.25 --> + 0.75
+  15:26 :(
+
+=== 2022-02 2022-02-01 15:43:59 HIS short @ 4488.0 pnl +1.8 ===
+  44 min after KME | at 35% of day range | his-exit:18tk his-entry:5tk firstWRB-1m:11tk firstWRB-5m:27tk firstWRB-10m:14tk allWRB-10m:14tk
+  15:38 Now I'm adapting to the movements between small Key KME Zones
+  15:38 I would have had a few more trades losses
+  15:43 [entry] Shorts Emini ES @ 4488.00 -> medium size
+  15:44 4 contracts
+  15:47 [exit] Covered all Emini ES Short @ 4486.25 --> + 1.75
+  15:47 Its trying hard to retrace back up to the small Key KME WRB Zone
+  15:47 Reason why I bailed on that Short
+
+=== 2022-02 2022-02-02 15:32:02 HIS long @ 4547.25 pnl +0.2 ===
+  2 min after KME | at 15% of day range | his-exit:11tk his-entry:6tk
+  15:28 [entry] Long Emini ES @ 4548.75 -> small size
+  15:29 2 contracts
+  15:29 we really need to give these trades a lot of breathing room on the initial stops
+  15:30 Its why I've had more -3 - -4 point stops the past two months in this hecktic price movements
+  15:31 [exit] Exited all Emini ES Long @ 4550.00 --> + 1.25
+  15:31 It's just bouncing up and down in that strange algo like rhythm
+  15:32 [entry] Long Emini ES @ 4547.25 -> small size
+  15:32 2 contracts
+  15:33 [exit] Exited all Emini ES Long @ 4547.50 --> + 0.25
+  15:34 I've had major software upgrade problems since last night
+  15:34 My forums are still down...all of them going through upgrades too
+  15:35 [entry] Shorts Emini ES @ 4542.50 -> small size
+  15:35 2+1 contracts
+  15:36 S area breakdown of the most recent contracting volatility intervals
+  15:36 [exit] Covered all Emini ES Short @ 4541.75 --> + 0.75
+  15:36 poor entry and then a good exit
+
+=== 2022-02 2022-02-02 15:35:28 HIS short @ 4542.5 pnl +0.8 ===
+  5 min after KME | at -1% of day range | his-exit:20tk his-entry:19tk firstWRB-1m:7tk
+  15:28 [entry] Long Emini ES @ 4548.75 -> small size
+  15:29 2 contracts
+  15:29 we really need to give these trades a lot of breathing room on the initial stops
+  15:30 Its why I've had more -3 - -4 point stops the past two months in this hecktic price movements
+  15:31 [exit] Exited all Emini ES Long @ 4550.00 --> + 1.25
+  15:31 It's just bouncing up and down in that strange algo like rhythm
+  15:32 [entry] Long Emini ES @ 4547.25 -> small size
+  15:32 2 contracts
+  15:33 [exit] Exited all Emini ES Long @ 4547.50 --> + 0.25
+  15:34 I've had major software upgrade problems since last night
+  15:34 My forums are still down...all of them going through upgrades too
+  15:35 [entry] Shorts Emini ES @ 4542.50 -> small size
+  15:35 2+1 contracts
+  15:36 S area breakdown of the most recent contracting volatility intervals
+  15:36 [exit] Covered all Emini ES Short @ 4541.75 --> + 0.75
+  15:36 poor entry and then a good exit
+  15:37 I enter that Short on a big developing WRB interval
+  15:38 [entry] Long Emini ES @ 4548.00 -> small size
+  15:38 1+1 contracts
+  15:40 [exit] Exited all Emini ES Long @ 4553.50 --> + 5.5
+
+=== 2022-02 2022-02-04 20:43:21 HIS short @ 4517.25 pnl +25.8 ===
+  298 min after KME | at 83% of day range | his-exit:28tk his-entry:7tk
+  20:43 [entry] Shorts Emini ES @ 4517.25 -> small size
+
+=== 2022-02 2022-02-07 14:42:11 HIS long @ 4500.25 pnl -1.8 ===
+  4257 min after KME | at 86% of day range | 
+  14:32 Good morning...
+  14:41 tricky price action so far
+  14:42 [entry] Long Emini ES @ 4500.25 -> small size
+  14:42 3 contracts
+  14:44 [exit] Exited all Emini ES Long @ 4498.50 --> - 1.75
+  14:45 [entry] Long Emini ES @ 4498.75 -> small size
+  14:46 2 contracts
+
+=== 2022-02 2022-02-08 15:02:10 HIS short @ 4460.0 pnl +0.5 ===
+  6 min after KME | at 8% of day range | his-exit:64tk his-entry:62tk firstWRB-1m:38tk
+  14:56 Not much so far in Emini ES futures
+  15:02 [entry] Shorts Emini ES @ 4460.00 -> small size
+  15:02 3 contracts
+  15:02 price action trying to cross thru a small Key KME WRB Zone
+  15:03 now testing the S area of the Zone
+  15:03 [exit] Covered all Emini ES Short @ 4459.50 --> + 0.5
+  15:05 [entry] Shorts Emini ES @ 4459.75 -> medium size
+  15:05 5 contracts
+  15:05 messy
+  15:06 [exit] Covered all Emini ES Short @ 4462.25 --> - 2.5
+
+=== 2022-02 2022-02-08 15:09:47 HIS long @ 4467.25 pnl +1.5 ===
+  14 min after KME | at 48% of day range | his-exit:20tk his-entry:29tk firstWRB-1m:9tk firstWRB-5m:5tk
+  15:02 [entry] Shorts Emini ES @ 4460.00 -> small size
+  15:02 3 contracts
+  15:02 price action trying to cross thru a small Key KME WRB Zone
+  15:03 now testing the S area of the Zone
+  15:03 [exit] Covered all Emini ES Short @ 4459.50 --> + 0.5
+  15:05 [entry] Shorts Emini ES @ 4459.75 -> medium size
+  15:05 5 contracts
+  15:05 messy
+  15:06 [exit] Covered all Emini ES Short @ 4462.25 --> - 2.5
+  15:09 [entry] Long Emini ES @ 4467.25 -> medium size
+  15:09 3+2 contracts
+  15:11 [exit] Exited all Emini ES Long @ 4468.75 --> + 1.5
+  15:12 bailed
+
+=== 2022-02 2022-02-08 15:29:20 HIS short @ 4465.75 pnl -2.0 ===
+  33 min after KME | at 42% of day range | his-exit:12tk his-entry:6tk firstWRB-1m:15tk firstWRB-5m:11tk firstWRB-10m:4tk allWRB-10m:4tk
+  15:29 [entry] Shorts Emini ES @ 4465.75 -> small size
+  15:29 2 contracts
+  15:29 intuition
+  15:30 [exit] Covered all Emini ES Short @ 4467.75 --> - 2
+  15:31 [entry] Shorts Emini ES @ 4468.25 -> small size
+  15:31 2 contracts re-entry
+  15:32 [exit] Covered all Emini ES Short @ 4469.50 --> - 1.25
+
+=== 2022-02 2022-02-10 15:39:18 HIS long @ 4574.5 pnl +5.0 ===
+  9 min after KME | at 98% of day range | firstWRB-1m:26tk firstWRB-5m:26tk
+  15:39 [entry] Long Emini ES @ 4574.50 -> small size
+  15:39 3 contracts
+  15:39 intuition
+  15:40 now above the R area of the 0830am KME
+  15:42 [exit] Exited all Emini ES Long @ 4579.50 --> + 5
+
+=== 2022-02 2022-02-10 17:47:28 HIS short @ 4543.0 pnl +4.2 ===
+  137 min after KME | at 40% of day range | 
+  17:39 [entry] Long Emini ES @ 4565.00 -> small size
+  17:39 2 contracts
+  17:39 chasing
+  17:40 KME @ 2pm est
+  17:47 [entry] Shorts Emini ES @ 4543.00 -> small size
+  17:47 2 contracts
+  17:47 prior trade -3.75
+  17:48 not sure what's driving this down
+  17:48 Short intuition and chasing
+  17:49 [exit] Covered all Emini ES Short @ 4538.75 --> + 4.25
+  17:50 [entry] Shorts Emini ES @ 4538.00 -> small size
+  17:50 2 contracts intuition
+  17:51 theres the crazy bouncing around price action :(
+
+=== 2022-02 2022-02-10 17:50:38 HIS short @ 4538.0 pnl +0.5 ===
+  141 min after KME | at 33% of day range | his-exit:3tk his-entry:20tk
+  17:40 KME @ 2pm est
+  17:47 [entry] Shorts Emini ES @ 4543.00 -> small size
+  17:47 2 contracts
+  17:47 prior trade -3.75
+  17:48 not sure what's driving this down
+  17:48 Short intuition and chasing
+  17:49 [exit] Covered all Emini ES Short @ 4538.75 --> + 4.25
+  17:50 [entry] Shorts Emini ES @ 4538.00 -> small size
+  17:50 2 contracts intuition
+  17:51 theres the crazy bouncing around price action :(
+  17:53 [exit] Covered all Emini ES Short @ 4537.50 --> + 0.5
+  17:54 Price action trying to get back above the R area of the Key KME WRB Zone
+  17:55 Yep
+
+=== 2022-02 2022-02-14 15:32:04 HIS short @ 4386.0 pnl +2.5 ===
+  122 min after KME | at 16% of day range | his-exit:7tk his-entry:100tk
+  15:30 The most amazing aspect about this high volatility price action...
+  15:31 I have NEVER seen it last this many consecutive months.
+  15:31 It's now about 3 months
+  15:32 [entry] Shorts Emini ES @ 4386.00 -> small size
+  15:32 2 contracts
+  15:32 price action trying hard to stay below the S area of the Key KME WRB Zone
+  15:34 [exit] Covered all Emini ES Short @ 4383.50 --> + 2.5
+  15:34 trail stop picked
+  15:36 [entry] Shorts Emini ES @ 4383.00 -> small size
+  15:36 2 contracts re-entry
+
+=== 2022-02 2022-02-14 15:44:28 HIS long @ 4389.0 pnl -1.8 ===
+  134 min after KME | at 29% of day range | his-exit:5tk his-entry:12tk
+  15:34 trail stop picked
+  15:36 [entry] Shorts Emini ES @ 4383.00 -> small size
+  15:36 2 contracts re-entry
+  15:37 geeesh :(
+  15:37 [exit] Covered all Emini ES Short @ 4381.75 --> + 1.25
+  15:37 bailed
+  15:39 Way too much geopolitical crap going on for the markets to absorb.
+  15:39 I can easily seeing this type of price action lasting more months
+  15:42 If the volatility is there...it typically moves right thru the key levels
+  15:43 In contrast, if the volatility is low or declining...it ranges around the key levels before getting enough energy to push strongly through the levels
+  15:44 [entry] Long Emini ES @ 4389.00 -> small size
+  15:44 2 contracts
+  15:45 [exit] Exited all Emini ES Long @ 4387.25 --> - 1.75
+  15:46 [entry] Long Emini ES @ 4387.75 -> small size
+  15:46 2 contracts re-enter
+  15:48 [exit] Exited all Emini ES Long @ 4393.00 --> + 5.25
+  15:48 bailed
+
+=== 2022-02 2022-02-14 19:15:12 HIS long @ 4367.25 pnl -2.0 ===
+  345 min after KME | at 16% of day range | his-exit:19tk his-entry:118tk
+  19:15 [entry] Long Emini ES @ 4367.25 -> small size
+  19:15 1 contract
+  19:15 [exit] Exited Emini ES Long @ 4365.25 --> - 2
+  19:16 [entry] Shorts Emini ES @ 4363.75 -> small size
+  19:16 1 contract
+  19:16 intuition
+  19:17 [exit] Covered Emini ES Short @ 4365.25 --> - 1.5
+  19:17 punks
+  19:18 [entry] Long Emini ES @ 4365.50 -> small size
+  19:19 [exit] Exited Emini ES Long @ 4365.75 --> + 0.25
+  19:19 bouncing around too much now...more contracting volatility too
+
+=== 2022-02 2022-02-15 14:37:00 HIS long @ 4454.25 pnl +3.0 ===
+  67 min after KME | at 78% of day range | firstWRB-10m:8tk allWRB-10m:8tk
+  14:31 I register with the CME Group many many years ago. Also, I'm a stock share owner in the company in Chicago :)
+  14:31 Part of my investment fund
+  14:32 I don't remember if I signed up for something of if they had my email address via something else
+  14:34 I bought them as a IPO
+  14:37 [entry] Long Emini ES @ 4454.25 -> medium size
+  14:37 5 contracts
+  14:39 [exit] Exited all Emini ES Long @ 4457.25 --> + 3
+  14:39 bailed
+
+=== 2022-02 2022-02-17 14:42:44 HIS short @ 4434.75 pnl +1.8 ===
+  73 min after KME | at 33% of day range | firstWRB-10m:6tk allWRB-10m:6tk
+  14:42 [entry] Shorts Emini ES @ 4434.75 -> medium size
+  14:42 2+2 contracts
+  14:44 [exit] Covered all Emini ES Short @ 4433.00 --> + 1.75
+  14:44 trail stop picked
+  14:45 [entry] Shorts Emini ES @ 4433.75 -> medium size
+  14:45 5 contracts re-entry
+
+=== 2022-02 2022-02-18 15:02:08 HIS short @ 4382.25 pnl -1.8 ===
+  2 min after KME | at 71% of day range | his-exit:23tk his-entry:29tk firstWRB-1m:9tk
+  15:02 [entry] Shorts Emini ES @ 4382.25 -> small size
+  15:02 3 contracts
+  15:03 [exit] Covered all Emini ES Short @ 4384.00 --> - 1.75
+  15:03 [entry] Shorts Emini ES @ 4383.50 -> small size
+  15:03 3 contracts re-entry
+  15:05 [exit] Covered all Emini ES Short @ 4383.50 --> 0
+
+=== 2022-02 2022-02-18 16:04:38 HIS short @ 4346.0 pnl +0.5 ===
+  5 min after KME | at 11% of day range | his-exit:27tk his-entry:44tk firstWRB-1m:4tk firstWRB-5m:110tk firstWRB-10m:68tk allWRB-10m:68tk
+  15:54 [entry] Long Emini ES @ 4360.50 -> small size
+  15:55 2 contracts
+  15:56 [exit] Exited all Emini ES Long @ 4360.25 --> - 0.25
+  16:00 [entry] Shorts Emini ES @ 4357.00 -> small size
+  16:00 3 contracts
+  16:02 [exit] Covered all Emini ES Short @ 4352.75 --> + 4.25
+  16:04 [entry] Shorts Emini ES @ 4346.00 -> small size
+  16:04 2 contracts
+  16:07 [exit] Covered all Emini ES Short @ 4345.50 --> + 0.5
+  16:08 [entry] Shorts Emini ES @ 4346.00 -> small size
+  16:08 2 contracts re-entry
+
+=== 2022-02 2022-02-18 20:45:52 HIS long @ 4356.5 pnl -3.5 ===
+  136 min after KME | at 51% of day range | 
+  20:45 [entry] Long Emini ES @ 4356.50 -> small size
+  20:46 2 contracts
+  20:46 [exit] Exited all Emini ES Long @ 4353.00 --> - 3.5
+  20:50 [entry] Shorts Emini ES @ 4352.00 -> small size
+  20:50 2 contracts
+
+=== 2022-02 2022-02-18 20:50:07 HIS short @ 4352.0 pnl +11.2 ===
+  140 min after KME | at 45% of day range | his-exit:4tk his-entry:18tk
+  20:45 [entry] Long Emini ES @ 4356.50 -> small size
+  20:46 2 contracts
+  20:46 [exit] Exited all Emini ES Long @ 4353.00 --> - 3.5
+  20:50 [entry] Shorts Emini ES @ 4352.00 -> small size
+  20:50 2 contracts
+  20:52 [exit] Covered all Emini ES Short @ 4340.75 --> + 11.25
+  20:53 early exit
+  20:53 Hi Tigerman
+  20:54 price action getting jumpy
+  20:54 It's been a long time since I've seen you here this late in the afternoon
+
+=== 2022-02 2022-02-18 20:55:48 HIS short @ 4345.25 pnl -1.5 ===
+  146 min after KME | at 35% of day range | his-exit:18tk his-entry:27tk
+  20:45 [entry] Long Emini ES @ 4356.50 -> small size
+  20:46 2 contracts
+  20:46 [exit] Exited all Emini ES Long @ 4353.00 --> - 3.5
+  20:50 [entry] Shorts Emini ES @ 4352.00 -> small size
+  20:50 2 contracts
+  20:52 [exit] Covered all Emini ES Short @ 4340.75 --> + 11.25
+  20:53 early exit
+  20:53 Hi Tigerman
+  20:54 price action getting jumpy
+  20:54 It's been a long time since I've seen you here this late in the afternoon
+  20:55 [entry] Shorts Emini ES @ 4345.25 -> small size
+  20:55 2 contracts
+  20:59 another battle on the R area of the Key KME WRB Zone
+  21:00 [exit] Covered all Emini ES Short @ 4346.75 --> - 1.5
+  21:00 punks
+
+=== 2022-02 2022-02-22 14:43:00 HIS long @ 4327.75 pnl +3.2 ===
+  43 min after KME | at 89% of day range | firstWRB-1m:32tk firstWRB-5m:16tk firstWRB-10m:22tk allWRB-10m:22tk
+  14:36 VIX @ 30.43
+  14:36 thanks to Russia entering Ukrain :(
+  14:43 [entry] Long Emini ES @ 4327.75 -> small size
+  14:43 2 contracts
+  14:43 chasing
+  14:43 [exit] Exited all Emini ES Long @ 4331.00 --> + 3.25
+  14:44 WRB pt1 reached
+  14:44 trade signal was @ 4321.50 (missed the entry)
+
+=== 2022-02 2022-02-22 15:02:54 HIS short @ 4339.75 pnl -3.0 ===
+  3 min after KME | at 65% of day range | his-exit:35tk his-entry:48tk firstWRB-1m:13tk firstWRB-5m:23tk firstWRB-10m:23tk allWRB-10m:23tk
+  15:02 [entry] Shorts Emini ES @ 4339.75 -> small size
+  15:03 3 contracts
+  15:03 early entry
+  15:04 [exit] Covered all Emini ES Short @ 4342.75 --> - 3
+  15:04 [entry] Shorts Emini ES @ 4343.50 -> small size
+  15:04 3 contracts re-entry
+  15:05 punks
+
+=== 2022-02 2022-02-23 15:17:21 HIS short @ 4298.0 pnl -4.0 ===
+  1217 min after KME | at 2% of day range | 
+  15:14 a support level but without the volatility :(
+  15:15 VIX trying to break below the R area of its own Key KME WRB Zone
+  15:16 now bouncing around
+  15:17 [entry] Shorts Emini ES @ 4298.00 -> medium size
+  15:17 4 contracts
+  15:18 volatility stalled as soon as I entered the Short
+  15:18 [exit] Covered all Emini ES Short @ 4302.00 --> - 4
+  15:19 [entry] Shorts Emini ES @ 4302.25 -> medium size
+  15:19 4 contracts re-entry
+  15:19 price action still bouncing around
+  15:21 [exit] Covered all Emini ES Short @ 4301.00 --> + 1.25
+  15:21 :(
+
+=== 2022-02 2022-02-23 15:37:34 HIS long @ 4292.25 pnl +3.8 ===
+  1238 min after KME | at 21% of day range | his-exit:5tk his-entry:23tk
+  15:30 prices still dropping on increasing volatility
+  15:32 price action now trying to find some legs to stand up on
+  15:36 price action needs to get a little higher back to the prior S area of the Key KME WRB Zone
+  15:37 [entry] Long Emini ES @ 4292.25 -> medium size
+  15:37 4 contracts
+  15:37 intuition
+  15:38 now back at the prior S area
+  15:38 [exit] Exited all Emini ES Long @ 4296.00 --> + 3.75
+  15:40 [entry] Shorts Emini ES @ 4291.00 -> medium size
+  15:41 2+2 contracts
+
+=== 2022-02 2022-02-24 15:13:18 HIS long @ 4158.0 pnl +1.5 ===
+  13 min after KME | at 92% of day range | his-exit:35tk his-entry:36tk firstWRB-1m:66tk
+  15:06 [exit] Covered all Emini ES Short @ 4142.00 --> 0
+  15:06 punks
+  15:07 [entry] Shorts Emini ES @ 4143.25 -> small size
+  15:07 2 contracts
+  15:08 re-entry
+  15:08 [exit] Covered all Emini ES Short @ 4145.00 --> - 1.75
+  15:10 [entry] Shorts Emini ES @ 4149.00 -> small size
+  15:10 2 contracts
+  15:10 re-entry
+  15:11 [exit] Covered all Emini ES Short @ 4149.25 --> - 0.25
+  15:12 the fast bounce is UP instead of DOWN
+  15:13 [entry] Long Emini ES @ 4158.00 -> small size
+  15:13 2 contracts
+  15:13 intutition
+  15:14 [exit] Exited all Emini ES Long @ 4159.50 --> + 1.5
+  15:14 [entry] Long Emini ES @ 4161.50 -> small size
+  15:15 2 contracts intuition
+  15:16 [exit] Exited all Emini ES Long @ 4166.25 --> + 4.75
+  15:16 bailed
+  15:16 VIX @ 34.65
+  15:17 [entry] Long Emini ES @ 4165.50 -> small size
+  15:17 2 contracts intuition
+
+=== 2022-02 2022-02-24 15:14:46 HIS long @ 4161.5 pnl +4.8 ===
+  15 min after KME | at 97% of day range | his-exit:8tk his-entry:14tk firstWRB-1m:80tk
+  15:06 [exit] Covered all Emini ES Short @ 4142.00 --> 0
+  15:06 punks
+  15:07 [entry] Shorts Emini ES @ 4143.25 -> small size
+  15:07 2 contracts
+  15:08 re-entry
+  15:08 [exit] Covered all Emini ES Short @ 4145.00 --> - 1.75
+  15:10 [entry] Shorts Emini ES @ 4149.00 -> small size
+  15:10 2 contracts
+  15:10 re-entry
+  15:11 [exit] Covered all Emini ES Short @ 4149.25 --> - 0.25
+  15:12 the fast bounce is UP instead of DOWN
+  15:13 [entry] Long Emini ES @ 4158.00 -> small size
+  15:13 2 contracts
+  15:13 intutition
+  15:14 [exit] Exited all Emini ES Long @ 4159.50 --> + 1.5
+  15:14 [entry] Long Emini ES @ 4161.50 -> small size
+  15:15 2 contracts intuition
+  15:16 [exit] Exited all Emini ES Long @ 4166.25 --> + 4.75
+  15:16 bailed
+  15:16 VIX @ 34.65
+  15:17 [entry] Long Emini ES @ 4165.50 -> small size
+  15:17 2 contracts intuition
+  15:19 Short Squeeze price movement
+
+=== 2022-02 2022-02-25 14:34:30 HIS long @ 4310.75 pnl +0.8 ===
+  64 min after KME | at 124% of day range | firstWRB-5m:6tk firstWRB-10m:18tk allWRB-10m:18tk
+  14:34 [entry] Long Emini ES @ 4310.75 -> small size
+  14:34 3 contracts
+  14:34 poor entry
+  14:35 [exit] Exited all Emini ES Long @ 4311.50 --> + 0.75
+  14:36 [entry] Long Emini ES @ 4310.50 -> small size
+  14:36 3 contracts re-entry
+  14:37 [exit] Exited all Emini ES Long @ 4310.25 --> - 0.25
+  14:37 VIX @ 29.18
+
+=== 2022-02 2022-02-25 14:58:45 HIS short @ 4295.25 pnl +11.0 ===
+  89 min after KME | at 28% of day range | his-exit:3tk his-entry:47tk
+  14:58 [entry] Shorts Emini ES @ 4295.25 -> medium size
+  14:58 5 contracts
+  14:59 I just lost my Emini YM and NQ data :(
+  15:01 [exit] Covered all Emini ES Short @ 4284.25 --> + 11
+  15:02 volatility increasing again...down through the Key KME WRB Zonr
+
+=== 2022-02 2022-02-25 15:07:12 HIS long @ 4296.0 pnl +10.8 ===
+  7 min after KME | at 44% of day range | his-exit:6tk his-entry:3tk firstWRB-1m:34tk
+  14:58 [entry] Shorts Emini ES @ 4295.25 -> medium size
+  14:58 5 contracts
+  14:59 I just lost my Emini YM and NQ data :(
+  15:01 [exit] Covered all Emini ES Short @ 4284.25 --> + 11
+  15:02 volatility increasing again...down through the Key KME WRB Zonr
+  15:05 price action now struggling inside the Key KME WRB Zone
+  15:06 now testing the R area
+  15:07 [entry] Long Emini ES @ 4296.00 -> small size
+  15:07 3 contracts
+  15:07 bouncing all over the place
+  15:09 [exit] Exited all Emini ES Long @ 4306.75 --> + 10.75
+  15:09 WRB pt1 reached
+
+=== 2022-02 2022-02-25 18:33:14 HIS long @ 4373.0 pnl -2.0 ===
+  153 min after KME | at 97% of day range | his-exit:85tk his-entry:69tk
+  18:33 [entry] Long Emini ES @ 4373.00 -> small size
+  18:33 2 contracts
+  18:35 [exit] Exited all Emini ES Long @ 4371.00 --> - 2
+  18:36 [entry] Shorts Emini ES @ 4370.50 -> small size
+  18:36 2 contracts
+  18:38 [exit] Covered all Emini ES Short @ 4365.25 --> + 5.25
+
+=== 2022-02 2022-02-28 14:59:57 HIS long @ 4343.25 pnl +1.8 ===
+  15 min after KME | at 83% of day range | firstWRB-1m:19tk
+  14:55 VIX @ 30.67
+  14:55 Ok
+  14:57 crappy price action so far
+  14:59 [entry] Long Emini ES @ 4343.25 -> small size
+  15:00 2 contracts intuition
+  15:00 [exit] Exited all Emini ES Long @ 4345.00 --> + 1.75
+  15:02 [entry] Shorts Emini ES @ 4342.25 -> small size
+  15:02 2 contracts early entry
+
+=== 2022-02 2022-02-28 15:15:01 HIS short @ 4326.75 pnl +1.2 ===
+  30 min after KME | at 20% of day range | his-exit:19tk his-entry:62tk firstWRB-1m:27tk firstWRB-5m:55tk
+  15:06 price action looks very confused
+  15:08 very tight trading range for a few minutes now in Emini ES
+  15:09 [exit] Covered all Emini ES Short @ 4331.50 --> + 10.75
+  15:09 bailed
+  15:10 should have held it a little longer to see if volatility will show up
+  15:15 [entry] Shorts Emini ES @ 4326.75 -> small size
+  15:15 1 contract
+  15:16 [exit] Covered Emini ES Short @ 4325.50 --> + 1.25
+  15:16 bailed
+  15:17 Yep
+  15:18 Surprising too considering the VIX > 30
+  15:18 There should be at least one smooth directional price movement without the price dancing around like this so far in the Emini Futures
+
+=== 2021-09 2021-09-10 14:03:31 HIS short @ 4487.5 pnl +4.2 ===
+  4 min after KME | at 8% of day range | his-exit:9tk his-entry:42tk firstWRB-1m:7tk
+  13:54 Trade entry on both the recent Shorts was poor...I didn't react as the price dropped below the Key WRB Zone s/r levels
+  13:56 Same with the losing Long position...poor entry (2 points higher) than the S area of the Key WRB Zone
+  14:02 A lot of volatility in Emini YM today...it dropped thru several Key WRB Zones for the past 2 trading days
+  14:03 [entry] Shorts Emini ES @ 4487.50 -> medium size
+  14:03 5 contracts
+  14:05 [exit] Covered all Emini ES Short @ 4483.25 --> + 4.25
+  14:05 WRB pt1 reached
+  14:05 Volatility still increasing
+  14:06 VIX @ 18.17 after opening @ 17.06
+
+=== 2021-09 2021-09-13 13:40:42 HIS short @ 4471.5 pnl +5.5 ===
+  4301 min after KME | at 9% of day range | 
+  13:40 [entry] Shorts Emini ES @ 4471.50 -> medium size
+  13:40 5 contracts
+  13:41 dropped below the most recent reaction low
+  13:41 YM fighting hard to stay above its most recent reaction low
+  13:42 YM now testing its most recent reaction low on increasing volatility
+  13:44 snapback Up in YM
+
+=== 2021-09 2021-09-13 14:23:04 HIS short @ 4453.25 pnl +1.2 ===
+  4343 min after KME | at 14% of day range | his-exit:3tk his-entry:52tk
+  14:19 more contracting volatility showing up but still slowly declining
+  14:20 Hi werner
+  14:21 [exit] Covered all Emini ES Short @ 4454.00 --> + 12.25
+  14:21 trail stop picked :(
+  14:23 [entry] Shorts Emini ES @ 4453.25 -> medium size
+  14:23 5 contracts re-entry
+  14:24 poor entry on this short of mine
+  14:25 [exit] Covered all Emini ES Short @ 4452.00 --> + 1.25
+  14:25 trail stop picked
+  14:25 bouncing around a lot now
+  14:26 I think its trying to put in a new support area
+
+=== 2021-09 2021-09-13 14:46:58 HIS long @ 4462.5 pnl +0.8 ===
+  4367 min after KME | at 40% of day range | his-exit:14tk his-entry:15tk
+  14:46 Some calm now in the Emini Futures
+  14:46 [entry] Long Emini ES @ 4462.50 -> small size
+  14:47 2 contracts
+  14:47 poor entry
+  14:47 YM trying to retrace back above the S area of its Key KME WRB Zone
+  14:49 [exit] Exited all Emini ES Long @ 4463.25 --> + 0.75
+  14:49 trail stop picked
+
+=== 2021-09 2021-09-15 16:56:04 HIS long @ 4463.25 pnl +2.8 ===
+  146 min after KME | at 96% of day range | 
+  16:56 [entry] Long Emini ES @ 4463.25 -> small size
+  16:56 2 contracts
+  16:56 not much to bite on but the price action has been moving higher...
+  16:57 Unfortunately of a ton of contraction and then a few Up WRB Hidden GAP intervals out of nowhere
+  16:57 The big problem...there are no Key KME WRB Zones
+  16:57 Therefore, force to trade off of new WRB Zones that form today
+
+=== 2021-09 2021-09-16 18:06:40 HIS short @ 4458.25 pnl -0.2 ===
+  217 min after KME | at 58% of day range | his-exit:34tk his-entry:33tk
+  18:06 [entry] Shorts Emini ES @ 4458.25 -> small size
+  18:06 3 contracts
+  18:06 early entry
+  18:07 need to be careful here...possible Short Squeexe area
+  18:07 [exit] Covered all Emini ES Short @ 4458.50 --> - 0.25
+  18:07 bailed
+  18:08 [entry] Long Emini ES @ 4459.00 -> small size
+  18:08 3 contracts
+  18:10 President Biden on TV giving a speech
+  18:11 [exit] Exited all Emini ES Long @ 4465.25 --> + 6.25
+  18:11 WRB pt1 reached
+
+=== 2021-09 2021-09-17 13:56:38 HIS short @ 4440.0 pnl +1.8 ===
+  1077 min after KME | at 5% of day range | his-exit:10tk his-entry:44tk
+  13:48 [entry] Shorts Emini ES @ 4451.00 -> medium size
+  13:48 5 contracts :(
+  13:48 worst re-entry
+  13:51 [exit] Covered all Emini ES Short @ 4442.50 --> + 8.5
+  13:51 WRB pt1 reached
+  13:52 increasing volatility showed up to save my butt on that Short after another crappy entry
+  13:52 VIX @ 19.32
+  13:56 [entry] Shorts Emini ES @ 4440.00 -> medium size
+  13:56 5 contracts intuition
+  13:58 [exit] Covered all Emini ES Short @ 4438.25 --> + 1.75
+  13:59 small WRB pt1
+  13:59 bailed when it started stalling
+  13:59 VIX @ 19.55
+
+=== 2021-09 2021-09-20 13:40:56 HIS long @ 4363.75 pnl +3.5 ===
+  4301 min after KME | at 96% of day range | his-exit:9tk his-entry:15tk
+  13:32 [entry] Long Emini ES @ 4360.00 -> medium size
+  13:32 5 contracts
+  13:34 Emini YM futures bounced off the S area of the Key KME WRB Zone
+  13:34 [exit] Exited all Emini ES Long @ 4361.50 --> + 1.5
+  13:34 trail stop pickedf
+  13:40 [entry] Long Emini ES @ 4363.75 -> medium size
+  13:41 5 contracts
+  13:41 Emini YM taking out the R area of the Key KME WRB Zone
+  13:43 [exit] Exited all Emini ES Long @ 4367.25 --> + 3.5
+  13:45 WRB pt1 reached...couldn't hold it for a possible WRB pt2 because it was bouncing around too much
+
+=== 2021-09 2021-09-20 15:08:14 HIS long @ 4351.0 pnl +2.0 ===
+  68 min after KME | at 31% of day range | his-exit:17tk his-entry:29tk
+  15:08 [entry] Long Emini ES @ 4351.00 -> large size
+  15:08 5+5 contracts
+  15:09 [exit] Exited all Emini ES Long @ 4353.00 --> + 2
+  15:09 trail stop picked
+  15:10 [entry] Long Emini ES @ 4350.25 -> large size
+  15:10 10 contracts re-entry
+  15:11 [exit] Exited all Emini ES Long @ 4351.00 --> + 0.75
+  15:11 bailed
+
+=== 2021-09 2021-09-20 15:10:25 HIS long @ 4350.25 pnl +0.8 ===
+  70 min after KME | at 28% of day range | his-exit:11tk his-entry:3tk
+  15:08 [entry] Long Emini ES @ 4351.00 -> large size
+  15:08 5+5 contracts
+  15:09 [exit] Exited all Emini ES Long @ 4353.00 --> + 2
+  15:09 trail stop picked
+  15:10 [entry] Long Emini ES @ 4350.25 -> large size
+  15:10 10 contracts re-entry
+  15:11 [exit] Exited all Emini ES Long @ 4351.00 --> + 0.75
+  15:11 bailed
+
+=== 2021-09 2021-09-22 15:03:47 HIS long @ 4387.0 pnl +1.0 ===
+  34 min after KME | at 94% of day range | firstWRB-1m:15tk firstWRB-5m:5tk firstWRB-10m:5tk allWRB-10m:5tk
+  15:03 [entry] Long Emini ES @ 4387.00 -> small size
+  15:03 3 contracts
+  15:07 [exit] Exited all Emini ES Long @ 4388.00 --> + 1
+  15:07 exit early
+  15:07 not a WRB pt1
+
+=== 2021-09 2021-09-22 18:06:25 HIS short @ 4394.75 pnl +0.2 ===
+  6 min after KME | at 84% of day range | his-exit:22tk his-entry:27tk firstWRB-1m:11tk firstWRB-5m:16tk
+  17:56 had problems trying to cover the Short when it hit 4321.75
+  18:00 [entry] Long Emini ES @ 4387.00 -> small size
+  18:01 3 contracts
+  18:01 [exit] Exited all Emini ES Long @ 4386.75 --> - 0.25
+  18:02 [entry] Long Emini ES @ 4388.00 -> small size
+  18:02 3 contracts re-entry
+  18:05 [exit] Exited all Emini ES Long @ 4400.25 --> + 12.25
+  18:05 WRB pt1 reached
+  18:06 [entry] Shorts Emini ES @ 4394.75 -> medium size
+  18:06 5 contracts
+  18:06 back below the R area
+  18:10 [exit] Covered all Emini ES Short @ 4394.50 --> + 0.25
+  18:10 [entry] Long Emini ES @ 4395.50 -> medium size
+  18:10 5 contracts
+
+=== 2021-09 2021-09-22 19:14:25 HIS long @ 4393.0 pnl +7.0 ===
+  44 min after KME | at 73% of day range | his-exit:52tk his-entry:10tk firstWRB-1m:13tk firstWRB-5m:5tk firstWRB-10m:6tk allWRB-10m:6tk
+  19:14 [entry] Long Emini ES @ 4393.00 -> medium size
+  19:14 5 contracts
+
+=== 2021-09 2021-09-22 19:43:08 HIS short @ 4390.75 pnl +3.8 ===
+  73 min after KME | at 68% of day range | his-exit:3tk his-entry:9tk firstWRB-10m:3tk allWRB-10m:3tk
+  19:34 [exit] Covered all Emini ES Short @ 4390.00 --> + 3.75
+  19:35 trail stop picked
+  19:39 [entry] Long Emini ES @ 4397.00 -> small size
+  19:40 2 contracts
+  19:42 [exit] Exited all Emini ES Long @ 4395.00 --> - 2
+  19:42 Emini ES fell back below the R area
+  19:43 [entry] Shorts Emini ES @ 4390.75 -> medium size
+  19:43 5 contracts
+  19:43 poor entry and same with prior Long position
+
+=== 2021-09 2021-09-23 13:38:14 HIS long @ 4414.5 pnl +13.2 ===
+  68 min after KME | at 95% of day range | firstWRB-5m:9tk firstWRB-10m:16tk allWRB-10m:16tk
+  13:37 Good morning...
+  13:38 [entry] Long Emini ES @ 4414.50 -> medium size
+  13:38 5 contracts
+  13:38 poor entry...late start to getting ready for the opening
+  13:41 WRB pt1 reached
+
+=== 2021-09 2021-09-23 19:46:11 HIS short @ 4442.0 pnl -0.2 ===
+  316 min after KME | at 76% of day range | his-exit:5tk his-entry:7tk
+  19:36 [exit] Exited all Emini ES Long @ 4445.00 --> + 1
+  19:37 small WRB pt1 but only because my entry was poor...it should have been a +2.5 trade had I enter the Short when the signal first appeared
+  19:42 [entry] Long Emini ES @ 4443.75 -> medium size
+  19:42 5 contracts re-entry
+  19:42 better entry into the same price action that is still active
+  19:45 [exit] Exited all Emini ES Long @ 4443.25 --> - 0.5
+  19:46 [entry] Shorts Emini ES @ 4442.00 -> medium size
+  19:46 5 contracts intuition
+  19:48 [exit] Covered all Emini ES Short @ 4442.25 --> - 0.25
+  19:48 punks :(
+
+=== 2021-09 2021-09-23 19:52:01 HIS short @ 4440.0 pnl +1.5 ===
+  322 min after KME | at 72% of day range | his-exit:9tk his-entry:8tk
+  19:42 [entry] Long Emini ES @ 4443.75 -> medium size
+  19:42 5 contracts re-entry
+  19:42 better entry into the same price action that is still active
+  19:45 [exit] Exited all Emini ES Long @ 4443.25 --> - 0.5
+  19:46 [entry] Shorts Emini ES @ 4442.00 -> medium size
+  19:46 5 contracts intuition
+  19:48 [exit] Covered all Emini ES Short @ 4442.25 --> - 0.25
+  19:48 punks :(
+  19:52 [entry] Shorts Emini ES @ 4440.00 -> medium size
+  19:52 5 contracts
+  19:56 [exit] Covered all Emini ES Short @ 4438.50 --> + 1.5
+  19:56 bailed
+
+=== 2021-09 2021-09-24 19:56:10 HIS short @ 4446.0 pnl +0.2 ===
+  356 min after KME | at 80% of day range | 
+  19:56 [entry] Shorts Emini ES @ 4446.00 -> small size
+  19:56 3 contracts intuition
+  19:57 [exit] Covered all Emini ES Short @ 4445.75 --> + 0.25
+  19:57 volatility stalled
+  20:00 [entry] Shorts Emini ES @ 4445.75 -> small size
+  20:00 3 contracts
+  20:00 re-entry
+
+=== 2021-09 2021-09-28 17:43:06 HIS long @ 4350.5 pnl +0.2 ===
+  3 min after KME | at 22% of day range | firstWRB-1m:3tk
+  17:43 [entry] Long Emini ES @ 4350.50 -> small size
+  17:43 1 contract
+  17:44 [exit] Exited Emini ES Long @ 4350.75 --> + 0.25
+  17:44 trail stop picked
+
+=== 2021-09 2021-09-29 13:35:28 HIS short @ 4352.5 pnl +0.2 ===
+  1025 min after KME | at 2% of day range | his-exit:18tk his-entry:13tk
+  13:30 [entry] Long Emini ES @ 4355.75 -> medium size
+  13:30 5 contracts
+  13:34 [exit] Exited all Emini ES Long @ 4357.00 --> + 1.25
+  13:34 trail stop hit plus an exit error
+  13:35 [entry] Shorts Emini ES @ 4352.50 -> medium size
+  13:36 5 contracts
+  13:36 [exit] Covered all Emini ES Short @ 4352.25 --> + 0.25
+  13:36 another problem trade exit :(
+  13:37 lost about 5 points on the exit errors
+  13:37 as in I should have made an additional 5 points
+  13:38 [entry] Shorts Emini ES @ 4353.00 -> large size
+  13:38 10 contracts
+
+=== 2021-09 2021-09-29 15:19:02 HIS short @ 4365.5 pnl +3.0 ===
+  49 min after KME | at 64% of day range | firstWRB-1m:3tk firstWRB-5m:9tk firstWRB-10m:11tk allWRB-10m:11tk
+  15:19 [entry] Shorts Emini ES @ 4365.50 -> medium size
+  15:19 5 contracts
+
+=== 2021-09 2021-09-30 13:42:45 HIS short @ 4362.25 pnl +0.0 ===
+  73 min after KME | at 29% of day range | his-exit:16tk his-entry:22tk firstWRB-10m:10tk allWRB-10m:6tk
+  13:33 [exit] Exited all Emini ES Long @ 4370.50 --> + 2.25
+  13:33 trail stop picked
+  13:34 [entry] Shorts Emini ES @ 4367.75 -> medium size
+  13:35 5 contracts
+  13:35 [exit] Covered all Emini ES Short @ 4367.00 --> + 0.75
+  13:36 [entry] Shorts Emini ES @ 4369.00 -> medium size
+  13:36 5 contracts
+  13:36 intuition
+  13:38 [exit] Covered all Emini ES Short @ 4366.25 --> + 2.75
+  13:38 bailed
+  13:42 [entry] Shorts Emini ES @ 4362.25 -> medium size
+  13:43 5 contracts
+  13:45 [exit] Covered all Emini ES Short @ 4362.25 --> 0
+  13:45 bailed
+  13:46 [entry] Long Emini ES @ 4363.75 -> small size
+  13:46 1 contract
+
+=== 2021-09 2021-09-30 19:55:52 HIS short @ 4306.0 pnl +4.5 ===
+  206 min after KME | at 2% of day range | his-exit:29tk his-entry:96tk
+  19:46 WRB pt2 reached
+  19:47 I would have stayed longer had more volatility showed up...instead...the volatility started to contract.
+  19:55 [entry] Shorts Emini ES @ 4306.00 -> small size
+  19:56 3 contracts
+  19:56 poor entry
+  19:57 [exit] Covered all Emini ES Short @ 4301.50 --> + 4.5
+  19:57 small WRB pt1 reached
+  19:59 Wish I had more time to trade this afternoon...had to deal with some family issues
+  19:59 Take care and see all tomorrow
+
+=== 2024-11 2024-11-04 14:45:40 HIS long @ 5756.0 pnl +14.8 ===
+  1906 min after KME | at 76% of day range | 
+  14:45 November 4th Monday 2024
+  14:45 Good morning
+  14:45 [entry] Long Emini ES @ 5756.00 -> large size
+  14:45 10 contracts
+
+=== 2024-11 2024-11-05 20:58:50 HIS long @ 5806.75 pnl +7.8 ===
+  178 min after KME | at 93% of day range | his-exit:42tk his-entry:12tk
+  20:58 [entry] Long Emini ES @ 5806.75 -> large size
+  21:00 [exit] Exited all Emini ES Long @ 5814.50 --> + 7.75
+  21:03 Lucky trade and tonight is a big night for Harris / Trump...whoever wins...America will not be better :(
+  21:03 Take care and see you tomorrow
+
+=== 2024-11 2024-11-07 18:52:17 HIS long @ 5994.0 pnl +1.2 ===
+  202 min after KME | at 69% of day range | 
+  18:51 Ok...I'm back for the FOMC rate announcement volatility
+  18:52 [entry] Long Emini ES @ 5994.00 -> large size
+  18:52 10 contracts
+
+=== 2024-11 2024-11-20 15:20:58 HIS short @ 5883.0 pnl -1.5 ===
+  21 min after KME | at -1% of day range | firstWRB-1m:102tk firstWRB-5m:44tk
+  15:20 [entry] Shorts Emini ES @ 5883.00 -> large size
+  15:21 10 contracts
+  15:21 [exit] Covered all Emini ES Short @ 5884.50 --> - 1.5
+
+=== 2024-11 2024-11-21 15:23:59 HIS short @ 5930.0 pnl +20.8 ===
+  24 min after KME | at 25% of day range | his-exit:31tk his-entry:68tk firstWRB-1m:24tk firstWRB-5m:20tk
+  15:23 [entry] Shorts Emini ES @ 5930.00 -> large size
+  15:24 10 Contracts
+  15:27 I'm not sure where all this volatility is coming from but I like it a lot
+
+=== 2024-11 2024-11-22 15:04:53 HIS short @ 5981.5 pnl -1.5 ===
+  5 min after KME | at 55% of day range | his-exit:20tk his-entry:64tk firstWRB-1m:19tk
+  15:04 [entry] Shorts Emini ES @ 5981.50 -> large size
+  15:05 10 contracts
+  15:05 poor entry
+  15:07 [exit] Covered all Emini ES Short @ 5983.00 --> - 1.5
+  15:07 [entry] Shorts Emini ES @ 5983.25 -> large size
+  15:07 10 contracts re-entry
+  15:08 volatility bouncing prices a lot now
+  15:09 too much chop
+
+=== 2024-11 2024-11-22 20:03:05 HIS short @ 5983.5 pnl +5.5 ===
+  303 min after KME | at 67% of day range | 
+  20:03 [entry] Shorts Emini ES @ 5983.50 -> large size
+  20:03 10 contracts
+
+=== 2024-11 2024-11-27 15:50:30 HIS short @ 6019.75 pnl +7.8 ===
+  20 min after KME | at 26% of day range | his-exit:12tk his-entry:43tk firstWRB-1m:7tk firstWRB-5m:5tk firstWRB-10m:9tk allWRB-10m:9tk
+  15:43 [exit] Covered all Emini ES Short @ 6016.75 --> + 13.75
+  15:45 prior trade...exit [10:42:08]
+  15:50 [entry] Shorts Emini ES @ 6019.75 -> large size
+  15:50 10 contracts

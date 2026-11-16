@@ -197,5 +197,9 @@ def run(repo):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--tol", type=int, default=2)
     a = ap.parse_args()
+    TOL_TK = a.tol
+    import p4_53_anchor_sweep as _m
+    _m.TOL_TK = a.tol
     run(a.repo)

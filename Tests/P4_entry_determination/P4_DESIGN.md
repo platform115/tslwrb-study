@@ -505,3 +505,8 @@ catch realism errors). The rules from here:
    is part of the same flaw and is fixed by the same per-second engine.
 4. Before trusting any new engine, inspect raw cases by hand. Gates prove
    consistency, not realism.
+
+## PARKED (user, 2026-11-16): YM-derived levels
+His chat narrates YM zones/reaction-lows constantly while trading ES (confirmed
+again in the P4.54 autopsy: ~7 of 87 unexplained entries cite YM/NQ/VIX cues).
+Needs YM 1m bars. Bring back after the entry-level work settles.
