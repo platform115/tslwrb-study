@@ -111,7 +111,7 @@ def score_month(repo, month):
             not (np.isfinite(fl15) and fl15 > FLOW15_CAP),
             bool(lag15[ib] > ref15l[ib]) if np.isfinite(ref15l[ib]) else False,
         ])
-        rows.append(dict(comp_ns=cns, score=score,
+        rows.append(dict(comp_ns=cns, score=score, direction=w.direction.iloc[i],
                          uref=pr * TICK if np.isfinite(pr) else np.nan))
     return pd.DataFrame(rows), bars, sym
 
