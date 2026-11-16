@@ -1,4 +1,9 @@
-# Strategy spec v10 — FROZEN (2026-11-15) · user's confirmation entry
+# STRATEGY 1 (spec v10) — FROZEN (2026-11-15) · user's confirmation entry
+> Named "Strategy 1" by the user (2026-11-16). Lineage: Group-A reverse
+> engineering (news-burst signal shape), applied ungated. Scope for now:
+> this arm only — Group B / fades parked.
+> OOS (T-EN46, one shot): 2021-09 +62.5 pts (144 tr, 49%) · 2024-11 −7.2 pts
+> (175 tr, 44%) · pooled +0.17/trade vs +0.84 in-sample.
 
 ## SETUP — RTH, force-flat at close · ES front month · v6 score >= 6 at a 1m WRB
    completion (PRIMARY: ungated; news<=15min variant kept as the concentrated arm)
