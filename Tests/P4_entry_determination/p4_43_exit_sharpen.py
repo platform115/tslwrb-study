@@ -52,7 +52,10 @@ def run_leg2(bars, pre, fb, fill, long, p, start_j, e_uref=None):
             t = best - tr[1] if long else best + tr[1]
             stop = max(stop, t) if long else min(stop, t)
         if (l[j] <= stop if long else h[j] >= stop):
-            return stop, j, ("faststop" if early else "stop")
+            xp = stop
+            if p.get("gapfill"):            # realistic: bar opens beyond stop -> open
+                xp = min(stop, o[j]) if long else max(stop, o[j])
+            return xp, j, ("faststop" if early else "stop")
         if j > fb and isw[j] and ((wdir[j] == "bullish") == long):
             n_pt += 1
             big = p["ladder"] and e_uref and wbody[j] >= 2.0 * e_uref

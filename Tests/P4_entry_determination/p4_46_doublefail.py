@@ -39,9 +39,10 @@ def run_leg4(bars, pre, fb, fill, long, p, start_j, e_uref=None):
     isw, wdir, wbb, wbt, wbody = pre
     n_pt = 0; opp = False
     best = fill
+    mfe = lambda: (best - fill) if long else (fill - best)   # noqa: E731
     for j in range(start_j, len(bars)):
         if sd[j] != sd[fb] or not rth[j]:
-            return c[j - 1], j - 1, "session", None, n_pt, opp
+            return c[j - 1], j - 1, "session", None, n_pt, opp, mfe()
         early = j < fb + p.get("early_bars", 2)
         sp = p["early"] if early else p["stop"]
         stop = fill - sp if long else fill + sp
@@ -56,16 +57,16 @@ def run_leg4(bars, pre, fb, fill, long, p, start_j, e_uref=None):
         if j > fb and isw[j] and ((wdir[j] == "bullish") != long):
             opp = True
         if (l[j] <= stop if long else h[j] >= stop):
-            return stop, j, ("faststop" if early else "stop"), src, n_pt, opp
+            return stop, j, ("faststop" if early else "stop"), src, n_pt, opp, mfe()
         if j > fb and isw[j] and ((wdir[j] == "bullish") == long):
             n_pt += 1
             big = p["ladder"] and e_uref and wbody[j] >= 2.0 * e_uref
             if n_pt >= 3 or not big:
-                return c[j], j, f"pt{n_pt}", None, n_pt, opp
+                return c[j], j, f"pt{n_pt}", None, n_pt, opp, mfe()
         if j >= fb + p.get("time_bars", 9):
-            return c[j], j, "time", None, n_pt, opp
+            return c[j], j, "time", None, n_pt, opp, mfe()
         best = max(best, h[j]) if long else min(best, l[j])
-    return c[-1], len(bars) - 1, "eof", None, n_pt, opp
+    return c[-1], len(bars) - 1, "eof", None, n_pt, opp, mfe()
 
 
 def month_trades(repo, es, month, insample, sym=None):
@@ -105,9 +106,10 @@ def month_trades(repo, es, month, insample, sym=None):
                 break
         if fb is None:
             continue
-        px, xi, reason, src, npt1, opp1 = run_leg4(bars, pre, fb, fill, long, V11, fb + 1, uref)
+        px, xi, reason, src, npt1, opp1, mfe1 = run_leg4(bars, pre, fb, fill, long, V11, fb + 1, uref)
         tot = (px - fill) if long else (fill - px)
-        rec = dict(month=month, pnl1=(px - fill) if long else (fill - px),
+        rec = dict(month=month, ts=bars.ts_event.iloc[fb], side="long" if long else "short",
+                   pnl1=(px - fill) if long else (fill - px),
                    npt=npt1, opp1=opp1, fail_bar=None, r2=None, npt2=0, pnl2=np.nan,
                    pnl3=np.nan, score=r.score, mv=abs(mv), tod=hrs[fb],
                    wait=fb - fb0 + 1)
@@ -117,14 +119,17 @@ def month_trades(repo, es, month, insample, sym=None):
                     rec[f] = r[f]
         if reason == "faststop":
             rec["fail_bar"] = xi - fb                       # 0 or 1
-            px2, xi2, r2, s2, npt2, opp2 = run_leg4(bars, pre, xi, px, not long, V11, xi + 1, uref)
+            px2, xi2, r2, s2, npt2, opp2, mfe2 = run_leg4(bars, pre, xi, px, not long, V11, xi + 1, uref)
             tot += (px2 - px) if (not long) else (px - px2)
-            rec["r2"] = r2; rec["npt2"] = npt2
+            rec["r2"] = r2; rec["npt2"] = npt2; rec["mfe2"] = mfe2
+            # favorable extreme ON the leg-2 exit bar (upper bound of what a
+            # quick target could have caught; bar order unknown from 1m data)
+            rec["mfe2bar"] = (px - l[xi2]) if (not long) else (h[xi2] - px)
             rec["pnl2"] = (px2 - px) if (not long) else (px - px2)
             if r2 == "faststop":                            # C) third leg, both directions
-                px3, xi3, r3, _, _, _ = run_leg4(bars, pre, xi2, px2, long, V11, xi2 + 1, uref)
+                px3, xi3, r3, _, _, _, _ = run_leg4(bars, pre, xi2, px2, long, V11, xi2 + 1, uref)
                 rec["pnl3"] = (px3 - px2) if long else (px2 - px3)
-                px4, xi4, r4, _, _, _ = run_leg4(bars, pre, xi2, px2, not long, V11, xi2 + 1, uref)
+                px4, xi4, r4, _, _, _, _ = run_leg4(bars, pre, xi2, px2, not long, V11, xi2 + 1, uref)
                 rec["pnl3s"] = (px4 - px2) if (not long) else (px2 - px4)
             xi = xi2
         rec["reason"] = reason; rec["tot"] = tot
