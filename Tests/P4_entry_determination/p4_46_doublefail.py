@@ -121,9 +121,11 @@ def month_trades(repo, es, month, insample, sym=None):
             tot += (px2 - px) if (not long) else (px - px2)
             rec["r2"] = r2; rec["npt2"] = npt2
             rec["pnl2"] = (px2 - px) if (not long) else (px - px2)
-            if r2 == "faststop":                            # C) third leg, original dir
+            if r2 == "faststop":                            # C) third leg, both directions
                 px3, xi3, r3, _, _, _ = run_leg4(bars, pre, xi2, px2, long, V11, xi2 + 1, uref)
                 rec["pnl3"] = (px3 - px2) if long else (px2 - px3)
+                px4, xi4, r4, _, _, _ = run_leg4(bars, pre, xi2, px2, not long, V11, xi2 + 1, uref)
+                rec["pnl3s"] = (px4 - px2) if (not long) else (px2 - px4)
             xi = xi2
         rec["reason"] = reason; rec["tot"] = tot
         out.append(rec)
@@ -172,6 +174,11 @@ def run(repo):
     pm = " | ".join(f"{m}: {dbl[dbl.month==m].pnl3.sum():+.0f}" for m in months)
     print(f"| third leg (re-reverse after double fail) | {len(a)} | {w.mean():.0%} | "
           f"+{a[w].mean():.2f} / {a[~w].mean():.2f} | {a.sum():+.1f} ({pm}) |")
+    if "pnl3s" in dbl.columns:
+        b = dbl.pnl3s.dropna().to_numpy(); wb = b > 0
+        pms = " | ".join(f"{m}: {dbl[dbl.month==m].pnl3s.sum():+.0f}" for m in months)
+        print(f"| third leg (re-enter SAME dir as the failed reversal) | {len(b)} | {wb.mean():.0%} | "
+              f"+{b[wb].mean():.2f} / {b[~wb].mean():.2f} | {b.sum():+.1f} ({pms}) |")
     print(f"| status quo (exit after double fail) | {len(a)} | - | - | +0.0 |")
 
     ins = d[d.month.isin([m for m, _ in MONTHS])]
