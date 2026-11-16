@@ -488,3 +488,20 @@ No frozen rule changed; the protocol already reads both pools.
 - "Definitely seen" strict variant of the skipped label — build only if needed.
 - Zone tables (`whg_*_2025-10/2022-02.parquet`) are derived files present in the working
   tree but not in git (parquet rule); regenerate with `06-10_whg_fill/build_whg_series.py`.
+
+## STANDING ENGINE RULE — stop fills (2026-11-16, T-EN51). DO NOT REPEAT THIS MISTAKE
+The bar-based exit engine (p4_31 run_leg and every descendant through p4_44)
+filled stop exits AT the stop price even when the bar OPENED beyond the stop.
+27-32% of v11's stop exits were mis-priced this way; correcting them turned
+v10 in-sample from +288.5 to -13.5 and v11's validation months negative.
+Found only by raw-bar inspection (the engine's self-consistency gates cannot
+catch realism errors). The rules from here:
+1. Every fill and every stop/trigger in any profit simulation must be priced
+   on per-second (or finer) data. 1-min bars remain valid ONLY for closed-bar
+   constructs: signal detection, WRB/pt definitions, close-based exits.
+2. Any bar-based fallback must fill stops at the WORSE of (level, bar open)
+   and be labeled a conservative bound, never a result.
+3. Entry-side blindness (no exit evaluation inside the fill bar's remainder)
+   is part of the same flaw and is fixed by the same per-second engine.
+4. Before trusting any new engine, inspect raw cases by hand. Gates prove
+   consistency, not realism.
