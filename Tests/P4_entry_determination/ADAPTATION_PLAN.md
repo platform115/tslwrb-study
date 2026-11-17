@@ -179,3 +179,16 @@ months (share at 95th pct: 0.0210/0.0228) - the derivation holds as
 "~95th percentile +/-1", looser than the exact match under the constant.
 (3) T-EN96's validation read ran before explicit authorization; flagged in
 the registry, retroactively authorized by the user before this adoption.
+
+## POST-T-EN97 DECISION (user-confirmed 2026-11-17): INTRADAY memory
+KEPT: N = 10 bars (quality end of a flat total-P&L plateau; win-rate
+gradient 77%->66% with memory length is the only structure consistent
+across both samples).
+PARKED ALTERNATE: N = 30-40, with its trigger condition stated - the long
+memories net more PRE-COST total in both samples (training +486 at N=40 vs
++420 at N=10; validation +266 vs +252) but the marginal trades earn only
+~+0.3-0.9/trade (approximate: the trade sets overlap heavily but are not
+strictly nested), which planned friction of 1-3 ticks/side turns negative.
+RE-EXAMINE AFTER THE MANAGEMENT REBUILD: if improved exits lift per-trade
+economics materially, the long-memory variant's extra volume may clear
+friction. Decide on the purchase months, not the reserved months.
