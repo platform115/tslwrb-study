@@ -65,3 +65,10 @@ The window rule applies to variants 2-9 (all adaptive variants); FIXED (variant
 window rule adapts the WINDOW only (slowly, monthly); the estimators adapt the
 TICK thresholds only. Nothing adapts the 0.042 / 0.17 shares, the 5-min thrust
 window, the clustering, or the cooldown - those stay fixed in every variant.
+
+## POST-VALIDATION DECISIONS (user, 2026-11-17, after T-EN75)
+- ATR14D adopted per the maximin rule (battery winner: worst month +26.2).
+- INTRADAY10 RETAINED as a second lane by user decision: the project runs
+  multiple clean entry strategies, each allowed to be low-frequency in some
+  periods; a lane that signals rarely but cleanly is acceptable by design.
+- Detector-side maximin: D6-accel + thrust 30.
