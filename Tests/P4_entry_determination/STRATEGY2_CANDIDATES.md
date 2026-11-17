@@ -29,3 +29,21 @@ AS AN IMITATION DEVICE; preserved for P&L).
 Levels (WRB boundaries / KME zones) select nothing at ENTRY - five nulls - but
 may govern everything once a trade is on (aim, hold, re-entry). Test when
 exits are redone: do his exits/holds cluster at boundaries the way his entries do not?
+
+## Lane structure (user decision 2026-11-17)
+Two adapter schemes, BOTH standing on their own merits as separate lanes;
+some conditions/variables carry different adapters per lane and that is by
+design, not an inconsistency to resolve:
+- **ATR14D lane** — RTH volume lane (maximin-adopted, T-EN83). More trades,
+  thinner per-trade margin; friction-sensitive at loose settings. Its ETH
+  variant (overnight-range version) FAILED — not licensed for Globex.
+- **INTRADAY10 lane** — quality lane in RTH (fewer, cleaner trades) AND the
+  only adapter that works overnight natively (T-EN85/86: 65% win both
+  samples Globex). The same scheme serves both sessions because its scale
+  is local (last-10-bars TR), not session-level.
+Burst-share derivation (T-EN91): INTRADAY10's q = |mv8|/R_est distribution is
+regime-invariant (95.3rd pct = share 0.022 in BOTH training months, quiet and
+wild) — a static share is defensible there because the adaptation already
+lives in R_est. ATR14D's q is NOT invariant (same share drifts ~1.4-1.9
+pct-points across the two months); its share currently has no stable
+measurement behind it.
