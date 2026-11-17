@@ -138,9 +138,8 @@ profile (fewer trades = lower admin cost), thrust 0.15 as tested:
   RTH bars of today only (never crosses into ETH; min 10 bars).
 - (b) DAYSOFAR share 0.014 — +380.2, 68%/185 tr, DD 1.0. R_est = C_N x mean
   TR of ALL of today's RTH bars so far (expanding, min 10 bars).
-- (b) DAYSOFAR second share: user stated 0.028, grid tested 0.026 (+338.8,
-  64%/168) and 0.030 (+296.9, 63%/144) — PENDING user confirmation which is
-  meant (or a 0.028 run). Not frozen until resolved (Rule 3).
+- (b) DAYSOFAR share 0.018 — +378.8, 66%/182 tr, DD 2.6. (User's earlier
+  "0.028" confirmed 2026-11-17 as a typo for 0.018.)
 Known caveats carried with these: C_N = 22.7 was calibrated on the 10-bar
 window, so its reuse in (b)/(c) is approximate (the share absorbs the level
 difference); their thrust axis was NOT swept (0.15 only).
