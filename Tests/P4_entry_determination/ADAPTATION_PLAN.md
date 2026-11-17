@@ -192,3 +192,13 @@ strictly nested), which planned friction of 1-3 ticks/side turns negative.
 RE-EXAMINE AFTER THE MANAGEMENT REBUILD: if improved exits lift per-trade
 economics materially, the long-memory variant's extra volume may clear
 friction. Decide on the purchase months, not the reserved months.
+
+## POST-T-EN98 DECISION (user-confirmed 2026-11-17): 2B trailing-pct coefficient
+KEPT: 85 (pre-registered, survived validation). The full bracket shows a
+broad plateau at 30-70 (+943-998) above the 75-90 band; trade counts pinned
+~600 across the whole range (the coefficient is a timing selector).
+PRIORITY NOTE (user, 2026-11-17): build an ADAPTER for this coefficient -
+a measured derivation that sets the percentile rather than a hand-picked
+value - SOONER RATHER THAN LATER, not parked to the distant backlog. The
+plateau center (60) vs 85 question goes to the purchase months if 2B is
+promoted by the management rebuild.
