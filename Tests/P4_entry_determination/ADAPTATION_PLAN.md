@@ -96,3 +96,17 @@ shrinks, DD 0 in the INTRADAY10 lane); N (30/60/120) barely matters, clamp
 [2,3] ~ [1,4]. FROZEN VARIANT for the next validation batch:
 rolling N=30, w in [1,4] (most reactive, least constrained), alongside the
 static w=2 and the 21-session rule (Amendment 2) for comparison.
+
+## AMENDMENT 4 (2026-11-17, T-EN82): the firing-gap rule
+Derivation (P4.79): burst crossings are heavily clustered - 68-75% of
+inter-arrival gaps are under 5 s (within one sweep), with a clear valley at
+5-30 s (3-5% per bin): an episode is OVER by ~10-30 s. The episode-count
+curve shows NO clean knee (smooth decay - bursts cluster at all scales;
+stated as a null for that instrument). Upper bound from the post-burst
+drift life (T-EN77 A: positive for 74-169 s): the gap must stay below it
+so re-fires still catch live moves. BRACKET: [~30 s, ~60-75 s] - exactly
+where the P&L grid peaks (T-EN81).
+FROZEN RULE: gap = half the post-burst drift zero-crossing, clamped to
+[30, 60] s, recomputed monthly where per-second data exists; 45 s default
+where it does not. (Training: Feb 37 s, Oct 60 s.) Wait-after-exit = 1 bar
+rides along as the T-EN81 candidate. Both await the next validation batch.
