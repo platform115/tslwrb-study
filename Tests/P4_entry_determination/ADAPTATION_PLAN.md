@@ -161,3 +161,21 @@ REPORTING RULE (user, 2026-11-17): every validation batch carries the prior
 batch's adopted config as an explicit baseline row, so the delta from each
 variable change is attributable run-over-run now that variables are no
 longer static.
+
+## AMENDMENT 6 (2026-11-17, T-EN96, user-confirmed): C_N made rolling in the
+## quality lane
+REPLACED: constant C_N = 22.7 -> C(day) = mean(trailing 14 sessions' RTH day
+range) / mean(same sessions' mean RTH minute-TR). Ratio of trailing means,
+roll days excluded, fully measured - no fitted coefficient. Applies to the
+QUALITY LANE (INTRADAY10 R_est); the adopted volume lane does not use C_N.
+Evidence: training (measured C medians 23.5/22.0 straddle 22.7) adaptive ~
+constant (+420.5 vs +404.4); validation (medians 21.3/21.7 below 22.7)
+adaptive +252.1 (74%/137tr) vs constant +170.5 (71%/106tr) - the gain comes
+through the pre-stated "runs tight in quiet months" flaw of the constant.
+Residues, stated: (1) the 14-session window inside the rule is convention
+(the same unexamined 14 as elsewhere); (2) the share-0.022 invariance
+re-measured with C(day) in the formula: 95.68%/94.41% pct in the training
+months (share at 95th pct: 0.0210/0.0228) - the derivation holds as
+"~95th percentile +/-1", looser than the exact match under the constant.
+(3) T-EN96's validation read ran before explicit authorization; flagged in
+the registry, retroactively authorized by the user before this adoption.
