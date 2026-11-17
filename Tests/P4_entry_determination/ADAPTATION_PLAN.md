@@ -110,3 +110,37 @@ FROZEN RULE: gap = half the post-burst drift zero-crossing, clamped to
 [30, 60] s, recomputed monthly where per-second data exists; 45 s default
 where it does not. (Training: Feb 37 s, Oct 60 s.) Wait-after-exit = 1 bar
 rides along as the T-EN81 candidate. Both await the next validation batch.
+
+## AMENDMENT 5 (2026-11-17, T-EN91/92): burst share derivation + lane adapters
+BURST SHARE, INTRADAY10 LANE — DERIVED, static 0.022 justified:
+q = |8-s move| / R_est is regime-INVARIANT in this lane (share 0.022 = 95.27%
+/ 95.28% pct of q in 2025-10 and 2022-02; inverse share-at-pct matches to
+~0.0005 across the two months). The adaptation lives in R_est (last-10-bars
+TR); the share riding on it does not need to move. Same justification
+pattern as C_N. The old 0.042 = 98.5th pct (2025-10 ATR scale) — a
+transcription of the old top-~1.5% fixed-threshold era, now retired.
+
+BURST THRESHOLD, ATR14D LANE — ADAPTIVE RULE (q NOT invariant there, T-EN91):
+threshold(day) = 85th percentile of raw |8-s move| (ticks) over trailing
+sessions. Tested form: expanding in-month, min 1 prior session (T-EN92:
++762.9, 64%/460 tr, months +411/+352 — matches static 0.018 at no derivation
+cost; maximin worst-month +352 > static's +333). LIVE / VALIDATION FORM
+(pre-registered here): trailing 14 sessions, matching the lane's lookback.
+Justification: the P&L turn sits at the 82nd–91st pct of q in BOTH training
+months; 85 is inside the band. Honest label: the pct value was picked from
+{85, 90, 95} on training P&L — adaptive structure derived, exact value fitted.
+
+SAVED SCHEME CANDIDATES (user decision 2026-11-17) — kept in the pool to be
+narrowed later and included in a validation run; low-count/high-quality
+profile (fewer trades = lower admin cost), thrust 0.15 as tested:
+- (c) RTH60 share 0.014 — +452.9, 69%/237 tr, DD 0.4 — and share 0.018 —
+  +414.2, 69%/234 tr, DD 3.0. R_est = C_N x mean TR of last min(60, so-far)
+  RTH bars of today only (never crosses into ETH; min 10 bars).
+- (b) DAYSOFAR share 0.014 — +380.2, 68%/185 tr, DD 1.0. R_est = C_N x mean
+  TR of ALL of today's RTH bars so far (expanding, min 10 bars).
+- (b) DAYSOFAR second share: user stated 0.028, grid tested 0.026 (+338.8,
+  64%/168) and 0.030 (+296.9, 63%/144) — PENDING user confirmation which is
+  meant (or a 0.028 run). Not frozen until resolved (Rule 3).
+Known caveats carried with these: C_N = 22.7 was calibrated on the 10-bar
+window, so its reuse in (b)/(c) is approximate (the share absorbs the level
+difference); their thrust axis was NOT swept (0.15 only).
