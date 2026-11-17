@@ -30,8 +30,8 @@ from p4_49_sec_engine import Ctx                       # noqa: E402
 TICK = 0.25
 
 
-def month_features(repo, month):
-    cx = Ctx(repo, month, True)
+def month_features(repo, month, insample=True):
+    cx = Ctx(repo, month, insample)
     lo, hi = month_bounds(month)
     bars = cx.bars
     f = pd.read_parquet(os.path.join(repo, f"Data/inputs/flow_per_sec_{month}_full.parquet"))
