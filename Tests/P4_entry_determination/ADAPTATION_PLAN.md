@@ -87,3 +87,12 @@ exists, the post-burst zero-crossing serves as the cross-check.
 Thrust thresholds scale by sqrt(window/5) from the frozen 5-min shares
 (the sqrt rule itself remains a flagged choice pending percentile-matched
 recalibration).
+
+## AMENDMENT 3 (2026-11-17, T-EN78): intraday-rolling thrust window
+w(bar) = clamp(75th-pct length of directional runs COMPLETED in the last N
+bars, lo..hi), fallback 2; thrust threshold scales sqrt(w/5). Training cost
+~10-20%% of static-2min totals with quality intact (win rate holds, avg loss
+shrinks, DD 0 in the INTRADAY10 lane); N (30/60/120) barely matters, clamp
+[2,3] ~ [1,4]. FROZEN VARIANT for the next validation batch:
+rolling N=30, w in [1,4] (most reactive, least constrained), alongside the
+static w=2 and the 21-session rule (Amendment 2) for comparison.
