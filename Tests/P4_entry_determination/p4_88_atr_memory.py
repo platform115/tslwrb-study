@@ -35,7 +35,9 @@ NS = (1, 2, 3, 5, 7, 12, 14, 15)
 NBARS = (10, 30, 60)
 
 
-def run(repo):
+def run(repo, val=False):
+    month_list = [(m, True) for m, _ in MONTHS] if not val else \
+                 [("2021-09", False), ("2024-11", False)]
     SH = session_history(repo)
     dates = list(SH.index)
     pos = {d: i for i, d in enumerate(dates)}
@@ -45,8 +47,8 @@ def run(repo):
         return float(SH.rth.iloc[max(0, i - N):i].mean()) if i and i > 0 else None
 
     Ps = {}
-    for m, _ in MONTHS:
-        P = prep(repo, m)
+    for m, insample in month_list:
+        P = prep(repo, m, insample=insample)
         cx = P["cx"]
         secs, mids = P["secs"], P["mids"]
         iw = np.searchsorted(secs, secs - 8)
@@ -113,5 +115,9 @@ def run(repo):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--val", action="store_true",
+                    help="run on the reserved months (2021-09, 2024-11)")
     a = ap.parse_args()
-    run(a.repo)
+    if a.val:
+        print("VALIDATION MONTHS - same sweep, settings frozen\n")
+    run(a.repo, val=a.val)
