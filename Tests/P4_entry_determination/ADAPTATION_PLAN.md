@@ -72,3 +72,18 @@ window, the clustering, or the cooldown - those stay fixed in every variant.
   multiple clean entry strategies, each allowed to be low-frequency in some
   periods; a lane that signals rarely but cleanly is acceptable by design.
 - Detector-side maximin: D6-accel + thrust 30.
+
+## AMENDMENT 2 (2026-11-17, T-EN77): the thrust-window rule
+Derivation measurements (P4.74, training months): post-burst drift crosses
+zero at 74-169 s (mean ~2 min); directional 1-min run lengths median 1-2,
+75th pct 2-3 min; variance ratio weakly peaks at 1-2 min (near-flat - weak
+instrument). CONVERGENT BAND: minute-scale moves live ~1-3 minutes. No
+measurement pins 2 min sharply (unlike the 8-9 s sweep duration for the
+burst window) - recorded as a BAND, not a point.
+FROZEN RULE: thrust window = the 75th-percentile directional run length of
+1-min RTH returns over the trailing 21 sessions, clamped to [2, 3] minutes.
+Bars-only, computable in every month and regime. Where per-second data
+exists, the post-burst zero-crossing serves as the cross-check.
+Thrust thresholds scale by sqrt(window/5) from the frozen 5-min shares
+(the sqrt rule itself remains a flagged choice pending percentile-matched
+recalibration).
