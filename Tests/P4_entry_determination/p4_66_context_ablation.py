@@ -94,7 +94,7 @@ def fires_of(P, which):
     return out
 
 
-def sim(P, fire_list, ctx_fun):
+def sim(P, fire_list, ctx_fun, cooldown=5):
     cx = P["cx"]
     pnl = []
     busy = -1
@@ -123,7 +123,7 @@ def sim(P, fire_list, ctx_fun):
             tot += (px2 - px) if (not long) else (px - px2)
             xb = xb2
         pnl.append(tot)
-        busy = xb + 5
+        busy = xb + cooldown
     return pnl
 
 
@@ -169,7 +169,7 @@ def sim_confirm(P, ctx_fun):
             tot += (px2 - px) if (d0 <= 0) else (px - px2)
             xb = xb2
         pnl.append(tot)
-        busy = xb + 5
+        busy = xb + cooldown
     return pnl
 
 
