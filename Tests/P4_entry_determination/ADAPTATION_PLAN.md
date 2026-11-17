@@ -41,3 +41,20 @@ of fixed's total in SAME-regime months (expected; the payoff is cross-regime).
    then be validated on months not yet used for it.
 5. The v11 management is a sketch; when management is rebuilt, this plan's
    entry-threshold comparison re-runs unchanged under the new management.
+
+## AMENDMENT 1 (2026-11-17, T-EN73 — before any validation run)
+Added to the pre-registered battery after P4.70:
+  INTRADAY10  R_est = 22.7 x mean true range of the last 10 COMPLETED 1-min
+              bars, recomputed every bar (user's reversed rolling estimator)
+  INTRADAY20  same with 20 bars (c = 22.7)
+  WINDOW RULE (replaces "7 s assumed"): window = the trailing 99th-percentile
+              duration of one-sided signed-flow runs, recomputed monthly
+              (= 8-9 s in both training months; the only measurement found
+              that independently yields the working window; price memory is
+              not it - 1-s autocorrelation dies at lag 1 - and extreme 20-s
+              moves show NO time concentration, B3 null).
+Which estimator GENERATES the fixed numbers: ATR14D (daily burst median 12.9
+vs 13; thrust 52 vs 50; lowest RMS miss with TRAIL21). Training P&L of the
+new variants: INTRADAY10 +149.1 (32 trades, 78% win, never below start),
+INTRADAY20 +133.6 - the best adaptive results so far.
+Decision rule unchanged: maximin on worst-month total, all variants frozen.
