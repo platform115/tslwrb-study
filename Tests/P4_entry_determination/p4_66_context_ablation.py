@@ -264,5 +264,36 @@ def run(repo):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--combos", action="store_true")
     a = ap.parse_args()
-    run(a.repo)
+    combos(a.repo) if a.combos else run(a.repo)
+
+
+def combos(repo):
+    """The T-EN68 combination rows (previously run via an uncommitted driver)."""
+    Ps = {m: prep(repo, m) for m, _ in MONTHS}
+    d1 = {m: fires_of(P, "D1") for m, P in Ps.items()}
+
+    def CTX2(thrust, sig, sess):
+        def f(ft, ib, d0, P, a2, b2):
+            if not (ft["ret5m"] >= thrust):
+                return False
+            if sig and not bool((P["sig_d"][a2:b2] == d0).any()):
+                return False
+            if sess is not None and not (ft["min_into_sess"] <= sess):
+                return False
+            return True
+        return f
+
+    print("| Variant | Trades | Win rate | Avg win / loss | Total (per month) | Max below start |")
+    print("|---|---|---|---|---|---|")
+    for name, t, sg, ss in [
+        ("thrust 30, no signal, no session cut", 30, False, None),
+        ("thrust 40, no signal, no session cut", 40, False, None),
+        ("thrust 40, no signal, early kept", 40, False, 1050),
+        ("thrust 50, no signal, no session cut", 50, False, None),
+        ("thrust 60, no signal, no session cut", 60, False, None),
+        ("thrust 40, signal kept, no session cut", 40, True, None),
+    ]:
+        per_m = {m: sim(Ps[m], d1[m], CTX2(t, sg, ss)) for m in Ps}
+        print(row(name, per_m))
