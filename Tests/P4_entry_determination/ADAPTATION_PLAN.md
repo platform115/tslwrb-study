@@ -58,3 +58,10 @@ vs 13; thrust 52 vs 50; lowest RMS miss with TRAIL21). Training P&L of the
 new variants: INTRADAY10 +149.1 (32 trades, 78% win, never below start),
 INTRADAY20 +133.6 - the best adaptive results so far.
 Decision rule unchanged: maximin on worst-month total, all variants frozen.
+
+## AMENDMENT 1a (clarification, 2026-11-17 — still before any validation run)
+The window rule applies to variants 2-9 (all adaptive variants); FIXED (variant
+1) keeps the 7 s window and 13/50 ticks unchanged as the pure control. The
+window rule adapts the WINDOW only (slowly, monthly); the estimators adapt the
+TICK thresholds only. Nothing adapts the 0.042 / 0.17 shares, the 5-min thrust
+window, the clustering, or the cooldown - those stay fixed in every variant.
