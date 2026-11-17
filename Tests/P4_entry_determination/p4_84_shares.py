@@ -178,8 +178,16 @@ if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
     ap.add_argument("--cross", action="store_true", help="full 7x7 burst x thrust matrix")
+    ap.add_argument("--low", action="store_true",
+                    help="extend the burst axis BELOW the original grid "
+                         "(0.014-0.030; 0.030 = overlap anchor with --cross)")
     a = ap.parse_args()
-    if a.cross:
+    if a.low:
+        globals()["BS"] = (0.014, 0.018, 0.022, 0.026, 0.030)
+        print("BURST AXIS EXTENSION below the original grid (0.030 repeated as anchor).")
+        print("Looking for where the surface turns; TRAINING MONTHS ONLY.\n")
+        cross(a.repo)
+    elif a.cross:
         cross(a.repo)
     else:
         run(a.repo)
