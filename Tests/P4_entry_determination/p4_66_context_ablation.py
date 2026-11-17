@@ -38,8 +38,8 @@ Q, CLUST = 99.0, 120
 WAIT = 5
 
 
-def prep(repo, month):
-    cx, bars, feats, c = month_features(repo, month, True)
+def prep(repo, month, insample=True):
+    cx, bars, feats, c = month_features(repo, month, insample)
     lo, hi = month_bounds(month)
     f = pd.read_parquet(os.path.join(repo, f"Data/inputs/flow_per_sec_{month}_full.parquet"))
     secs = f.sec.to_numpy(np.int64); mids = f.mid.to_numpy(float)
