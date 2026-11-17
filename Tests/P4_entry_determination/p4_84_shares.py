@@ -96,8 +96,90 @@ def run(repo):
             print(row(f"{t:.2f}{tag}", per_m))
 
 
+def cross(repo):
+    """Full burst x thrust matrix (totals, both months pooled; win rate in a
+    second matrix). Fires per burst share precomputed once."""
+    SH = session_history(repo)
+    dates = list(SH.index)
+    pos = {d: i for i, d in enumerate(dates)}
+
+    def atr14d(d):
+        i = pos.get(d)
+        return float(SH.rth.iloc[max(0, i - 14):i].mean()) if i and i > 0 else None
+
+    Ps = {}
+    for m, _ in MONTHS:
+        P = prep(repo, m)
+        cx = P["cx"]
+        secs, mids = P["secs"], P["mids"]
+        iw = np.searchsorted(secs, secs - 8)
+        P["_mv8"] = (mids - mids[np.maximum(iw, 0)]) / TICK
+        P["_bar_i"] = np.clip(np.searchsorted(cx.bts, secs * 10**9, "right") - 1, 0, len(cx.c) - 1)
+        pc = np.roll(cx.c, 1); pc[0] = cx.c[0]
+        tr = np.maximum(cx.h - cx.l, np.maximum(np.abs(cx.h - pc), np.abs(cx.l - pc))) / TICK
+        P["_atr10"] = pd.Series(tr).shift(1).rolling(10).mean().to_numpy()
+        P["_Rday"] = {d: atr14d(d) for d in set(P["sd"])}
+        P["_ret2"] = np.concatenate([[0.0] * W, (cx.c[W:] - cx.c[:-W]) / TICK])
+        Ps[m] = P
+    for scheme in ("ATR14D", "INTRADAY10"):
+        # precompute per burst share: candidate fires with their thrust refs
+        cand = {}
+        for m, P in Ps.items():
+            cx = P["cx"]
+            secs, keep = P["secs"], P["keep"]
+            if scheme == "ATR14D":
+                Rs = np.array([P["_Rday"].get(d) or np.nan for d in P["sd"]])[P["_bar_i"]]
+            else:
+                Rs = C_N * P["_atr10"][P["_bar_i"]]
+            for b in BS:
+                bt = b * Rs
+                kept = []
+                last = -10**18
+                for i in np.flatnonzero(keep & np.isfinite(bt)):
+                    if abs(P["_mv8"][i]) < bt[i]:
+                        continue
+                    if secs[i] - last <= GAP:
+                        continue
+                    last = int(secs[i])
+                    ib = P["_bar_i"][i]
+                    if ib < 60 or not cx.rth[ib]:
+                        continue
+                    d0 = int(np.sign(P["_mv8"][i]))
+                    kept.append((i, d0, float(Rs[i]), float(d0 * P["_ret2"][ib])))
+                cand[(m, b)] = kept
+        tot = {}; wr = {}; ntr = {}
+        for b in BS:
+            for t in TS:
+                allp = []
+                for m, P in Ps.items():
+                    sel = [(i, d0) for i, d0, R, r2 in cand[(m, b)]
+                           if np.isfinite(R) and r2 >= t * np.sqrt(W / 5) * R]
+                    allp += sim(P, sel, lambda *a: True, cooldown=WAIT)
+                a = np.asarray(allp)
+                tot[(b, t)] = a.sum()
+                wr[(b, t)] = (a > 0).mean() if len(a) else np.nan
+                ntr[(b, t)] = len(a)
+        print(f"===== {scheme}: TOTAL points (rows = burst share, cols = thrust share) =====")
+        print("| burst\\thrust | " + " | ".join(f"{t:.2f}" for t in TS) + " |")
+        print("|---|" + "---|" * len(TS))
+        for b in BS:
+            mark = "*" if b == B0 else ""
+            print(f"| {b:.3f}{mark} | " + " | ".join(
+                f"{tot[(b, t)]:+.0f}{'*' if (b, t) == (B0, T0) else ''}" for t in TS) + " |")
+        print(f"===== {scheme}: win rate / trades =====")
+        print("| burst\\thrust | " + " | ".join(f"{t:.2f}" for t in TS) + " |")
+        print("|---|" + "---|" * len(TS))
+        for b in BS:
+            print(f"| {b:.3f} | " + " | ".join(
+                f"{wr[(b, t)]:.0%}/{ntr[(b, t)]}" for t in TS) + " |")
+
+
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--cross", action="store_true", help="full 7x7 burst x thrust matrix")
     a = ap.parse_args()
-    run(a.repo)
+    if a.cross:
+        cross(a.repo)
+    else:
+        run(a.repo)
