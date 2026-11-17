@@ -28,6 +28,8 @@ CLUST, MATCH_S = 120, 120
 GRID = [(1.0, w) for w in (5, 7, 10, 12, 15, 20)] + \
        [(0.5, w) for w in (5, 7, 10, 12, 15, 20, 30)] + \
        [(2.0, w) for w in (5, 7, 10, 12, 15, 20, 30)]
+GRID_Q025 = [(0.25, 5), (0.25, 7), (0.25, 10),
+             (0.5, 7), (1.0, 10)]   # last two = reference rows from T-EN69
 
 
 def run(repo):
@@ -109,5 +111,9 @@ def run(repo):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--q025", action="store_true",
+                    help="top 0.25%% at 5/7/10s (user request) + reference rows")
     a = ap.parse_args()
+    if a.q025:
+        globals()['GRID'] = GRID_Q025
     run(a.repo)
