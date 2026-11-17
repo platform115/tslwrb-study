@@ -30,6 +30,7 @@ from p4_69_adaptation_plan import session_history      # noqa: E402
 TICK = 0.25
 BURST_SHARE, THRUST_SHARE, C_N = 0.042, 0.17, 22.7
 W, GAP, WAIT = 2, 45, 1
+VAL = False
 
 
 class CtxView:
@@ -58,8 +59,10 @@ def run(repo):
         return float(v.mean()) if len(v) else None
 
     per_m = {"ATR14D-ETH": {}, "INTRADAY10": {}}
-    for m, _ in MONTHS:
-        P = prep(repo, m)
+    month_list = [(m, True) for m, _ in MONTHS] if not VAL else \
+                 [("2021-09", False), ("2024-11", False)]
+    for m, insample in month_list:
+        P = prep(repo, m, insample=insample)
         cx = P["cx"]
         bars = cx.bars
         glbx = (bars.session == "GLOBEX").to_numpy()
@@ -123,5 +126,10 @@ def run(repo):
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--val", action="store_true",
+                    help="run on the reserved months (2021-09, 2024-11) instead")
     a = ap.parse_args()
+    if a.val:
+        VAL = True
+        print("VALIDATION MONTHS (frozen settings, first overnight look)\n")
     run(a.repo)
