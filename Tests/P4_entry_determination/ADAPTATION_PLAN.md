@@ -143,3 +143,21 @@ profile (fewer trades = lower admin cost), thrust 0.15 as tested:
 Known caveats carried with these: C_N = 22.7 was calibrated on the 10-bar
 window, so its reuse in (b)/(c) is approximate (the share absorbs the level
 difference); their thrust axis was NOT swept (0.15 only).
+
+## POST-BATCH-4 DECISION (user-confirmed 2026-11-17, T-EN93)
+Two lanes kept, one config each; the rest parked, not deleted.
+- VOLUME LANE: ATR14D, burst = trailing 85th pct of raw |8-s move|
+  (live form: trailing 14 sessions), thrust 0.13. Validated +239.6/+272.6,
+  worst-month best of the pool. FLAG: ~3.4 ticks/trade pre-cost -
+  tradeable only if the management rebuild adds per-trade margin.
+- QUALITY LANE: INTRADAY10, burst share 0.022 (derived), thrust 0.17.
+  Validated +54.4/+116.1 at 66%/74% win; only adapter licensed overnight.
+- PARKED (validated positive both months, same family as INTRADAY10 -
+  window variants of "C_N x mean TR of a recent window"): RTH60 0.014 and
+  0.018 / thrust 0.15; DAYSOFAR 0.014 and 0.018 / thrust 0.15. Re-examine
+  on the purchase months; RTH60 outscored INTRADAY10 on validation totals
+  but its shares are underived - first alternate if INTRADAY10 stumbles.
+REPORTING RULE (user, 2026-11-17): every validation batch carries the prior
+batch's adopted config as an explicit baseline row, so the delta from each
+variable change is attributable run-over-run now that variables are no
+longer static.
