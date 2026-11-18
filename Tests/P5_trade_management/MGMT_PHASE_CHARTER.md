@@ -55,3 +55,25 @@ Training months only for development. Reserved months (read 8x in the entry
 phase) used only on user authorization. User is acquiring additional data
 during this phase. Purchase months stay sealed until entries + management
 are frozen together.
+
+## Decisions appended 2026-11-18 (user)
+- Taxonomy: MECHANISM-ONLY (targets / loss-cutting / ditching). The state
+  framing is dropped as overcomplication; the anatomy evidence simply
+  informs which mechanisms have a constituency.
+- Timescale: management's natural units are minutes (T-EX02 peak times),
+  but the DOOR STAYS OPEN for seconds-precision "move is done" detection
+  (the entry phase's drift/flow machinery pointed at exits).
+- Non-mover check verified across windows (not just 10 min): RTH fires
+  never fail to move 1 pt at ANY window 3-20 min (0% both months); at
+  +/-1.5pt only 0-4% at 3 min. OVERNIGHT non-movers are real at short
+  windows (8-17% never move 1 pt in 3 min; 4% never 1.5 pt in 20 min).
+  The ditch mechanism is an ETH mechanism on this evidence.
+- RTH vs ETH: ONE management design in session-scaled units (R_est-style),
+  instantiated and frozen as TWO configs (operationally two strategies,
+  structurally one design). Revisit if later measurements break the
+  same-shape finding.
+- REPORTING RULE: be conservative/realistic, not optimistic - future
+  anatomy and all candidate tests must (a) de-overlap clustered fires
+  (one path per episode) for any number used in decisions, and
+  (b) where fills matter, show a pessimistic variant (entry 1 tick
+  against) alongside mid.
