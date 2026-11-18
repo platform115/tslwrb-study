@@ -117,3 +117,12 @@ avg loss -0.93 vs -1.62, DD 0 vs 3.0), overnight +28% with 1/5 the DD, and
 a 3-rule implementation suited to translation. M0 remains frozen as the
 historical control. User note: M0 was created under a less optimal research
 plan. Purchase months remain the final judge.
+
+## STANDING GATE added 2026-11-19 (post-T-EN99): THE TRUNCATION HARNESS
+Tests/P0_audit/truncation_harness.py - mechanical lookahead detection: every
+signal quantity recomputed on data truncated at its decision second must
+match the pipeline's value; exits re-run with post-exit prices poisoned must
+reproduce identical outcomes. NO new entry/signal script earns a registry
+row until its fire logic passes this harness. First run: all clean
+components pass on 300 fire seconds + 150 exits per training month; the
+known contaminated thrust is caught 300/300 (sensitivity proven).
