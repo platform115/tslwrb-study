@@ -109,3 +109,11 @@ Structural change confirmed as the path (trail tuning rejected - T-EX07).
 - M1 stands at: stall clock (S inside the session's measured alive-gap band:
   30s RTH / 90s ETH) + session close + inert rails. NOT yet validated on
   reserved months - awaiting user authorization.
+
+## M1 ADOPTED (user decision 2026-11-18, post-T-EX14)
+M1 replaces M0 as the working management. Grounds stated honestly: RTH
+totals parity (not superiority) with materially better risk (win 79% vs 74%,
+avg loss -0.93 vs -1.62, DD 0 vs 3.0), overnight +28% with 1/5 the DD, and
+a 3-rule implementation suited to translation. M0 remains frozen as the
+historical control. User note: M0 was created under a less optimal research
+plan. Purchase months remain the final judge.
