@@ -96,3 +96,16 @@ Structural change confirmed as the path (trail tuning rejected - T-EX07).
   be needed - parked as its own design question.
 - SCALE-OUT: necessary eventually, too early now - 1-contract trades are
   the norm for a while.
+
+## M2 slot resolved + phase pause (user, 2026-11-18)
+- The "at least two management strategies" requirement was INTENDED as
+  RTH + ETH coverage - achieved inside M1 (one design, two session configs,
+  T-EX13). No separate M2 design is required.
+- The remaining structural candidates (flow-death exit, opposite-burst,
+  the C3b full-capture profile) are PAUSED pending the Pine detector work.
+- PRIORITY DELIVERABLE NEXT (user): the rigid, translation-ready rule spec
+  (Python-exact definitions + golden test vectors) for the Pine agent -
+  entries first; M1's spec follows once validated.
+- M1 stands at: stall clock (S inside the session's measured alive-gap band:
+  30s RTH / 90s ETH) + session close + inert rails. NOT yet validated on
+  reserved months - awaiting user authorization.
