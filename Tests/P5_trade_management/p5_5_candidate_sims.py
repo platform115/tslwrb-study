@@ -42,6 +42,7 @@ import p5_1_excursion_anatomy as X                     # noqa: E402
 TICK = 0.25
 W, GAP, WAIT = 2, 45, 1
 BSH, TSH = 0.022, 0.17
+GRID = False
 
 
 def clock3(bars):
@@ -54,8 +55,9 @@ def clock3(bars):
     return comp[o], d[o], body[o]
 
 
-def leg_cand(cx, ck, fb, fill, fill_s, long, mode, uref, time_bars=27):
-    """One leg, candidate rules. ck = (comp_sec, dir, body) 3m WRB clock."""
+def leg_cand(cx, ck, fb, fill, fill_s, long, mode, uref, time_bars=27, trail=None):
+    """One leg, candidate rules. ck = (comp_sec, dir, body) 3m WRB clock.
+    trail: (arm, width) override; None = V11's (2.0, 2.5); C3b ignores it."""
     comp, cdir, cbody = ck
     p = V11
     n_pt = 0
@@ -93,9 +95,10 @@ def leg_cand(cx, ck, fb, fill, fill_s, long, mode, uref, time_bars=27):
         stop = fill - sp if long else fill + sp
         src = "base"
         if mode != "C3b":
+            ta, tw = trail if trail else p["trail"]
             fav = (best - fill) if long else (fill - best)
-            if fav >= p["trail"][0]:
-                t = best - p["trail"][1] if long else best + p["trail"][1]
+            if fav >= ta:
+                t = best - tw if long else best + tw
                 if (t > stop) if long else (t < stop):
                     stop, src = t, "trail"
         if (m <= stop if long else m >= stop):
@@ -107,7 +110,7 @@ def leg_cand(cx, ck, fb, fill, fill_s, long, mode, uref, time_bars=27):
     return cx.c[j], int(cx.secs[-1]), j, "eof"
 
 
-def sim_cand(P, ck, fire_list, mode):
+def sim_cand(P, ck, fire_list, mode, trail=None):
     cx = P["cx"]
     pnl = []; busy = -1
     for i, d0 in fire_list:
@@ -118,10 +121,10 @@ def sim_cand(P, ck, fire_list, mode):
         fill = float(P["mids"][i]); long = d0 > 0
         uref = P["prevd"].get(P["sd"][ib], None)
         uref = uref if uref and np.isfinite(uref) else None
-        px, xs, xb, reason = leg_cand(cx, ck, ib, fill, s0, long, mode, uref)
+        px, xs, xb, reason = leg_cand(cx, ck, ib, fill, s0, long, mode, uref, trail=trail)
         tot = (px - fill) if long else (fill - px)
         if reason == "faststop":
-            px2, xs2, xb2, _ = leg_cand(cx, ck, xb, px, xs, not long, mode, uref)
+            px2, xs2, xb2, _ = leg_cand(cx, ck, xb, px, xs, not long, mode, uref, trail=trail)
             tot += (px2 - px) if (not long) else (px - px2)
             xb = xb2
         pnl.append(tot)
@@ -158,16 +161,31 @@ def run(repo):
     print("|---|---|---|---|---|---|")
     per_m = {m: sim(Ps[m], fires[m], lambda *a: True, cooldown=WAIT) for m in Ps}
     print(row("M0 (frozen baseline, 1m clock)", per_m))
-    for mode, name in [("C1", "C1: M0 re-timed to 3m clock, time 27"),
-                       ("C2", "C2: trail + flat at 3m-pt3 (user)"),
-                       ("C3a", "C3a: exit at 3m-pt2, trail kept (user)"),
-                       ("C3b", "C3b: exit at 3m-pt2, no trail")]:
-        per_m = {m: sim_cand(Ps[m], cks[m], fires[m], mode) for m in Ps}
-        print(row(name, per_m))
+    if not GRID:
+        for mode, name in [("C1", "C1: M0 re-timed to 3m clock, time 27"),
+                           ("C2", "C2: trail + flat at 3m-pt3 (user)"),
+                           ("C3a", "C3a: exit at 3m-pt2, trail kept (user)"),
+                           ("C3b", "C3b: exit at 3m-pt2, no trail")]:
+            per_m = {m: sim_cand(Ps[m], cks[m], fires[m], mode) for m in Ps}
+            print(row(name, per_m))
+    else:
+        per_m = {m: sim_cand(Ps[m], cks[m], fires[m], "C3b") for m in Ps}
+        print(row("C3b reference (no trail)", per_m))
+        for mode in ("C2", "C3a"):
+            for arm in (2.0, 4.0, 6.0):
+                for wid in (2.5, 3.5, 4.5):
+                    per_m = {m: sim_cand(Ps[m], cks[m], fires[m], mode, trail=(arm, wid))
+                             for m in Ps}
+                    tag = " <= current" if (arm, wid) == (2.0, 2.5) else ""
+                    print(row(f"{mode}, arm {arm:.0f} / width {wid:.1f}{tag}", per_m))
 
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
     ap.add_argument("--repo", default=".")
+    ap.add_argument("--grid", action="store_true",
+                    help="trail arm x width grid under C2 and C3a (user round)")
     a = ap.parse_args()
+    if a.grid:
+        GRID = True
     run(a.repo)
