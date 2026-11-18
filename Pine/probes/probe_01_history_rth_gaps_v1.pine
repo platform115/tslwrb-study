@@ -1,0 +1,105 @@
+//@version=6
+// =============================================================================
+// PROBE 01 v1 — history depth / RTH filter / empty seconds
+// Purpose: setup probe, NOT a strategy component. Answers three questions:
+//   Q1. From a seconds chart, does a 1-minute request.security() call carry
+//       enough of its own history to cover 14+ regular sessions?
+//   Q2. Can the research window (08:30-15:00 CT) be filtered INSIDE that
+//       request, so day ranges are regular-hours only?
+//   Q3. How often does the seconds chart skip a second during regular hours
+//       (no bar printed when no trade)?
+// Implements: probe (no strategy spec)
+// Run on: ES1! with back-adjustment OFF (or the contract J charts), 1-second
+//   timeframe. Run twice: chart session Electronic, then Regular.
+// Session window implemented: 0830-1500 America/Chicago (research window;
+//   TradingView's own Regular setting is 0830-1515)
+// Data source validated against: none (this is a probe)
+// Known differences from the research implementation: n/a
+// Historical vs live behaviour: on live bars the request returns developing
+//   1-minute values. Irrelevant here; the table is read from loaded history.
+// request.security calls: 1 — chart symbol, "1", gaps_off, lookahead_off
+// Hardcoded values: session window, 3600 s day-jump cutoff
+// UNVERIFIED built-ins (not in reference/v6_signatures.md): table.new,
+//   table.cell, str.tostring, str.format_time, dayofmonth, math.max, math.min,
+//   math.round, parameter order of time(timeframe, session, timezone)
+// Changed from previous version: first version
+// =============================================================================
+indicator("S2 Probe 01 - history depth / RTH filter / empty seconds", overlay = true)
+
+string RTH_WINDOW = "0830-1500"        // research regular hours, exchange time
+string EXCH_TZ    = "America/Chicago"
+
+// Evaluated in the requested 1-minute context.
+// A session is counted as completed when the next session's first bar arrives.
+rthStats() =>
+    var int   sessionsDone = 0
+    var int   curDay       = na
+    var int   curStart     = na
+    var int   lastStart    = na
+    var float dayHigh      = na
+    var float dayLow       = na
+    var float lastRange    = na
+    bool inRth = not na(time(timeframe.period, RTH_WINDOW, EXCH_TZ))
+    int  d     = dayofmonth(time, EXCH_TZ)
+    if inRth
+        if na(curDay)
+            curDay   := d
+            curStart := time
+            dayHigh  := high
+            dayLow   := low
+        else if d != curDay
+            sessionsDone += 1
+            lastRange    := dayHigh - dayLow
+            lastStart    := curStart
+            curDay       := d
+            curStart     := time
+            dayHigh      := high
+            dayLow       := low
+        else
+            dayHigh := math.max(dayHigh, high)
+            dayLow  := math.min(dayLow, low)
+    [sessionsDone, lastRange, lastStart, bar_index]
+
+[reqSessions, reqLastRange, reqLastStart, reqBarIndex] = request.security(syminfo.tickerid, "1", rthStats(), gaps = barmerge.gaps_off, lookahead = barmerge.lookahead_off)
+
+// Capture what the request already knew at the first chart bar that had a value.
+var int firstSessions  = na
+var int firstReqBar    = na
+var int firstChartTime = na
+if na(firstSessions) and not na(reqSessions)
+    firstSessions  := reqSessions
+    firstReqBar    := reqBarIndex
+    firstChartTime := time
+
+// Q3: skipped seconds inside the research window, on the chart's own bars.
+bool chartInRth = not na(time(timeframe.period, RTH_WINDOW, EXCH_TZ))
+var int rthBars   = 0
+var int gapCount  = 0
+var int maxGapSec = 0
+if chartInRth and chartInRth[1]
+    int gapSec = int(math.round((time - time[1]) / 1000.0))
+    if gapSec < 3600                  // ignore the jump between two days
+        rthBars += 1
+        if gapSec > 1
+            gapCount  += 1
+            maxGapSec := math.max(maxGapSec, gapSec)
+
+var table t = table.new(position.top_right, 2, 12)
+
+row(int r, string k, string v) =>
+    table.cell(t, 0, r, k, text_color = color.white, bgcolor = color.black)
+    table.cell(t, 1, r, v, text_color = color.white, bgcolor = color.black)
+
+if barstate.islast
+    row(0, "Symbol", syminfo.tickerid)
+    row(1, "Chart timeframe", timeframe.period)
+    row(2, "Chart bars loaded", str.tostring(bar_index + 1))
+    row(3, "First chart bar (CT)", str.format_time(firstChartTime, "yyyy-MM-dd HH:mm:ss", EXCH_TZ))
+    row(4, "Q1: 1-min bars before first chart bar", str.tostring(firstReqBar))
+    row(5, "Q1: RTH sessions done at first chart bar (need 15+)", str.tostring(firstSessions))
+    row(6, "RTH sessions done now", str.tostring(reqSessions))
+    row(7, "Q2: last completed RTH session (CT date)", str.format_time(reqLastStart, "yyyy-MM-dd", EXCH_TZ))
+    row(8, "Q2: its 08:30-15:00 range, points", str.tostring(reqLastRange))
+    row(9, "Q3: RTH chart bars checked", str.tostring(rthBars))
+    row(10, "Q3: skipped-second gaps", str.tostring(gapCount))
+    row(11, "Q3: longest gap, seconds", str.tostring(maxGapSec))

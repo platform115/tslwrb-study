@@ -1,0 +1,104 @@
+//@version=6
+// =============================================================================
+// PROBE 02 v1 — 1-second bars read from inside a 1-minute chart
+// Purpose: setup probe, NOT a strategy component. Tests option (b) of Q16:
+//   run the detector on a 1-minute chart (which can hold 14+ sessions itself)
+//   and read 1-second bars through request.security_lower_tf.
+//   B1. Are 1-second intrabars available at all, and how far back?
+//   B2. How many intrabars come back, and how complete are they in RTH?
+//   B3. Do the chart's own 1-minute bars hold 15+ regular sessions?
+//   B4. On the live bar, does the 1-second array grow as the minute forms,
+//       and how far behind the clock is its newest entry?
+// Implements: probe (no strategy spec)
+// Run on: ES1!, back-adjustment OFF, 1-MINUTE timeframe, real-time data,
+//   market open. Run twice: chart session Regular, then Electronic.
+// Session window implemented: 0830-1500 America/Chicago
+// Data source validated against: none (this is a probe)
+// Known differences from the research implementation: n/a
+// Historical vs live behaviour: rows marked "Live" only fill on live bars and
+//   use varip (values kept across ticks, not rolled back). They read 0 / n/a
+//   until the script has seen live ticks. All other rows are from history.
+// request.security calls: 1 — request.security_lower_tf, chart symbol, "1S",
+//   tuple [time, close]. No lookahead parameter exists on this function.
+// Hardcoded values: session window, "1S", 60 seconds per bar for coverage
+// UNVERIFIED built-ins (not in reference/v6_signatures.md): array.size,
+//   array.last, barstate.isrealtime, timenow, varip, str.tostring with a
+//   format string, position.middle_right
+// Changed from previous version: first version
+// =============================================================================
+indicator("S2 Probe 02 - 1S intrabars from a 1-minute chart", overlay = true)
+
+string RTH_WINDOW = "0830-1500"
+string EXCH_TZ    = "America/Chicago"
+
+[ltfTimes, ltfCloses] = request.security_lower_tf(syminfo.tickerid, "1S", [time, close])
+
+int  n     = array.size(ltfTimes)
+bool inRth = not na(time(timeframe.period, RTH_WINDOW, EXCH_TZ))
+int  d     = dayofmonth(time, EXCH_TZ)
+
+// B3: regular sessions on the chart's own 1-minute bars.
+// A session is counted as completed when the next session's first bar arrives.
+var int sessionsDone = 0
+var int curDay       = na
+if inRth
+    if na(curDay)
+        curDay := d
+    else if d != curDay
+        sessionsDone += 1
+        curDay       := d
+
+// B1 / B2: how much 1-second data came back.
+var int barsWithData   = 0
+var int barsEmpty      = 0
+var int totalIntrabars = 0
+var int firstDataTime  = na
+var int rthBarsData    = 0
+var int rthIntrabars   = 0
+var int dataDays       = 0
+var int lastDataDay    = na
+if n > 0
+    barsWithData   += 1
+    totalIntrabars += n
+    if na(firstDataTime)
+        firstDataTime := time
+    if inRth
+        rthBarsData  += 1
+        rthIntrabars += n
+        if na(lastDataDay) or d != lastDataDay
+            dataDays    += 1
+            lastDataDay := d
+else
+    barsEmpty += 1
+
+// B4: live-bar behaviour. varip values survive between ticks of the same bar.
+varip int liveUpdates = 0
+varip int liveMaxSize = 0
+if barstate.isrealtime
+    liveUpdates += 1
+    liveMaxSize := math.max(liveMaxSize, n)
+
+float lagSec   = n > 0 ? (timenow - array.last(ltfTimes)) / 1000.0 : na
+float coverage = rthBarsData > 0 ? 100.0 * rthIntrabars / (rthBarsData * 60.0) : na
+
+var table t = table.new(position.middle_right, 2, 14)
+
+row(int r, string k, string v) =>
+    table.cell(t, 0, r, k, text_color = color.white, bgcolor = color.black)
+    table.cell(t, 1, r, v, text_color = color.white, bgcolor = color.black)
+
+if barstate.islast
+    row(0, "Symbol", syminfo.tickerid)
+    row(1, "Chart timeframe (must be 1)", timeframe.period)
+    row(2, "Chart bars loaded", str.tostring(bar_index + 1))
+    row(3, "B3: RTH sessions on chart's own bars (need 15+)", str.tostring(sessionsDone))
+    row(4, "B1: 1-min bars WITH 1S data", str.tostring(barsWithData))
+    row(5, "B1: 1-min bars WITHOUT 1S data", str.tostring(barsEmpty))
+    row(6, "B1: first bar with 1S data (CT)", na(firstDataTime) ? "none" : str.format_time(firstDataTime, "yyyy-MM-dd HH:mm", EXCH_TZ))
+    row(7, "B1: RTH days that have 1S data", str.tostring(dataDays))
+    row(8, "B2: total 1S intrabars retrieved", str.tostring(totalIntrabars))
+    row(9, "B2: RTH seconds that had a bar, %", na(coverage) ? "n/a" : str.tostring(coverage, "#.0"))
+    row(10, "Live: script updates seen on live bars", str.tostring(liveUpdates))
+    row(11, "Live: 1S intrabars in the forming bar now", str.tostring(n))
+    row(12, "Live: most 1S intrabars seen in a live bar", str.tostring(liveMaxSize))
+    row(13, "Live: clock minus newest 1S bar open, s", na(lagSec) ? "n/a" : str.tostring(lagSec, "#.0"))
