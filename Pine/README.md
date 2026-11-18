@@ -5,6 +5,26 @@ Not a backtest and not the source of truth. The Python research code is the sour
 a Pine script is a translation that is checked against it.
 
 Current scope: Strategy 2A entries (indicator only). 2B waits. Exits are not final.
+Everything in this folder implements Strategy 2A.
+
+## Decided design (J, 2026-11-18)
+
+**Route M**: the detector runs on a 1-minute, Electronic-hours ES1! chart. It computes the 14-session
+numbers from the chart's own bars and reads 1-second bars from inside the chart
+(`request.security_lower_tf`). A typed-in C(day) override input is kept for when fewer than 14
+sessions are available.
+
+Naming: **route M** = minute chart, self-computing. **route S** = seconds chart with a typed-in daily
+number (the fallback). These replace the earlier "option (b)" and "option (a)", which collided with
+the strategy names 2A/2B. The frozen file `probes/probe_02_ltf_seconds_v1.pine` still says
+"option (b)" in its header; read that as route M.
+
+## Build stages
+
+1. Readout indicator (14-session mean range, C(day), R_est). Acceptance gate: its numbers are checked
+   against the research side's reference values. No detector code before this passes.
+2. Alert test (Probe 03): does a server-side alert see the live 1-second data?
+3. Burst detector — NOT STARTED, waits for the rigid spec and reference outputs in `spec/`.
 
 ## Read in this order
 
@@ -37,5 +57,5 @@ Current scope: Strategy 2A entries (indicator only). 2B waits. Exits are not fin
 
 ## Related
 
-- Rules source: project doc `claude/pine-v6-agent-handoff.md` (to be amended, see OPEN_QUESTIONS).
+- Rules source: project doc `claude/pine-v6-agent-handoff.md` (amended 2026-11-18).
 - Strategy 2 research code: `Tests/P4_entry_determination/`.

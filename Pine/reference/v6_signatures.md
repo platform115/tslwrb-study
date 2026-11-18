@@ -27,9 +27,15 @@ COMPILED = accepted by the TradingView compiler on the date shown (proves it exi
 | `math.max`, `math.min`, `math.round` | accepted | COMPILED (Probe 01) | 2026-11-18 |
 | user function with `var` state as a `request.security` expression | accepted and ran | COMPILED (Probe 01) | 2026-11-18 |
 
+| `alert(message, freq)` | `freq` is one of `alert.freq_once_per_bar` (default), `alert.freq_once_per_bar_close`, `alert.freq_all`; alerts trigger only on the realtime bar; an alert runs a saved copy of the script and inputs made at creation | UM, Alerts | 2026-11-18 |
+| Alert rate limit | a script alert that triggers more than 15 times in 3 minutes is stopped automatically | TradingView help articles 43000597494, 43000690939 | 2026-11-18 |
+
 ## Used but unverified (waiting on a paste or a compile)
 
-None at present.
+Readout v01: `input.float`, `input.string`, `str.contains`, `math.abs`, `hour(time, timezone)`,
+`minute(time, timezone)`, `array.new<type>()`, `array.push`, `array.shift`, `array.avg`, `array.get`,
+`array.first`, `plot(..., display = display.data_window)`, `position.bottom_right`.
+Probe 03: `barstate.isconfirmed`, `position.top_center`.
 
 ## Compiled in Probe 02 (2026-11-18)
 

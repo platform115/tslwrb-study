@@ -17,7 +17,14 @@ Filled in by J. Scripts are written for exactly this setup; if it changes, updat
 | Alerts: how received (app / email / webhook) | ? | |
 | Platform (web / desktop app) | ? | |
 
-## Recommended symbol (proposed 2026-11-18, J to confirm)
+## Decided chart (J, 2026-11-18)
+
+ES1!, 1-minute timeframe, Electronic trading hours, real-time data. Route M. Reason for Electronic:
+the research takes the first regular-hours bar's true range from the last overnight bar's close, and
+the 10-bar true-range mean just after the open reaches into overnight bars; those bars only exist on
+an Electronic chart. Cost: about 16 regular sessions fit, a margin of about one over the 14 needed.
+
+## Symbol (recommended 2026-11-18; B-ADJ state still to confirm)
 
 ES1! with back-adjustment OFF. Reason: the research used the unadjusted front-month series, which
 changes contract at each roll; ES1! unadjusted is the nearest TradingView equivalent, including for

@@ -1,6 +1,6 @@
 # Pine conventions
 
-Status: PROPOSED 2026-11-18, awaiting J's approval. Items marked (J to confirm) are choices, not facts.
+Status: APPROVED by J 2026-11-18 (as committed in 5aeabfd).
 
 ## Non-negotiables
 
@@ -18,7 +18,7 @@ Status: PROPOSED 2026-11-18, awaiting J's approval. Items marked (J to confirm) 
 - Probes: `probe_<NN>_<topic>_v<N>.pine`
 - Lower case, underscores, no spaces.
 
-## Versions (J to confirm)
+## Versions
 
 - Before a file's first commit, compile fixes edit it in place.
 - After commit a file is frozen. Any change, including a bug fix, is a new version file with the

@@ -28,4 +28,4 @@ Same procedure as Probe 01 (`probe_01_RUN.md`), with these differences.
 | B2: RTH seconds that had a bar, % | Close to the 99.5% Probe 01 measured |
 | Live: script updates seen | Climbs steadily |
 | Live: 1S intrabars in the forming bar now | Grows through the minute, towards ~60 |
-| Live: clock minus newest 1S bar open | A second or two. A value near 60 means seconds only arrive when the minute closes, which kills option (b) for live use |
+| Live: clock minus newest 1S bar open | A second or two. A value near 60 means seconds only arrive when the minute closes, which kills route M for live use |
