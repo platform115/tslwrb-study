@@ -126,3 +126,20 @@ reproduce identical outcomes. NO new entry/signal script earns a registry
 row until its fire logic passes this harness. First run: all clean
 components pass on 300 fire seconds + 150 exits per training month; the
 known contaminated thrust is caught 300/300 (sensitivity proven).
+
+## ENTRY REBUILD PROGRAMME (user decision 2026-11-19)
+Order: (1) THE IMITATION STUDY, then (2) THE BOUNDED SEARCH (pre-registered
+candidate list + stopping rule, drafted for approval after the study).
+Names chosen to avoid the A/B collision with strategy names.
+User directives for the study:
+- WRBs / zones / KMEs return to the mix, with a changed level definition:
+  the BORDER AREAS of WRB bodies (bands, not exact prices), and only
+  (a) levels formed in the CURRENT session, plus (b) older levels whose
+  border area price has NEVER traversed between formation and now
+  ("virgin" levels). Previous-day levels that price has already crossed
+  are out.
+- Group his entries LOGICALLY BY TYPE from whatever the data reveals -
+  not by solved/unsolved.
+- Start with ONE training month.
+- Keep it honest, carefully: every feature computed from data at or before
+  the entry second; truncation-harness discipline applies.
