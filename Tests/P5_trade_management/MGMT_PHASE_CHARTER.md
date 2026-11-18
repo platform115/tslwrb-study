@@ -40,8 +40,14 @@ reversal, time stop, session close) is hereby FROZEN and NAMED **M0**.
    - "Relative reverse" of entry conditions: exit mechanisms built from the
      same measurement families as the entries (burst/thrust-like), with
      their own adaptations and thresholds, pointed at exits.
-   - WRB pt testing: the pt-ladder geometry (pt1/pt2/pt3) examined properly
-     as a target family in its own right.
+   - WRB pt testing - MECHANISM CORRECTED by user 2026-11-18: his
+     pt1/pt2/pt3 are SEQUENTIAL SAME-DIRECTION WRBs OCCURRING during the
+     trade (hold while they keep forming; 1st new WRB = pt1, 2nd = pt2,
+     3rd = pt3) - an event count / progress clock, NOT static price levels
+     from prior WRBs ("he's not looking at where they are in relation to
+     previous WRBs... at least rarely"). M0's size-based pt ladder (uref
+     multiples) is an approximation, not this mechanism. T-EX04's
+     level-geometry test does not bear on this.
 
 ## Parked entry items (address during breaks from management work)
 1. Wire the burst-window rule live (code currently fixed 8s).
