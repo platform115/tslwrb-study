@@ -85,3 +85,14 @@ are frozen together.
   BRACKET reality: show mid (slightly optimistic) and 1-tick-against
   (slightly pessimistic) side by side; the truth sits between. Never
   discount numbers one-sidedly in either direction.
+
+## Post-T-EX07 direction (user, 2026-11-18)
+Structural change confirmed as the path (trail tuning rejected - T-EX07).
+- #1 MEASURED MOVE-DEATH EXIT: active design discussion first (variables,
+  adapters), then derivation, then trade sim.
+- RE-ENTRY after profit-protect exits: wanted SOON, after the basics are
+  scripted and running. User note: continuation may already be captured as a
+  new 2A/2B fire; where momentum is lower a DIFFERENT re-entry trigger may
+  be needed - parked as its own design question.
+- SCALE-OUT: necessary eventually, too early now - 1-contract trades are
+  the norm for a while.
