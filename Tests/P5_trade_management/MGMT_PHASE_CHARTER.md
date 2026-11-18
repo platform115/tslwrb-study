@@ -72,8 +72,10 @@ are frozen together.
   instantiated and frozen as TWO configs (operationally two strategies,
   structurally one design). Revisit if later measurements break the
   same-shape finding.
-- REPORTING RULE: be conservative/realistic, not optimistic - future
-  anatomy and all candidate tests must (a) de-overlap clustered fires
-  (one path per episode) for any number used in decisions, and
-  (b) where fills matter, show a pessimistic variant (entry 1 tick
-  against) alongside mid.
+- REPORTING RULE: REALISTIC, biased in neither direction (user
+  clarification 2026-11-18). (a) De-overlap clustered fires (one path per
+  episode) for any number used in decisions - this corrects a known
+  double-count, it is accuracy, not pessimism. (b) Where fills matter,
+  BRACKET reality: show mid (slightly optimistic) and 1-tick-against
+  (slightly pessimistic) side by side; the truth sits between. Never
+  discount numbers one-sidedly in either direction.
