@@ -1,1 +1,2 @@
 cef97b9ed2e45b5b654b02759851d8107a5979940e4353b84b5f9231590d90ff  Data/inputs/his_zone_refs.parquet
+eac1323c5d664a5835c6d294de4f88849893479b66ec2be87baa39d0363e9aa2  Data/inputs/his_signal_stamps.parquet
