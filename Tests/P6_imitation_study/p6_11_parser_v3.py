@@ -91,7 +91,19 @@ def parse_text(t, ts=None):
     tier = next((k for k, p in TIER if re.search(p, tl)), "none")
     if kind == "key_kme_wrb" and tier == "none":
         tier = "key"
-    dm = DIRECTION.search(tl) if kind in ("hidden_gap", "shadow_interval", "wrb") else None
+    # v3.1 FIX (T-IM18 spot-check): direction binds to the token ADJACENT to
+    # the kind phrase ("Up WRB Hidden GAP"), never the first up/down in the
+    # message ("retracing back DOWN below ... the UP WRB Hidden GAP").
+    dm = None
+    if kind in ("hidden_gap", "shadow_interval", "wrb"):
+        m0 = found[0][1]
+        pre = tl[max(0, m0.start() - 25):m0.start()]
+        hits_pre = list(DIRECTION.finditer(pre))
+        if hits_pre:
+            dm = hits_pre[-1]
+        else:
+            seg = tl[m0.start():m0.end() + 15]
+            dm = DIRECTION.search(seg)
     state = next((k for k, p in STATE if re.search(p, tl)), "none") if kind == "hidden_gap" else "none"
     rec = next((k for k, p in RECENCY if re.search(p, tl)), "none")
     tfm = TFTOK.search(tl)

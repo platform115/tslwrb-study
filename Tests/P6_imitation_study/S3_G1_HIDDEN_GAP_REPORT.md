@@ -91,3 +91,41 @@ exact verification - collect and use them as the correctness test set.
 Fix the three matcher defects (direction binding in parser; relation-aware
 and role-aware geometry in the matcher), build the gold-anchor set, re-run
 identification, and hand-check again. No definition change.
+
+---
+# ITERATION 3 — MATCHER FIXES + GOLD ANCHORS (T-IM19)
+Fixes applied: (1) parser v3.1 direction binds to the token adjacent to the
+kind phrase (bug case verified flipped to Up; DB regenerated, checksum
+updated); (2) relation-aware geometry (broken = price allowed beyond the
+named edge, 2x tol on break side); (3) role-aware edges (his S area = zone
+LO, R area = zone HI); (4) ES-only calibration set (a YM ref was found
+contaminating the gold set - non-ES deferred per charter).
+
+## Identification, ES-only relational refs (tol 3)
+| TF set | miss / IDENTIFIED / ambiguous | null unique |
+|---|---|---|
+| 1/3/5 (prior) | 10% / 64% / 26% | 44% |
+| 5m only | 30% / 62% / 8% | 49% |
+(Iteration 2 baseline: 15/52/32.) Most-recent-stated refs: 70%.
+
+## Gold anchors (7 refs where HE states the object's clock time or size)
+- 2025-08-14 "Big Down WRB Hidden GAP interval of the 0830am KME Report":
+  UNIQUE match, CLOCK-VERIFIED (5m bar 08:30-35 ET, 29.25-pt gap).
+- 2021-11-22 "big Up WRB Hidden GAP of 0948am est": correct 5m object now
+  IN the candidate set (iteration-2 fix validated); clock stamp
+  disambiguates it from 1 wrong co-candidate.
+- 2021-11-08 "of 0938am est": clock pins the exact 1m gap among 4.
+- 2021-06-16 "KME @ 1030am produced a questionable WRB Hidden GAP": NOT
+  matchable by price proximity - he is describing FORMATION, price had
+  left; formation references need event-time matching, not proximity.
+- 1 ref was YM (filter added), 2 have no decisive verifier.
+OBSERVATION: the clock-verified objects live on 5m; KME-attached gaps may
+be a 5m phenomenon (consistent with 5m-only's 62%/8% identification).
+
+## Where G1 stands (gate)
+Definition: unchanged (Perry-sourced). Matcher: v3 (role/relation/direction
+aware). 64% of ES relational refs pin a unique object; clock stamps verify
+correctness where available. Known limits: formation-references need
+event-time matching; ~26% two-candidate ambiguity (clock/TF context would
+resolve some); null uniqueness floor ~44% means the match set is a working
+hypothesis to be validated by use (S4 lifetime + S6 entries), not ground truth.

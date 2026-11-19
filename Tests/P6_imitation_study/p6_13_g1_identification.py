@@ -43,7 +43,10 @@ BIGRE = re.compile(r"\bbig\b|\bhuge\b|\blarge\b", re.I)
 
 
 def candidates(t, px, sd0, msg_dir, msg_recent, msg_big, Z, sess_list,
-               ts1, h1, l1, tfs, tol=TOL):
+               ts1, h1, l1, tfs, tol=TOL, role=None, relation=None):
+    """v3 matcher (T-IM19): role-aware edge (his S area = zone LO, R area =
+    zone HI) and relation-aware geometry (broken = price allowed BEYOND the
+    named edge, up to 2x tol on the break side)."""
     si = sess_list.index(sd0)
     pool = []
     for k in range(K_SESS):
@@ -69,8 +72,22 @@ def candidates(t, px, sd0, msg_dir, msg_recent, msg_big, Z, sess_list,
             if key not in best or z["comp"] > best[key]["comp"]:
                 best[key] = z
         pool = list(best.values())
-    near = [z for z in pool
-            if (z["lo"] - tol) <= px <= (z["hi"] + tol)]
+    def accept(z):
+        if role == "S":
+            edge = z["lo"]
+            if relation == "broken":
+                return (edge - 2 * tol) <= px <= (edge + tol)
+            return abs(px - edge) <= tol
+        if role == "R":
+            edge = z["hi"]
+            if relation == "broken":
+                return (edge - tol) <= px <= (edge + 2 * tol)
+            return abs(px - edge) <= tol
+        lo, hi = z["lo"], z["hi"]
+        if relation == "broken":
+            return (lo - 2 * tol) <= px <= (hi + 2 * tol)
+        return (lo - tol) <= px <= (hi + tol)
+    near = [z for z in pool if accept(z)]
     # dedupe near-identical bands across TFs (same object seen twice):
     # two candidates whose bands overlap >=50% of the smaller are one object
     merged = []
@@ -91,7 +108,8 @@ def run(repo):
     b = b.sort_values("ts_event").reset_index(drop=True)
     b["sd"] = b.session_date.astype(str)
     zr = pd.read_parquet(os.path.join(repo, "Data/inputs/his_zone_refs.parquet"))
-    hg = zr[(zr.kind == "hidden_gap") & (zr.relation.isin(RELATIONAL))].copy()
+    hg = zr[(zr.kind == "hidden_gap") & (zr.relation.isin(RELATIONAL))
+            & (zr.instrument == "ES")].copy()   # non-ES deferred (charter)
     print(f"relational hidden-gap refs: {len(hg)} of {len(zr[zr.kind=='hidden_gap'])}")
     ts1 = b.ts_event.dt.tz_convert(None).to_numpy()
     h1, l1, c1 = b.high.to_numpy(), b.low.to_numpy(), b.close.to_numpy()
@@ -128,7 +146,9 @@ def run(repo):
         j = np.searchsorted(ts1, t - np.timedelta64(60, "s"), "right") - 1
         refs.append(dict(t=t, px=c1[j], sd=s, dir=r.direction,
                          recent=(r.recency_cue == "most_recent"),
-                         big=bool(BIGRE.search(r.raw)), raw=r.raw))
+                         big=bool(BIGRE.search(r.raw)), raw=r.raw,
+                         role=(r.role if isinstance(r.role, str) else None),
+                         relation=r.relation))
 
     # null: random RTH-session times from the same sessions, random descriptors
     rth = b[b.session == "RTH"]
@@ -156,7 +176,8 @@ def run(repo):
         cnt = []
         for r in refs:
             cs = candidates(r["t"], r["px"], r["sd"], r["dir"], r["recent"],
-                            r["big"], Z, sess_list, ts1, h1, l1, tfs)
+                            r["big"], Z, sess_list, ts1, h1, l1, tfs,
+                            role=r["role"], relation=r["relation"])
             cnt.append(len(cs))
         cnt = np.array(cnt)
         ncnt = []
