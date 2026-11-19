@@ -51,6 +51,9 @@ flagged for review, never forced into an existing class.
 S0. TIMEFRAME USAGE MINING - verify, don't assume: extract every timeframe
     mention in his messages with context (entry / exit / structure / zone);
     test the "1m for entries" hypothesis. Output: TF usage report. REVIEW.
+    [DONE - T-IM14, S0_TF_USAGE_REPORT.md. DECIDED TF SET: 1m, 2m, 3m, 5m,
+    15m (+60m for zones). 1m kept on user's direct observation + his docs;
+    corpus added 2m/15m; 15m/60m are his "higher time frames".]
 S1. PARSER v3 SPEC - full pattern inventory (incl. anything new from S0);
     open-enum policy; correction-linking; boilerplate/personal/instrument
     filters. Output: spec + 50 sample parses + precision vs the T-IM13 hand

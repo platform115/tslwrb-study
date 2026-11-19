@@ -1,6 +1,6 @@
 # S0 — TIMEFRAME USAGE REPORT (T-IM14)
 Structure program step S0. Source: his 31,838 messages, whole corpus.
-Script: `p6_10_tf_usage_mining.py`. STATUS: AWAITING REVIEW.
+Script: `p6_10_tf_usage_mining.py`. STATUS: REVIEWED - CLOSED (decision below).
 
 ## Method and the trap it caught
 A naive mention count (312 hits) is dominated by **durations**, not chart
@@ -51,9 +51,12 @@ What his own statements support instead:
 - The 2026-03-02 pair is the strongest single datum: stated chart set +
   structure tied to a named TF + immediate trading.
 
-## Proposed consequence for S3 (PROPOSAL ONLY — not applied)
-Structure generators should be computed on **2m, 3m, 5m, 15m (and 60m for
-zones)** rather than the assumed 1m/3m/5m. Note the existing typology
-border catalog (p6_1) used TFS=(1,3,5) — built before this evidence; its
-descriptive results stand but any level machinery going forward should use
-the evidenced set. Awaiting decision at this review gate.
+## DECISION (review gate passed, user 2026-11-20)
+TF set for structure generation: **1m, 2m, 3m, 5m, 15m (+60m for zones)**.
+1m is KEPT despite its single corpus mention: user has directly observed him
+using 1m many times and it appears in his documentation — it is implied, not
+narrated, in the chat room. Corpus evidence added 2m and 15m to the set and
+established 15m/60m as his "higher time frames" (context/structure, not
+execution). The p6_1 border catalog (1/3/5) predates this; its descriptive
+results stand; all level machinery forward uses the decided set.
+STATUS: REVIEWED - CLOSED.
