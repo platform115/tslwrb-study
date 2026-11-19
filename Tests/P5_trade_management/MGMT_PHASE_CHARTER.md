@@ -143,3 +143,16 @@ User directives for the study:
 - Start with ONE training month.
 - Keep it honest, carefully: every feature computed from data at or before
   the entry second; truncation-harness discipline applies.
+
+## ZONE/LEVEL WORK CONSTRAINTS (user, 2026-11-19)
+- Resolution tolerance: within ~1 POINT is good enough; tick precision not
+  expected.
+- His chart timeframes: mostly 1m / 3m / 5m (not exclusively) - zone
+  construction searches those first.
+- RECENCY RULE - the anti-saturation principle: active levels are SAME-DAY
+  KMEs and SAME-DAY-OR-MOST-RECENT WRBs "for the most part". Levels are NOT
+  valid forever. The failure mode to prevent: "there are levels all over the
+  chart" - he watches SPECIFIC ones; the work is finding WHICH.
+- Instrument tagging required: he also discusses NQ/VIX/YM - non-ES
+  references flagged, never silently mixed in (parser v2 does this).
+- PROCESS RULE (user): no assumptions - ASK when unsure.

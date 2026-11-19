@@ -23,23 +23,26 @@ import os, re, sys
 import numpy as np
 import pandas as pd
 
-KINDS = [
+KINDS = [   # v2: level_sr BEFORE zone_area (S/R-area lines were being buried)
     ("key_kme_wrb", r"key\s+kme\s+wrb|kme\s+wrb\s+zone"),
     ("kme", r"\bkme\b"),
     ("wrb_zone", r"wrb\s+(?:zone|area)"),
     ("wrb", r"\bwrb\b"),
+    ("level_sr", r"\b[SR]\s+area\b|\blevel\b|\bsupport\b|\bresistance\b"),
     ("zone_area", r"\bzone\b|\barea\b"),
-    ("level_sr", r"\blevel\b|\bsupport\b|\bresistance\b|\b[SR]\s+area\b"),
     ("range", r"trading\s+range|\brange\b"),
 ]
+INSTR = [("NQ", r"\bnq\b|nasdaq"), ("VIX", r"\bvix\b"),
+         ("YM", r"\bym\b|\bdow\b"), ("CL", r"\bcl\b|crude"),
+         ("TF/RTY", r"\brty\b|russell")]
 RELS = [
     ("reached", r"reach|tagged|\bhit\b|touch"),
-    ("testing", r"\btest|prob(?:e|ing)|attack|challeng"),
+    ("testing", r"test|prob(?:e|ing)|attack|challeng"),
     ("approaching", r"approach|coming\s+(?:up|down)|heading|push(?:ing)?\s+(?:up|down|toward)"),
     ("failed_held", r"\bfail|reject|\bheld\b|\bhold(?:ing)?\b|defend|bounc"),
     ("above", r"\babove\b"),
     ("below", r"\bbelow\b"),
-    ("at_near", r"\b(?:at|near|around)\b|@"),
+    ("at_near", r"\b(?:at|near|around|on|off|stuck|sitting|inside|within)\b|@"),
 ]
 PRICE = re.compile(r"\b([1-9]\d{3}(?:\.(?:25|50|5|75|00|0))?)\b")
 SIDE = re.compile(r"\b([SR])\s+area\b", re.I)
@@ -61,12 +64,14 @@ def extract(repo="."):
         prices = [float(x) for x in PRICE.findall(t)][:2]
         side = (SIDE.search(t) or [None, None])[1] if SIDE.search(t) else None
         is_event = bool(EVENT.search(tl))
+        instr = next((k for k, p in INSTR if re.search(p, tl)), "ES")
         if prices:
             ref_type, conf = "explicit_price", ("high" if kind != "zone_area" else "med")
         elif is_event:
             ref_type, conf = "event", "med"
         elif rel != "none":
-            ref_type, conf = "relational", ("med" if kind in ("key_kme_wrb", "kme", "wrb_zone", "wrb") else "low")
+            ref_type, conf = "relational", ("med" if (kind in ("key_kme_wrb", "kme", "wrb_zone", "wrb", "level_sr")
+                                                     or SIDE.search(t)) else "low")
         else:
             ref_type, conf = "mention", "low"
         rows.append(dict(
@@ -75,7 +80,8 @@ def extract(repo="."):
             price_1=prices[0] if prices else np.nan,
             price_2=prices[1] if len(prices) > 1 else np.nan,
             side_label=side.upper() if side else None,
-            confidence=conf, needs_review=(conf == "low"), raw=t[:200]))
+            instrument=instr,
+            confidence=conf, needs_review=(conf == "low" or instr != "ES"), raw=t[:200]))
     df = pd.DataFrame(rows)
     out = os.path.join(repo, "Data/inputs/his_zone_refs.parquet")
     df.to_parquet(out)
@@ -83,6 +89,7 @@ def extract(repo="."):
     print("\nby ref_type:"); print(df.ref_type.value_counts().to_string())
     print("\nby kind (top):"); print(df.kind.value_counts().head(7).to_string())
     print("\nconfidence:"); print(df.confidence.value_counts().to_string())
+    print("\ninstrument:"); print(df.instrument.value_counts().to_string())
     print("\nper data month:")
     for m in ("2025-10", "2022-02", "2021-09", "2024-11"):
         g = df[df.month == m]
