@@ -1,92 +1,77 @@
-# PROJECT OVERVIEW TREE
-> The one-page map. Updated 2026-11-19 after the lookahead reset (T-EN99).
-> Detail lives in the registry (Tests/test_registry_rows.tsv) and phase docs.
+# PROJECT TREE — components and their relationships
+> Updated 2026-11-19. Arrows show what feeds, became, or governs what.
 
-## PHASES
-- P1-P3  (done)    Data/infrastructure; Strategy 1 era; early imitation work
-- P4     (HALTED)  Strategy 2 mechanical entries - lookahead found (T-EN99);
-                   honest edge: none (T-EN100). Clean pieces salvaged.
-- P5     (paused)  Trade management - M1 built & adopted; full resumption
-                   waits for honest entries (M2 planning begins per user)
-- P6     (ACTIVE)  THE IMITATION STUDY - learn entry selection from HIS trades
-- next   BOUNDED SEARCH (pre-registered, stopping rule) -> validation ->
-         purchase-month final exam
+```
+ES TRADING PROJECT (reverse-engineer wrbtrader -> build our own strategies)
+|
++-- DATA
+|   +-- Market data (Databento)
+|   |   +-- es_1m_front bars (all sessions, roll-flagged)
+|   |   +-- per-second mids (TBBO) --feeds--> burst measure, fill engine
+|   |   +-- flow_per_sec (signed volume), book_per_sec (2 months)
+|   |   +-- month budget
+|   |       +-- training 2025-10 (ACTIVE - sole month until entries select)
+|   |       +-- training 2022-02 (waiting)
+|   |       +-- reserved 2021-09, 2024-11 (9 reads, pre-freeze only, closed)
+|   |       +-- purchase x4 (SEALED - final exam)
+|   +-- His data (ground truth - the only proven edge)
+|       +-- tsl_episodes_clean: entries/adds/exits/realized P&L
+|       +-- wrb_messages: 31,838 msgs, trade_action tags (his explanations)
+|       +-- chat_activity: per-minute presence (was he there)
+|       +-- his_kme_times / kme_calendar
+|
++-- METHODS & GATES  --govern every branch below--
+|   +-- truncation harness (lookahead gate; standing, after T-EN99)
+|   +-- per-second fill engine (honest fills/stops)
+|   +-- registry: T-EN (entries/audits) T-EX (management) T-IM (imitation)
+|   +-- rules: pre-freeze before reserved reads | derive-from-measurement |
+|       maximin | two-sided reporting | propose-then-confirm | commit per test
+|
++-- STRATEGIES
+|   +-- Strategy 1 (v1-v11)  [FROZEN - clean code, honestly unprofitable]
+|   |   +-- 10-condition score signals --revived--> P6 separator (AUC .727)
+|   |   +-- v11 exit stack --became--> M0
+|   +-- Strategy 2  [ENTRIES VOID - thrust lookahead, T-EN99/100]
+|       +-- detectors
+|       |   +-- D1 8s-burst --was core of--> 2A/2B; clean piece kept in toolkit
+|       |   +-- D4 quiet-tape [parked] --aimed at--> quiet-46% group (P6)
+|       |   +-- D6, D7 [retired]
+|       +-- 2A (quality) / 2B (volume) / overnight  [all void]
+|       +-- adapters (clean, reusable by any future entry)
+|           +-- C(day) rolling ratio | atr10 | trailing-pct rule | gap rule
+|
++-- TRADE MANAGEMENT  (independent layer - works on ANY entry source)
+|   +-- M0 = v11 sketch  [frozen control, never modified]
+|   +-- M1 = stall clock [ADOPTED] 
+|   |   +-- RTH config S=30 / ETH config S=90 (band-derived)
+|   |   +-- + session close + inert rails (hard stop, time stop)
+|   |   +-- proven: beats M0 on identical fires; profits on HIS entries
+|   +-- M2 [planned next]
+|       <--built from-- his-vs-M1 differences on identical entries
+|                       (he ~+620 scale-confounded vs our +108, T-IM05)
+|
++-- ACTIVE PHASE: P6 IMITATION STUDY  (entry detection & selection)
+|   +-- object of study: HIS 92 first entries, 2025-10 only
+|   +-- typology v0: momentum-join 34% | drift-join 14% | fade 7% | quiet 46%
+|   +-- separators found (within momentum-join, n=14 - leads not findings):
+|   |   score-signal .727 | early-session .670 | KME-window .667
+|   |   stacked: 176/day -> 10.7/day at ~2% precision (ceiling suspected)
+|   +-- grouping axes to build (user 2026-11-19):
+|   |   presence-known | commentary-explained | KME-tf-WRB rule-catchable
+|   +-- target: a % of his entries caught PER DAY by one or several small
+|   |   systems; one-rule-for-all not expected
+|   +-- feeds--> BOUNDED SEARCH (pre-registered candidates + stopping rule)
+|                --> validation --> purchase-month exam
+|
++-- TRANSLATION / LIVE  (downstream consumers of frozen results)
+    +-- Pine route M (TradingView)
+    |   +-- stage 1 readout + alert probe [ACTIVE - clean definitions]
+    |   +-- stage 2 detector + fire vectors [HALTED until honest entries]
+    +-- Python runner
+        +-- handoff doc written; Stage-1 shadow logger waits for a detector
 
-## STRATEGIES
-- Strategy 1 (v1-v11)   FROZEN. Clean code, honestly unprofitable. Reference.
-- Strategy 2A / 2B      ENTRIES VOID (lookahead). The 8s burst trigger is
-                        clean code but loses alone. No honest entry exists yet.
-- (2A overnight)        Void with them.
-
-## MANAGEMENT PLANS
-- M0  v11 sketch        FROZEN control. Not modified, ever.
-- M1  stall-30 (RTH) / stall-90 (ETH) + session close + rails
-                        ADOPTED. Clean (harness-passed). Profits on HIS real
-                        entries (+107.8, DD 0, T-IM05). Not modified much/at all.
-- M2  (planned)         Built from THE DIFFERENCES between his management and
-                        M1 on identical entries (he: ~+620 scale-confounded vs
-                        our +108). First step: dissect his adds/exits per
-                        episode (n_entries, entry_prices, exit_prices held).
-
-## DETECTORS (historical layer)
-- D1          became the 2A/2B burst core - clean, void as a strategy
-- D4          quiet-tape - parked, aimed at the quiet 46% entry mass
-- D6, D7      retired
-- 10-cond score signals  retired from profit lane; REVIVED as the best
-              within-type separator (AUC 0.727, T-IM03)
-
-## CLEAN TOOLKIT (survives the reset; all harness-passed)
-per-second mids & burst measure | C(day) rolling ratio | atr10 | gap clock |
-flow per-second (signed/total) | book_per_sec (2 months) | score signals |
-KME calendar + his KME times | WRB catalogs | M1 exits | per-second fill
-engine | TRUNCATION HARNESS (standing gate: no new signal without a pass)
-
-## HIS-DATA ASSETS (imitation study fuel)
-tsl_episodes_clean (entries/exits/adds/realized P&L per episode) |
-wrb_messages (31,838 msgs, trade_action tags - HIS EXPLANATIONS) |
-chat_activity (per-minute presence - WAS HE THERE) | his_kme_times
-
-## REGISTRY & DATA BUDGET
-- Tests: T-EN1..101 (entries+audits), T-EX01..14 (management), T-IM01..05
-  (imitation study). Every test scripted, committed, 21-col row.
-- Training (active): 2025-10, 2022-02 - current work = 2025-10 ONLY until
-  entries select a good share of his trades (user directive).
-- Reserved: 2021-09, 2024-11 (9 reads, pre-freeze discipline; closed for now).
-- Purchase months: 4, SEALED - final exam only.
-
-## ACTIVE WORKSTREAMS (user-set, 2026-11-19)
-1. ENTRY GROUPING of his trades, new axes (data confirmed available):
-   a. presence-known entries (chat_activity: he was demonstrably there)
-   b. commentary-explained entries (wrb_messages around entry time; his
-      stated reasons; exit-level descriptions reveal his price interests)
-   c. KME-window WRBs on specific timeframes with known entry conditions -
-      catch them whether he took them or not
-   d. further groups as the data reveals them (typology v0: momentum-join /
-      drift-join / fade / quiet)
-   GOAL: some % of his entries caught per day by A SYSTEM OR SEVERAL -
-   multiple small systems accepted, one-rule-for-all NOT expected.
-   METHOD: start with the group we know the MOST about; find price-action
-   markers per group; selectivity matters (few non-his unless they work).
-2. MANAGEMENT: find the his-vs-M1 differences on identical entries; distill
-   into M2. M0/M1 stay essentially untouched.
-
-## PARKED - TRY SOON (consolidated 2026-11-19)
-- Active-window restriction of lookalikes (presence data) - precision ceiling
-- His adds/exits dissection per episode (feeds M2)
-- Performance-target reframing (select moments that WIN under M1, not
-  moments that match him) - candidate for the bounded search
-- Finer tape shapes (pullback-then-resume; final 10-20s structure)
-- Flow/print microstructure (large prints, imbalance persistence; book data)
-- Day-type context (trend vs range day from early stats)
-- Cross-market lead-lag (NQ/YM; YM interest long-parked)
-- D4 quiet-tape applied to the quiet 46%
-- Per-type separator stacks beyond T1 (drift-join, fade)
-- Pine stage 2 (detector + fire vectors) - HALTED until honest entries exist
-- Python runner Stage 1 shadow logger - waits for an honest detector
-- Burst-window rule wiring; 2B percentile adapter; trailing-form equivalence
-  check (entry-era items, moot until entries exist again)
-
-## STANDING RULES (unchanged)
-Pre-freeze before any reserved-month read | derive numbers from measurements
-| maximin | conservative two-sided reporting | truncation harness gate |
-registry row + commit per test | propose-then-confirm decisions
+PARKED - TRY SOON: active-window restriction | his adds/exits dissection
+(feeds M2) | performance-target reframing | finer tape shapes | flow/print
+microstructure | day-type | NQ/YM lead-lag | D4-on-quiet | per-type stacks
+beyond T1 | burst-rule wiring etc. (moot till entries exist)
+```
