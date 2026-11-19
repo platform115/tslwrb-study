@@ -71,18 +71,21 @@ def battery(C, t, d=None):
     def idx(back):
         return int(np.searchsorted(secs, t - back))
     # moves, many windows (ticks, toward d or absolute)
-    for w in (8, 30, 60, 120, 300, 900):
+    # (user 2026-11-19: added 10/15/20/45s; finer grids come later the way 8s was found)
+    for w in (8, 10, 15, 20, 30, 45, 60, 120, 300, 900):
         out[f"mv{w}"] = sgn((px - mids[min(idx(w), j)]) / TICK)
     # ranges & compression at several horizons
     def rng(a, b=0):
         seg = mids[idx(a):(j + 1 if b == 0 else idx(b))]
         return (seg.max() - seg.min()) / TICK if len(seg) > 10 else np.nan
-    for w in (120, 300, 900, 1800):
+    for w in (30, 60, 120, 300, 900, 1800):
         out[f"rng{w}"] = rng(w)
-    base5 = np.nanmedian([rng(300 + k * 300, k * 300) for k in range(1, 12)])
-    base15 = np.nanmedian([rng(900 + k * 900, k * 900) for k in range(1, 8)])
-    out["comp5"] = out["rng300"] / base5 if base5 and base5 > 0 else np.nan
-    out["comp15"] = out["rng900"] / base15 if base15 and base15 > 0 else np.nan
+    # compression at SHORT frames too (user 2026-11-19): current w-window range
+    # vs median of prior same-width windows (count capped by a 1-hour lookback)
+    for w in (30, 60, 120, 300, 900):
+        k = max(3, min(11, 3600 // w))
+        base = np.nanmedian([rng(w + i * w, i * w) for i in range(1, k + 1)])
+        out[f"comp{w}"] = out[f"rng{w}"] / base if base and base > 0 else np.nan
     # vol-of-tape ratios
     v2 = np.nanstd(dif[idx(120):j + 1]); v5 = np.nanstd(dif[idx(300):j + 1])
     v30 = np.nanstd(dif[idx(1800):j + 1])
@@ -90,10 +93,12 @@ def battery(C, t, d=None):
     out["volr5"] = v5 / v30 if v30 > 0 else np.nan
     # volume rates and ratio
     ctv, csv = C["ctv"], C["csv"]
-    for w, nm in ((60, "vrate1"), (300, "vrate5"), (900, "vrate15")):
-        out[nm] = (ctv[j + 1] - ctv[idx(w)]) / w
-    out["vratio5_30"] = (out["vrate5"] / ((ctv[j + 1] - ctv[idx(1800)]) / 1800)
-                         if ctv[j + 1] > ctv[idx(1800)] else np.nan)
+    # volume rates, granular through minutes (user 2026-11-19)
+    for w in (10, 30, 60, 120, 180, 300, 900):
+        out[f"vrate{w}"] = (ctv[j + 1] - ctv[idx(w)]) / w
+    v30m = (ctv[j + 1] - ctv[idx(1800)]) / 1800
+    for w in (60, 120, 300):
+        out[f"vratio{w}_30m"] = out[f"vrate{w}"] / v30m if v30m > 0 else np.nan
     # signed flow toward d (c/s), several windows
     for w, nm in ((60, "flow1"), (300, "flow5"), (900, "flow15")):
         v = (csv[j + 1] - csv[idx(w)]) / w
