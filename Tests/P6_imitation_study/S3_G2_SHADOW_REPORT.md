@@ -1,5 +1,8 @@
 # S3 — GENERATOR 2 (Long Upper/Lower Shadow intervals) REPORT (T-IM21)
-> Status: AWAITING REVIEW. Script: `p6_14_g2_shadow.py`.
+> Status: CLOSED - OPTION A (user 2026-11-20). D2 + forced most-recent on
+> full ranges is the PROVISIONAL G2 selection. Open questions (D1 vs D2,
+> full range vs wick band, TF) go to S4 re-reference tracking. Shadows are
+> revisited there before anything downstream consumes them.
 
 ## Definitions tested (S2-approved, loose first)
 Anatomy: upper = high − max(o,c); lower = min(o,c) − low; noise floor
