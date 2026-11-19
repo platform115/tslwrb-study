@@ -54,3 +54,40 @@ null as hygiene. No definition change — selection layer only.
 Zone candidacy and fill state depend only on completed bars ≤ t by
 construction. A formal truncation-harness extension for generator outputs
 is due before S4 consumes them (flagged, not yet written).
+
+---
+# ITERATION 2 — OBJECT IDENTIFICATION (T-IM18, p6_13)
+User direction: saturation was known; the task is identifying THE gaps he
+references; TF prior 1m/3m/5m unless he specifies otherwise.
+
+## Identification result (71 relational refs, tol 3 pts, his own descriptors applied)
+| TF set | miss / IDENTIFIED / ambiguous (med n) | null unique |
+|---|---|---|
+| 1/3/5 (prior) | 15% / 52% / 32% (med 2) | 47% |
+| 1/2/3/5/15 | 14% / 46% / 39% | 50% |
+| 2m only | 28% / 63% / 8% | 47% |
+Descriptor-rich refs do better (most-recent stated: 63% identified; no
+descriptors: 17%). Null uniqueness ~45-50% means UNIQUENESS ALONE is not
+proof of correctness - correctness comes from spot-checks.
+
+## Spot-check findings (12 hand-checked cases) - three matcher defects found
+1. DIRECTION BINDING BUG: "retracing back DOWN below the S area of the most
+   recent UP WRB Hidden GAP" - parser takes the FIRST up/down in the
+   message; must bind to the (Up|Down) immediately preceding "WRB Hidden
+   GAP" (his consistent syntax).
+2. RELATION-AWARE GEOMETRY MISSING: "broke below the S area" means price is
+   BEYOND the edge - the within-3-pts band test wrongly excludes the true
+   object once price has followed through (verified on the 0948am case:
+   the right 5m gap [4722.75, 4730.50], completed 14:50 UTC = the 0945-50
+   ET bar, S=4722.75, px 4718.25 broke below it - excluded by the naive
+   tolerance window; a wrong 3m gap was returned instead).
+3. ROLE-AWARE EDGE MISSING: his "S area" = zone bottom, "R area" = zone top
+   ("exit at the S area of the Up WHG interval"). Matching should measure
+   to the NAMED edge, not the whole band - kills much of the n=2 ambiguity.
+GOLD ANCHORS: refs where he timestamps the object ("of 0948am est") permit
+exact verification - collect and use them as the correctness test set.
+
+## Iteration 3 proposal (gate decision)
+Fix the three matcher defects (direction binding in parser; relation-aware
+and role-aware geometry in the matcher), build the gold-anchor set, re-run
+identification, and hand-check again. No definition change.
