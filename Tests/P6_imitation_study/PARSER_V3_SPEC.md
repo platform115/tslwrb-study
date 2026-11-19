@@ -114,4 +114,9 @@ kind, or event · low = generic kind (12–14) relational, or bare mention.
 - 54 stratified sample parses reviewed; fixes applied during review: VTR
   false positive ("contracting volatility trading days"), CME Group Alert
   mis-filed as his alerts, display bugs.
-STATUS: AWAITING USER REVIEW before DB regeneration (--write).
+STATUS: APPROVED (user 2026-11-20); DB regenerated with v3.
+User notes at approval: (a) "Shadow" is standard candlestick terminology -
+defined in known references; S2 verifies against them. (b) The price-alert
+row may come from a system/indicator he coded onto a chart, not necessarily
+a platform alert on a manual list - do NOT over-read it as proof of a
+maintained watch-list alerting workflow.
