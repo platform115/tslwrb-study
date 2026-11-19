@@ -1,6 +1,10 @@
 # S2 — DEFINITION CHECK (T-IM16): WRB / Hidden GAP / Long Shadow
-> Status: AWAITING REVIEW. Nothing below is implemented yet; S3 builds only
-> what this review approves.
+> Status: REVIEWED - CLOSED (user 2026-11-20). Decisions:
+> (1) WRB + WHG kept as sourced/implemented. (2) Long Shadow: calibrate BOTH
+> D1 and D2, with LOOSER initial thresholds than the 2x rule ("a bit less
+> strict until we know more") - the wide net first, narrowed by calibration.
+> (3) Shadow intervals stored as full-range bands with shadow sub-range
+> field; calibration decides which his references track.
 
 ## 1. WRB — ALREADY DEFINED, SOURCED, IMPLEMENTED. Proposal: KEEP.
 `WRB Definition.txt` (repo root, "single source of truth", sourced to
