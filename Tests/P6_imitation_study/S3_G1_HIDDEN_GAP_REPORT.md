@@ -129,3 +129,20 @@ correctness where available. Known limits: formation-references need
 event-time matching; ~26% two-candidate ambiguity (clock/TF context would
 resolve some); null uniqueness floor ~44% means the match set is a working
 hypothesis to be validated by use (S4 lifetime + S6 entries), not ground truth.
+
+---
+# VERIFICATION PASS (T-IM20) — user challenge: 64% vs null 44% didn't add up
+The null was ASYMMETRIC (no role/relation descriptors). Fixed with a
+permutation null: each real ref's full descriptor tuple at random
+same-session RTH times, 20 permutations.
+- FAIR NULL unique: 51% +/- 5%. HIS refs: 64%. Gap +13% (z ~ 2.7).
+- Honest reading: 64% is COVERAGE (unique matches are fairly cheap in a
+  descriptor-filtered landscape); value = naming the object GIVEN a
+  reference. Accuracy evidence: gold anchors 3/3 where verifiable, plus
+  CONSISTENCY 5/6 (83%) - same-direction refs <30 min apart resolve to the
+  same object.
+- 5m-KME hypothesis SUPPORTED (small n): identified objects within 45 min
+  after a KME: 5m = 14/22; outside KME windows: 1m = 8/17.
+G1 CLOSED at this state (user 2026-11-20: verify, then move on if sure).
+Open items parked for S4: formation-ref event-time matching; two-candidate
+disambiguation via re-reference tracking.
