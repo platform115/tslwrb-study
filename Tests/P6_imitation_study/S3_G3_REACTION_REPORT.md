@@ -46,3 +46,22 @@ Adopt: most recent swing per side, 5m, N=2 (primary; N=3 and 15m N=1 are
 within noise — S4 re-reference evidence picks the final one, as with G2's
 open questions). Misses (~33%) unexplained for now: tolerance, late typing,
 or occasional different object — S4 can audit them.
+
+---
+# RIVAL-DEFINITION TEST (user challenge 2026-11-20: do not settle for the
+# first/easiest reading of his words)
+Two documented rival families run on the identical hit metric and null:
+| family | his hit | null | gap |
+|---|---|---|---|
+| R1 swing 5m N=2 (original) | 67% | 25% | +42 |
+| R3 zigzag pivot, 5-pt reversal | 65% | 29% | +36 |
+| R3 zigzag, 3-pt reversal | 89% | 57% | +33 |
+| R2 running session extreme | 18% | 18% | 0 - RULED OUT |
+Findings: his reaction H/L is NOT the session extreme (consistent with his
+separate "intraday high/low" vocabulary). Zigzag pivots are competitive and
+largely co-locate with swings (both = last meaningful local extreme); the
+swing form leads modestly and is scale-free (zigzag's point threshold has
+the cross-regime flaw). SELECTION STANDS: swing, 5m, N=2 - with zigzag
+recorded as the near-equivalent rival; S4 re-reference evidence arbitrates.
+Also clarified for the record: N is the swing-prominence parameter (bars
+each side), NOT the sample size; the sample is 57 usable references.
