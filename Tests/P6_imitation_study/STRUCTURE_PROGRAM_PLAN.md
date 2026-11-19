@@ -5,7 +5,10 @@
 
 ## DATA MODEL (revised per user 2026-11-20)
 Central table = PRICE LEVELS / BANDS, not exclusive "objects":
-- level_id | band_lo, band_hi (prices) | timeframe(s)
+- level_id | band_lo, band_hi (prices; band_lo == band_hi = a PRECISE
+  level) | WIDTH HISTORY: a band can narrow to a precise level as tests
+  accumulate, or widen - S/R or any attribute attaches to either form and
+  can change between them (user 2026-11-20) | timeframe(s)
 - source_attributes: LIST, may hold several simultaneously
   (wrb_body_top, zone_S_area, hidden_gap_edge, shadow_range_bound,
   reaction_low, contraction_range_bound, tested_level_inside_zone, ...)
@@ -19,20 +22,27 @@ price without conflict. The attribute vocabulary is OPEN - unknown forms are
 flagged for review, never forced into an existing class.
 
 ## FULL LIST OF DISCOVERED OBJECTS (open list; from T-IM01..13)
-1. Key KME WRB Zone (small / regular / "Old"; color-coded importance;
-   maintained as his list; midpoint used; S/R areas; role flips)
-2. WRB Zone (non-key)
+1. Key KME WRB Zone - HIS tiers, his words: "small Key KME" = S-R span
+   narrow ("s/r levels too close to each other"); "Old" vs new = vintage;
+   "I color code my Key KME WRB Zones based upon their importance";
+   maintained as his list; midpoint used; S/R areas; role flips
+2. WRB Zone (non-key) - his tier distinction, action-relevant: "ignored
+   [a Short signal] because it only occurred in a regular WRB Zone and not
+   a Key KME WRB Zone"; hierarchy WRB Zone -> KME WRB Zone -> Key KME WRB
+   Zone
 3. WRB interval (plain)
 4. WRB Hidden GAP interval (Up/Down; FILLED vs UNFILLED - unfilled = open
    zone, his words)
 5. Long Upper Shadow interval (range traded along)
 6. Long Lower Shadow interval
 7. Reaction high / Reaction low (with S/R areas)
-8. Contraction range (contracting-volatility S/R)
-9. Tight trading range (S/R of the range)
+8. Contraction range (contracting-volatility S/R) - possibly the process
+   (ranges shrinking) vs...
+9. Tight trading range - ...the state (price confined). SAME OR DIFFERENT
+   UNKNOWN (user): kept separate; S3 co-occurrence/boundary data decides
 10. Plain support / resistance level
 11. Tested level inside a zone (repeat-test importance)
-12. KME (time anchor; "Key KME line" can itself be the S area)
+12. KME (time anchor; "Key KME line" can itself be the S OR R area)
 13. WRB pt levels (management targets; +pt notation)
 14. Cross-market insync (condition, not a price)
 15. VTR signal (second entry system; definition unknown, parked)
@@ -67,3 +77,8 @@ S6. ONLY THEN: his entries vs validated structures (the selection goal).
   lesson); his text is ground truth and unlimited-use, market data honest.
 - S and R are names of roles, not fixed types; the same price can carry
   several attributes at once; roles switch per standard trading knowledge.
+- WORKING S/R DEFINITION (confirmed with user): Support = level/band below
+  current price where buying repeatedly appears - price stalls/bounces;
+  Resistance = mirror above. Break WITH follow-through flips the role;
+  each held test adds importance; labels are roles relative to current
+  price, never permanent properties.
