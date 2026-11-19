@@ -19,3 +19,4 @@ data/            # if you symlink the SSD dir to ./data
 !Data/inputs/
 !Data/inputs/*.parquet
 Data/inputs/his_zone_refs.parquet
+Data/inputs/his_tf_mentions.parquet
