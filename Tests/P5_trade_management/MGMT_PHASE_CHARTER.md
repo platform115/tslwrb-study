@@ -145,8 +145,8 @@ User directives for the study:
   the entry second; truncation-harness discipline applies.
 
 ## ZONE/LEVEL WORK CONSTRAINTS (user, 2026-11-19)
-- Resolution tolerance: within ~1 POINT is good enough; tick precision not
-  expected.
+- Resolution tolerance: START WIDE at 2-3 points (user: ~1pt was arbitrary;
+  1.25 can be fine depending) - narrowed later BY TESTING, not assumption.
 - His chart timeframes: mostly 1m / 3m / 5m (not exclusively) - zone
   construction searches those first.
 - RECENCY RULE - the anti-saturation principle: active levels are SAME-DAY
@@ -155,4 +155,9 @@ User directives for the study:
   chart" - he watches SPECIFIC ones; the work is finding WHICH.
 - Instrument tagging required: he also discusses NQ/VIX/YM - non-ES
   references flagged, never silently mixed in (parser v2 does this).
+  NON-ES WORK IS DEFERRED (user): "that's for a later system".
+- Prior-day validity (user ruling): (a) re-referenced today, (b) never
+  traversed since formation, (c) most-recent-until-replaced are ALL valid
+  carriers - PLUS an emphasis criterion: a level remarked as important more
+  than once, or even once if emphasised strongly, stays active.
 - PROCESS RULE (user): no assumptions - ASK when unsure.
