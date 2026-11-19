@@ -70,6 +70,24 @@ ES TRADING PROJECT (reverse-engineer wrbtrader -> build our own strategies)
     +-- Python runner
         +-- handoff doc written; Stage-1 shadow logger waits for a detector
 
+ACTIVE QUEUE - IMITATION STUDY (user-ordered 2026-11-19):
+1. TERM-GROUNDING: at the times he says contracting / squeeze / volatility
+   spike / expansion etc., measure the tape (compression + movement metrics)
+   vs ambient - define HIS terms detectably. Message-lag caveat applies.
+2. Compression-at-entries run: squeeze metrics at his 92 entries vs ambient,
+   per typology group (tests the quiet-46% = contraction-entry hypothesis).
+3. EARLY-ENTRY context study: seconds/minutes BEFORE his entries (what level
+   was being approached, why it might matter: session hi/lo, swings, round
+   numbers, borders) and AFTER (the signal he expected - did expansion come).
+4. BROAD LANGUAGE SEARCH: beyond hand-picked keywords - distinctive-term
+   discovery near entries vs general chat (he is not transparent; let the
+   text reveal his working vocabulary).
+5. 2022-02-22 "signal @ 4321.50" dissection - WHEN 2022-02 OPENS (one-month
+   directive holds until entries select).
+CAUTIONS (user): do not over-formalize his language (clue/confirmation/
+signal are not fixed stages; chart patterns are sometimes-pending, not
+always); keywords are a floor, not the method.
+
 PARKED - TRY SOON: active-window restriction | his adds/exits dissection
 (feeds M2) | performance-target reframing | finer tape shapes | flow/print
 microstructure | day-type | NQ/YM lead-lag | D4-on-quiet | per-type stacks
