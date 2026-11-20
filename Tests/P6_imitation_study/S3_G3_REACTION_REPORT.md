@@ -1,5 +1,7 @@
 # S3 — GENERATOR 3 (Reaction highs / lows) REPORT (T-IM22)
-> Status: AWAITING REVIEW. Script: `p6_15_g3_reaction.py` + inline refinement.
+> Status: CLOSED - APPROVED (user 2026-11-20). Selection: most recent swing
+> per side, 5m, N=2; zigzag recorded as near-equivalent rival; S4
+> arbitrates the final family/parameters.
 
 ## Definition (documented)
 Reaction high = swing high: a bar whose high exceeds the highs of the N
