@@ -13,6 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 T = os.path.dirname(HERE)
 sys.path.insert(0, HERE)
 sys.path.insert(0, os.path.join(T, "P4_entry_determination"))
+sys.path.insert(0, os.path.join(T, "P5_trade_management"))
 from p6_0_feature_battery import build_ctx, battery
 from p4_2_entry_context import month_bounds
 
