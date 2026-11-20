@@ -69,7 +69,8 @@ ES / wrbtrader STUDY
 |   |   +-- MG-3  S=90 validation: wins 2/3 months, loses high-vol 2022-02 - NOT frozen
 |   |   +-- MG-3b prior-session gap adapter: FAIL (too tight)
 |   |   +-- MG-3c intraday gap adapter: FAIL (tightens in active tape - backwards)
-|   |   +-- MG-3d stop = share of R_est, S=90: RUNNING NOW
+|   |   +-- MG-3d stop = share of R_est: FAIL (wider-in-high-vol is wrong direction)
+|   |   +-- ROUND CLOSED - M1 stands; S=90 best-but-fragile on record
 |   +-- exit taxonomy in force: stall clock | hard stop | time stop | session close
 |   +-- HIS exits: ride WRB pt occurrences; NOT level-parked (measured)
 |   +-- remaining chartered adapters: time stop (peak-time distribution)
