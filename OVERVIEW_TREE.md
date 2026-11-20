@@ -1,108 +1,92 @@
-# PROJECT TREE — components and their relationships
-> Updated 2026-11-19. Arrows show what feeds, became, or governs what.
+# MASTER TREE — the grander plan (2026-11-20, supersedes the previous tree)
 
-```
-ES TRADING PROJECT (reverse-engineer wrbtrader -> build our own strategies)
+ES / wrbtrader STUDY
 |
-+-- DATA
-|   +-- Market data (Databento)
-|   |   +-- es_1m_front bars (all sessions, roll-flagged)
-|   |   +-- per-second mids (TBBO) --feeds--> burst measure, fill engine
-|   |   +-- flow_per_sec (signed volume), book_per_sec (2 months)
-|   |   +-- month budget
-|   |       +-- training 2025-10 (ACTIVE - sole month until entries select)
-|   |       +-- training 2022-02 (waiting)
-|   |       +-- reserved 2021-09, 2024-11 (9 reads, pre-freeze only, closed)
-|   |       +-- purchase x4 (SEALED - final exam)
-|   +-- His data (ground truth - the only proven edge)
-|       +-- tsl_episodes_clean: entries/adds/exits/realized P&L
-|       +-- wrb_messages: 31,838 msgs, trade_action tags (his explanations)
-|       +-- chat_activity: per-minute presence (was he there)
-|       +-- his_kme_times / kme_calendar
++-- DATA LAYER
+|   +-- bars: es_1m_front.parquet (2021-05 .. 2026-05), wrb_1m.parquet
+|   +-- per-second: flow_per_sec (2021-09, 2022-02, 2024-11, 2025-10)
+|   |               book_per_sec (2022-02, 2025-10) [NEVER USED - cycle-3 backlog]
+|   +-- his record: wrb_messages (31,838 msgs) | tsl_episodes_clean (his trades)
+|   |               his_zone_refs (parser v3.1, 5,155 refs) | his_kme_times | kme_calendar
+|   +-- derived:   s4_objects (3.34M structures) | s4_ref_links | s6_presence | s6_selectors_final
 |
-+-- METHODS & GATES  --govern every branch below--
-|   +-- truncation harness (lookahead gate; standing, after T-EN99)
-|   +-- per-second fill engine (honest fills/stops)
-|   +-- registry: T-EN (entries/audits) T-EX (management) T-IM (imitation)
-|   +-- rules: pre-freeze before reserved reads | derive-from-measurement |
-|       maximin | two-sided reporting | propose-then-confirm | commit per test
++-- INTEGRITY GATES (standing)
+|   +-- truncation harness T-EN101 - entries / signals / M1 exits
+|   +-- resolver harness T-IM28 - all structure generators at 1-second precision
+|   +-- test registry (one row per test, T-xxNN) | Rule 2: hypotheses before backtests
+|   +-- review gates: no step starts before the prior step's gate passes
 |
-+-- STRATEGIES
-|   +-- Strategy 1 (v1-v11)  [FROZEN - clean code, honestly unprofitable]
-|   |   +-- 10-condition score signals --revived--> P6 separator (AUC .727)
-|   |   +-- v11 exit stack --became--> M0
-|   +-- Strategy 2  [ENTRIES VOID - thrust lookahead, T-EN99/100]
-|       +-- detectors
-|       |   +-- D1 8s-burst --was core of--> 2A/2B; clean piece kept in toolkit
-|       |   +-- D4 quiet-tape [parked] --aimed at--> quiet-46% group (P6)
-|       |   +-- D6, D7 [retired]
-|       +-- 2A (quality) / 2B (volume) / overnight  [all void]
-|       +-- adapters (clean, reusable by any future entry)
-|           +-- C(day) rolling ratio | atr10 | trailing-pct rule | gap rule
++-- STUDIES (phases)
+|   +-- P0-P3  early audits and candidates (historic)
+|   +-- P4     entry era -> Strategy 2A/2B VOID (T-EN99 thrust lookahead)
+|   +-- P5     trade management (active)
+|   +-- P6     imitation study (complete; cycle 3 open)
+|   +-- P7     bounded search (round 1 done; refinement waiting on management)
 |
-+-- TRADE MANAGEMENT  (independent layer - works on ANY entry source)
-|   +-- M0 = v11 sketch  [frozen control, never modified]
-|   +-- M1 = stall clock [ADOPTED] 
-|   |   +-- RTH config S=30 / ETH config S=90 (band-derived)
-|   |   +-- + session close + inert rails (hard stop, time stop)
-|   |   +-- proven: beats M0 on identical fires; profits on HIS entries
-|   +-- M2 [planned next]
-|       <--built from-- his-vs-M1 differences on identical entries
-|                       (he ~+620 scale-confounded vs our +108, T-IM05)
++-- STRUCTURE PROGRAM (P6, S0-S6, all gates passed)
+|   +-- S0 timeframes: HIS set = 1m 2m 3m 5m 15m (+60m zones); named objects live on 5m/15m
+|   +-- S1 parser v3.1 (direction binding fixed) -> his_zone_refs
+|   +-- S2 definitions: WRB + Hidden GAP (Perry-sourced, kept) | Long Shadow D1/D2
+|   +-- S3 GENERATORS (each calibrated vs his words, fair nulls)
+|   |   +-- G1 hidden gaps: identification 64%; gold clock-verified; KME gaps = 5m, others 1m
+|   |   +-- G2 shadows: D2 + most-recent PROVISIONAL (78%, +14)
+|   |   +-- G3 reaction levels: swing 5m N=2 UNION 0.08% zigzag (86%, +38) - STRONGEST
+|   |   +-- G4 compression: W=15 contraction / W=30 tight range (+24 role-stated)
+|   +-- S4 lifetime: ordinary structures intraday (4-23 min); Key KME zones weeks-months
+|   |      (his stated prices, 2.4x null) -> recency rule refined
+|   +-- S5 resolver: tolerance 1 pt (gaps, shadows) / 3 pts (reaction, compression)
+|   +-- S6 entries vs structures (below)
 |
-+-- ACTIVE PHASE: P6 IMITATION STUDY  (entry detection & selection)
-|   +-- object of study: HIS 92 first entries, 2025-10 only
-|   +-- typology v0: momentum-join 34% | drift-join 14% | fade 7% | quiet 46%
-|   +-- separators found (within momentum-join, n=14 - leads not findings):
-|   |   score-signal .727 | early-session .670 | KME-window .667
-|   |   stacked: 176/day -> 10.7/day at ~2% precision (ceiling suspected)
-|   +-- grouping axes to build (user 2026-11-19):
-|   |   presence-known | commentary-explained | KME-tf-WRB rule-catchable
-|   +-- target: a % of his entries caught PER DAY by one or several small
-|   |   systems; one-rule-for-all not expected
-|   +-- feeds--> BOUNDED SEARCH (pre-registered candidates + stopping rule)
-|                --> validation --> purchase-month exam
++-- ENTRIES
+|   +-- VOID: Strategy 2A / 2B (lookahead era)
+|   +-- IMITATION SELECTORS (frozen, catch-rate only, no P&L)
+|   |   +-- ER-SIG  = reaction-edge interaction + score>=6 signal
+|   |   |            38% catch training, 19-26% validation, 13-19 fires/day
+|   |   |            entry price = edge + displacement (median +2.3..+3.0 pts)
+|   |   +-- ER-WIDE = interaction + (KME window OR signal)
+|   |   |            49% / 32-44%, 34-50 fires/day
+|   |   +-- key facts: he enters OFF levels (break/reject), not AT them;
+|   |   |             KME window = 4x enrichment; momentum entries uncaught by design
+|   |   +-- REMAINDER (his drift entries, ~60% of trades, bigger half of his P&L)
+|   |       +-- unexplained by: tape state (288 cells), interaction x drift,
+|   |       |   vol-spike, KME, signals - all documented failures
+|   |       +-- CYCLE-3 BACKLOG: order book, prints, cross-market insync,
+|   |           sequence context, path shapes
+|   +-- BOUNDED SEARCH (our own entries, P&L in scope)
+|       +-- S-A edge-break: +84/month but ~+0.05/trade - negligible
+|       +-- S-B (+KME), S-C (+signal): REJECTED (lose under M1)
+|       +-- verdict: triggers locate his places; profit lives in management
+|       +-- refinement: deferred, resumes when management improves
 |
-+-- TRANSLATION / LIVE  (downstream consumers of frozen results)
-    +-- Pine route M (TradingView)
-    |   +-- stage 1 readout + alert probe [ACTIVE - clean definitions]
-    |   +-- stage 2 detector + fire vectors [HALTED until honest entries]
-    +-- Python runner
-        +-- handoff doc written; Stage-1 shadow logger waits for a detector
-
-ACTIVE QUEUE - IMITATION STUDY (user-ordered 2026-11-19):
-1. TERM-GROUNDING: at the times he says contracting / squeeze / volatility
-   spike / expansion etc., measure the tape (compression + movement metrics)
-   vs ambient - define HIS terms detectably. Message-lag caveat applies.
-2. Compression-at-entries run: squeeze metrics at his 92 entries vs ambient,
-   per typology group (tests the quiet-46% = contraction-entry hypothesis).
-3. EARLY-ENTRY context study: seconds/minutes BEFORE his entries (what level
-   was being approached, why it might matter: session hi/lo, swings, round
-   numbers, borders) and AFTER (the signal he expected - did expansion come).
-4. BROAD LANGUAGE SEARCH: beyond hand-picked keywords - distinctive-term
-   discovery near entries vs general chat (he is not transparent; let the
-   text reveal his working vocabulary).
-5. 2022-02-22 "signal @ 4321.50" dissection - WHEN 2022-02 OPENS (one-month
-   directive holds until entries select).
-CAUTIONS (user): do not over-formalize his language (clue/confirmation/
-signal are not fixed stages; chart patterns are sometimes-pending, not
-always); keywords are a floor, not the method.
-
-PARKED - TRY SOON: active-window restriction | his adds/exits dissection
-(feeds M2) | performance-target reframing | finer tape shapes | flow/print
-microstructure | day-type | NQ/YM lead-lag | D4-on-quiet | per-type stacks
-beyond T1 | burst-rule wiring etc. (moot till entries exist)
-```
-
-## BOUNDED-SEARCH CANDIDATES harvested from the imitation study (user 2026-11-20:
-## "might be useful for finding an entry strategy as part of the other entry
-## work not related to imitating his trades - remember those")
-- Structure-edge trigger architecture: maintain resolver edges (harness-
-  certified), detect cross/reject interaction, enter at edge + measured
-  displacement (REA median +3.0 pts, SQZ +1.5, GAP/SHD at edge). T-IM31.
-- KME-window gate: 3x fires-per-catch concentration (87->28). T-IM33.
-- REA union definition (5m N=2 swing OR 0.08% pct-zigzag): 86% of his
-  reaction refs, +38 over fair null. T-IM27.
-- Negative knowledge: price-AT-structure selection fails (T-IM29);
-  vol-spike (comp5/mv120) does not discriminate entries (T-IM33);
-  implied Key-zone lists inherit market geometry (T-IM27).
++-- TRADE MANAGEMENT (P5)
+|   +-- M0 - FROZEN incumbent (fast-fail + stop + time + session; no stall)
+|   +-- M1 - ADOPTED working plan (stall S=30 RTH / 90 ETH + stop 4.0 + time 27 + session)
+|   +-- M2 - NOT YET FROZEN; design runs so far:
+|   |   +-- MG-1  diagnosis: HIS +620 vs M1 +200 per-unit; gap = patience
+|   |   |         (he holds 183s vs 50s, captures 83% of 2x the move)
+|   |   +-- MG-2  patience plateau S=60..180 -> +235..+248 (vs 200); L-rules weaker
+|   |   +-- MG-2b structure-breakeven cells: ALL LOSE (edge pullbacks are normal)
+|   |   +-- MG-3  S=90 validation: wins 2/3 months, loses high-vol 2022-02 - NOT frozen
+|   |   +-- MG-3b prior-session gap adapter: FAIL (too tight)
+|   |   +-- MG-3c intraday gap adapter: FAIL (tightens in active tape - backwards)
+|   |   +-- MG-3d stop = share of R_est, S=90: RUNNING NOW
+|   +-- exit taxonomy in force: stall clock | hard stop | time stop | session close
+|   +-- HIS exits: ride WRB pt occurrences; NOT level-parked (measured)
+|   +-- remaining chartered adapters: time stop (peak-time distribution)
+|
++-- DETECTOR / SIGNAL layer (legacy, clean components)
+|   +-- 8s burst measure (honest) | atr10 | C(day) | gap clock | flow features
+|   +-- score>=6 signals - the strongest selection conjunct found (7x concentration)
+|   +-- FAILED as conditions: volatility-spike at entry; session-extreme reading
+|
++-- PINE / LIVE track
+|   +-- stage 1 (readout indicator, probes) - continues
+|   +-- stage 2 + fire vectors - HALTED until honest entries firm up
+|   +-- python runner / VPS - separate conversation thread
+|
++-- OPEN QUEUES
+    +-- cycle 3 (remainder): book, prints, cross-market, sequence, path shapes
+    +-- Key-zone generated list (proxy failed; stated-price clusters = validation set)
+    +-- G2 shadows D1-vs-D2 / band form -> future re-reference evidence
+    +-- time-stop adapter | re-entry mechanism | scale-out (needs multi-contract months)
+    +-- 2022-02 "4321.50" dissection | M2 freeze | second-era months
