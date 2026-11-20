@@ -1,4 +1,10 @@
 # CYCLE 2 — THE MOMENTUM REMAINDER (plan, review-gated)
+> CLOSED 2026-11-20 with a NEGATIVE result: M-1 characterized the remainder
+> (active-tape aligned-drift, mid-session, no signal; pnl +329.5 > caught
+> half); M-2 grid (288 cells) found no concentrating state (46% costs 329
+> fires/day); post-hoc interaction-AND-drift: 39% at 203/day (T-IM39).
+> The remainder is attention + discretion; routed to the bounded search
+> as economics. M-3 never run - nothing freezable.
 > Target: the 57 training-month entries V1 misses - including his largest
 > wins. These are his momentum trades (3/92 escape structure interaction
 > entirely; the rest escape the signal/KME conditions).
