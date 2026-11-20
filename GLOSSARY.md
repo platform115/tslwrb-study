@@ -6,7 +6,7 @@
 ## 1. ENTRY STRATEGIES (X axis) - canonical
 | canonical | was | definition | status |
 |---|---|---|---|
-| Strategy 1 | Strategy 1 | earlier-era entry rule (pre-adaptive) | UNVERIFIED vs the T-EN99 lookahead audit - audit before any use |
+| Strategy 1 | Strategy 1 | score>=6 at a 1m WRB completion; direction = prior 5-min move; stop-fill at the signal bar's extreme; pt-ladder exits | CERTIFIED (T-EN102); record: +0.84/trade in-sample, +0.17/trade pooled OOS |
 | Strategy 2A / 2B | same | adaptive-era rules | VOID (lookahead) - never reusable |
 | Strategy 3A | S-A | reaction-edge interaction (break/reject, 15 min, direction = break side), no gate | tested; ~zero per trade under M1 |
 | Strategy 3B | S-B | 3A + KME-window gate (45 min) | rejected under M1; retest only with new management |

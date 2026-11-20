@@ -29,7 +29,7 @@
     (the 437 episodes used today carry selection pressure).
 
 ## 3. BACKTESTING PROGRAM (the X-entry x Y-management matrix)
-3a. Matrix plan: {Strategy 1 (post-audit), 3A, 3C, 3D, future} x {M0, M1, M1A,
+3a. Matrix plan: {Strategy 1 (certified T-EN102), 3A, 3C, 3D, future} x {M0, M1, M1A,
     future M2} x {RTH, ETH, both} - each cell pre-registered, run once.
 3b. STANDARD RESULTS SET (user-specified + additions):
     - comparison vs HIS trades in the same period (totals + per-trade)
