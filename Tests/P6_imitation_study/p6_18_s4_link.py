@@ -85,7 +85,8 @@ def run(repo="."):
         si = sess_idx.get(sd0)
         if si is None:
             continue
-        frames = [by_sess[sess_list[si - k]] for k in range(K_SESS)
+        look = 30 if KIND2GEN[r.kind][0][0] == "*" else K_SESS
+        frames = [by_sess[sess_list[si - k]] for k in range(look)
                   if si - k >= 0 and sess_list[si - k] in by_sess]
         if not frames:
             continue
@@ -94,6 +95,14 @@ def run(repo="."):
         if not len(cand):
             continue
         want = DIRMAP.get(str(r.direction), None)
+        # SELECTION-AWARE LINKING (v2 - the v1 all-within-tol run saturated,
+        # ~645 links/ref; S3 lesson applies to linking too):
+        #   specific kinds -> that generator's ADOPTED selection: newest per
+        #   (tf, dir_side) [the most-recent reading], then the acceptance
+        #   window; at most a handful of candidates, nearest kept per (tf).
+        #   '*' kinds -> the NEAREST band per generator family (one link
+        #   per family), long lookback - these measure where zone/level
+        #   talk lands and how old the landed-on object is.
         for gen, param in KIND2GEN[r.kind]:
             g = cand if gen == "*" else cand[cand.generator == gen]
             if param is not None:
@@ -102,6 +111,9 @@ def run(repo="."):
                 g = g[(g.dir_side == want) | (g.dir_side == "")]
             if not len(g):
                 continue
+            if gen != "*":
+                # newest object per (tf, dir_side) = most-recent selection
+                g = g.sort_values("kts").groupby(["tf", "dir_side"]).tail(1)
             lo = g.band_lo.to_numpy(); hi = g.band_hi.to_numpy()
             inside = (lo - TOL <= px) & (px <= hi + TOL)
             d = np.where((lo <= px) & (px <= hi), 0.0,
@@ -109,18 +121,31 @@ def run(repo="."):
             sel = np.flatnonzero(inside)
             if not len(sel):
                 continue
-            kts = g.kts.to_numpy()
-            # newest knowable same-gen/side object at t (for staleness)
-            newest = kts.max()
-            for k in sel:
-                links.append(dict(
-                    ref_idx=ridx, ts=t, kind=r.kind, relation=r.relation,
-                    anchor=anchor, generator=g.generator.iloc[k] if gen == "*" else gen,
-                    param=(g.param.iloc[k] if gen == "*" else (param or "")),
-                    object_id=int(g.object_id.iloc[k]),
-                    dist=float(d[k]),
-                    age_min=float((t - kts[k]) / np.timedelta64(1, "m")),
-                    is_newest=bool(kts[k] == newest)))
+            kts_all = cand[cand.generator == (g.generator.iloc[0] if gen != "*" else "")].kts
+            if gen == "*":
+                # one link per generator family: the nearest band
+                g2 = g.iloc[sel].assign(dd=d[sel])
+                g2 = g2.sort_values("dd").groupby("generator").head(1)
+                it = g2.iterrows()
+                for _, row in it:
+                    newest_gen = cand[cand.generator == row.generator].kts.max()
+                    links.append(dict(
+                        ref_idx=ridx, ts=t, kind=r.kind, relation=r.relation,
+                        anchor=anchor, generator=row.generator,
+                        param=row.param, object_id=int(row.object_id),
+                        dist=float(row.dd),
+                        age_min=float((t - row.kts) / np.timedelta64(1, "m")),
+                        is_newest=bool(row.kts == newest_gen)))
+            else:
+                newest = kts_all.max() if len(kts_all) else g.kts.max()
+                for k in sel:
+                    links.append(dict(
+                        ref_idx=ridx, ts=t, kind=r.kind, relation=r.relation,
+                        anchor=anchor, generator=gen, param=(param or ""),
+                        object_id=int(g.object_id.iloc[k]),
+                        dist=float(d[k]),
+                        age_min=float((t - g.kts.iloc[k]) / np.timedelta64(1, "m")),
+                        is_newest=bool(g.kts.iloc[k] == newest)))
     L = pd.DataFrame(links)
     out = os.path.join(repo, "Data/inputs/s4_ref_links.parquet")
     L.to_parquet(out)
