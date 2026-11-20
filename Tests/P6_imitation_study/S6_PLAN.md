@@ -29,8 +29,30 @@ at S-type edges?), KME window, tape state (battery features at the entry).
 Deliverable: the joint signatures that describe his entry moments, each
 with counts, never fitted thresholds. REVIEW GATE.
 
-## S6.3 PRE-REGISTERED candidate selectors (no fishing)
-Declared now, before any S6.1 results are seen:
+## THE REPLICATION MODEL (locked in from S6.1+S6.2, user 2026-11-20)
+He does not enter AT levels; he enters OFF them. The structure edge is the
+TRIGGER SITE: price crosses or rejects the edge, the entry fills on the
+break side, points past it. REPLICATION therefore means: (1) maintain the
+selected structure edges live (the resolver does this, harness-certified);
+(2) detect the interaction event (cross/reject, direction); (3) enter at
+edge +/- the measured DISPLACEMENT (S6.3 must output, per caught entry,
+the trigger-edge price and his fill's displacement from it - that
+distribution IS the entry-price rule). Exits are already covered by the
+management line (M1; his own exits ride WRB-pt occurrences, not static
+levels - T-IM30).
+
+## S6.3 selectors — EVENT-BASED (the one allowed refinement, drawn from
+## S6.1/S6.2 evidence; supersedes the location-based draft below)
+  SEL-A': REA interaction within 15 min, direction-aligned (gap +20)
+  SEL-C': SQZ interaction within 15 min, direction-aligned (gap +21)
+  SEL-B': GAP interaction within 5 min, direction-aligned (+13, density flag)
+  SEL-E': SHD interaction within 5 min, direction-aligned (+9, density flag)
+  SEL-D : stated Key zones - zero 2025-10 coverage, parked.
+Per selector: catch of his entries, fires/day (5-min dedupe), union,
+overlap, and the DISPLACEMENT distribution (fill vs trigger edge).
+
+## (superseded) original location-based draft
+Declared before any S6.1 results were seen:
   SEL-A: price within 1 pt of the most-recent reaction level — the S5b
          UNION (5m swing N=2 OR pct-zigzag 0.08%) — side matching the
          trade direction (reaction-level system).
