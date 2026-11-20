@@ -1,4 +1,4 @@
-# CYCLE-2 M-2 — MOMENTUM-STATE GRID RESULT (T-IM38)
+# CYCLE-2 C2-S2 (formerly 'M-2' - renamed, M# is reserved for management plans) — MOMENTUM-STATE GRID RESULT (T-IM38)
 > 288 cells, pre-registered ranges, all saved (m2_momentum_grid_cells.csv).
 > Decision metric: uncaught-catch vs fires/day frontier.
 
@@ -18,7 +18,7 @@ state is a precondition he shares with hundreds of moments a day; his
 selection WITHIN it is not explained by these variables at any level.
 This matches the risk declared at pre-registration: the drift remainder
 looks like attention + discretion, and tape-state imitation hits a wall
-here. M-3 (freeze/validate) is NOT run - there is no candidate worth
+here. C2-S3 (freeze/validate) is NOT run - there is no candidate worth
 freezing.
 
 ## What remains open for the remainder
