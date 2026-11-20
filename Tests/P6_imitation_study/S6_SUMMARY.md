@@ -23,18 +23,18 @@
   NOTHING - V2c-only catches = 0; every one already caught by v1. Either
   his October trades were not Key-zone trades, or the 5m-gap proxy does
   not stand in for his maintained list - indistinguishable this month.
-  Post-hoc union U = rea&(KME|sig): 49% catch at 48/day. (T-IM35)
+  Post-hoc union ER-WIDE = rea&(KME|sig): 49% catch at 48/day. (T-IM35)
 
 ## FINAL SELECTORS (training month)
 | selector | catch | fires/day | fires/catch |
 |---|---|---|---|
-| V1: REA-interaction & signal | 38% (35/92) | 18.6 | 12 |
-| U: REA-interaction & (KME or signal) [post-hoc] | 49% (45/92) | 48.4 | 25 |
+| ER-SIG: REA-interaction & signal | 38% (35/92) | 18.6 | 12 |
+| ER-WIDE: REA-interaction & (KME or signal) [post-hoc] | 49% (45/92) | 48.4 | 25 |
 Entry price rule: trigger edge + displacement (REA median +3.0 pts).
 
 ## UNCAUGHT ACCOUNTING
 - By any interaction at all: 3/92 (momentum continuations).
-- By V1: 57/92 uncaught - including several of his largest wins (+47.75,
+- By ER-SIG: 57/92 uncaught - including several of his largest wins (+47.75,
   +31.25) - the selectors catch his structure-triggered trades, not his
   momentum trades. Full list in the T-IM35 run log.
 
@@ -44,6 +44,10 @@ post-hoc; his discretion bounds any catch target; Key-zone system
 unmodeled for this month (no stated prices, proxy failed).
 
 ## SECOND-MONTH VALIDATION (awaiting user go)
-Freeze V1 and U exactly as specified. Run on the next data month with
+Freeze ER-SIG and ER-WIDE exactly as specified. Run on the next data month with
 ZERO refitting. Report catch, fires/day, displacement distribution. The
 test: do 38%/18.6 and 49%/48 hold out of sample?
+
+> NAMING (2026-11-20): selectors renamed - ER-SIG (edge-break + signal;
+> was V1) and ER-WIDE (edge-break + KME-or-signal; was U). Registry rows
+> written before this date keep the old names; this note is the mapping.

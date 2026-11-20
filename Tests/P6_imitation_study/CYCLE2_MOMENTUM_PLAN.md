@@ -23,3 +23,12 @@ C2-S3 Score (catch + fires/day), freeze, validate on 2022-02 + 2021-09 with
 > NAMING NOTE (2026-11-20): cycle-2 steps renamed C2-S1/S2/S3 to end a
 > collision with the management plans - M0/M1/M2 ALWAYS mean trade
 > management, nothing else.
+
+## CYCLE-3 BACKLOG — data and angles NOT yet tried on the remainder
+- Order book dynamics: book_per_sec_2025-10 / 2022-02 exist and have
+  never entered entry work (imbalance, depth pulls, refills at the edges).
+- Trade prints / microstructure (large-lot prints, sweep patterns).
+- Cross-market state: NQ/YM/VIX lead-lag and his "insync" condition
+  (parked since the typology phase).
+- Sequence context: his own prior trade's outcome/holding as a condition.
+- Finer price-path shapes within the drift state (not just endpoint moves).
