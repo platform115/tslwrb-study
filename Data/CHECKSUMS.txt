@@ -3,3 +3,4 @@ eac1323c5d664a5835c6d294de4f88849893479b66ec2be87baa39d0363e9aa2  Data/inputs/hi
 4e8aa79104a20ab9eed51a380128d558367622685cc6ab94a4840fad3d87f42b  Data/inputs/remainder_820.txt
 8a36ecf0610712b99f309989fb5e98d87fe7294a663377c3b2f8456004927104  Data/inputs/his_zone_refs.parquet (parser v3.1, T-IM19)
 611feb94743f03940d19103e965764959d51fb86ce104ddbeca7fb77a7db72a2  Data/inputs/s4_objects.parquet
+e374bc10c8a8027ef14619684648bdced91a69cab2ab18680b82ac9ee5eaa56b  Data/inputs/s4_ref_links.parquet
