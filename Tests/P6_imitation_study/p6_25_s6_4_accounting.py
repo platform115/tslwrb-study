@@ -112,14 +112,14 @@ def run(repo="."):
     sd1 = bm.sd.to_numpy(); bt1 = bm.ts_event.dt.tz_convert(None).to_numpy()
 
     def sec_sd(t):
-        j = np.searchsorted(bt1, t, "right") - 1
+        j = np.searchsorted(bt1, np.datetime64(t), "right") - 1
         return sd1[j] if j >= 0 else None
 
     ep = pd.read_parquet(os.path.join(repo, "Data/inputs/tsl_episodes_clean.parquet")
                          ).dropna(subset=["first_entry_utc"])
     lo, hi = month_bounds(MONTH)
     em = ep[(ep.first_entry_utc >= lo) & (ep.first_entry_utc < hi)].copy()
-    em["t"] = [np.datetime64(pd.Timestamp(x).tz_convert(None)) for x in em.first_entry_utc]
+    em["t"] = pd.to_datetime(em.first_entry_utc, utc=True).dt.tz_convert(None)
     em["sd"] = [sec_sd(t) for t in em.t]
     his_times = em.t.to_numpy()
 
@@ -129,8 +129,9 @@ def run(repo="."):
     for _, r in em.iterrows():
         side = 1 if r.side == "long" else -1
         nsel = 0; first_edge = None; first_fam = None
+        rt = np.datetime64(r.t)
         for name, fam, M in SELS:
-            E = interact_edges(R, r.sd, r.t, fam, M, secs, mids, side)
+            E = interact_edges(R, r.sd, rt, fam, M, secs, mids, side)
             if E:
                 nsel += 1
                 if first_edge is None:
@@ -140,7 +141,7 @@ def run(repo="."):
                     first_fam = fam
         caught_any[r.name] = nsel >= 1; caught_2[r.name] = nsel >= 2
         if first_edge is not None:
-            acted_props.append(edge_props(R, r.sd, r.t, first_fam, first_edge, secs, mids, ev))
+            acted_props.append(edge_props(R, r.sd, rt, first_fam, first_edge, secs, mids, ev))
     em["c1"] = em.index.map(caught_any); em["c2"] = em.index.map(caught_2)
     print("## 1. DAILY ACCOUNTING")
     print("| session | entries | caught >=1 | >=2 | uncaught |")
@@ -193,13 +194,14 @@ def run(repo="."):
         for _, r in em[em.sd == sd0].sort_values("t").iterrows():
             side = 1 if r.side == "long" else -1
             tag = "-"
+            rt = np.datetime64(r.t)
             for name, fam, M in SELS:
-                E = interact_edges(R, sd0, r.t, fam, M, secs, mids, side)
+                E = interact_edges(R, sd0, rt, fam, M, secs, mids, side)
                 if E:
                     fills = np.atleast_1d(r.entry_prices)
                     fill = float(fills[0]) if len(fills) and np.isfinite(fills[0]) else np.nan
                     e = min(E, key=lambda q: abs((fill if np.isfinite(fill) else 0) - q))
-                    pr = edge_props(R, sd0, r.t, fam, e, secs, mids, ev)
+                    pr = edge_props(R, sd0, rt, fam, e, secs, mids, ev)
                     tag = (f"{fam} edge {e:.2f} (tf {pr['tf']}, age {pr['age_min']:.0f}m, "
                            f"{'KME' if pr['kme'] else 'no-KME'}, confl {pr['confluence']}, "
                            f"tested {pr['tested']}x)")
