@@ -54,7 +54,12 @@ def truncate_bars_contaminated(g, t, tf):
 
 
 def bands(objs):
-    return sorted((round(z["lo"], 2), round(z["hi"], 2), z.get("dir", z.get("side", ""))) for z in objs)
+    out = []
+    for z in objs:
+        lo = z["lo"] if "lo" in z else z["px"]
+        hi = z["hi"] if "hi" in z else z["px"]
+        out.append((round(lo, 2), round(hi, 2), z.get("dir", z.get("side", ""))))
+    return sorted(out)
 
 
 def run(repo="."):
