@@ -66,6 +66,13 @@ S3. GENERATORS, one at a time, each cycle = define -> implement (<=t,
     harness-passed) -> calibrate vs his references -> hit-rate report ->
     REVIEW before the next generator. Order: hidden-gap/zones -> shadow
     intervals -> reaction H/L -> contraction ranges.
+    [S3 COMPLETE 2026-11-20: G1 hidden gaps CLOSED (identification 64%,
+    gold clock-verified; KME gaps on 5m, others 1m). G2 shadows PROVISIONAL
+    (D2 + most-recent, 78%, +14). G3 reaction H/L CLOSED (swing 5m N=2,
+    67% vs 25%, +42; zigzag rival recorded; session-extreme ruled out).
+    G4 contraction CLOSED (C2 W=15 contraction / W=30 tight range;
+    role-stated +24; price anchors 2-3x null; misses = older-band
+    persistence -> S4 target). All provisional calls arbitrated in S4.]
 S4. LEVEL/BAND DB ASSEMBLY (multi-attribute model above) + LIFETIME
     MEASUREMENT (creation -> last reference; traversal effects; his words
     AND the data both in evidence). REVIEW.

@@ -1,5 +1,8 @@
 # S3 — GENERATOR 4 (Contraction ranges) REPORT (T-IM23)
-> Status: AWAITING REVIEW. Script: `p6_16_g4_contraction.py`.
+> Status: CLOSED - ADOPTED WITH VERIFICATION ADDENDUM (user 2026-11-20:
+> "take extra care to ensure there is not a way to get this more verified").
+> C2 compression adopted: W=15 q=0.67 (contraction), W=30 q=0.67 (tight
+> range), provisional pending S4.
 
 ## Definitions tested (documented families)
 C1 — Crabel (1990) NR-7: most recent narrowest-range-of-7 bar; band = the
@@ -40,3 +43,19 @@ Adopt C2 (rolling compression): W=15 q=0.67 for contraction-range objects,
 W=30 q=0.67 for tight-trading-range objects — both flagged provisional at
 the same standard as G2 (S4 re-reference evidence refines). NR7 recorded
 as tested and weaker; NR7 15m negative.
+
+---
+# VERIFICATION ADDENDUM — explicit-price anchors (strongest check available)
+11 contraction/tight-range refs state a price. Band-edge match (within 1.5
+pts of the stated price): W15 4/11, W30 5/11, either 6/11 — vs 17% for
+random prices near the market at the same moments (2-3x null, n=11).
+Direct confirmations include: "volatility contracting a lot above 4400.00"
+(both windows' band edge at 4400.75); "tight trading range between
+6421.50 - 6426.00" (W30 lo at 6421.25).
+THE MISSES ARE INFORMATIVE: "a S area near the 4426.00 that was ALSO part
+of THIS MORNING EARLIER key contracting volatility" and "I HAVE the
+3874.50 as the R area" reference OLDER episodes' bands persisting as S/R —
+invisible to most-recent-only selection BY DESIGN. This is direct evidence
+for the S4 lifetime model (old squeeze bands persist as levels) and sets
+one of S4's measurement targets: how long do contraction bands keep
+getting referenced after the episode ends?
