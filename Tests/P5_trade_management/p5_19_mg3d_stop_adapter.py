@@ -4,9 +4,9 @@ p5_19_mg3d_stop_adapter.py — MG-3d: STOP AS A SHARE OF R_est. (T-MG07.)
 ===============================================================================
 The chartered stop adapter (p5_10 notes: points-fixed stops cannot carry
 across regimes). Cells, pre-registered:
-  stall S=90 (270 ETH) fixed; stop = share x R_est, share in {0.25, 0.35,
-  0.5}; R_est = C(day) x atr10 at the entry bar (points); stop clipped to
-  [1.5, 8.0] pts. Baselines: M1 (S=30, stop 4.0), S=90 stop 4.0, HIS.
+  stall S=90 (270 ETH) fixed; stop = share x R_est, share grid CORRECTED to {0.08, 0.12, 0.17} after the first run collapsed
+  into the 8-pt clip (R_est medians 28-45 pts; disclosed in the report);
+  stop clipped to [1.5, 10.0] pts. Baselines: M1 (S=30, stop 4.0), S=90 stop 4.0, HIS.
 FREEZE CRITERION: one single share must win pooled over BOTH baselines
 and not be the worst mechanical plan in any month -> frozen as M2.
 
@@ -31,7 +31,7 @@ TICK = 0.25
 def run(repo="."):
     c_day = X.c_day_fun(repo)
     months = ["2025-10", "2022-02", "2021-09"]
-    plans = ["HIS", "M1 (S30/stop4)", "S90/stop4", "S90/R.25", "S90/R.35", "S90/R.50"]
+    plans = ["HIS", "M1 (S30/stop4)", "S90/stop4", "S90/R.08", "S90/R.12", "S90/R.17"]
     pooled = {k: [] for k in plans}
     worst = []
     for month in months:
@@ -68,15 +68,15 @@ def run(repo="."):
                 elif k == "S90/stop4":
                     S, stp = 90, 4.0
                 else:
-                    share = float(k.split("R.")[1]) / 100 if False else {"S90/R.25": .25, "S90/R.35": .35, "S90/R.50": .50}[k]
+                    share = float(k.split("R.")[1]) / 100 if False else {"S90/R.08": .08, "S90/R.12": .12, "S90/R.17": .17}[k]
                     S = 90
-                    stp = float(np.clip(share * Rpts, 1.5, 8.0)) if np.isfinite(Rpts) else 4.0
+                    stp = float(np.clip(share * Rpts, 1.5, 10.0)) if np.isfinite(Rpts) else 4.0
                 q = dict(early=stp, stop=stp, time_bars=27, S=S * (3 if eth else 1))
                 px, xs, xb, _ = leg(cx, ib, fill, s0, d > 0, q)
                 res[k].append((px - fill) * d)
-                if k == "S90/R.35":
+                if k == "S90/R.12":
                     stops_used.append(stp)
-        print(f"\n===== {month} ({len(res['HIS'])} episodes) | R.35 stop q25/50/75 = "
+        print(f"\n===== {month} ({len(res['HIS'])} episodes) | R.12 stop q25/50/75 = "
               f"{np.percentile(stops_used,25):.1f}/{np.percentile(stops_used,50):.1f}/{np.percentile(stops_used,75):.1f} pts =====")
         print("| plan | Win rate | Avg win / loss | Total |")
         tot = {}
@@ -93,7 +93,7 @@ def run(repo="."):
         print(f"| {k} | {(a>0).mean():.0%} | {a.sum():+.1f} |")
     base = max(np.sum(pooled["M1 (S30/stop4)"]), np.sum(pooled["S90/stop4"]))
     print("\nFREEZE CHECK per share:")
-    for k in ("S90/R.25", "S90/R.35", "S90/R.50"):
+    for k in ("S90/R.08", "S90/R.12", "S90/R.17"):
         win = np.sum(pooled[k]) > base
         w = k in worst
         print(f"  {k}: pooled win {win}, worst-in-a-month {w} -> {'PASS' if win and not w else 'fail'}")
