@@ -93,3 +93,16 @@ PARKED - TRY SOON: active-window restriction | his adds/exits dissection
 microstructure | day-type | NQ/YM lead-lag | D4-on-quiet | per-type stacks
 beyond T1 | burst-rule wiring etc. (moot till entries exist)
 ```
+
+## BOUNDED-SEARCH CANDIDATES harvested from the imitation study (user 2026-11-20:
+## "might be useful for finding an entry strategy as part of the other entry
+## work not related to imitating his trades - remember those")
+- Structure-edge trigger architecture: maintain resolver edges (harness-
+  certified), detect cross/reject interaction, enter at edge + measured
+  displacement (REA median +3.0 pts, SQZ +1.5, GAP/SHD at edge). T-IM31.
+- KME-window gate: 3x fires-per-catch concentration (87->28). T-IM33.
+- REA union definition (5m N=2 swing OR 0.08% pct-zigzag): 86% of his
+  reaction refs, +38 over fair null. T-IM27.
+- Negative knowledge: price-AT-structure selection fails (T-IM29);
+  vol-spike (comp5/mv120) does not discriminate entries (T-IM33);
+  implied Key-zone lists inherit market geometry (T-IM27).
