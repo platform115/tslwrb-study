@@ -9,7 +9,11 @@ The standing gate (T-EN101) covers entry/signal scripts; the resolver's
 generator outputs were ≤t BY CONSTRUCTION but never mechanically checked.
 Before any S6 number counts: extend the harness — at sampled seconds,
 recompute the resolver state from truncated data; any difference = fail.
-REVIEW GATE: harness passes.
+USER AMENDMENT (2026-11-20): evaluation at the 1-SECOND level wherever
+per-second data exists (the training month does) — anchor prices are
+per-second mids at the exact second, structures compared at second
+precision; no bar-containing-the-moment rounding, which is the exact
+shortcut that caused the original lookahead. REVIEW GATE: harness passes.
 
 ## S6.1 Structure presence at his entries vs matched null
 For each of his 92 first entries (2025-10): resolver state at the entry
@@ -37,6 +41,12 @@ Declared now, before any S6.1 results are seen:
          matched. Carries the weakest-kind flag.
   SEL-D: price within 3 pts of a STATED-price Key-zone level (prior
          mentions only; implied lists failed in S5b and are excluded).
+  SEL-E: price within 1 pt of a Long Shadow interval range edge (adopted
+         D2 + most-recent per side) — his most-used structural frame; was
+         missing from the first draft (user caught the omission).
+  SEL-F: price within 1 pt of a WRB body border — current-session, or
+         virgin older border (never touched since completion) — the p6_1
+         object, on the decided TF set.
 Metrics per selector, per day: catch rate of HIS entries; qualifying-
 moment volume (how often it fires with nobody there — attention realism);
 catch share of the UNION; overlap matrix between selectors.
