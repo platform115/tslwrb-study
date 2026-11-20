@@ -42,6 +42,7 @@
       terciles, KME-day vs quiet-day); month-by-month stability table;
       equity curve; flat-day count
     - costs/sizing stay out of scope per project instructions
+    - DISPLAY: every entry test uses RESULTS_DISPLAY_STANDARD.md (agreed 2026-11-21)
 3c. Harness rule: every entry gate passes truncation checks before any
     cell runs (standing).
 
