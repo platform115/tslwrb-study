@@ -1,5 +1,7 @@
 # S4 — LEVEL/BAND DB + LIFETIME MEASUREMENT (T-IM24/25)
-> Status: AWAITING REVIEW. Scripts: p6_17_s4_emit.py, p6_18_s4_link.py.
+> Status: CLOSED - APPROVED (user 2026-11-20). Refinement confirmed:
+> same-day/most-recent for ordinary structures; Key KME WRB Zones =
+> maintained list, weeks-to-months. Key-zone band identity -> S5.
 
 ## What was built
 - Objects table: 3,336,407 objects from all adopted generators + recorded
