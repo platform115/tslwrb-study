@@ -33,6 +33,8 @@ P4 = os.path.join(T, "P4_entry_determination")
 WAIT = 5
 Q_RTH = dict(early=4.0, stop=4.0, time_bars=27, S=30)
 Q_M1A = dict(early=4.0, stop=4.0, time_bars=27, S=90)   # M1A variant (T-BS03)
+Q_M0 = dict(early=1.5, stop=4.0, time_bars=27, S=10**9)  # M0 single-leg (T-BS04;
+# no stall, fast-fail 1.5; the reversal leg of full M0 is omitted, as in T-MG02)
 
 
 def run(repo=".", mgmt="M1"):
@@ -80,7 +82,7 @@ def run(repo=".", mgmt="M1"):
                 cross = np.flatnonzero(seg >= lvl) if long else np.flatnonzero(seg <= lvl)
                 js = j0 + (int(cross[0]) if len(cross) else 0)
             fill_s = int(secs[js])
-            px, xs, xb, reason = leg(cx, fb, fill, fill_s, long, Q_RTH if mgmt == "M1" else Q_M1A)
+            px, xs, xb, reason = leg(cx, fb, fill, fill_s, long, {"M1": Q_RTH, "M1A": Q_M1A, "M0": Q_M0}[mgmt])
             pnl = (px - fill) if long else (fill - px)
             # MAE from per-second mids during the trade
             j2 = int(np.searchsorted(secs, int(xs), "right")) - 1
