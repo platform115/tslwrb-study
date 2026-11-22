@@ -16,6 +16,8 @@
 | Strategy 1 | M1 | 2022-02 RTH | 224 | 47% | +2.18/-1.72 | +24.2 | 12.0 | T-BS02 |
 | Strategy 1 | M1A | 2025-10 RTH | 231 | 35% | +2.87/-2.25 | -104.6 | 121.6 | T-BS03 |
 | Strategy 1 | M1A | 2022-02 RTH | 204 | 34% | +3.29/-2.82 | -147.2 | 147.2 | T-BS03 |
+| Strategy 1 | M0 | 2025-10 RTH | 178 | 19% | +7.25/-2.56 | -131.6 | 151.4 | T-BS04 |
+| Strategy 1 | M0 | 2022-02 RTH | 163 | 14% | +14.37/-2.55 | -26.6 | 97.6 | T-BS04 |
 | Strategy 3A | M1 | 2025-10 RTH | 1644 | 41% | +1.76/-1.11 | +84.2 | 47.4 | T-BS01 |
 | Strategy 3B | M1 | 2025-10 RTH | 428 | 40% | +1.84/-1.25 | -9.5 | 21.2 | T-BS01 |
 | Strategy 3C | M1 | 2025-10 RTH | 373 | 42% | +1.79/-1.47 | -36.8 | 45.0 | T-BS01 |
@@ -104,6 +106,26 @@ but losses grow faster). The coupling is not about clock speed: these
 confirmation entries need their native structure (fast-fail 2.0 +
 pt-ladder targets + 9-bar time), not a stall clock of any length.
 
+#### Strategy 1 | M0 | RTH (T-BS04; single leg, reversal omitted as in T-MG02)
+| metric | OURS 25-10 | OURS 22-02 |
+|---|---|---|
+| trades | 178 | 163 |
+| win rate | 19% | 14% |
+| points won / lost | +239.2 / -370.9 | +330.5 / -357.1 |
+| net points | -131.6 | -26.6 |
+| avg win / avg loss | +7.25 / -2.56 | +14.37 / -2.55 |
+| worst single trade / worst MAE | -4.88 / 4.88 | -5.88 / 5.88 |
+| max drawdown from start | 151.4 | 97.6 |
+STRATEGY 1 M-SERIES EXPLORATION CLOSED: all three plans lose. M0's
+fast-fail 1.5 kills ~55% of trades in two bars; the few survivors are
+huge (avg win up to +14.4 - the 27-bar clock lets winners run past where
+the pt-ladder would exit) but far too few. Bracketed precisely, the
+native stack's value lies in: fast-fail at 2.0 not 1.5, time 9 bars not
+27, pt-ladder targets, and the reversal leg (absent from all these
+single-leg runs; native's +0.84/trade included it). Strategy 1 keeps its
+NATIVE exit stack in the register; fill counts differ across plans
+because the 5-min cooldown keys off each plan's own exit times.
+
 #### Strategy 1 | native exit stack (historical era, thin record)
 | metric | HIS 21-09 | OURS 21-09 | HIS 24-11 | OURS 24-11 |
 |---|---|---|---|---|
@@ -137,7 +159,7 @@ table never built - open cell.)
 ## 5. UNTESTED COMBOS (the open grid)
 | entry | management | note |
 |---|---|---|
-| Strategy 1 | M0 | M1 (T-BS02) and M1A (T-BS03) both tested - both poor fits |
+| Strategy 1 | (none - M-series complete) | M0/M1/M1A all tested (T-BS02..04), all poor; native stack stands |
 | Strategy 1 | - | his 2024-11 comparison table still never built |
 | Strategy 3A / 3B | M0 / M1A | |
 | Strategy 3C / 3D | M0 | |
