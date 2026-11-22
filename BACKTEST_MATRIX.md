@@ -12,6 +12,8 @@
 | Strategy 1 | native | 2025-10+2022-02 (IS) | - | - | - | +0.84/tr | - | T-EN45 |
 | Strategy 1 | native | 2021-09 (OOS) | 144 | 49% | - | +62.5 | - | T-EN46 |
 | Strategy 1 | native | 2024-11 (OOS) | 175 | 44% | - | -7.2 | - | T-EN46 |
+| Strategy 1 | M1 | 2025-10 RTH | 260 | 38% | +1.45/-1.59 | -113.2 | 114.1 | T-BS02 |
+| Strategy 1 | M1 | 2022-02 RTH | 224 | 47% | +2.18/-1.72 | +24.2 | 12.0 | T-BS02 |
 | Strategy 3A | M1 | 2025-10 RTH | 1644 | 41% | +1.76/-1.11 | +84.2 | 47.4 | T-BS01 |
 | Strategy 3B | M1 | 2025-10 RTH | 428 | 40% | +1.84/-1.25 | -9.5 | 21.2 | T-BS01 |
 | Strategy 3C | M1 | 2025-10 RTH | 373 | 42% | +1.79/-1.47 | -36.8 | 45.0 | T-BS01 |
@@ -60,8 +62,31 @@ Activity: his 92 | 3A caught 79 (86%), ~299 fires/day | 3B caught -, 428 taken
 | worst single trade (MAE) | - | - | - |
 | max drawdown from start | ~0 | 47.4 | 21.2 |
 
-### Strategy 1 | native exit stack — all measured months
-Activity: catch-vs-HIS never measured (open cell); fires = trades taken.
+### Strategy 1 — all measured months
+Activity (catch = his entry within +/-5 min of a fill, direction-matched;
+definition adopted at T-BS02 for fill-based rules):
+| | 2025-10 | 2022-02 |
+|---|---|---|
+| his trades | 92 | 221 |
+| fills (per day) | 260 (10.4) | 224 (9.7) |
+| his caught | 35 (38%) | 70 (32%) |
+
+#### Strategy 1 | M1 | RTH (T-BS02 - full standard block, exact splits + MAE)
+| metric | HIS 25-10 | OURS 25-10 | HIS 22-02 | OURS 22-02 |
+|---|---|---|---|---|
+| trades | 92 | 260 | 221 | 224 |
+| win rate | 82% | 38% | 71% | 47% |
+| points won / lost | +642.2 / -22.2 | +143.1 / -256.4 | +865.8 / -114.5 | +229.0 / -204.8 |
+| net points | +620.0 | -113.2 | +751.2 | +24.2 |
+| avg win / avg loss | +8.56 / -1.31 | +1.45 / -1.59 | +5.48 / -1.82 | +2.18 / -1.72 |
+| worst single trade / worst MAE | -3.00 / - | -5.12 / 5.12 | -4.00 / - | -6.00 / 6.00 |
+| max drawdown from start | ~0 | 114.1 | 10.5 | 12.0 |
+Exits: ~93% stall - M1's clock closes Strategy 1's confirmation entries
+before their pt-ladder targets can be reached. READ: entries and
+management are COUPLED; M1 fits HIS entries, not Strategy 1's (native
+stack earned +0.84/trade on these same months).
+
+#### Strategy 1 | native exit stack (historical era, thin record)
 | metric | HIS 21-09 | OURS 21-09 | HIS 24-11 | OURS 24-11 |
 |---|---|---|---|---|
 | trades | 124 | 144 | - | 175 |
@@ -94,8 +119,8 @@ table never built - open cell.)
 ## 5. UNTESTED COMBOS (the open grid)
 | entry | management | note |
 |---|---|---|
-| Strategy 1 | M0 / M1 / M1A | only ever run with native exits |
-| Strategy 1 | - | catch-vs-HIS never measured; his 2024-11 table never built |
+| Strategy 1 | M0 / M1A | M1 tested at T-BS02 (poor fit - coupling noted) |
+| Strategy 1 | - | his 2024-11 comparison table still never built |
 | Strategy 3A / 3B | M0 / M1A | |
 | Strategy 3C / 3D | M0 | |
 | Strategy 3C | any mgmt, 2022-02 / 2021-09 / 2024-11 P&L | catch measured, P&L not |
