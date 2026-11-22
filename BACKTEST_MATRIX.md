@@ -14,6 +14,8 @@
 | Strategy 1 | native | 2024-11 (OOS) | 175 | 44% | - | -7.2 | - | T-EN46 |
 | Strategy 1 | M1 | 2025-10 RTH | 260 | 38% | +1.45/-1.59 | -113.2 | 114.1 | T-BS02 |
 | Strategy 1 | M1 | 2022-02 RTH | 224 | 47% | +2.18/-1.72 | +24.2 | 12.0 | T-BS02 |
+| Strategy 1 | M1A | 2025-10 RTH | 231 | 35% | +2.87/-2.25 | -104.6 | 121.6 | T-BS03 |
+| Strategy 1 | M1A | 2022-02 RTH | 204 | 34% | +3.29/-2.82 | -147.2 | 147.2 | T-BS03 |
 | Strategy 3A | M1 | 2025-10 RTH | 1644 | 41% | +1.76/-1.11 | +84.2 | 47.4 | T-BS01 |
 | Strategy 3B | M1 | 2025-10 RTH | 428 | 40% | +1.84/-1.25 | -9.5 | 21.2 | T-BS01 |
 | Strategy 3C | M1 | 2025-10 RTH | 373 | 42% | +1.79/-1.47 | -36.8 | 45.0 | T-BS01 |
@@ -86,6 +88,22 @@ before their pt-ladder targets can be reached. READ: entries and
 management are COUPLED; M1 fits HIS entries, not Strategy 1's (native
 stack earned +0.84/trade on these same months).
 
+#### Strategy 1 | M1A | RTH (T-BS03)
+| metric | OURS 25-10 | OURS 22-02 |
+|---|---|---|
+| trades | 231 | 204 |
+| win rate | 35% | 34% |
+| points won / lost | +232.2 / -336.9 | +230.1 / -377.4 |
+| net points | -104.6 | -147.2 |
+| avg win / avg loss | +2.87 / -2.25 | +3.29 / -2.82 |
+| worst single trade / worst MAE | -6.38 / 6.38 | -4.88 / 5.38 |
+| max drawdown from start | 121.6 | 147.2 |
+READ: longer patience does NOT fix the fit - M1A matches M1's loss in
+2025-10 and turns 2022-02 from +24.2 to -147.2 (wins grow to +2.87/+3.29
+but losses grow faster). The coupling is not about clock speed: these
+confirmation entries need their native structure (fast-fail 2.0 +
+pt-ladder targets + 9-bar time), not a stall clock of any length.
+
 #### Strategy 1 | native exit stack (historical era, thin record)
 | metric | HIS 21-09 | OURS 21-09 | HIS 24-11 | OURS 24-11 |
 |---|---|---|---|---|
@@ -119,7 +137,7 @@ table never built - open cell.)
 ## 5. UNTESTED COMBOS (the open grid)
 | entry | management | note |
 |---|---|---|
-| Strategy 1 | M0 / M1A | M1 tested at T-BS02 (poor fit - coupling noted) |
+| Strategy 1 | M0 | M1 (T-BS02) and M1A (T-BS03) both tested - both poor fits |
 | Strategy 1 | - | his 2024-11 comparison table still never built |
 | Strategy 3A / 3B | M0 / M1A | |
 | Strategy 3C / 3D | M0 | |
