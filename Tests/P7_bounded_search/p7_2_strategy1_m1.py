@@ -32,9 +32,10 @@ from p5_10_stall_stack_dials import leg
 P4 = os.path.join(T, "P4_entry_determination")
 WAIT = 5
 Q_RTH = dict(early=4.0, stop=4.0, time_bars=27, S=30)
+Q_M1A = dict(early=4.0, stop=4.0, time_bars=27, S=90)   # M1A variant (T-BS03)
 
 
-def run(repo="."):
+def run(repo=".", mgmt="M1"):
     sig_all = pd.read_csv(os.path.join(P4, "p4_36_all_signals.csv"))
     for month in ("2025-10", "2022-02"):
         P = prep(repo, month)
@@ -79,7 +80,7 @@ def run(repo="."):
                 cross = np.flatnonzero(seg >= lvl) if long else np.flatnonzero(seg <= lvl)
                 js = j0 + (int(cross[0]) if len(cross) else 0)
             fill_s = int(secs[js])
-            px, xs, xb, reason = leg(cx, fb, fill, fill_s, long, Q_RTH)
+            px, xs, xb, reason = leg(cx, fb, fill, fill_s, long, Q_RTH if mgmt == "M1" else Q_M1A)
             pnl = (px - fill) if long else (fill - px)
             # MAE from per-second mids during the trade
             j2 = int(np.searchsorted(secs, int(xs), "right")) - 1
@@ -116,7 +117,7 @@ def run(repo="."):
         hw = ha[ha > 0]; hl = ha[ha <= 0]
         dd = -min(0.0, float(np.min(np.cumsum(a))))
         hdd = -min(0.0, float(np.min(np.cumsum(ha))))
-        print(f"\n===== Strategy 1 | M1 | {month} | RTH =====")
+        print(f"\n===== Strategy 1 | {mgmt} | {month} | RTH =====")
         print(f"A: his trades {len(ha)} | fills {len(D)} ({len(D)/ndays:.1f}/day) "
               f"| his caught (+/-5min, dir-matched) {caught} ({caught/len(ha):.0%}) "
               f"| fills without his trade: {len(D)-caught} (approx)")
@@ -132,4 +133,5 @@ def run(repo="."):
 
 
 if __name__ == "__main__":
-    run("." if len(sys.argv) < 2 else sys.argv[1])
+    run("." if len(sys.argv) < 2 else sys.argv[1],
+        mgmt=(sys.argv[2] if len(sys.argv) > 2 else "M1"))
