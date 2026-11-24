@@ -1,5 +1,5 @@
 # A1 — FEATURE COVERAGE MATRIX + CANDIDATE ELICITATION
-STATUS: LIVING | Version 1.1 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
+STATUS: LIVING | Version 1.2 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
 Purpose (plain): the complete list of what we measure, what we could
 measure, and where each candidate came from. OPEN list - J adds any time.
 v1.1: vocabulary now CENSUSED from his 31,838 messages (counts shown),
@@ -96,29 +96,68 @@ my v1.0 list had invented emphasis. Corrected by the census.)
   "0830am KME Report"; do our calendar rows match every one he names?) | ABSENT - audit task |
 | day-regime flag (KME-day vs quiet day) | ABSENT as feature |
 
-## APPENDIX — THE EXISTING BATTERY (the "35", enumerated; all BUILT, <=t)
-moves: mv8 mv10 mv15 mv20 mv30 mv45 mv60 mv120 mv300 mv900 (ticks, signed
-toward direction or absolute) | ranges: rng30 rng60 rng120 rng300 rng900
-rng1800 | compression: comp30 comp60 comp120 comp300 comp900 (current
-window vs median of prior same-width windows) | volatility ratios: volr2
-volr5 | volume rates: vrate10 vrate30 vrate60 vrate120 vrate180 vrate300
-vrate900 + vratio60/120/300_30m | signed flow: flow1 flow5 flow15 |
-burst activity: bursts5 bursts15 burst_silence | stall_5m_extreme |
-day structure: dist_day_hi dist_day_lo day_pos mins_open | context:
-Rest(=Cday x atr10) atr10 Cday kme_mins_since | signals: sig_samedir_5m
-sig_best_score. Structure-interaction flags and object ages live in the
-resolver, alongside these.
+## APPENDIX — THE EXISTING BATTERY, DEFINED IN PLAIN LANGUAGE (all BUILT, <=t)
+Price movement
+- mv8..mv900: how far price moved over the last 8s / 10s / 15s / 20s /
+  30s / 45s / 60s / 2min / 5min / 15min, in ticks; measured toward the
+  trade's direction when one is given.
+- rng30..rng1800: the distance between the highest and lowest price over
+  the last 30s / 1 / 2 / 5 / 15 / 30 minutes.
+- comp30..comp900: the current window's range compared with the typical
+  recent range of the same width - below 1.0 means quieter than usual,
+  above 1.0 wider than usual (the "contraction/expansion" measure).
+- volr2, volr5: how jumpy second-to-second prices are in the last 2 / 5
+  minutes relative to the last 30 minutes.
+Volume and order flow
+- vrate10..vrate900: contracts traded per second over the last 10s ... 15min.
+- vratio60/120/300_30m: that trading rate compared with the last half
+  hour's average (above 1.0 = busier than the recent norm).
+- flow1, flow5, flow15: buying minus selling pressure per second over the
+  last 1 / 5 / 15 minutes (positive = buyers hitting the offer harder).
+Burst activity
+- bursts5, bursts15: how many fast price bursts occurred in the last 5 /
+  15 minutes (a burst = an 8-second move larger than a session-scaled
+  threshold).
+- burst_silence: seconds since the last burst.
+- stall_5m_extreme: seconds since price last set a new extreme (in the
+  relevant direction) within the past 5 minutes.
+Day structure and context
+- dist_day_hi, dist_day_lo, day_pos: distance to today's high and low,
+  and where price sits inside today's range (0 = at the low, 1 = at the high).
+- mins_open: minutes since the session open.
+- atr10: the average size of the last 10 completed 1-minute bars (the
+  bar-size yardstick).
+- Cday, Rest: a session-scale multiplier learned from prior sessions, and
+  Cday x atr10 = the expected movement scale for this session.
+- kme_mins_since: minutes since the last scheduled news event.
+Signals
+- sig_samedir_5m, sig_best_score: whether a score>=6 signal in the trade's
+  direction completed within the last 5 minutes, and its best score.
+Structure-interaction flags and object ages (which level/zone was crossed
+or rejected, how old it is) live in the resolver beside these.
 
-## PROPOSED BUILD ORDER v1.1 (reordered per J; decision J's)
-1. RECENT-BARS family + LEVEL-ANCHORED family together (they meet at
-   "how did the last bars behave INTO this level" - his actual view).
-2. KME family expansion incl. the his-mentions-vs-calendar audit.
-3. Event-anchored windows + seasonal/lunch regime anchors.
-4. Volume-at-price + prior-day levels + VWAP (anchors group).
-5. Order book + prints family.  6. Cross-market insync.  7. Pattern n-grams.
-All through the truncation harness before entering the table (R-1).
+## BUILD ORDER — RANKED BY A STATED RULE, NOT PREFERENCE
+Ranking rule (standard research triage): expected relevance to HIS
+behavior (from the census counts and prior findings) x how much we trust
+the data, divided by build cost. Ratings shown so the order is auditable
+and J can overrule any line.
+| family (plain name) | what it measures, plainly | relevance | data trust | cost | order |
+|---|---|---|---|---|---|
+| Recent bars + the level's story | how the last 1-20 bars behaved coming INTO a level: bounces, dwell, weakening tests, bar shapes | HIGH (bounce 391, break 317, battle/hesitation ~60) | HIGH | MED | 1 |
+| News-event (KME) family | which report, its phase, pre-news quiet, first reaction, move-since-event; plus the audit: does our calendar contain every KME he names | HIGH (kme words ~2400; 4x enrichment already proven) | HIGH | LOW | 2 |
+| Time-of-day regimes | open phases, lunch, event-anchored clocks instead of fixed windows | MED | HIGH | LOW | 3 |
+| Cross-market agreement | are NQ/YM/VIX moving with or against ES ("insync" - his word, 99+73 uses) | HIGH (he names it) | MED (needs data alignment work) | MED | 4 |
+| Standard price anchors | VWAP, yesterday's high/low/close, overnight range, volume-concentration prices | MED (field-standard; he never names them - census: 0) | HIGH | LOW | 5 |
+| Order book + large trades | depth, pulls and refills at levels; big prints hitting them | HIGH as a hypothesis (the unexplained drift trades) | MED (held for 2 months only) | HIGH | 6 |
+| Bar-shape sequences | encoding what the last few candles look like as repeatable patterns | MED | HIGH | HIGH (easy to fool ourselves; strict controls needed) | 7 |
+Note the honest tension at ranks 4-5: he names cross-market and never
+names VWAP, so relevance puts insync first even though anchors are
+cheaper. J may reorder any of this; the ratings are the argument, not
+the verdict. Every family passes the truncation harness before entering
+the measurement table (R-1).
 
 ## CHANGE LOG
+- v1.2 2026-11-24: battery appendix rewritten with plain-language definitions; build order rewritten with a stated ranking rule and auditable ratings (J's corrections).
 - v1.1 2026-11-24: vocabulary censused (counts), bounce/retrace/dwell/
   sweep gaps surfaced, recent-bars family added + prioritized, KME family
   expanded, battery enumerated, zero-count terms corrected out.
