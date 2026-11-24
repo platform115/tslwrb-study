@@ -33,7 +33,13 @@ for c in num_cols:
                             if b.median() not in (0, np.nan) else np.nan)))
 R = pd.DataFrame(rows).sort_values("p").reset_index(drop=True)
 
-UNITS = [("mv","ticks toward his side"),("rng","ticks"),("comp","ratio (1=typical)"),
+UNITS = [("mention","count (areas he named earlier today)"),
+("mins_since_mention","minutes"),("key_mention","0/1"),
+("edge_dist","points"),("n_tests_today","count"),("mins_since_test","minutes"),
+("last_bounce_ticks","ticks"),("dwell120","share 0-1"),("approach120","ticks (+=approaching)"),
+("consec_1m","bars, signed toward his side"),("consec_10s","10s steps, signed toward his side"),
+("body_share3","share 0-1"),("wick_opp_last","share 0-1"),("inside_last","0/1"),("volt3","ratio"),
+("mv","ticks toward his side"),("rng","ticks"),("comp","ratio (1=typical)"),
 ("volr","ratio"),("vratio","ratio"),("vrate","contracts/s"),
 ("flow","net contracts/s toward his side"),("bursts","count"),
 ("burst_silence","seconds"),("stall","seconds"),("dist_day","ticks"),
@@ -96,6 +102,8 @@ FAMS2 = [
  ("Distance to structure edges", lambda c: c.endswith(("_int_dist","_near_dist"))),
  ("Our signal engine state", lambda c: c.startswith("sig_")),
  ("News-event timing/surprise", lambda c: c.startswith("kme_")),
+ ("HIS LABELS: talked-about areas (A2.3)", lambda c: c.startswith("mention") or c == "key_mention_near" or c == "mins_since_mention"),
+ ("Level story + recent bars (A2.3)", lambda c: c in ("edge_dist","n_tests_today","mins_since_test","last_bounce_ticks","dwell120","approach120","consec_1m","consec_10s","body_share3","wick_opp_last","inside_last","volt3")),
 ]
 print("| family | members flagged | strongest member | difference | his q50 | null q50 | unit |")
 print("|---|---|---|---|---|---|---|")
