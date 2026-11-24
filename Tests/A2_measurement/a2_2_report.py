@@ -22,20 +22,37 @@ for c in num_cols:
     if len(a) < 30 or len(b) < 100:
         continue
     try:
-        p = mannwhitneyu(a, b).pvalue
+        mw = mannwhitneyu(a, b)
+        p = mw.pvalue
+        delta = 2.0 * mw.statistic / (len(a) * len(b)) - 1.0  # Cliff's delta
     except ValueError:
         continue
-    rows.append(dict(feature=c, his_q25=a.quantile(.25), his_q50=a.median(),
+    rows.append(dict(feature=c, delta=delta, his_q25=a.quantile(.25), his_q50=a.median(),
                      his_q75=a.quantile(.75), null_q50=b.median(), p=p,
                      ratio=(a.median() / b.median()
                             if b.median() not in (0, np.nan) else np.nan)))
 R = pd.DataFrame(rows).sort_values("p").reset_index(drop=True)
+
+UNITS = [("mv","ticks toward his side"),("rng","ticks"),("comp","ratio (1=typical)"),
+("volr","ratio"),("vratio","ratio"),("vrate","contracts/s"),
+("flow","net contracts/s toward his side"),("bursts","count"),
+("burst_silence","seconds"),("stall","seconds"),("dist_day","ticks"),
+("day_pos","0=low 1=high"),("mins_open","minutes"),("atr10","ticks"),
+("Cday","ratio"),("Rest","ticks"),("kme_mins","minutes"),
+("kme_surprise_sign","+1/-1"),("kme_surprise","native per report"),
+("sig_samedir","0/1"),("sig_best","score 0-10"),("_dist","points")]
+def unit(c):
+    for pre,u in UNITS:
+        if c.startswith(pre) or (pre.startswith("_") and c.endswith(pre+"dist")) or (pre=="_dist" and c.endswith(("_int_dist","_near_dist"))):
+            return u
+    return "-"
 m = len(R)
 R["bh_flag"] = R.p <= (np.arange(1, m + 1) / m) * 0.05  # BH step-up (sorted)
 # correct BH: largest k with p_k <= k/m*q
 ok = np.flatnonzero(R.p.to_numpy() <= (np.arange(1, m + 1) / m) * 0.05)
 k = ok.max() + 1 if len(ok) else 0
 R["bh_flag"] = np.arange(m) < k
+R = R.sort_values("delta", key=np.abs, ascending=False).reset_index(drop=True)
 
 print("# A2.2 REPORT — THE MEASUREMENT TABLE (T-IM41)")
 print("STATUS: CLOSED | 2026-11-24 | Spec: A2_2_SPEC.md (frozen) | "
@@ -62,9 +79,11 @@ print("REA = reaction levels (recent swing highs/lows he reacts off); "
       "SHD = long-shadow zones. A null = an ordinary moment: same "
       "session, same 30-min time slot, >=10 min from any of his entries.")
 print()
-print("## FEATURE FAMILIES, GROUPED (one finding per family, not per column)")
-print("Flags = Mann-Whitney with Benjamini-Hochberg 5% correction. "
-      "Provisional marks for A3/A4, never gates (R-4).")
+print("## FEATURE FAMILIES, GROUPED - SORTED BY HOW DIFFERENT HIS MOMENTS ARE")
+print("Difference score = Cliff's delta (Cliff, 1993): the chance a random")
+print("entry of his exceeds a random ordinary moment, minus the reverse.")
+print("0 = indistinguishable, +/-1 = completely separated. Flags = ")
+print("Mann-Whitney, Benjamini-Hochberg 5%; provisional, never gates (R-4).")
 print()
 FAMS2 = [
  ("Directional movement (8s-15min ladder)", lambda c: c.startswith("mv")),
@@ -78,27 +97,31 @@ FAMS2 = [
  ("Our signal engine state", lambda c: c.startswith("sig_")),
  ("News-event timing/surprise", lambda c: c.startswith("kme_")),
 ]
-print("| family | members flagged | strongest member | his q50 | null q50 |")
-print("|---|---|---|---|---|")
+print("| family | members flagged | strongest member | difference | his q50 | null q50 | unit |")
+print("|---|---|---|---|---|---|---|")
+fam_rows = []
 for name, fn in FAMS2:
     sub = R[R.feature.map(fn)]
     if not len(sub):
         continue
     top = sub.iloc[0]
+    fam_rows.append((abs(top.delta), name, sub, top))
+for _, name, sub, top in sorted(fam_rows, reverse=True):
     print(f"| {name} | {int(sub.bh_flag.sum())}/{len(sub)} | {top.feature} "
-          f"| {top.his_q50:.2f} | {top.null_q50:.2f} |")
+          f"| {top.delta:+.2f} | {top.his_q50:.2f} | {top.null_q50:.2f} "
+          f"| {unit(top.feature)} |")
 print()
 print(f"Flagged: {int(R.bh_flag.sum())} of {m} columns - but the ladder "
       f"columns inside a family are one finding measured at several "
       f"widths, so read this as ~{sum(1 for nm,fn in FAMS2 if R[R.feature.map(fn)].bh_flag.any())} "
       f"family-level findings, not {int(R.bh_flag.sum())}.")
 print()
-print("## FULL RANKED LIST (appendix)")
-print("| feature | his q25/q50/q75 | null q50 | flagged |")
-print("|---|---|---|---|")
+print("## FULL LIST, MOST-DIFFERENT FIRST (appendix)")
+print("| feature | difference | his q25/q50/q75 | null q50 | unit | flagged |")
+print("|---|---|---|---|---|---|")
 for _, r in R.iterrows():
-    print(f"| {r.feature} | {r.his_q25:.2f} / {r.his_q50:.2f} / "
-          f"{r.his_q75:.2f} | {r.null_q50:.2f} | "
+    print(f"| {r.feature} | {r.delta:+.2f} | {r.his_q25:.2f} / {r.his_q50:.2f} / "
+          f"{r.his_q75:.2f} | {r.null_q50:.2f} | {unit(r.feature)} | "
           f"{'YES' if r.bh_flag else 'no'} |")
 print()
 print("## KME SURPRISE (new field)")

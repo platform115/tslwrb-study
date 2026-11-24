@@ -233,6 +233,7 @@ reporting and naming layer (R-3, R-7).
   GLOSSARY entry in the same commit."
 
 ## CHANGE LOG
+- 2026-11-24: methods register + Cliff's delta (Cliff, 1993 - rank-based effect size; the chance one group exceeds the other, minus the reverse) for his-vs-null difference ranking in A2 reports.
 - 2026-11-24: two-tier amendment ACCEPTED with J's condition - per-second months first; screening tier and vendor expansion deferred.
 - 2026-11-24: proposed two-tier evidence amendment to R-1 (screening on 1m/60 months vs confirmation on per-second); awaiting J.
 - 2026-11-24: R-8 added (mechanical completeness pass); ASSETS.md generator committed.
