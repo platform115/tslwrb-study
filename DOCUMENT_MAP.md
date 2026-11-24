@@ -42,6 +42,10 @@ STAGE 3 — EXECUTION (per test; inside Tests/<phase>/)
                              pre-stated criteria.
   Tests/test_registry_rows.tsv one row per test (T-xx ids). Written by
                              script only, never by hand.
+  Tests/P6_imitation_study/REMAINDER_LEDGER.md  the uncaught-entries
+                             ledger: which of his trades no selector
+                             explains yet, and what has been ruled out.
+                             Updated each entry-search cycle.
 
 STAGE 4 — AGGREGATION (read when choosing what to do next)
   BACKTEST_MATRIX.md ....... every entry x management combo tried, full
