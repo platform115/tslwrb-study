@@ -25,8 +25,9 @@ ends Feb 27 because the ORIGINAL Databento order (GLBX-20260607, on the
 external drive) ends at glbx-mdp3-20220227 - the final day was never
 ordered. The derived file is faithful to the raw; the raw is short one
 day. FIX: one-day vendor order for 2022-02-28 (J approves purchases).
-Until then those 8 trades carry entry_flag=no_data_window and are
-excluded from per-second work - never silently dropped from the table.
+J's decision (2026-11-24): no purchase for now. The 8 trades keep their
+no_data_window flag, stay in the table, are excluded from per-second
+analyses, and are included wherever per-second data is not required.
 
 ## OUTPUT
 Data/inputs/a2_ground_truth.parquet (checksummed) - 315 rows: identity
