@@ -1,5 +1,5 @@
 # A2.2 SPEC — THE MEASUREMENT TABLE (pre-registered; frozen at run)
-STATUS: DRAFT FOR J'S REVIEW | 2026-11-24 | Track A step A2.2 | Registry: T-IM41
+STATUS: FROZEN at run (J approved with window check) | 2026-11-24 | Track A step A2.2 | Registry: T-IM41
 Months: training only (2025-10, 2022-02). Rows: 315 trades + matched nulls.
 
 ## PURPOSE (plain)
@@ -29,6 +29,22 @@ then look for relationships (J's standing correction).
    latest event name, SURPRISE = actual vs forecast parsed to numbers
    where the calendar strings allow (%, K/M/B suffixes), NaN where not -
    parse coverage reported, never guessed.
+
+## SELF-CHECK AMENDMENTS (before run, 2026-11-24, per J)
+- WINDOWS vs HIS TIMESCALE: ladder spans 8s-30min trailing from the
+  moment, dense at the short end - matches his measured behavior (hold
+  ~183s median, stall clock 30s, burst scale 8s). Nothing reads prior
+  days EXCEPT Cday/Rest (session-scale yardstick from prior sessions).
+  Both carry a prior_session_derived flag so grouping can exclude them;
+  rng1800 is the intraday-only alternative in the same table.
+- FRESHNESS GUARD: if the latest per-second datum is more than 5s older
+  than the moment (data gap), features are NaN - never silently computed
+  from stale prices.
+- NULL FALLBACK: if a 30-min band has fewer than 10 eligible seconds
+  (busy cluster days), widen to the surrounding 2 hours; fallback count
+  reported.
+- KME name/surprise come from the calendar row matching the certified
+  event time (within 1s); no match = NaN, reported.
 
 ## HARNESS (the A2 extension, with the self-test folded in as agreed)
 Before results count: (a) at 40 sampled trade-moments, recompute every
