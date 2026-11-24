@@ -56,17 +56,50 @@ print(f"| inside 45-min KME window | {h.kme_in45.mean():.0%} | "
 print(f"| KME phase 0-5 min | {(h.kme_phase == '0-5').mean():.0%} | "
       f"{(n.kme_phase == '0-5').mean():.0%} |")
 print()
-print("## FEATURES RANKED BY SEPARATION (Mann-Whitney, BH-corrected 5%)")
-print("Flags mark where A3/A4 should look. They are NOT gates (R-4).")
+print("## NAMES IN PLAIN WORDS (designation rule)")
+print("REA = reaction levels (recent swing highs/lows he reacts off); "
+      "SQZ = squeeze bands (tight-range zones); GAP = hidden gaps; "
+      "SHD = long-shadow zones. A null = an ordinary moment: same "
+      "session, same 30-min time slot, >=10 min from any of his entries.")
 print()
+print("## FEATURE FAMILIES, GROUPED (one finding per family, not per column)")
+print("Flags = Mann-Whitney with Benjamini-Hochberg 5% correction. "
+      "Provisional marks for A3/A4, never gates (R-4).")
+print()
+FAMS2 = [
+ ("Directional movement (8s-15min ladder)", lambda c: c.startswith("mv")),
+ ("Recent range / compression", lambda c: c.startswith(("rng","comp","volr"))),
+ ("Volume rate", lambda c: c.startswith(("vrate","vratio"))),
+ ("Buy-sell flow", lambda c: c.startswith("flow")),
+ ("Bursts / time-since-extreme", lambda c: c.startswith("burst") or c=="stall_5m_extreme"),
+ ("Position in the day / clock", lambda c: c in ("dist_day_hi","dist_day_lo","day_pos","mins_open")),
+ ("Session scale (Cday/Rest prior-session-derived)", lambda c: c in ("atr10","Cday","Rest")),
+ ("Distance to structure edges", lambda c: c.endswith(("_int_dist","_near_dist"))),
+ ("Our signal engine state", lambda c: c.startswith("sig_")),
+ ("News-event timing/surprise", lambda c: c.startswith("kme_")),
+]
+print("| family | members flagged | strongest member | his q50 | null q50 |")
+print("|---|---|---|---|---|")
+for name, fn in FAMS2:
+    sub = R[R.feature.map(fn)]
+    if not len(sub):
+        continue
+    top = sub.iloc[0]
+    print(f"| {name} | {int(sub.bh_flag.sum())}/{len(sub)} | {top.feature} "
+          f"| {top.his_q50:.2f} | {top.null_q50:.2f} |")
+print()
+print(f"Flagged: {int(R.bh_flag.sum())} of {m} columns - but the ladder "
+      f"columns inside a family are one finding measured at several "
+      f"widths, so read this as ~{sum(1 for nm,fn in FAMS2 if R[R.feature.map(fn)].bh_flag.any())} "
+      f"family-level findings, not {int(R.bh_flag.sum())}.")
+print()
+print("## FULL RANKED LIST (appendix)")
 print("| feature | his q25/q50/q75 | null q50 | flagged |")
 print("|---|---|---|---|")
-for _, r in R.head(30).iterrows():
+for _, r in R.iterrows():
     print(f"| {r.feature} | {r.his_q25:.2f} / {r.his_q50:.2f} / "
           f"{r.his_q75:.2f} | {r.null_q50:.2f} | "
           f"{'YES' if r.bh_flag else 'no'} |")
-print()
-print(f"Flagged features: {int(R.bh_flag.sum())} of {m} tested.")
 print()
 print("## KME SURPRISE (new field)")
 k45 = h[h.kme_in45 == True]  # noqa: E712
