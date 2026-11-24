@@ -1,5 +1,5 @@
 # A1 — FEATURE COVERAGE MATRIX + CANDIDATE ELICITATION
-STATUS: LIVING | Version 1.3 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
+STATUS: LIVING | Version 1.4 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
 Purpose (plain): the complete list of what we measure, what we could
 measure, and where each candidate came from. OPEN list - J adds any time.
 v1.1: vocabulary now CENSUSED from his 31,838 messages (counts shown),
@@ -56,7 +56,7 @@ my v1.0 list had invented emphasis. Corrected by the census.)
 | first-touch vs later-touch behavior difference | ABSENT |
 | volume at tests vs ambient; volume trend across tests | ABSENT |
 | VOLUME-AT-PRICE / volume profile around the level (high-volume nodes) | ABSENT (standard: Steidlmayer market profile family; POC/value area) |
-| order book depth/refills/pulls at the level | ABSENT (book held, unused) |
+| order book at the level | ABSENT. v1.4 audit: held columns are top-of-book + 10-level totals (bid0/ask0/bid10/ask10, 2 months) - supports imbalance and thinning measures; pull/refill events would need raw MBP-10 reprocessing |
 | large prints at the level | ABSENT |
 | stacked-level ladder density (how many levels within y pts) | ABSENT |
 | zone-midpoint coincidence | ABSENT |
@@ -88,6 +88,7 @@ my v1.0 list had invented emphasis. Corrected by the census.)
 | in-45-min window flag + minutes-since | BUILT |
 | KME TYPE (which report: CPI/FOMC/claims/...) | ABSENT (calendar holds it; never a feature) |
 | KME importance tier | ABSENT |
+| KME SURPRISE: actual vs forecast (the calendar already stores actual/forecast/previous - never used as a feature; macro-surprise is a standard, documented driver) | ABSENT - audit found the columns unused |
 | window PHASE (0-5 min vs 5-45 min) | ABSENT |
 | pre-KME state (quiet-before-news compression) | ABSENT |
 | initial reaction: direction + size of first move after release | ABSENT |
@@ -113,7 +114,10 @@ What exists, verified against the data files:
   live weeks-months.
 | candidate measurement | status |
 |---|---|
-| was the entry inside/near an area HE had already named (same session or earlier)? talk->trade lag, count of prior mentions, which kind he called it | ABSENT - never measured; all inputs parsed |
+| was the entry inside/near an area HE had already named (same session or earlier)? talk->trade lag, count of prior mentions, which kind he called it | ABSENT. HONEST CAVEAT (v1.4 audit): only 146/5,155 refs carry an explicit stated price - the linkage must run refs->linked objects->edge prices (7,533 links exist), not stated prices alone |
+| his own interaction labels: relation column - "reached" (1,270), "at/near" (416), "broken" (238), "squeeze" (211) - HE classified the interactions; compare against our detector's classification | ABSENT |
+| his importance labels: tier column - "key" (1,092) vs "small" (292) | PARTIAL (key-zone work used stated prices only) |
+| which TF he is working on at entry/exit moments (his_tf_mentions has ctx_entry/ctx_exit flags - never joined to trades) | ABSENT |
 | areas he named and did NOT trade: what distinguishes them from named-then-traded (his own ignored set, vs our mechanical one) | ABSENT |
 | his conditional plans - "if it ..." (60), "looking for" (22), "watching" (47): parse the stated condition, test whether his next action matched it | ABSENT - direct rule elicitation from his words |
 | explicit negatives: "no trade" (98), "missed" (128), "waiting" (22) as labeled no-entry moments with full feature vectors | ABSENT |
@@ -122,6 +126,23 @@ What exists, verified against the data files:
 | his chat-activity rate around entries | ANALYSIS-ONLY - explains misses; can never be a live entry input (not knowable without him) |
 Assets: his_zone_refs, s4_ref_links, s4_objects (3.34M objects),
 wrb_messages, his_kme_times (for the Source 4 audit), his_signal_stamps.
+
+## SCOPE NOTE (v1.4 audit) — THE SAMPLE IS LARGER THAN THE PROGRAM ASSUMED
+The episode file holds 4,842 of his trades across 60 months (2021-05 to
+2026-05), and his messages span the same range. Per-second data exists
+for only 4 months, but every Source 5 measurement (talk->trade linkage,
+named-but-untraded, conditional plans, relation labels) needs only
+message timestamps + 1m bars. DECISION FOR J (R-3, not taken silently):
+do Source 5 analyses run on the full corpus, or does the training/
+validation month discipline extend to them? Proposal: explore on all
+months EXCEPT the quarantined validation months; any RULE fitted from
+the findings still validates only on quarantined data.
+
+## LABELS ARE NOT FEATURES (kept separate so X and y never mix)
+This matrix lists candidate INPUTS (X). The OUTCOMES (y) live apart:
+his realized P&L / exits / hold times (episodes), the M1-vs-his
+dissection, and the triple-barrier outcomes B1 will compute. A feature
+may never be computed from the trade's own outcome.
 
 ## APPENDIX — THE EXISTING BATTERY, DEFINED IN PLAIN LANGUAGE (all BUILT, <=t)
 Price movement
@@ -187,6 +208,12 @@ the verdict. Every family passes the truncation harness before entering
 the measurement table (R-1).
 
 ## CHANGE LOG
+- v1.4 2026-11-24: mechanical asset audit (ASSETS.md created). Found: KME
+  surprise columns unused; his relation/tier labels unused; tf-mention
+  entry/exit context unused; 60-month / 4,842-trade scope note + R-3
+  decision for J; stated-price caveat (146/5,155); order-book holding
+  corrected to what the columns actually support; labels-vs-features
+  separation stated.
 - v1.3 2026-11-24: SOURCE 5 added - his marked areas with his own labels
   (zone refs, ref->object links, entry/exit messages, no-trade census,
   conditional plans); was built in the structure program and omitted from

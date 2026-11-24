@@ -52,6 +52,15 @@ Work may switch between tracks at any review; a switch is a logged
 decision. Neither track's progress excuses the other.
 
 ===========================================================================
+### R-8 — MECHANICAL COMPLETENESS PASS (added 2026-11-24, after two recall failures)
+Before ANY deliverable reaches J at a review gate: diff it against
+ASSETS.md (the generated data-asset inventory) and against the relevant
+section of MASTER_PROGRAM - item by item, as a run step, never from
+memory. The deliverable ships with a "checked against inventory; not
+included: ..." footer. Rationale: both A1 omissions (invented vocabulary
+v1.0; his-labels source missing until v1.3) were recall-instead-of-census
+failures. Recall does not improve with effort; procedure replaces it.
+
 ## TRACK A — THE MAP (breadth: measure everything, find the patterns)
 Purpose (plain): a complete, living picture of HIS trading - every trade
 measured on everything we can measure, grouped into named types - so we
@@ -197,6 +206,7 @@ reporting and naming layer (R-3, R-7).
   GLOSSARY entry in the same commit."
 
 ## CHANGE LOG
+- 2026-11-24: R-8 added (mechanical completeness pass); ASSETS.md generator committed.
 - v1.0 2026-11-24: created from the planning discussion of 2026-11-23/24
   (two mandatory switchable tracks; measure-everything correction;
   evidence-at-review replaces numeric gates except R-1/R-5; single-trade
