@@ -62,7 +62,12 @@ v1.0; his-labels source missing until v1.3) were recall-instead-of-census
 failures. Recall does not improve with effort; procedure replaces it.
 
 
-### PROPOSED AMENDMENT TO R-1 — TWO-TIER EVIDENCE (awaiting J's decision, 2026-11-24)
+### R-1 AMENDMENT — TWO-TIER EVIDENCE (ACCEPTED WITH CONDITION, J, 2026-11-24)
+J's condition: work focuses FIRST on the four per-second months
+(training 2025-10 + 2022-02; validation 2021-09 one-pass-spent +
+2024-11 quarantined). The 60-month screening tier activates later,
+alongside selective Databento per-second purchases. The tier rules
+below stand as written for when it does.
 Context: 1m bars cover the full 60-month corpus (2021-05..2026-05,
 1.77M bars, verified); per-second data covers 4 months. The 1-second
 mandate exists because bar-rounding caused the original lookahead.
@@ -228,6 +233,7 @@ reporting and naming layer (R-3, R-7).
   GLOSSARY entry in the same commit."
 
 ## CHANGE LOG
+- 2026-11-24: two-tier amendment ACCEPTED with J's condition - per-second months first; screening tier and vendor expansion deferred.
 - 2026-11-24: proposed two-tier evidence amendment to R-1 (screening on 1m/60 months vs confirmation on per-second); awaiting J.
 - 2026-11-24: R-8 added (mechanical completeness pass); ASSETS.md generator committed.
 - v1.0 2026-11-24: created from the planning discussion of 2026-11-23/24
