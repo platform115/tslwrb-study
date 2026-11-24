@@ -1,5 +1,5 @@
 # A1 — FEATURE COVERAGE MATRIX + CANDIDATE ELICITATION
-STATUS: LIVING | Version 1.4 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
+STATUS: LIVING | Version 1.5 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
 Purpose (plain): the complete list of what we measure, what we could
 measure, and where each candidate came from. OPEN list - J adds any time.
 v1.1: vocabulary now CENSUSED from his 31,838 messages (counts shown),
@@ -79,7 +79,9 @@ my v1.0 list had invented emphasis. Corrected by the census.)
 | bar-volume pattern last N bars (rising/falling) | ABSENT |
 | last swing LEG stats (length, duration, speed) | PARTIAL |
 | short-window continuation-vs-revert tendency | ABSENT |
-| 1-second "bars": the same measures on 1s aggregation | ABSENT |
+| 1-second "bars": the same measures on 1s aggregation | PARTIAL (consec_10s BUILT in T-IM43, delta +0.44) |
+| completed-bar anatomy at 3m / 5m (his charted TFs) | ABSENT (1m tested T-IM43: marginal ~0; the J-flagged follow-up) |
+| CONDITIONAL bar anatomy (same measures, but only at structure edges / squeeze breaks) | ABSENT - A4 interaction test; marginal ~0 does not rule it out |
 | the existing mv/rng/comp ladder (8s..30min) | BUILT |
 
 ## SOURCE 4 — KME FAMILY (expanded per J)
@@ -208,6 +210,7 @@ the verdict. Every family passes the truncation harness before entering
 the measurement table (R-1).
 
 ## CHANGE LOG
+- v1.5 2026-11-24: T-IM42/43 statuses folded in; 3m/5m and conditional bar-anatomy follow-ups logged (J's challenge to the 'nothing there' reading).
 - v1.4 2026-11-24: mechanical asset audit (ASSETS.md created). Found: KME
   surprise columns unused; his relation/tier labels unused; tf-mention
   entry/exit context unused; 60-month / 4,842-trade scope note + R-3
