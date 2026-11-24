@@ -153,6 +153,14 @@ A4. CANDIDATE RANKING (feeds Track B)
     Lopez de Prado, 2018, ch. 8). Low ceiling = the missing column is in
     an ABSENT cell of A1 - named, built, loop repeats. Shipped rules stay
     deterministic; the model is an instrument, never a strategy.
+    (d) the STACKING STUDY (J, 2026-11-24): no single measurement
+    separates his moments cleanly (A2.2: strongest family difference
+    +0.54), so measure how separation grows as independent families are
+    COMBINED - which conjunctions concentrate his entries, at what
+    fires-per-catch cost. This is the honest upper bound for any rule
+    built from current measurements. Standing premise (J): he has no
+    data we cannot get - a low combined ceiling always means a missing
+    construction on our side (an ABSENT A1 cell), never "unknowable".
   Outputs: ranked shortlist with plain-language evidence per group.
   Review: J picks Track B's next target (or orders an A1 build instead).
 
@@ -233,6 +241,7 @@ reporting and naming layer (R-3, R-7).
   GLOSSARY entry in the same commit."
 
 ## CHANGE LOG
+- 2026-11-24: A4 extended with the stacking study (combined-family separation ceiling) and the no-hidden-data premise, per J.
 - 2026-11-24: methods register + Cliff's delta (Cliff, 1993 - rank-based effect size; the chance one group exceeds the other, minus the reverse) for his-vs-null difference ranking in A2 reports.
 - 2026-11-24: two-tier amendment ACCEPTED with J's condition - per-second months first; screening tier and vendor expansion deferred.
 - 2026-11-24: proposed two-tier evidence amendment to R-1 (screening on 1m/60 months vs confirmation on per-second); awaiting J.
