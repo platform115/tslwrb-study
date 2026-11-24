@@ -1,5 +1,5 @@
 # A1 — FEATURE COVERAGE MATRIX + CANDIDATE ELICITATION
-STATUS: LIVING | Version 1.2 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
+STATUS: LIVING | Version 1.3 | 2026-11-24 | Process: MASTER_PROGRAM Track A, step A1
 Purpose (plain): the complete list of what we measure, what we could
 measure, and where each candidate came from. OPEN list - J adds any time.
 v1.1: vocabulary now CENSUSED from his 31,838 messages (counts shown),
@@ -96,6 +96,33 @@ my v1.0 list had invented emphasis. Corrected by the census.)
   "0830am KME Report"; do our calendar rows match every one he names?) | ABSENT - audit task |
 | day-regime flag (KME-day vs quiet day) | ABSENT as feature |
 
+## SOURCE 5 — THE AREAS HE MARKED, WITH HIS OWN LABELS (J's catch, v1.3:
+## this was built in the structure program and then LEFT OUT of this matrix)
+What exists, verified against the data files:
+- his parsed references: 5,155 marked areas with kind (wrb 1,912,
+  key_kme_wrb 1,111, level_sr 513, contraction 310, shadow 268,
+  hidden_gap 119, ...), role (S/R), relation, direction, TF, stated price.
+- reference->object links: 7,533 matches of his references to specific
+  chart objects, with distance and object age (s4_ref_links).
+- his action labels: 5,207 entry messages, 5,174 exit messages, 21,457
+  commentary messages - he labeled his own data for us.
+- acted-vs-ignored edge properties (S6.4, one month): KME-window 42% vs
+  10%; age/confluence/round-number/tested-count showed no separation.
+- displacement (fill vs trigger edge): measured; the entry-price rule.
+- lifetimes (S4): ordinary structures die intraday; stated Key zones
+  live weeks-months.
+| candidate measurement | status |
+|---|---|
+| was the entry inside/near an area HE had already named (same session or earlier)? talk->trade lag, count of prior mentions, which kind he called it | ABSENT - never measured; all inputs parsed |
+| areas he named and did NOT trade: what distinguishes them from named-then-traded (his own ignored set, vs our mechanical one) | ABSENT |
+| his conditional plans - "if it ..." (60), "looking for" (22), "watching" (47): parse the stated condition, test whether his next action matched it | ABSENT - direct rule elicitation from his words |
+| explicit negatives: "no trade" (98), "missed" (128), "waiting" (22) as labeled no-entry moments with full feature vectors | ABSENT |
+| per-area mention count / emphasis / correction history as an importance score (vs the failed implied-list approach, S5b) | ABSENT |
+| acted-vs-ignored properties on ALL months, not one | ABSENT (built 2025-10 only) |
+| his chat-activity rate around entries | ANALYSIS-ONLY - explains misses; can never be a live entry input (not knowable without him) |
+Assets: his_zone_refs, s4_ref_links, s4_objects (3.34M objects),
+wrb_messages, his_kme_times (for the Source 4 audit), his_signal_stamps.
+
 ## APPENDIX — THE EXISTING BATTERY, DEFINED IN PLAIN LANGUAGE (all BUILT, <=t)
 Price movement
 - mv8..mv900: how far price moved over the last 8s / 10s / 15s / 20s /
@@ -143,20 +170,27 @@ the data, divided by build cost. Ratings shown so the order is auditable
 and J can overrule any line.
 | family (plain name) | what it measures, plainly | relevance | data trust | cost | order |
 |---|---|---|---|---|---|
-| Recent bars + the level's story | how the last 1-20 bars behaved coming INTO a level: bounces, dwell, weakening tests, bar shapes | HIGH (bounce 391, break 317, battle/hesitation ~60) | HIGH | MED | 1 |
-| News-event (KME) family | which report, its phase, pre-news quiet, first reaction, move-since-event; plus the audit: does our calendar contain every KME he names | HIGH (kme words ~2400; 4x enrichment already proven) | HIGH | LOW | 2 |
-| Time-of-day regimes | open phases, lunch, event-anchored clocks instead of fixed windows | MED | HIGH | LOW | 3 |
-| Cross-market agreement | are NQ/YM/VIX moving with or against ES ("insync" - his word, 99+73 uses) | HIGH (he names it) | MED (needs data alignment work) | MED | 4 |
-| Standard price anchors | VWAP, yesterday's high/low/close, overnight range, volume-concentration prices | MED (field-standard; he never names them - census: 0) | HIGH | LOW | 5 |
-| Order book + large trades | depth, pulls and refills at levels; big prints hitting them | HIGH as a hypothesis (the unexplained drift trades) | MED (held for 2 months only) | HIGH | 6 |
-| Bar-shape sequences | encoding what the last few candles look like as repeatable patterns | MED | HIGH | HIGH (easy to fool ourselves; strict controls needed) | 7 |
-Note the honest tension at ranks 4-5: he names cross-market and never
+| HIS marked areas + his own labels | entries vs areas he named (talk->trade), named-but-untraded areas, his "if it" conditions vs his actions, explicit no-trade moments | HIGHEST (his own labels; 5,155 refs + 10,381 action messages already parsed) | HIGH | LOW | 1 |
+| Recent bars + the level's story | how the last 1-20 bars behaved coming INTO a level: bounces, dwell, weakening tests, bar shapes | HIGH (bounce 391, break 317, battle/hesitation ~60) | HIGH | MED | 2 |
+| News-event (KME) family | which report, its phase, pre-news quiet, first reaction, move-since-event; plus the audit: does our calendar contain every KME he names | HIGH (kme words ~2400; 4x enrichment already proven) | HIGH | LOW | 3 |
+| Time-of-day regimes | open phases, lunch, event-anchored clocks instead of fixed windows | MED | HIGH | LOW | 4 |
+| Cross-market agreement | are NQ/YM/VIX moving with or against ES ("insync" - his word, 99+73 uses) | HIGH (he names it) | MED (needs data alignment work) | MED | 5 |
+| Standard price anchors | VWAP, yesterday's high/low/close, overnight range, volume-concentration prices | MED (field-standard; he never names them - census: 0) | HIGH | LOW | 6 |
+| Order book + large trades | depth, pulls and refills at levels; big prints hitting them | HIGH as a hypothesis (the unexplained drift trades) | MED (held for 2 months only) | HIGH | 7 |
+| Bar-shape sequences | encoding what the last few candles look like as repeatable patterns | MED | HIGH | HIGH (easy to fool ourselves; strict controls needed) | 8 |
+Rank 1 is new in v1.3: his own labels are the only feature family where
+relevance is not inferred - he wrote it down - and the parsing cost is
+already paid. Note the honest tension at ranks 5-6: he names cross-market and never
 names VWAP, so relevance puts insync first even though anchors are
 cheaper. J may reorder any of this; the ratings are the argument, not
 the verdict. Every family passes the truncation harness before entering
 the measurement table (R-1).
 
 ## CHANGE LOG
+- v1.3 2026-11-24: SOURCE 5 added - his marked areas with his own labels
+  (zone refs, ref->object links, entry/exit messages, no-trade census,
+  conditional plans); was built in the structure program and omitted from
+  this matrix (J's catch). Build order re-ranked: his-labels family = 1.
 - v1.2 2026-11-24: battery appendix rewritten with plain-language definitions; build order rewritten with a stated ranking rule and auditable ratings (J's corrections).
 - v1.1 2026-11-24: vocabulary censused (counts), bounce/retrace/dwell/
   sweep gaps surfaced, recent-bars family added + prioritized, KME family
