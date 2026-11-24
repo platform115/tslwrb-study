@@ -53,6 +53,27 @@ def main():
     with open(OUT, "w") as fh:
         fh.write("\n".join(lines))
     print(f"wrote {OUT}")
+    # R-8 doc-coverage check: every .md must appear in DOCUMENT_MAP.md
+    if os.path.exists("DOCUMENT_MAP.md"):
+        dm = open("DOCUMENT_MAP.md").read()
+        covered_groups = ["Tests/01", "Tests/02", "Tests/03", "Tests/04",
+                          "Tests/05", "Tests/06", "Tests/07",
+                          "STRATEGY_SPEC_v", "_spec", "_REPORT", "PLAN",
+                          "SPEC", "CHARTER", "HANDOFF", "BACKLOG",
+                          "CANDIDATES", "GROUPS", "DESIGN", "CHECK",
+                          "USAGE", "SUMMARY", "VALIDATION"]
+        missing = []
+        for md in glob.glob("*.md") + glob.glob("Tests/*/*.md"):
+            base = os.path.basename(md)
+            if base in dm or any(k in md for k in covered_groups):
+                continue
+            missing.append(md)
+        if missing:
+            print("DOC-COVERAGE FAIL - not in DOCUMENT_MAP.md:")
+            for x in missing:
+                print("  ", x)
+        else:
+            print("doc-coverage: all .md files placed")
 
 
 if __name__ == "__main__":

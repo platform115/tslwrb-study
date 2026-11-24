@@ -61,6 +61,28 @@ included: ..." footer. Rationale: both A1 omissions (invented vocabulary
 v1.0; his-labels source missing until v1.3) were recall-instead-of-census
 failures. Recall does not improve with effort; procedure replaces it.
 
+
+### PROPOSED AMENDMENT TO R-1 — TWO-TIER EVIDENCE (awaiting J's decision, 2026-11-24)
+Context: 1m bars cover the full 60-month corpus (2021-05..2026-05,
+1.77M bars, verified); per-second data covers 4 months. The 1-second
+mandate exists because bar-rounding caused the original lookahead.
+Proposal:
+- TIER 1 - SCREENING (60 months, 1m bars + his message timestamps + his
+  reported fill prices): allowed ONLY under the completed-bar rule - at
+  time t, use nothing from the bar containing t; price-at-t is the last
+  COMPLETED bar's close, with the staleness (up to 1 min) stated on every
+  output. The truncation harness is extended to enforce this tier.
+  Screening outputs say SCREENING on them and may only decide WHERE to
+  look next. They never become rule inputs or performance claims.
+- TIER 2 - CONFIRMATION (per-second months): every screening finding
+  must reproduce here before it can enter any entry or management rule.
+  All backtests and all fill/exit logic remain per-second only, as now.
+- Optional: buy further per-second months from the vendor selectively,
+  where screening concentrates - J approves each purchase.
+Note: the core talk->trade linkage (his message time vs his reported
+fill) uses no bar data at all - timestamps and his own stated prices -
+so the lookahead surface there is zero by construction.
+
 ## TRACK A — THE MAP (breadth: measure everything, find the patterns)
 Purpose (plain): a complete, living picture of HIS trading - every trade
 measured on everything we can measure, grouped into named types - so we
@@ -206,6 +228,7 @@ reporting and naming layer (R-3, R-7).
   GLOSSARY entry in the same commit."
 
 ## CHANGE LOG
+- 2026-11-24: proposed two-tier evidence amendment to R-1 (screening on 1m/60 months vs confirmation on per-second); awaiting J.
 - 2026-11-24: R-8 added (mechanical completeness pass); ASSETS.md generator committed.
 - v1.0 2026-11-24: created from the planning discussion of 2026-11-23/24
   (two mandatory switchable tracks; measure-everything correction;

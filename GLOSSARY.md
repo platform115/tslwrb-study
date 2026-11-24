@@ -49,3 +49,27 @@ Track A = the map (breadth: measurement table + taxonomy + ranking).
 Track B = the build (depth: one target to reliable; group mode or
 single-trade case-study mode). A1..A4, B0..B5 = their steps.
 R-1..R-7 = the standing rules in MASTER_PROGRAM.md.
+
+## STANDING RULES (R-series) — MASTER_PROGRAM.md is the full text
+There are exactly EIGHT. No R-9 without J's sign-off.
+| id | plain meaning |
+|---|---|
+| R-1 | Lookahead prevention: the truncation harness applies to every script, mechanically |
+| R-2 | Pre-registration: hypotheses and criteria written before any run |
+| R-3 | Uncertainty is flagged to J, never resolved silently |
+| R-4 | Plain language in everything J reads; numbers are provisional flag-lines, never silent gates |
+| R-5 | Naming: GLOSSARY.md is the authority; new names land in the same commit |
+| R-6 | Docs stay current: status headers, change logs, the living docs updated the same turn |
+| R-7 | Results display: every entry test shown per RESULTS_DISPLAY_STANDARD.md |
+| R-8 | Completeness pass: deliverables are diffed against ASSETS.md and the program doc mechanically, never from memory |
+
+## TRACK STEPS (MASTER_PROGRAM)
+A1 coverage matrix | A2 measurement table | A3 grouping | A4 ranking
+B0 pick target | B1 anatomy | B2 entry rule | B3 paired management | B4 unit test | B5 quarantined validation
+
+## DESIGNATION DISCIPLINE (added 2026-11-24, J: "these designations sprawl too easily")
+1. The COMPLETE list of designation families is this file's table of
+   contents. A designation not findable here is a naming bug - report it.
+2. No new family (new prefix or numbering scheme) without J's approval.
+3. First use of any designation in anything written for J carries its
+   plain meaning inline, every time.
