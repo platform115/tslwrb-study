@@ -43,3 +43,9 @@ MG-1..MG-3d management-design steps | C2-S1..S3 imitation cycle-2 steps
 D1/D2 shadow definitions | C1/C2/C3 conjunction conditions | Q dial set
 ALIASES retired by naming v2: ER-SIG -> Strategy 3C, ER-WIDE -> 3D,
 S-A/B/C -> 3A/3B/3C, M1-S90 -> M1A, V1/U -> 3C/3D (oldest).
+
+## MASTER PROGRAM names (added 2026-11-24, same-commit rule R-3)
+Track A = the map (breadth: measurement table + taxonomy + ranking).
+Track B = the build (depth: one target to reliable; group mode or
+single-trade case-study mode). A1..A4, B0..B5 = their steps.
+R-1..R-7 = the standing rules in MASTER_PROGRAM.md.

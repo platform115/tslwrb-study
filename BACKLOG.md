@@ -1,3 +1,5 @@
+# NOTE (2026-11-24): this backlog is being absorbed into MASTER_PROGRAM.md tracks; items not yet absorbed remain valid.
+
 # OUTSTANDING TASKS (2026-11-20; the working backlog)
 
 ## 1. ENTRY SEARCH (ongoing, no fixed end)
