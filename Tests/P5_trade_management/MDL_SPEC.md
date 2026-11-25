@@ -67,3 +67,7 @@ break handling {kill at 2.5x-tol beyond, PERSIST with role flip}.
 Metrics per cell: actions-only recovery, levels/day, and G2-coverage
 (share of the 62 with a level ahead). Attribution stays clean; the
 frozen bars decide; the purchased months arbitrate.
+V4 RESOLUTION CELL (pre-registered before run): the persist rows
+saturate (99 levels/day -> 100% recovery is base-rate, not skill).
+Fair test = persist + TOP-12 pruning by cluster score (density matched
+to the kill rule's 12/day). Judged on the same three metrics.
