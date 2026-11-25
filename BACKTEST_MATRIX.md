@@ -175,3 +175,16 @@ table never built - open cell.)
 Every new run: add its summary row (1), extend its combo's detail block
 (2) with the new month column, fill "-" cells it measures, remove its
 combo from (5), cite its T-id.
+
+## STRATEGY 4 x M3 — THE G2 BUILD (T-BS05, 2026-11-25; training months pooled)
+HIS G2 same period: 62 trades, 74% win, net +231.2, +5.71/-1.97, worst -3.75.
+| combo | trades | win | net (22-02/25-10) | worst | maxMAE | maxDD | caught/62 | extras net |
+|---|---|---|---|---|---|---|---|---|
+| 4A d1.25 x M3A (WINNER) | 473 | 44% | +135.8 (+55.1/+80.6) | -3.75 | 5.62 | 35.1 | 39 | +47.0 |
+| 4A d2.5 x M3C (runner-up) | 381 | 43% | +125.5 (+34.0/+91.5) | -3.75 | 7.88 | 48.8 | 47 | +105.5 |
+| 4A d1.25 x M3C | 434 | 41% | +94.4 | -3.75 | 5.88 | 47.9 | 37 | +88.4 |
+| 4B d1.25 x M3A | 287 | 44% | +61.8 | -3.75 | 5.62 | 34.6 | 38 | +1.2 |
+| 4A d1.25 x M3B | 421 | 41% | +52.8 | -3.75 | 5.62 | 61.4 | 37 | +9.0 |
+| others (7) | - | - | +44.4 .. -17.2 (B4 report) | - | - | - | - | - |
+Winner rule (pre-stated): positive both months AND extras net >= 0, highest pooled net. 7/12 qualified.
+Note: M3B (stall 90) - best on HIS fills in B3 - is WORST on OUR fills (extras punish patience): the entry-management coupling, measured again.
