@@ -92,3 +92,12 @@ B0 pick target | B1 anatomy | B2 entry rule | B3 paired management | B4 unit tes
 | G2-1 | Strategy 4A d1.25 x M3A (squeeze-break entry, 5-45min post-release, unfiltered, displacement 1.25; stall-60 management) | VALIDATED (T-BS05 training, T-BS06 quarantine PASS) |
 Convention: alias used alongside the long form, never replacing it in
 specs. Future validated pairs: G<group>-<n>.
+
+## M4 / M5 MANAGEMENT CANDIDATES (named per J, 2026-11-25; status shown)
+| name | plain meaning | status |
+|---|---|---|
+| M4A | ratchet stall: patience budget grows with each k-pt new extreme | tested (T-MG09), not adopted |
+| M4B | tiered stall: 60s/120s/longer by progress tier | tested (T-MG09), not adopted |
+| M4C | event-keyed: exit on opposite-direction 1m WRB completion + safety stall | tested (T-MG09/10), not adopted; safety-180 on the REVISIT list (extras +59.5 beat G2-1's +47.0; lost on his-like fills) |
+| M5A | accelerating trail (Wilder-SAR-inspired): trail tightens with each new extreme | in test (T-MG11) |
+| M5B | speed gate: fast move -> spike-capture; slow -> M3A patience | in test (T-MG11) |
