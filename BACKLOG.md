@@ -65,4 +65,6 @@
 5b. Python runner / VPS thread (separate conversation) - unchanged.
 5c. 2022-02 "signal @ 4321.50" dissection (parked since that era).
 5d. Registry hygiene: naming map (V1/U -> ER-SIG/ER-WIDE) done; keep.
-- OPEN (T-MG09, 2026-11-25): the OTHER exit-gap class (+51.8 on 16 G2 trades) is NOT scale-outs and NOT single-unit path - candidate causes to test: exit-message posting lag, limit exits filled at extremes beyond mids, holds beyond the 1800s sim window.
+- RESOLVED (T-MG10): the OTHER exit-gap class = his FAST PROFIT-TAKING (14/16 exited at the spike before a 60s stall could fire); 1 long-hold window-cap case; 1 data noise. Open successor: SPEED-CONDITIONED dual-mode exit study/round (M5).
+
+- STANDING SIMPLIFICATION (J, 2026-11-25): scale-outs are modeled as single regular exits (mean price); J does not plan to scale for a long time.
