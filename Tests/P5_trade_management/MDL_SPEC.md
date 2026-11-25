@@ -29,3 +29,20 @@ recovery outcome, labeled as such.
 Levels parquet (checksummed) + report with both checks + the his-vs-
 generic comparison. Review gate: J sees the checks before ANY rule
 (M6C stage 1 or entries) consumes a generated level.
+
+## V2 ADDENDUM (pre-registered 2026-11-25, J-approved; frozen before run)
+REVEALED-PREFERENCE TEACHING SET (J: use ALL the data): his-important
+levels = clusters over price x time of EVERY attention trace - entry
+prices + exit prices (all episodes, full corpus), mention-linked object
+edges, priced mentions, alert stamps. A region active on >= 3 distinct
+days within tolerance {2,3} pts over a trailing 60-day window = a
+REVEALED KEY. Teaching-only; never ships.
+V2 MARKET EVIDENCE (the deficiency fix): add 5m and 15m WRB body edges
+(certified definition, body > max of prior 3 bodies, computed from
+resampled bars) and shadow-zone edges where available; news-born
+evidence double-weighted in clustering.
+V2 RECOVERY: primary target = the revealed-key set (region recovered if
+a generated level sits within 3 pts while it is active); secondary =
+the 55 priced key mentions (continuity with v1). Same verdict bands
+(>=50% fit / 25-50% partial / <25% unfit) now applied to the PRIMARY
+target. Same review gate before anything consumes a level.
