@@ -58,3 +58,12 @@ later question). Head-to-head vs the fixed version under the SAME
 frozen bars (recovery bands; stage-1 >+123.9; joint >+135.8 etc.).
 The pre-committed validation months (2023-05, 2024-05, J purchasing)
 arbitrate whichever ships.
+V4 SECOND AXIS (added after the coverage diagnostic, before any v4 run):
+the 18-trade coverage gap is NOT fresh territory (3/18) - it is the
+KILL rule deleting recently-broken levels in trends. His own vocabulary
+has role-flip (broken resistance acts as support). V4 therefore tests
+2 axes separately: tolerance {fixed 2.0, 0.04%, 0.06% of price} x
+break handling {kill at 2.5x-tol beyond, PERSIST with role flip}.
+Metrics per cell: actions-only recovery, levels/day, and G2-coverage
+(share of the 62 with a level ahead). Attribution stays clean; the
+frozen bars decide; the purchased months arbitrate.
