@@ -101,3 +101,6 @@ specs. Future validated pairs: G<group>-<n>.
 | M4C | event-keyed: exit on opposite-direction 1m WRB completion + safety stall | tested (T-MG09/10), not adopted; safety-180 on the REVISIT list (extras +59.5 beat G2-1's +47.0; lost on his-like fills) |
 | M5A | accelerating trail (Wilder-SAR-inspired): trail tightens with each new extreme | in test (T-MG11) |
 | M5B | speed gate: fast move -> spike-capture; slow -> M3A patience | in test (T-MG11) |
+
+| M7 | level-snap management: M3A backstops (stall-60, stop 3.75, time 480) + spike-capture arming when price reaches a COMPUTED multi-day level within 8 pts of entry (MDL v3 detector) | ADOPTED on training (T-MG14) |
+| G2-2 | Strategy 4A d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits fresh pre-committed validation month |

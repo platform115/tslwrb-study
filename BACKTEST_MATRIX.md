@@ -194,3 +194,10 @@ Note: M3B (stall 90) - best on HIS fills in B3 - is WORST on OUR fills (extras p
 |---|---|---|---|---|---|---|---|---|---|
 | G2-1 (4A d1.25 x M3A) | 190 | 53% | +63.6 | -3.75 | 3.88 | 16.1 | 8/11 his G2-like (73%) | +61.9 | PASS (pre-stated rule) |
 HIS 2024-11 G2-like: 11 entries, 91% win, +104.2. Note: our P&L that month came almost entirely from extras.
+
+## G2-2 CANDIDATE (T-MG14, 2026-11-26; training months pooled)
+| combo | trades | win-side | net (22-02/25-10) | caught/62 | extras net | status |
+|---|---|---|---|---|---|---|
+| G2-2 = 4A d1.25 x M7 (level-snap reach8) | 500 | - | +186.0 (+84.6/+101.4) | 40 | +88.4 | TRAINING ONLY - validation month to be pre-committed & purchased |
+| 4A d1.25 x M7-reach5 | 500 | - | +154.9 | 40 | +57.2 | qualifier, not selected |
+vs G2-1 +135.8 / catch 39 / extras +47.0. Flag: reach monotone to the tested boundary (8).
