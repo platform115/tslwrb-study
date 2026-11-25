@@ -80,3 +80,4 @@
   Order: C (squeeze coverage audit) first, this build second,
   management (M6C stage 1) resumes only after the recovery check.
 - Role-flip levels, smarter form (T-IM52): blanket persistence fails at fair density; candidate = flipped levels kept only with a freshness window / retest confirmation. Low priority until G3 cycle.
+- Strategy 4 revision batch (next time the B2->B4 chain re-runs, e.g. post-G3): add squeeze cell W20 q0.5 (covers 3 of the 9 missed trades at HALF the shipped ambient rate, T-IM53); consider W20 q0.8 (4 covers) if catch is prioritized over precision.
