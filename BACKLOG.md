@@ -65,3 +65,4 @@
 5b. Python runner / VPS thread (separate conversation) - unchanged.
 5c. 2022-02 "signal @ 4321.50" dissection (parked since that era).
 5d. Registry hygiene: naming map (V1/U -> ER-SIG/ER-WIDE) done; keep.
+- OPEN (T-MG09, 2026-11-25): the OTHER exit-gap class (+51.8 on 16 G2 trades) is NOT scale-outs and NOT single-unit path - candidate causes to test: exit-message posting lag, limit exits filled at extremes beyond mids, holds beyond the 1800s sim window.
