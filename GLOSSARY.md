@@ -85,3 +85,10 @@ B0 pick target | B1 anatomy | B2 entry rule | B3 paired management | B4 unit tes
 | M3A | stall 60s + stop 3.75 + time 480s |
 | M3B | stall 90s + stop 3.75 + time 480s |
 | M3C | fail-fast 1.5 in first 30s + target 4.5 + stop 3.75 + time 480s |
+
+## VALIDATED PAIRS (compact aliases, J-approved)
+| alias | full designation | status |
+|---|---|---|
+| G2-1 | Strategy 4A d1.25 x M3A (squeeze-break entry, 5-45min post-release, unfiltered, displacement 1.25; stall-60 management) | VALIDATED (T-BS05 training, T-BS06 quarantine PASS) |
+Convention: alias used alongside the long form, never replacing it in
+specs. Future validated pairs: G<group>-<n>.

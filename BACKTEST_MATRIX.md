@@ -180,7 +180,7 @@ combo from (5), cite its T-id.
 HIS G2 same period: 62 trades, 74% win, net +231.2, +5.71/-1.97, worst -3.75.
 | combo | trades | win | net (22-02/25-10) | worst | maxMAE | maxDD | caught/62 | extras net |
 |---|---|---|---|---|---|---|---|---|
-| 4A d1.25 x M3A (WINNER) | 473 | 44% | +135.8 (+55.1/+80.6) | -3.75 | 5.62 | 35.1 | 39 | +47.0 |
+| 4A d1.25 x M3A (WINNER = G2-1) | 473 | 44% | +135.8 (+55.1/+80.6) | -3.75 | 5.62 | 35.1 | 39 | +47.0 |
 | 4A d2.5 x M3C (runner-up) | 381 | 43% | +125.5 (+34.0/+91.5) | -3.75 | 7.88 | 48.8 | 47 | +105.5 |
 | 4A d1.25 x M3C | 434 | 41% | +94.4 | -3.75 | 5.88 | 47.9 | 37 | +88.4 |
 | 4B d1.25 x M3A | 287 | 44% | +61.8 | -3.75 | 5.62 | 34.6 | 38 | +1.2 |
@@ -192,5 +192,5 @@ Note: M3B (stall 90) - best on HIS fills in B3 - is WORST on OUR fills (extras p
 ## B5 VALIDATION (T-BS06, 2024-11, first touch - QUARANTINE SPENT, look 1)
 | combo | trades | win | net | worst | maxMAE | maxDD | caught | extras net | verdict |
 |---|---|---|---|---|---|---|---|---|---|
-| 4A d1.25 x M3A | 190 | 53% | +63.6 | -3.75 | 3.88 | 16.1 | 8/11 his G2-like (73%) | +61.9 | PASS (pre-stated rule) |
+| G2-1 (4A d1.25 x M3A) | 190 | 53% | +63.6 | -3.75 | 3.88 | 16.1 | 8/11 his G2-like (73%) | +61.9 | PASS (pre-stated rule) |
 HIS 2024-11 G2-like: 11 entries, 91% win, +104.2. Note: our P&L that month came almost entirely from extras.
