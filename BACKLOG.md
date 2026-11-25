@@ -79,3 +79,4 @@
   a miss = detector unfit for the M6C path, documented, no surprise.
   Order: C (squeeze coverage audit) first, this build second,
   management (M6C stage 1) resumes only after the recovery check.
+- Role-flip levels, smarter form (T-IM52): blanket persistence fails at fair density; candidate = flipped levels kept only with a freshness window / retest confirmation. Low priority until G3 cycle.
