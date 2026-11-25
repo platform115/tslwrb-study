@@ -257,11 +257,12 @@ Track A: A1 LIVING v1.5 | A5 gap autopsy QUEUED (after B4, pending J) | A2.1 T-I
 A3 T-IM44/45 + GROUPS OF RECORD (approved) | A4 T-IM46 (G2 top).
 Track B: B0 = G2 (J confirmed) | B1 T-IM47 | B2 T-EN103 (entries only;
 variants 'none' and 'move+flow' carried) | B3 management pairing = NEXT
-| B4 joint unit test | B5 quarantined validation untouched.
+| B4 T-BS05 (winner 4A d1.25 x M3A) | B5 T-BS06 PASS on 2024-11 - QUARANTINE SPENT (look 1). G2 build VALIDATED. Next: A5 gap autopsy, then target 2 (G3 per A4 ranking).
 Standing: fees ~0 for J's account (J, 2026-11-25) - cost caveats out of
 the model by instruction; execution realism still priced at B4.
 
 ## CHANGE LOG
+- 2026-11-25: B5 PASS - first validated strategy of the program (Strategy 4A d1.25 x M3A on G2); 2024-11 look 1 spent.
 - 2026-11-25: A5 gap autopsy added (J's directive); loop: B-verdict -> A5 -> next build/target.
 - 2026-11-25: status board added; A-track closed through A4; B0-B2 closed; B3 next.
 - 2026-11-24: A4 extended with the stacking study (combined-family separation ceiling) and the no-hidden-data premise, per J.

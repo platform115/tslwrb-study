@@ -188,3 +188,9 @@ HIS G2 same period: 62 trades, 74% win, net +231.2, +5.71/-1.97, worst -3.75.
 | others (7) | - | - | +44.4 .. -17.2 (B4 report) | - | - | - | - | - |
 Winner rule (pre-stated): positive both months AND extras net >= 0, highest pooled net. 7/12 qualified.
 Note: M3B (stall 90) - best on HIS fills in B3 - is WORST on OUR fills (extras punish patience): the entry-management coupling, measured again.
+
+## B5 VALIDATION (T-BS06, 2024-11, first touch - QUARANTINE SPENT, look 1)
+| combo | trades | win | net | worst | maxMAE | maxDD | caught | extras net | verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| 4A d1.25 x M3A | 190 | 53% | +63.6 | -3.75 | 3.88 | 16.1 | 8/11 his G2-like (73%) | +61.9 | PASS (pre-stated rule) |
+HIS 2024-11 G2-like: 11 entries, 91% win, +104.2. Note: our P&L that month came almost entirely from extras.
