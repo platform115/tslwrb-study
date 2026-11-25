@@ -56,3 +56,15 @@ Reading: capture = share of his 307 entries passing; null pass = share of matche
 | G6 rare contexts | 8 | 1 | 0.57 | n/a |
 
 Registry: T-IM46.
+
+## POST-RUN LEAK SWEEP (J's verification request, 2026-11-25)
+Mechanical checks on the exact 76-feature matrix the model consumed:
+1. Missingness parity: no feature's NaN rate differs between his rows
+   and ambient rows by more than 25pp (the structural _int_dist gaps all
+   sit below that and mean "not interacting" - real context, not leak).
+2. Single-feature test: no feature alone reaches AUC 0.90+ (the leak
+   signature). The strongest is mv15 at 0.77 - the known movement
+   signal. A leaked column scores ~1.00 alone; nothing comes close.
+3. mins_vs_open after the fix: NaN 0% on both sides.
+4. Coherence: best single feature 0.77 vs full-model 0.81 - a plausible
+   increment. Leaky models jump to ~1.00; honest ones improve modestly.
