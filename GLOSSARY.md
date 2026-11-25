@@ -73,3 +73,15 @@ B0 pick target | B1 anatomy | B2 entry rule | B3 paired management | B4 unit tes
 2. No new family (new prefix or numbering scheme) without J's approval.
 3. First use of any designation in anything written for J carries its
    plain meaning inline, every time.
+
+## TRACK B NAMES (added 2026-11-25, with B4)
+| name | plain meaning |
+|---|---|
+| Strategy 4 | the G2 entry rule: squeeze-band break inside the 5-45 min post-release window, stop order at edge + displacement |
+| Strategy 4A | unfiltered trigger |
+| Strategy 4B | trigger + movement-and-flow filter |
+| d1.25 / d2.50 | the displacement parameter (pts past the band edge) |
+| M3 (family) | G2-speed management, built from his G2 exit anatomy (B3) |
+| M3A | stall 60s + stop 3.75 + time 480s |
+| M3B | stall 90s + stop 3.75 + time 480s |
+| M3C | fail-fast 1.5 in first 30s + target 4.5 + stop 3.75 + time 480s |
