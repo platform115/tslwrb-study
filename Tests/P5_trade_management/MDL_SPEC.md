@@ -46,3 +46,15 @@ a generated level sits within 3 pts while it is active); secondary =
 the 55 priced key mentions (continuity with v1). Same verdict bands
 (>=50% fit / 25-50% partial / <25% unfit) now applied to the PRIMARY
 target. Same review gate before anything consumes a level.
+
+## V4 ADDENDUM (pre-registered 2026-11-26; J's scale challenge)
+Fixed-point parameters embed era drift over a 3,400->6,900 price range.
+V4 = the same detector with a FIXED META-RULE generating parameters:
+tolerance = {0.04%, 0.06%} of the local price (~1.8/2.6 pts at 4400,
+~2.7/4.1 at 6800); kill = 2.5 x tolerance; member threshold unchanged.
+M7-scaled: reach = 4 x tolerance; pullback = 0.3 x tolerance (floor one
+tick); stall/stop unchanged this round (management scaling is its own
+later question). Head-to-head vs the fixed version under the SAME
+frozen bars (recovery bands; stage-1 >+123.9; joint >+135.8 etc.).
+The pre-committed validation months (2023-05, 2024-05, J purchasing)
+arbitrate whichever ships.
