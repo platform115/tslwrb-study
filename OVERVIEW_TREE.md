@@ -91,3 +91,11 @@ ES / wrbtrader STUDY
     +-- G2 shadows D1-vs-D2 / band form -> future re-reference evidence
     +-- time-stop adapter | re-entry mechanism | scale-out (needs multi-contract months)
     +-- 2022-02 "4321.50" dissection | M2 freeze | second-era months
+
+## TRACK A/B PROGRESS (2026-11-25)
+- Track A closed through A4: measurement table (75 cols, harness-
+  certified), groups of record G1-G6, ranking -> G2 squeeze+news top.
+- Track B: B1 anatomy (74% win, +231 pts his; trigger shape 62/62);
+  B2 entry rule (catch 45-47/62 raw, 40/62 filtered; extras positive
+  pre-management). B3 management pairing next; B4 joint test; B5
+  quarantined.

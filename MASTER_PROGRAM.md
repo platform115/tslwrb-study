@@ -240,7 +240,17 @@ reporting and naming layer (R-3, R-7).
 - "No method without a METHODS REGISTER entry; no name without a
   GLOSSARY entry in the same commit."
 
+## STATUS BOARD (updated as steps close)
+Track A: A1 LIVING v1.5 | A2.1 T-IM40 | A2.2 T-IM41 | A2.3 T-IM42/43 |
+A3 T-IM44/45 + GROUPS OF RECORD (approved) | A4 T-IM46 (G2 top).
+Track B: B0 = G2 (J confirmed) | B1 T-IM47 | B2 T-EN103 (entries only;
+variants 'none' and 'move+flow' carried) | B3 management pairing = NEXT
+| B4 joint unit test | B5 quarantined validation untouched.
+Standing: fees ~0 for J's account (J, 2026-11-25) - cost caveats out of
+the model by instruction; execution realism still priced at B4.
+
 ## CHANGE LOG
+- 2026-11-25: status board added; A-track closed through A4; B0-B2 closed; B3 next.
 - 2026-11-24: A4 extended with the stacking study (combined-family separation ceiling) and the no-hidden-data premise, per J.
 - 2026-11-24: methods register + Cliff's delta (Cliff, 1993 - rank-based effect size; the chance one group exceeds the other, minus the reverse) for his-vs-null difference ranking in A2 reports.
 - 2026-11-24: two-tier amendment ACCEPTED with J's condition - per-second months first; screening tier and vendor expansion deferred.
