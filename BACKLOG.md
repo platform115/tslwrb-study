@@ -68,3 +68,14 @@
 - RESOLVED (T-MG10): the OTHER exit-gap class = his FAST PROFIT-TAKING (14/16 exited at the spike before a 60s stall could fire); 1 long-hold window-cap case; 1 data noise. Open successor: SPEED-CONDITIONED dual-mode exit study/round (M5).
 
 - STANDING SIMPLIFICATION (J, 2026-11-25): scale-outs are modeled as single regular exits (mean price); J does not plan to scale for a long time.
+- DETECTOR DESIGN CONSTRAINT (J + census, 2026-11-25): the multi-day
+  level detector must be built from HIS structure families (WRB bodies,
+  gap edges, shadow zones, S/R reactions persisting across days) with
+  the formed-at-news flag first-class - NOT generic floor levels
+  (census: he never says pivot/value area/POC/VWAP). Generic levels
+  enter only as a comparison arm. Recovery check vs his stated keys
+  (S4: n=7 clusters - direction solid, magnitude uncertain) runs with a
+  pre-stated flag-line BEFORE any rule consumes a generated level;
+  a miss = detector unfit for the M6C path, documented, no surprise.
+  Order: C (squeeze coverage audit) first, this build second,
+  management (M6C stage 1) resumes only after the recovery check.
