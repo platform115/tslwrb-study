@@ -92,10 +92,60 @@ ES / wrbtrader STUDY
     +-- time-stop adapter | re-entry mechanism | scale-out (needs multi-contract months)
     +-- 2022-02 "4321.50" dissection | M2 freeze | second-era months
 
-## TRACK A/B PROGRESS (2026-11-25)
-- Track A closed through A4: measurement table (75 cols, harness-
-  certified), groups of record G1-G6, ranking -> G2 squeeze+news top.
-- Track B: B1 anatomy (74% win, +231 pts his; trigger shape 62/62);
-  B2 entry rule (catch 45-47/62 raw, 40/62 filtered; extras positive
-  pre-management). B3 management pairing next; B4 joint test; B5
-  quarantined.
+## THE ARTIFACT TREE (2026-11-26; statuses live)
+
+GOVERNANCE (Stage-0 docs)
+├─ MASTER_PROGRAM.md ... goal, R-1..R-8, tracks, status board
+├─ GLOSSARY.md ......... naming authority (all designations below)
+├─ RESULTS_DISPLAY_STANDARD.md | DOCUMENT_MAP.md | ASSETS.md (generated)
+└─ BACKTEST_MATRIX.md .. every entry x management combo ever run
+
+STANDING RULES R-1..R-8 (exactly eight)
+R-1 lookahead harness (+two-tier screening/confirmation amendment)
+R-2 pre-registration | R-3 flag uncertainty | R-4 plain language
+R-5 naming | R-6 docs current | R-7 results standard | R-8 mechanical
+completeness passes
+
+TRACK A (the map) — A1 coverage matrix (LIVING v1.5) -> A2 measurement
+table (T-IM40/41/42/43: 75 cols, 315 trades + nulls) -> A3 grouping
+(T-IM44/45 + GROUPS OF RECORD) -> A4 ranking + ceiling 0.81 + stacking
+(T-IM46) -> A5 gap autopsy (T-IM48)
+
+GROUPS OF RECORD (two factual axes)
+G1 news-burst(21) G2 squeeze+news(62) G3 squeeze quiet(151)
+G4 reaction+news(25) G5 reaction quiet(40) G6 rare(8)
++ intensity = continuous dial (dead-band use only)
+
+ENTRY STRATEGIES
+├─ Strategy 1 ... certified signal-score entry + native stack (T-EN102)
+├─ Strategy 2A/2B VOID (lookahead era)
+├─ Strategy 3A-3D ... structure-interaction selectors (OOS 19-49%)
+└─ Strategy 4 ...... the G2 rule (B2, T-EN103)
+   ├─ 4A unfiltered | 4B move+flow | displacement d1.25/d2.50
+
+MANAGEMENT
+├─ M0 frozen | M1 adopted-general | M1A variant
+├─ M3 family (G2-speed): M3A stall-60 (STANDS) | M3B | M3C
+├─ M4 ratchet/tiered/event (tested, not adopted; M4C-180 revisit list)
+├─ M5 accelerating-trail / speed-gate (no qualifier; DUAL ORACLE +274.9)
+└─ M6 level-aware: nearest-edge failed; M6C his-keys cleared stage 0;
+   stage 1 (computed levels) = next
+
+VALIDATED PAIRS
+└─ G2-1 = Strategy 4A d1.25 x M3A ... training +135.8, B5 PASS on
+   2024-11 (+63.6, catch 8/11, extras +61.9); quarantine look 1 spent
+
+DETECTOR LAYER
+├─ G1-G4 generators (gaps/shadows/reactions/compression) + resolver
+│  (harness-certified, 1s)
+├─ signal engine (score>=6 at WRB completion)
+└─ MDL multi-day level detector v3 (T-IM50/51): density-peak, 60d/2pt/
+   >=4 days, ~10 levels/day; 62% recovery of revealed zones; FIT
+
+TEACHING ASSETS (study-only, never ship)
+├─ his episodes (4,842) | zone refs (5,155) | ref->object links (7,533)
+├─ ground truth table (audited, T-IM40) | revealed episodes (1,416)
+└─ a2 features table (75 cols + labels)
+
+QUEUE: M6C stage 1 -> (joint) -> C squeeze coverage audit -> G3 cycle
+(book/prints lens) | registries: T-IM51, T-EN103, T-MG13, T-BS06 latest
