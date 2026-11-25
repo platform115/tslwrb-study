@@ -261,7 +261,17 @@ variants 'none' and 'move+flow' carried) | B3 management pairing = NEXT
 Standing: fees ~0 for J's account (J, 2026-11-25) - cost caveats out of
 the model by instruction; execution realism still priced at B4.
 
+### GOAL REFINEMENT (J, 2026-11-26)
+"Discretionary" means he has internalized a series of consistent
+patterns. Two modes follow: (1) DISCOVER AND REPLICATE those patterns -
+most of the edge should be reachable this way; (2) where a pattern
+resists discovery after honest cycles, his results become the BASELINE
+for designing our own entries and management that may produce FEWER BUT
+MORE PROFITABLE trades. Mode 2 is not failure; it is the second half of
+the program (precision over volume, benchmarked against him).
+
 ## CHANGE LOG
+- 2026-11-26: goal refinement recorded (two modes: replicate patterns / precision-over-volume original design on his baseline).
 - 2026-11-26: M6C stage 1+2 ADOPTED - M7 (level-snap at computed multi-day levels) named; G2-2 = 4A d1.25 x M7, +186.0 training vs G2-1's +135.8, extras ~2x; TRAINING-ONLY pending a fresh pre-committed validation month. Management campaign closes successful; queue: C audit -> G3 cycle.
 - 2026-11-25: management campaign M4-M6C closed. M3A stands live. Dual-oracle ceiling +274.9 proven; tested-form failures logged (not idea-deaths, per J); M6C stage 0 weak-positive: KEY-level snap beats M3A (+129 vs +124) where nearest-level fails (+92) - level selection is the lead. Stage 1 = computable key-ness generator (detector build), queued.
 - 2026-11-25: M4 round closed, no adoption - M3A stands; OTHER gap cause reopened (not scale-outs); next: squeeze-detector coverage audit (C), then G3 cycle.
