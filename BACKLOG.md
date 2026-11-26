@@ -98,3 +98,10 @@
   (b) contract-size split (full strategy on tier20, G2-5-selective on minor).
   Both are combos; awaiting J's aim. Flag is a calendar constant -> free retest
   on validation months.
+
+- EX2 (from T-MG19, prerequisite before any exit-switch rule): rerun Analysis A
+  with controls matched on duration AND current excursion (profit at the moment)
+  - if imb10 survives, spec a hold/exit switch backtest vs M7; if it dies, the
+  finding was a price-extreme market regularity, not his trigger.
+- sup0-at-clock + flow-at-clock (T-MG19 Analysis B, thin n): holders at 480s sit
+  on thicker top support / positive flow. Validation-months retest alongside own0.
