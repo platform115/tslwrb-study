@@ -90,3 +90,11 @@
 - Event-level MBP-10 round (drive: mbp10_*_windowed.parquet, 3.3G): intra-second
   queue dynamics (pulling, iceberg refills) at taken-vs-passed crosses - the
   resolution the per-second reduction averages away. Needs its own spec; J's call.
+
+- flow_vol_5m retest (from T-EN112): first-5-min total volume higher in his
+  traded windows (p=0.0496, suggestive). Validation-months-only retest.
+- tier20 engagement prior (T-EN112 FINDING): candidate rule options for J -
+  (a) engagement prior (tier20 ~ always engage; minor events need confirmation),
+  (b) contract-size split (full strategy on tier20, G2-5-selective on minor).
+  Both are combos; awaiting J's aim. Flag is a calendar constant -> free retest
+  on validation months.
