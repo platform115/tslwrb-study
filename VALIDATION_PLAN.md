@@ -43,3 +43,25 @@ frozen in an addendum BEFORE first read of the purchased files.
 - Every number above is written here BEFORE the data is read.
 - Anything that fails here dies here; anything that passes earns the
   next quarantined month, not production.
+
+## ADDENDUM 1 — DATA ARRIVED & CONVERTER CERTIFIED (2026-11-26); EXACT THRESHOLDS FROZEN
+Data ingested (checksummed; provenance in Data/inputs/README.md). No
+strategy number has been computed on these months. The one look runs
+these, verbatim, on the FILL-TIME engine, both months:
+1. G2-3: PASS = pooled net > 0 AND each month > 0 AND catch >= 60% of
+   his same-group entries (group built by the B5 recipe) AND extras
+   net > -20% of pooled net. Expected shrinkage vs +276.1 accepted.
+2. G2-4: same four conditions; judged beside G2-3 - the better
+   pooled net among those that PASS becomes the carried strategy.
+3. G2-5: PASS = per-trade >= +0.60 AND each month > 0 (its claim is
+   quality, not total).
+4. tier20: his engagement rate on tier20 vs minor windows reported
+   (direction must repeat: tier20 > minor) + strategy-conditional
+   P&L share.
+5. Suggestive retests (report direction + p, no thresholds, no
+   adoption from these alone): own0 at taken crosses (book_top),
+   flow_vol_5m at engaged windows, flow direction at taken crosses,
+   sup0-at-clock (ANALYSIS B twin, top-of-book only).
+6. tier20 candidate shapes measured descriptively (no adoption).
+No parameter may change after the first strategy number is computed.
+Anything failing here dies here.

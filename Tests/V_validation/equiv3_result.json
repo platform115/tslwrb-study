@@ -1,0 +1,18 @@
+{
+ "day": "20241105",
+ "front_id": 183748,
+ "old_secs": 73045,
+ "new_secs": 73045,
+ "joined": 73045,
+ "buyv_exact": 0.9999863098090218,
+ "sellv_exact": 0.9999863098090218,
+ "buyv_sum_old": 572254,
+ "buyv_sum_new": 572252,
+ "sellv_sum_old": 570974,
+ "sellv_sum_new": 570972,
+ "mid_equal": 1.0,
+ "mid_within_tick": 1.0,
+ "mid_max_abs": 0.0,
+ "secs_only_old": 0,
+ "secs_only_new": 0
+}

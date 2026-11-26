@@ -36,3 +36,15 @@ in the same commit. Verify: `shasum -a 256 -c CHECKSUMS.sha256`
   by last-3-day volume: ESZ1 / ESZ4; identity gate vs committed bars: mid
   tracks closes within half a tick). 1.36M / 1.40M rows.
 - book_per_sec_{2022-02,2025-10}.parquet: per-second last-in-second top-of-book sizes (bid0/ask0) + 10-level depth sums (bid10/ask10); built by reduce_book.py (J's drive, tslwrb_windowed) from Databento GLBX.MDP3 MBP-10, instrument-filtered ESH2/ESZ5; ingested 2026-11-26 for T-EN111.
+- flow_per_sec_{2023-05,2024-05}_full.parquet + book_top_per_sec_{2023-05,2024-05}.parquet:
+  VALIDATION months, built 2026-11-26 by Tests/V_validation/convert_v4.py on J's
+  device from the purchased Databento GLBX.MDP3 tbbo + bbo-1s (ES.FUT parent;
+  jobs GLBX-20261126-{LJNLAWJDTM,LP5HY33ATB,5QRJSDPDXY,ND57PU8Q5X}). Conventions
+  = old pipeline (buyv side B / sellv side A / mid last-in-second; front id by
+  top volume over the month's last 3 day-files: 95414 / 5602). Converter
+  CERTIFIED by Tests/V_validation/equiv_check3.py vs raw MBP-10 day 20241105:
+  73,045/73,045 seconds joined, volumes exact on 99.999% of seconds (2 of 572k
+  contracts at a day boundary), mid exact everywhere. QA: mids within a tick of
+  tbbo trade-tops on 99.97% of trade seconds (qa_*.json). QUARANTINE: these
+  files feed ONLY the pre-registered VALIDATION_PLAN look - no training, no
+  tuning, no feature mining.
