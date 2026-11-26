@@ -68,9 +68,16 @@ financial lines passed (+144.4 pooled, both months positive, extras
 direction at taken crosses survives all three samples (only thread
 that does); tier20 SPLIT -> open question; own0 and flow_vol_5m
 split -> weakened; sup0-at-clock reversed -> dead.
-PLAN FULLY EXECUTED 2026-11-26. The purchased months are spent:
-anything retested on them hereafter carries training-data weight,
-not validation weight.
+PLAN FULLY EXECUTED 2026-11-26. What "spent" means, precisely (J):
+- SPENT for: re-judging G2-3/G2-4/G2-5 or variants tuned in response
+  to what these months showed, and re-running the five reported
+  threads with moved goalposts.
+- STILL USABLE as: additional TRAINING data for new work (the corpus
+  is now 4 deep months, not 2), and near-clean first tests for claims
+  designed without reference to anything reported from them (with the
+  caveat that summary results have been seen).
+- The NEXT clean quarantine for G2-4 and successors = months not yet
+  purchased.
 4. tier20: his engagement rate on tier20 vs minor windows reported
    (direction must repeat: tier20 > minor) + strategy-conditional
    P&L share.
