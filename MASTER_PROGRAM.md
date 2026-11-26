@@ -62,6 +62,30 @@ v1.0; his-labels source missing until v1.3) were recall-instead-of-census
 failures. Recall does not improve with effort; procedure replaces it.
 
 
+### R-8 EXTENSION — THE PRE-PRESENT CHECKLIST (2026-11-26; each line
+### is a documented miss J had to catch, never hypothetical)
+Run mechanically on every deliverable BEFORE it reaches J:
+1. CURRENCY: is the headline metric the decision currency (traded P&L,
+   catches, fills) or a proxy (proximity, counts, rates)? A proxy may
+   inform but NEVER carries a recommendation. [C1 -> C2 flip]
+2. BASE RATE: every rate ships beside its null, base rate, or matched-
+   density control, or it does not ship. [three saturated metrics]
+3. SELECTION LINE: "what selection effect could produce this result for
+   free?" - written in the spec before results are read. [key-ness
+   confound; chaining]
+4. CENSUS BEFORE CITATION: any claim about HIS method checks his corpus
+   first; the field's standard constructs are controls, not defaults.
+   [pivot/VWAP miss]
+5. PREMISE RE-OPEN: when a new result changes the value estimate behind
+   a prior decision (defer/adopt/park), that decision re-opens
+   AUTOMATICALLY and the change is stated. [W20 deferral]
+6. BOUNDARY FLAG: a parameter best at the edge of its tested range gets
+   the flag and one extension cell. [reach-8]
+7. J'S THREE QUESTIONS: the raw numbers behind every % | plain meaning
+   of every term on first use | live-computable or study-only, stated.
+The checklist result (pass / items fixed) is part of the deliverable.
+Review gates REMAIN: this raises the floor; it does not replace J.
+
 ### R-1 AMENDMENT — TWO-TIER EVIDENCE (ACCEPTED WITH CONDITION, J, 2026-11-24)
 J's condition: work focuses FIRST on the four per-second months
 (training 2025-10 + 2022-02; validation 2021-09 one-pass-spent +
@@ -271,6 +295,7 @@ MORE PROFITABLE trades. Mode 2 is not failure; it is the second half of
 the program (precision over volume, benchmarked against him).
 
 ## CHANGE LOG
+- 2026-11-26: R-8 extended with the pre-present checklist (7 lines, each from a documented miss); J may amend.
 - 2026-11-26: B2v2 adopted (T-EN104) - G2-3 = 4A-v2 d1.25 x M7, +265.4 training, catch 74% of G2; training-only; the C2 sharpening (J) directly produced this. Next: G3 cycle.
 - 2026-11-26: C audit closed (T-IM53) - coverage candidates logged for the next Strategy-4 revision batch; pre-G3 queue COMPLETE. Next: the G3 cycle (B0-B5 for squeeze-quiet, with the book/prints lens built inside it).
 - 2026-11-26: goal refinement recorded (two modes: replicate patterns / precision-over-volume original design on his baseline).
