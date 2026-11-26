@@ -208,3 +208,17 @@ vs G2-1 +135.8 / catch 39 / extras +47.0. Flag: reach monotone to the tested bou
 | G2-3 = 4A-v2 d1.25 x M7 | 542 | +265.4 (+140.5/+124.9) | 46 (74%) | +173.0 | TRAINING ONLY |
 | 4A-v2 d1.25 x M3A | 515 | +244.6 (+108.0/+136.6) | 46 | +158.6 | qualifier |
 vs G2-2 +186.0/40 and G2-1 +135.8/39. Third stacked training improvement - validation months arbitrate.
+
+## RT ROUND — BREAK-AND-RETEST ENTRY (T-EN106, 2026-11-26; training months pooled)
+Entry timing only; everything else = exact G2-3 config. Spec RT_SPEC.md, frozen first.
+| cell | trades | per-trade | net (22-02/25-10) | caught/62 | extras net | verdict |
+|---|---|---|---|---|---|---|
+| Wr120 pb0.25 | 521 | +0.48 | +250.4 (+134.6/+115.8) | 43 | +163.8 | no |
+| Wr120 pb0.75 | 540 | +0.50 | +269.6 (+158.2/+111.4) | 45 | +177.0 | no (baseline replica) |
+| Wr300 pb0.25 | 525 | +0.50 | +265.0 (+148.4/+116.6) | 43 | +177.5 | no |
+| Wr300 pb0.75 | 540 | +0.50 | +269.6 (+158.2/+111.4) | 45 | +177.0 | no (baseline replica) |
+REJECTED on both pre-stated lines. Design hole found post-run (median cross
+overshoot 0.12pt -> pb0.75 "retest" instantly satisfied on 94.5% of crosses;
+pb0.25 on 68.6%): hypothesis only weakly tested. A true retest needs a minimum
+excursion beyond the edge before the pullback counts (RT v2 = new spec, J's
+call vs training freeze). G2-3 stands. Untested grid: excursion-gated retest.
