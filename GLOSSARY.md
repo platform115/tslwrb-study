@@ -106,8 +106,8 @@ specs. Future validated pairs: G<group>-<n>.
 | G2-2 | Strategy 4A d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits fresh pre-committed validation month |
 
 | Strategy 4A-v2 | 4A with the band set widened: squeeze cells W10/W30 q0.67 PLUS W20 q0.8, one deduped trigger stream | adopted on training (T-EN104) |
-| G2-3 | Strategy 4A-v2 d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits the purchased months (2023-05, 2024-05). Corrected numbers under the fill-time engine (standard since T-EN108): +276.1 / 607 / catch 47 / extras +185.6 |
-| G2-4 | Strategy 4A-v2 d1.25 two-lane (first-break + retest X1.0 pb0.75) x M7 | REGISTERED QUALITY-ALTERNATE (J, 2026-11-26) - carried beside G2-3 into the purchased validation months; fill-time engine only |
+| G2-3 | Strategy 4A-v2 d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits the purchased months (2023-05, 2024-05). Corrected numbers under the fill-time engine (standard since T-EN108): +276.1 / 607 / catch 47 / extras +185.6. OUT-OF-SAMPLE (T-VL01): +144.4 (+137.6/+6.8), catch 50%; RE-REGISTERED AS TRACK-2 SYSTEM (J) - standalone earner, not a replication claim |
+| G2-4 | Strategy 4A-v2 d1.25 two-lane (first-break + retest X1.0 pb0.75) x M7 | OUT-OF-SAMPLE PASS (T-VL02): +158.1 (+118.8/+39.4), all mode-2 lines - the program's first validated track-2 strategy |
 | M12 | M7 + imb10 gate at the stall exit | TESTED-REJECTED (T-MG21: mechanism-negative) |
 | M13 | M7 + book-conditioned extension of the 480s cap | TESTED-STRUCTURALLY-EMPTY (T-MG22: 1/607 trades reach the cap) |
 | G2-5 | G2-3 with cadence cap N=1 per news window | REGISTERED HIGH-CONTRACT-SIZE VARIANT (J, 2026-11-26: "much better strategy for higher numbers of contracts, needs to be saved and tested later") - per-trade +0.90 on training; goes to validation beside G2-3/G2-4, NOT adopted |

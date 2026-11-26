@@ -289,3 +289,14 @@ failed on our fills. M7 stands.
 His same-group line: 14 entries, +65.2 total (+2.40 and +5.92/trade by month).
 Shrinkage realized: per-trade +0.45 -> +0.26. 2024-05 nearly flat (+6.8).
 Original program goal (30-50% replication) met; the frozen 60% line was not.
+POST-GATE (J, 2026-11-26): G2-3 RE-REGISTERED AS A TRACK-2 (MODE-2) SYSTEM -
+failed as a replication claim, validated as a standalone earner (all financial
+lines passed; no losing month in 4 tested: +111.8/+164.4 training,
++137.6/+6.8 out of sample; the +6.8 month is the recorded robustness caveat).
+
+## VALIDATION STEP 2 — G2-4 OUT OF SAMPLE (T-VL02, 2026-11-26; mode-2 lines)
+| strategy | trades | win | per-trade | net (23-05/24-05) | caught/his | extras | worst | maxDD | frozen verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| G2-4 | 760 | 51% | +0.21 | +158.1 (+118.8/+39.4) | 7/14 (50%) | +154.6 | -3.75 | 28.5 | PASS (all mode-2 lines) |
+First full out-of-sample PASS. Holds up in 2024-05 (+39.4) where G2-3 went
+nearly flat (+6.8) - the retest lane earned where first-break-only thinned.
