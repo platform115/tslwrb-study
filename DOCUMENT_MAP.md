@@ -50,6 +50,15 @@ STAGE 3 — EXECUTION (per test; inside Tests/<phase>/)
                              Updated each entry-search cycle.
 
 STAGE 4 — AGGREGATION (read when choosing what to do next)
+  VALIDATION_PLAN.md ....... THE single pre-registered look at the
+                             purchased months (2023-05/2024-05): every
+                             registered strategy (G2-3/G2-4/G2-5),
+                             every parked suggestive, every candidate
+                             rule shape. ANY new test or finding that
+                             should be judged out-of-sample MUST add
+                             itself to this page in the same commit.
+                             Frozen (addendum with exact thresholds)
+                             before the purchased data is first read.
   BACKTEST_MATRIX.md ....... every entry x management combo tried, full
                              results stats, untested grid. Updated the
                              same turn as any new backtest.
@@ -72,8 +81,10 @@ STAGE 5 — ARCHIVE (kept, not current; do not plan from these)
 1. MASTER_PROGRAM.md (rules + where the program stands)
 2. GLOSSARY.md (what names mean)
 3. DOCUMENT_MAP.md (this page)
-4. The LIVING docs of the active step (today: A1_FEATURE_COVERAGE.md)
-5. ASSETS.md before touching any data
+4. VALIDATION_PLAN.md (what is owed to the out-of-sample look - any
+   new finding must be added there in the same commit)
+5. The LIVING docs of the active step
+6. ASSETS.md before touching any data
 
 ## COVERAGE CHECK (mechanical, part of R-8)
 `python3 scripts/gen_assets_inventory.py` also prints every .md file in
@@ -81,5 +92,8 @@ the repo that this map does not mention by name or by covered group.
 A non-empty list fails the completeness pass.
 
 ## CHANGE LOG
+- v1.1 2026-11-26: VALIDATION_PLAN.md added to Stage 4 and the read
+  order, with the standing rule that new findings register there in
+  the same commit.
 - v1.0 2026-11-24: created (J's request: place all documents in the
   end-to-end process).
