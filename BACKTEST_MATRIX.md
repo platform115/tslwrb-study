@@ -281,3 +281,11 @@ Standing lesson (institutionalized in specs from T-MG22 on): management verdicts
 are MECHANISM-PRIMARY (twin-matched delta per month), cell totals secondary.
 imb10 (T-MG20) stands as description of HIS exits; both monetization shapes
 failed on our fills. M7 stands.
+
+## VALIDATION STEP 1 — G2-3 OUT OF SAMPLE (T-VL01, 2026-11-26; 2023-05 + 2024-05, FIRST TOUCH)
+| strategy | trades | win | per-trade | net (23-05/24-05) | caught/his | extras | worst | maxDD | frozen verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| G2-3 | 566 | 51% | +0.26 | +144.4 (+137.6/+6.8) | 7/14 (50%) | +141.1 | -3.75 | 25.2 | FAIL (catch 50% < 60%; all 3 financial lines PASS) |
+His same-group line: 14 entries, +65.2 total (+2.40 and +5.92/trade by month).
+Shrinkage realized: per-trade +0.45 -> +0.26. 2024-05 nearly flat (+6.8).
+Original program goal (30-50% replication) met; the frozen 60% line was not.

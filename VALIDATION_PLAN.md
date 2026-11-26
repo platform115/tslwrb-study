@@ -58,8 +58,11 @@ benchmarked on P&L) are judged without it.
 2. G2-4 (mode 2): PASS = pooled net > 0 AND each month > 0 AND
    extras net > -20% of pooled net. Catch reported, not gated.
 3. G2-5 (mode 2): PASS = per-trade >= +0.60 AND each month > 0.
-STEP ORDER (J: one step at a time): 1) G2-3; 2) G2-4 + G2-5;
-3) tier20 + suggestives. Review gate after each step.
+STEP ORDER (J: one step at a time): 1) G2-3 - EXECUTED 2026-11-26
+(T-VL01): FAIL on the catch line alone (7/14 = 50% vs 60%); all three
+financial lines passed (+144.4 pooled, both months positive, extras
++141.1). 2) G2-4 + G2-5 - awaiting J. 3) tier20 + suggestives -
+awaiting J. Review gate after each step.
 4. tier20: his engagement rate on tier20 vs minor windows reported
    (direction must repeat: tier20 > minor) + strategy-conditional
    P&L share.
