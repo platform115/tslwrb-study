@@ -105,3 +105,8 @@
   purchase cannot test it (options flagged in EX2_REPORT).
 - sup0-at-clock + flow-at-clock (T-MG19 Analysis B, thin n): holders at 480s sit
   on thicker top support / positive flow. Validation-months retest alongside own0.
+
+- POST-VALIDATION THREAD LEDGER (T-VL04, 2026-11-26): flow-at-taken-crosses =
+  best-supported which-signal fragment (3/3 samples directionally) - next
+  instrument is the event-level book. tier20 = open question (split). own0,
+  flow_vol_5m = weakened. sup0-at-clock = DEAD (reversed both months).
