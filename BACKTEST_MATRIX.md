@@ -247,3 +247,11 @@ are provisional until J rules on re-baselining:
 NO ADOPTION DECLARED. Decisions to J: (1) re-baseline on fill-time engine,
 (2) TL-B adopt/alternate/reject (clears corrected incumbent on net/catch/extras;
 lane2 quality +0.28/trade dilutes per-trade).
+
+## ENGINE CONVENTION (standard as of T-EN108, J-approved 2026-11-26)
+Single-position is applied in FILL-TIME order (executable convention). All
+rows above this line were produced under the old cross-order convention and
+are kept for traceability; the corrected incumbent line is G2-3 = +276.1 /
+607 / catch 47 / extras +185.6, and G2-4 (two-lane TL-B) = +325.1 / 757 /
+catch 48 / extras +246.8 is REGISTERED AS QUALITY-ALTERNATE. Both go to the
+purchased validation months; those months arbitrate.
