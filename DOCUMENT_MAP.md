@@ -19,6 +19,8 @@ STAGE 0 — STANDING GOVERNANCE (read at the start of every work session)
                              Updated only if J changes the standard.
   DOCUMENT_MAP.md .......... this file. Updated whenever a doc is added,
                              retired, or changes role.
+  PLAIN_MAP.md ............. the no-jargon status map for J; updated
+                             with the overview tree.
 
 STAGE 1 — DATA LAYER (read before any measurement)
   ASSETS.md ................ generated inventory of every data file:
