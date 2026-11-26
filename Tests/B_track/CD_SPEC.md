@@ -44,3 +44,16 @@ amputates the tail.
 Full standard either way; his G2 line (+231.2 / 62 / +3.73) beside
 it. Registry: T-EN110. Last pre-freeze entry round unless J orders
 otherwise.
+
+## ADDENDUM 1 (2026-11-26, before any results were produced)
+Check 3's premise was WRONG and the abort caught it: capping
+interacts with the single-position clock — when the cap skips a
+fill, the position stays free, so a later candidate fill that
+CONTROL never took (it was busy) can legitimately fill in a capped
+cell. "Capped subset of CONTROL" is therefore not a valid invariant.
+Corrected check 3: every capped-cell fill must (a) exist in the
+shared candidate set, and (b) if absent from CONTROL's trades, fall
+at a second when CONTROL held a position or its window cap... (no
+cap in control) -> when CONTROL was busy. Abort stands if any fill
+violates (a) or (b). No results were seen before this amendment
+(the run aborted at the check, by design).
