@@ -295,6 +295,7 @@ MORE PROFITABLE trades. Mode 2 is not failure; it is the second half of
 the program (precision over volume, benchmarked against him).
 
 ## CHANGE LOG
+- 2026-11-26: M9 closed negative, M7 stands; T-MG15 finding-4 corrected (dataset-mix artifact; stop vindicated by distribution). Management line RESTS pending book data / validation months. G3 cycle next.
 - 2026-11-26: R-8 extended with the pre-present checklist (7 lines, each from a documented miss); J may amend.
 - 2026-11-26: B2v2 adopted (T-EN104) - G2-3 = 4A-v2 d1.25 x M7, +265.4 training, catch 74% of G2; training-only; the C2 sharpening (J) directly produced this. Next: G3 cycle.
 - 2026-11-26: C audit closed (T-IM53) - coverage candidates logged for the next Strategy-4 revision batch; pre-G3 queue COMPLETE. Next: the G3 cycle (B0-B5 for squeeze-quiet, with the book/prints lens built inside it).
