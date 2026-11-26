@@ -30,8 +30,10 @@ frozen in an addendum BEFORE first read of the purchased files.
    - flow_vol_5m (T-EN112): first-5-min volume higher in engaged
      windows (tbbo carries aggressor flow)
    - flow direction at taken crosses (T-EN109)
-   - imb10 at exits + sup0/flow at the 480s clock (T-MG19), judged
-     only if EX2 (excursion-matched control) keeps them alive
+   - sup0/flow at the 480s clock (T-MG19). imb10 SURVIVED EX2
+     (T-MG20) but needs 10-LEVEL depth: bbo-1s cannot test it - either
+     extend the purchase to mbp-10 for these months or carry it as
+     training-evidenced only (J decides)
 6. tier20 candidate shapes - MEASURED, not adopted: (a) engagement
    prior; (b) tier20-full / minor-selective contract split (G2-3 on
    tier20 windows vs G2-5 posture on minor).

@@ -99,9 +99,9 @@
   Both are combos; awaiting J's aim. Flag is a calendar constant -> free retest
   on validation months.
 
-- EX2 (from T-MG19, prerequisite before any exit-switch rule): rerun Analysis A
-  with controls matched on duration AND current excursion (profit at the moment)
-  - if imb10 survives, spec a hold/exit switch backtest vs M7; if it dies, the
-  finding was a price-extreme market regularity, not his trigger.
+- DONE 2026-11-26: EX2 (T-MG20) ran - imb10 SURVIVED the excursion-matched
+  control. Next: switch-rule backtest spec (stall gate / clock extension shapes),
+  awaiting J's aim. NOTE: imb10 needs 10-level depth - the bbo-1s validation
+  purchase cannot test it (options flagged in EX2_REPORT).
 - sup0-at-clock + flow-at-clock (T-MG19 Analysis B, thin n): holders at 480s sit
   on thicker top support / positive flow. Validation-months retest alongside own0.
