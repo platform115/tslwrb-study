@@ -110,4 +110,4 @@ specs. Future validated pairs: G<group>-<n>.
 | G2-4 | Strategy 4A-v2 d1.25 two-lane (first-break + retest X1.0 pb0.75) x M7 | OUT-OF-SAMPLE PASS (T-VL02): +158.1 (+118.8/+39.4), all mode-2 lines - the program's first validated track-2 strategy |
 | M12 | M7 + imb10 gate at the stall exit | TESTED-REJECTED (T-MG21: mechanism-negative) |
 | M13 | M7 + book-conditioned extension of the 480s cap | TESTED-STRUCTURALLY-EMPTY (T-MG22: 1/607 trades reach the cap) |
-| G2-5 | G2-3 with cadence cap N=1 per news window | REGISTERED HIGH-CONTRACT-SIZE VARIANT (J, 2026-11-26: "much better strategy for higher numbers of contracts, needs to be saved and tested later") - per-trade +0.90 on training; goes to validation beside G2-3/G2-4, NOT adopted |
+| G2-5 | G2-3 with cadence cap N=1 per news window | OUT-OF-SAMPLE FAIL (T-VL03): per-trade +0.39 < +0.60 bar (training +0.90 was mostly fit) - DEAD per VALIDATION_PLAN rule |

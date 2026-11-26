@@ -62,8 +62,9 @@ STEP ORDER (J: one step at a time): 1) G2-3 - EXECUTED 2026-11-26
 (T-VL01): FAIL on the catch line alone (7/14 = 50% vs 60%); all three
 financial lines passed (+144.4 pooled, both months positive, extras
 +141.1). 2) G2-4 - EXECUTED (T-VL02): PASS all mode-2 lines (+158.1 pooled,
-+118.8/+39.4, extras +154.6; catch 50% reported). 2b) G2-5 - awaiting
-J. 3) tier20 + suggestives - awaiting J. Review gate after each step.
++118.8/+39.4, extras +154.6; catch 50% reported). 2b) G2-5 - EXECUTED (T-VL03): FAIL on the quality line (per-trade
++0.39 < +0.60; both months positive; catch 7%) - dies per the rule.
+3) tier20 + suggestives - awaiting J. Review gate after each step.
 4. tier20: his engagement rate on tier20 vs minor windows reported
    (direction must repeat: tier20 > minor) + strategy-conditional
    P&L share.

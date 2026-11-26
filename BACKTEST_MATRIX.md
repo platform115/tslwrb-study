@@ -300,3 +300,11 @@ lines passed; no losing month in 4 tested: +111.8/+164.4 training,
 | G2-4 | 760 | 51% | +0.21 | +158.1 (+118.8/+39.4) | 7/14 (50%) | +154.6 | -3.75 | 28.5 | PASS (all mode-2 lines) |
 First full out-of-sample PASS. Holds up in 2024-05 (+39.4) where G2-3 went
 nearly flat (+6.8) - the retest lane earned where first-break-only thinned.
+
+## VALIDATION STEP 2b — G2-5 OUT OF SAMPLE (T-VL03, 2026-11-26; mode-2 quality line)
+| strategy | trades | win | per-trade | net (23-05/24-05) | caught/his | extras | worst | maxDD | frozen verdict |
+|---|---|---|---|---|---|---|---|---|---|
+| G2-5 | 99 | 53% | +0.39 | +38.9 (+33.5/+5.4) | 1/14 (7%) | +31.9 | -3.75 | 17.8 | FAIL (per-trade +0.39 < +0.60) |
+Engines retro-controlled before the look: v1 -> 607/+276.1, v2 -> 757/+325.1,
+v3 -> 98/+88.0, all exact. G2-5's quality edge was mostly training-fit
+(+0.90 -> +0.39); dies per the plan's rule. G2-4 remains the sole OOS PASS.
