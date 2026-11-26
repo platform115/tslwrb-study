@@ -81,3 +81,4 @@
   management (M6C stage 1) resumes only after the recovery check.
 - Role-flip levels, smarter form (T-IM52): blanket persistence fails at fair density; candidate = flipped levels kept only with a freshness window / retest confirmation. Low priority until G3 cycle.
 - Strategy 4 revision batch (post-G3): add squeeze cell W20 q0.8 (T-IM54: converts 5/9 misses, extras +239.8 under M3A) - NOT q0.5 (toxic at trigger level, -107.1). MUST model overlap with the shipped W10/W30 fills in the re-run (combined is not the sum). The 4 residual misses are zone-break trades (on GAP/SHD edges) -> G3-cycle zone-trigger question.
+- STANDING TRIGGER (J, 2026-11-26): when the external drive (MBP-10 raw) is reconnected, the book lens runs: (a) fade-style entries (A5 blind set), (b) the hold/sell switch remainder (oracle gap), (c) G3 features. This item stays open until all three have their book-side test.
