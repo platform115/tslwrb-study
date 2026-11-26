@@ -36,3 +36,31 @@ build). T-xx = test ledger IDs. R-1..R-8 = working rules.
 - 4 group-2 misses = zone-trigger question (queued into G3).
 - Backlog: role-flip levels v2, higher-TF bar anatomy, 3C/3D traded
   P&L, regime splits.
+
+## 2026-11-26 EVENING — WHERE THINGS STAND, NO JARGON
+- We finished testing every entry-timing idea on the books. Waiting
+  for a pullback before entering: rejected (he does both; a
+  pullback-only system can't catch a third of his trades). Taking
+  only the first trades after each news release: rejected (his few
+  trades per window are the LATER, chosen ones, not the early ones).
+- While testing those we found a real bug in how every earlier
+  backtest decided which of two pending orders wins. Fixed; the
+  honest convention is now standard; our main strategy's numbers got
+  slightly BETTER after the fix (+276.1 over the two months, catching
+  47 of his 62 trades).
+- Three strategies are now saved and will be judged once, together,
+  on the two months being purchased (the plan for that judging is
+  written down in VALIDATION_PLAN.md so nothing can be quietly tuned):
+  the main one; a variant that adds pullback re-entries (more total
+  profit, slightly lower per-trade quality); and a one-trade-per-news
+  variant (much higher quality per trade - for when trading many
+  contracts).
+- First confirmed piece of his decision tree: on calendar days
+  everyone knows matter (CPI, Fed), he almost always trades (78% of
+  those windows); on minor news only 27%. That flag is free public
+  information. How he picks among the minor windows is still unknown
+  - the order book is the remaining place to look.
+- His drive is connected. Now looking at whether the order book
+  explains his exit timing (the single biggest gap left: on the same
+  trades he makes +3.73 per trade, we make +0.45, mostly because he
+  holds winners longer when it is right to).

@@ -149,3 +149,18 @@ TEACHING ASSETS (study-only, never ship)
 
 QUEUE: M6C stage 1 -> (joint) -> C squeeze coverage audit -> G3 cycle
 (book/prints lens) | registries: T-IM51, T-EN103, T-MG13, T-BS06 latest
+
+## 2026-11-26 EVENING ADDITIONS
+- Engine: FILL-TIME single-position convention = standard (T-EN108
+  control arm caught the old cross-order defect; old rows kept, labeled)
+- Strategies registered: G2-3 (primary, corrected +276.1/607/47),
+  G2-4 (two-lane alternate, +325.1/757/48), G2-5 (N=1 cap, +0.90/trade)
+- Entry rounds closed: T-EN106 (RT), T-EN107 (RT2 + his dual-mode),
+  T-EN108 (TL), T-EN109 (which-signal, tape), T-EN110 (cadence),
+  T-EN111 (which-signal, book), T-EN112 (window selection - tier20
+  FINDING)
+- New data: Data/inputs/book_per_sec_{2022-02,2025-10}.parquet (drive
+  MBP-10 per-second reduction, checksummed)
+- New governance doc: VALIDATION_PLAN.md (single pre-registered look)
+- Open: EX round (exit-switch via book, running), tbbo converter,
+  event-level MBP-10 round (optional), G3 cycle
