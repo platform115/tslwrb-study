@@ -35,3 +35,4 @@ in the same commit. Verify: `shasum -a 256 -c CHECKSUMS.sha256`
   by `/Volumes/2TB-Lexar/make_flow_validation.py` (front contract auto-resolved
   by last-3-day volume: ESZ1 / ESZ4; identity gate vs committed bars: mid
   tracks closes within half a tick). 1.36M / 1.40M rows.
+- book_per_sec_{2022-02,2025-10}.parquet: per-second last-in-second top-of-book sizes (bid0/ask0) + 10-level depth sums (bid10/ask10); built by reduce_book.py (J's drive, tslwrb_windowed) from Databento GLBX.MDP3 MBP-10, instrument-filtered ESH2/ESZ5; ingested 2026-11-26 for T-EN111.

@@ -82,3 +82,11 @@
 - Role-flip levels, smarter form (T-IM52): blanket persistence fails at fair density; candidate = flipped levels kept only with a freshness window / retest confirmation. Low priority until G3 cycle.
 - Strategy 4 revision batch (post-G3): add squeeze cell W20 q0.8 (T-IM54: converts 5/9 misses, extras +239.8 under M3A) - NOT q0.5 (toxic at trigger level, -107.1). MUST model overlap with the shipped W10/W30 fills in the re-run (combined is not the sum). The 4 residual misses are zone-break trades (on GAP/SHD edges) -> G3-cycle zone-trigger question.
 - STANDING TRIGGER (J, 2026-11-26): when the external drive (MBP-10 raw) is reconnected, the book lens runs: (a) fade-style entries (A5 blind set), (b) the hold/sell switch remainder (oracle gap), (c) G3 features (d) book state at taken-vs-passed crosses from T-EN109 (which-signal question). This item stays open until all three have their book-side test.
+
+- own0 retest (from T-EN111, 2026-11-26): supporting-side top size higher at
+  his taken crosses (p=0.039, suggestive only). Retest ONLY on the purchased
+  validation months (bbo-1s carries top-of-book sizes). Same-direction partner:
+  T-EN109 flow hint. NOT a rule until it survives out of sample.
+- Event-level MBP-10 round (drive: mbp10_*_windowed.parquet, 3.3G): intra-second
+  queue dynamics (pulling, iceberg refills) at taken-vs-passed crosses - the
+  resolution the per-second reduction averages away. Needs its own spec; J's call.
