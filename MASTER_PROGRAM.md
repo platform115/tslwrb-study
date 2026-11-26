@@ -295,9 +295,16 @@ variant). Parked suggestives + tier20 candidate shapes: see
 VALIDATION_PLAN.md (pre-registered, one look).
 THREE-LAYER FRAMING (J briefed): context layer (tier20 lives here) /
 trigger layer (G2-3/4/5) / management layer (M7 etc).
-NOW RUNNING: drive-connected management round - exit-switch remainder
-through the order book (spec EX_SPEC.md). Then: tbbo converter ->
-validation -> TRAINING FREEZE. G3 cycle after.
+Management/exit lane (drive-connected, 2026-11-26 night): T-MG19/20 -
+imb10 exit-into-liquidity FINDING, survives duration+excursion
+controls (his best-evidenced exit signal); T-MG21/22 - BOTH
+monetization shapes failed on our fills (stall gate mechanism-negative;
+clock extension structurally empty: 1/607 trades reach 480s - the
+stall, not the clock, ends our trades). M7 stands. STANDING LESSON:
+management verdicts are MECHANISM-PRIMARY (twin-matched delta).
+Long-hold remainder -> mode 2 and/or event-level book round (J's
+call). NEXT: tbbo converter -> VALIDATION_PLAN one look -> TRAINING
+FREEZE. G3 cycle after.
 Standing: fees ~0 for J's account (J, 2026-11-25) - cost caveats out of
 the model by instruction; execution realism still priced at B4.
 
@@ -311,6 +318,11 @@ MORE PROFITABLE trades. Mode 2 is not failure; it is the second half of
 the program (precision over volume, benchmarked against him).
 
 ## CHANGE LOG
+- 2026-11-26 (night): T-MG19..22 closed (exit lane); imb10 finding
+  earned and retained as description; both rule shapes rejected with
+  mechanism accounting; mechanism-primary verdict standard adopted
+  for management rounds; DOCUMENT_MAP v1.1 (VALIDATION_PLAN indexed
+  with same-commit registration rule).
 - 2026-11-26 (evening): entry cycle closed (T-EN106..112); fill-time
   engine adopted as standard after T-EN108's control arm caught the
   cross-order defect (all pre-correction combo rows kept, labeled);

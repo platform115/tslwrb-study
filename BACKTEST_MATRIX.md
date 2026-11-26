@@ -269,3 +269,15 @@ earliness. Entry-side pre-freeze program COMPLETE (retest line + cadence closed)
 POST-GATE (J, 2026-11-26): N=1 cell REGISTERED as G2-5, the high-contract-size
 quality variant (+0.90/trade) - saved for validation testing beside G2-3/G2-4,
 not adopted.
+
+## M12/M13 ROUNDS — BOOK-GATED EXITS (T-MG21/22, 2026-11-26; fill-time engine)
+| cell | trades | net (22-02/25-10) | extras | mechanism (twin-matched delta) | verdict |
+|---|---|---|---|---|---|
+| CONTROL (M7) | 607 | +276.1 (+111.8/+164.4) | +185.6 | - | incumbent reproduced (both rounds) |
+| M12 stall-gate th0.00 | 578 | +274.9 | +216.2 | -5.8 on 96 extended | REJECTED |
+| M12 stall-gate th-0.02 | 581 | +280.8 | +209.2 | -5.2 on 84 extended | REJECTED (cell ADOPT line met by busy-reshuffle confound; mechanism negative) |
+| M13 clock-ext th0.00/-0.02 | 607 | +276.1 | +185.6 | n=0 (1/607 trades reach 480s) | STRUCTURALLY EMPTY |
+Standing lesson (institutionalized in specs from T-MG22 on): management verdicts
+are MECHANISM-PRIMARY (twin-matched delta per month), cell totals secondary.
+imb10 (T-MG20) stands as description of HIS exits; both monetization shapes
+failed on our fills. M7 stands.
