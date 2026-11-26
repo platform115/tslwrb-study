@@ -279,9 +279,25 @@ reporting and naming layer (R-3, R-7).
 ## STATUS BOARD (updated as steps close)
 Track A: A1 LIVING v1.5 | A5 gap autopsy QUEUED (after B4, pending J) | A2.1 T-IM40 | A2.2 T-IM41 | A2.3 T-IM42/43 |
 A3 T-IM44/45 + GROUPS OF RECORD (approved) | A4 T-IM46 (G2 top).
-Track B: B0 = G2 (J confirmed) | B1 T-IM47 | B2 T-EN103 (entries only;
-variants 'none' and 'move+flow' carried) | B3 management pairing = NEXT
-| B4 T-BS05 (winner 4A d1.25 x M3A) | B5 T-BS06 PASS on 2024-11 - QUARANTINE SPENT (look 1). G2 build VALIDATED. Next: A5 gap autopsy, then target 2 (G3 per A4 ranking).
+Track B: B0 = G2 (J confirmed) | B1 T-IM47 | B2 T-EN103 | B3/B4 T-BS05
+(G2-1) | B5 T-BS06 PASS 2024-11 (look 1 spent). ENTRY REFINEMENT CYCLE
+CLOSED 2026-11-26: T-EN106/107 (retest line - rejected; his dual-mode
+measured), T-EN108 (two-lane; CONTROL ARM EXPOSED the cross-order vs
+fill-time engine defect -> FILL-TIME ENGINE NOW STANDARD, incumbent
+restated G2-3 = +276.1/607/catch 47/extras +185.6), T-EN110 (cadence
+caps - rejected; his sparseness is selection not earliness), T-EN109/
+111 (which-signal: tape + per-second book - null/suggestive only),
+T-EN112 (window selection - FINDING: tier20 calendar flag = first
+decision-tree branch, 78% vs 27% engagement).
+REGISTERED, all to the purchased validation months: G2-3 (primary),
+G2-4 (two-lane quality-alternate), G2-5 (N=1 cap, high-contract-size
+variant). Parked suggestives + tier20 candidate shapes: see
+VALIDATION_PLAN.md (pre-registered, one look).
+THREE-LAYER FRAMING (J briefed): context layer (tier20 lives here) /
+trigger layer (G2-3/4/5) / management layer (M7 etc).
+NOW RUNNING: drive-connected management round - exit-switch remainder
+through the order book (spec EX_SPEC.md). Then: tbbo converter ->
+validation -> TRAINING FREEZE. G3 cycle after.
 Standing: fees ~0 for J's account (J, 2026-11-25) - cost caveats out of
 the model by instruction; execution realism still priced at B4.
 
@@ -295,6 +311,12 @@ MORE PROFITABLE trades. Mode 2 is not failure; it is the second half of
 the program (precision over volume, benchmarked against him).
 
 ## CHANGE LOG
+- 2026-11-26 (evening): entry cycle closed (T-EN106..112); fill-time
+  engine adopted as standard after T-EN108's control arm caught the
+  cross-order defect (all pre-correction combo rows kept, labeled);
+  G2-4 and G2-5 registered; tier20 finding recorded; VALIDATION_PLAN.md
+  created (single pre-registered look at 2023-05/2024-05); exit-switch
+  book round opened while J's drive is connected.
 - 2026-11-26: M9 closed negative, M7 stands; T-MG15 finding-4 corrected (dataset-mix artifact; stop vindicated by distribution). Management line RESTS pending book data / validation months. G3 cycle next.
 - 2026-11-26: R-8 extended with the pre-present checklist (7 lines, each from a documented miss); J may amend.
 - 2026-11-26: B2v2 adopted (T-EN104) - G2-3 = 4A-v2 d1.25 x M7, +265.4 training, catch 74% of G2; training-only; the C2 sharpening (J) directly produced this. Next: G3 cycle.
