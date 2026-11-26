@@ -277,7 +277,7 @@ reporting and naming layer (R-3, R-7).
   GLOSSARY entry in the same commit."
 
 ## STATUS BOARD (updated as steps close)
-Track A: A1 LIVING v1.5 | A5 gap autopsy QUEUED (after B4, pending J) | A2.1 T-IM40 | A2.2 T-IM41 | A2.3 T-IM42/43 |
+Track A: A1 LIVING v1.5 | A5 gap autopsy DONE | A2.1 T-IM40 | A2.2 T-IM41 | A2.3 T-IM42/43 |
 A3 T-IM44/45 + GROUPS OF RECORD (approved) | A4 T-IM46 (G2 top).
 Track B: B0 = G2 (J confirmed) | B1 T-IM47 | B2 T-EN103 | B3/B4 T-BS05
 (G2-1) | B5 T-BS06 PASS 2024-11 (look 1 spent). ENTRY REFINEMENT CYCLE
@@ -354,9 +354,22 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-11 | 1 | all | Edge-coverage expansion: his UNMATCHED entries (12/62 training, 3/14 OOS sit near none of our edges; REMAINDER_LEDGER) | hard ceiling on catch everywhere | anatomy of the unmatched | QUEUED |
 | D-12 | 1 | G1,G4-G6 | Remaining groups of record after G3 | unmined behavior | after D-5 | QUEUED |
 | D-13 | 2 | - | Scale-outs vs single exits (he scales; we model single) | old simplification note; matters at size | - | QUEUED |
+| D-14 | 1+2 | - | Cross-market lane (ES vs NQ/bonds/DX at his moments) | named at in-data exhaustion as the lane beside the book; never registered | data purchase | QUEUED |
+| D-15 | 2 | - | Full-month converter certification (old scripts, overnight on J's Mac) | one-day cert passed 99.999%; full month = belt+braces | J's Mac overnight | QUEUED (optional) |
+| D-16 | - | - | ~~imb10 third monetization shape (book-conditioned stall)~~ | priced as a losing bet by T-MG21's negative mechanism | - | RETIRED at entry |
+| D-17 | 2 | - | Pine track restart: stage 2 + fire vectors (HALTED pending settled entry rules - now settled by G2-4) + owed stage-1 session-stats vectors | BACKLOG 5a; unblocked by validation | folds into D-4 execution | QUEUED |
+
+OPEN DECISIONS (addressed to J, not work items; append-only too):
+| id | decision | since | status |
+|---|---|---|---|
+| Q-1 | R-1 two-tier evidence amendment (screening on 1m/60mo vs confirmation on per-second) | 2026-11-24 | AWAITING J |
+| Q-2 | Move CURRENT_STATE.md + _edits to archive/ with stale banner | 2026-11-24 | AWAITING J |
+| Q-3 | G2-1 / G2-2 disposition: both TRAINING-ONLY under the OLD engine; re-base on fill-time, or retire as superseded by G2-4? | 2026-11-26 | AWAITING J |
+
 J aims; the chosen item moves to IN PROGRESS in the same commit its
-spec is written. This table is the complete register: BACKLOG.md
-holds detail for D-9 only, the thread ledger, and nothing else new.
+spec is written. This register is complete as of 2026-11-26 22:10
+(audited against BACKLOG.md, MASTER, VALIDATION_PLAN, DOCUMENT_MAP);
+BACKLOG.md holds detail for D-9 only, plus the thread ledger.
 
 ### GOAL REFINEMENT (J, 2026-11-26)
 "Discretionary" means he has internalized a series of consistent

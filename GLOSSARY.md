@@ -97,6 +97,8 @@ failed; dominated by G2-4) | G2-4 VALIDATED | G2-5 DORMANT.
 
 ## VALIDATED PAIRS (compact aliases, J-approved)
 | alias | full designation | status |
+| D-n | ROADMAP direction item n (MASTER_PROGRAM roadmap table; append-only register of open work directions) | family registered 2026-11-26 |
+| Q-n | OPEN DECISION n addressed to J (same roadmap block) | family registered 2026-11-26 |
 |---|---|---|
 | G2-1 | Strategy 4A d1.25 x M3A (squeeze-break entry, 5-45min post-release, unfiltered, displacement 1.25; stall-60 management) | VALIDATED (T-BS05 training, T-BS06 quarantine PASS) |
 Convention: alias used alongside the long form, never replacing it in
