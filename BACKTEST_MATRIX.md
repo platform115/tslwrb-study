@@ -201,3 +201,10 @@ HIS 2024-11 G2-like: 11 entries, 91% win, +104.2. Note: our P&L that month came 
 | G2-2 = 4A d1.25 x M7 (level-snap reach8) | 500 | - | +186.0 (+84.6/+101.4) | 40 | +88.4 | TRAINING ONLY - validation month to be pre-committed & purchased |
 | 4A d1.25 x M7-reach5 | 500 | - | +154.9 | 40 | +57.2 | qualifier, not selected |
 vs G2-1 +135.8 / catch 39 / extras +47.0. Flag: reach monotone to the tested boundary (8).
+
+## G2-3 CANDIDATE (T-EN104, 2026-11-26; training months pooled)
+| combo | trades | net (22-02/25-10) | caught/62 | extras net | status |
+|---|---|---|---|---|---|
+| G2-3 = 4A-v2 d1.25 x M7 | 542 | +265.4 (+140.5/+124.9) | 46 (74%) | +173.0 | TRAINING ONLY |
+| 4A-v2 d1.25 x M3A | 515 | +244.6 (+108.0/+136.6) | 46 | +158.6 | qualifier |
+vs G2-2 +186.0/40 and G2-1 +135.8/39. Third stacked training improvement - validation months arbitrate.

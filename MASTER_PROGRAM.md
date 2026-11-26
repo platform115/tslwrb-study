@@ -271,6 +271,7 @@ MORE PROFITABLE trades. Mode 2 is not failure; it is the second half of
 the program (precision over volume, benchmarked against him).
 
 ## CHANGE LOG
+- 2026-11-26: B2v2 adopted (T-EN104) - G2-3 = 4A-v2 d1.25 x M7, +265.4 training, catch 74% of G2; training-only; the C2 sharpening (J) directly produced this. Next: G3 cycle.
 - 2026-11-26: C audit closed (T-IM53) - coverage candidates logged for the next Strategy-4 revision batch; pre-G3 queue COMPLETE. Next: the G3 cycle (B0-B5 for squeeze-quiet, with the book/prints lens built inside it).
 - 2026-11-26: goal refinement recorded (two modes: replicate patterns / precision-over-volume original design on his baseline).
 - 2026-11-26: M6C stage 1+2 ADOPTED - M7 (level-snap at computed multi-day levels) named; G2-2 = 4A d1.25 x M7, +186.0 training vs G2-1's +135.8, extras ~2x; TRAINING-ONLY pending a fresh pre-committed validation month. Management campaign closes successful; queue: C audit -> G3 cycle.

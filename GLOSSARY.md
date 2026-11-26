@@ -104,3 +104,6 @@ specs. Future validated pairs: G<group>-<n>.
 
 | M7 | level-snap management: M3A backstops (stall-60, stop 3.75, time 480) + spike-capture arming when price reaches a COMPUTED multi-day level within 8 pts of entry (MDL v3 detector) | ADOPTED on training (T-MG14) |
 | G2-2 | Strategy 4A d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits fresh pre-committed validation month |
+
+| Strategy 4A-v2 | 4A with the band set widened: squeeze cells W10/W30 q0.67 PLUS W20 q0.8, one deduped trigger stream | adopted on training (T-EN104) |
+| G2-3 | Strategy 4A-v2 d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits the purchased months (2023-05, 2024-05) |
