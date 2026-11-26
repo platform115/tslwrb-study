@@ -232,3 +232,18 @@ Gate: price must extend >= X beyond the edge, pull back to within pb, then re-br
 | X2.0 pb0.25 | 300 | +0.80 | +240.8 (+165.2/+75.5) | 32 | +162.9 | no |
 | X2.0 pb0.75 | 342 | +0.52 | +176.4 (+153.1/+23.2) | 38 | +151.0 | no |
 REJECTED as replacement (catch structurally capped: Part A shows he retest-takes only 32/50 matched entries, first-takes 17). First entry-side lever to move per-trade quality (+0.80 best vs +0.49). Untested grid: two-lane (first-break + retest) = combo, awaiting J.
+
+## TL ROUND — TWO-LANE ENTRY (T-EN108, 2026-11-26) — CONTROL GATE TRIPPED, PENDING J
+The round's control arm exposed an engine convention defect in ALL prior combo
+backtests: single-position applied in cross order, not fill order (not
+executable; not lookahead; reproduction of G2-3 to the decimal confirms it is
+the only difference). Numbers below use the REALISTIC (fill-time) engine and
+are provisional until J rules on re-baselining:
+| cell | trades (L1/L2) | per-trade | net (22-02/25-10) | caught/62 | extras net |
+|---|---|---|---|---|---|
+| lane1-only = "G2-3 corrected" | 607 | +0.45 | +276.1 (+111.8/+164.4) | 47 | +185.6 |
+| TL-A (+retest X2.0 pb0.25) | 760 (490/270) | +0.36 | +272.2 (+108.9/+163.4) | 47 | +207.4 |
+| TL-B (+retest X1.0 pb0.75) | 757 (517/240) | +0.43 | +325.1 (+137.6/+187.5) | 48 | +246.8 |
+NO ADOPTION DECLARED. Decisions to J: (1) re-baseline on fill-time engine,
+(2) TL-B adopt/alternate/reject (clears corrected incumbent on net/catch/extras;
+lane2 quality +0.28/trade dilutes per-trade).
