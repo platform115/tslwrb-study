@@ -48,13 +48,18 @@ frozen in an addendum BEFORE first read of the purchased files.
 Data ingested (checksummed; provenance in Data/inputs/README.md). No
 strategy number has been computed on these months. The one look runs
 these, verbatim, on the FILL-TIME engine, both months:
-1. G2-3: PASS = pooled net > 0 AND each month > 0 AND catch >= 60% of
-   his same-group entries (group built by the B5 recipe) AND extras
-   net > -20% of pooled net. Expected shrinkage vs +276.1 accepted.
-2. G2-4: same four conditions; judged beside G2-3 - the better
-   pooled net among those that PASS becomes the carried strategy.
-3. G2-5: PASS = per-trade >= +0.60 AND each month > 0 (its claim is
-   quality, not total).
+MODE SPLIT (J, 2026-11-26, before any number): catch is a MODE-1
+(replication) criterion only. Mode-2 strategies (our own designs
+benchmarked on P&L) are judged without it.
+1. G2-3 (mode 1, primary): PASS = pooled net > 0 AND each month > 0
+   AND catch >= 60% of his same-group entries (group by the B5
+   recipe) AND extras net > -20% of pooled net. Shrinkage vs +276.1
+   accepted. STEP 1 of the look - run and reviewed alone.
+2. G2-4 (mode 2): PASS = pooled net > 0 AND each month > 0 AND
+   extras net > -20% of pooled net. Catch reported, not gated.
+3. G2-5 (mode 2): PASS = per-trade >= +0.60 AND each month > 0.
+STEP ORDER (J: one step at a time): 1) G2-3; 2) G2-4 + G2-5;
+3) tier20 + suggestives. Review gate after each step.
 4. tier20: his engagement rate on tier20 vs minor windows reported
    (direction must repeat: tier20 > minor) + strategy-conditional
    P&L share.
