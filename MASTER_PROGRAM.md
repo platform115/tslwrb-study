@@ -324,28 +324,39 @@ the mechanism-primary testing standard.
 Every finding files under one track; a track-1 discovery can graduate
 into a track-2 component (the retest lane did exactly this).
 
-### ROADMAP (the ONE list of open directions; replaces the earlier
-"standing next directions" block)
+### ROADMAP (the ONE register of open directions; v2 after J's completeness audit)
 Rules: (1) every open direction lives here as a D-number - an idea
 not on this list does not get worked or pitched; a new idea enters as
-one line FIRST, then waits for J. (2) One item IN PROGRESS at a time
-unless J says otherwise. (3) Statuses: QUEUED / IN PROGRESS / DONE /
-RETIRED - no other words. (4) Each item names its track, its evidence,
-and what it needs.
+one line FIRST. (2) APPEND-ONLY (J): items are never removed - a
+finished item is marked DONE, an abandoned one RETIRED with ~~strike~~;
+the numbering never reuses. (3) One item IN PROGRESS at a time unless
+J says otherwise. (4) Statuses: QUEUED / IN PROGRESS / DONE / RETIRED.
+(5) Every item names its TRACK (1 = replicate him, 2 = standalone);
+track-1 items name their GROUP.
 
-| id | track | what | why (evidence) | needs | status |
-|---|---|---|---|---|---|
-| D-1 | 2 | Extras decomposition: measure which of OUR trades earn and what the earners share | extras carried the OOS P&L (+141/+155 of +144/+158); never studied in its own right; zero knobs | 4-month corpus (allowed per VALIDATION_PLAN) | QUEUED |
-| D-2 | 2 | Flow-agreement entry gate: require 30s aggressor flow with the trade at the cross | the only thread that repeated in all 3 samples | D-1 read first; fresh months to judge finally | QUEUED |
-| D-3 | 2 | Level-aware entries incl. fade-at-level family | level kit validated inside G2-4's exits; fade entries long-parked | D-1 helpful | QUEUED |
-| D-4 | 2 | G2-4 live port (Pine v6 / TradingView + Python for levels) | sole VALIDATED system | nothing - independent | QUEUED |
-| D-5 | 1 | G3 cycle: his 151 quiet-squeeze trades, measurement-first | largest unmined group of his trades | nothing | QUEUED |
-| D-6 | 1+2 | Deep book round: event-level MBP-10 | carries the flow thread, the exit remainder, G3 features | drive connected | QUEUED |
-| D-7 | 2 | Lane regime complementarity (first-break vs retest by condition) | 2 observations only - logged, not actionable | more months of G2-4 evidence | QUEUED (parked) |
-| D-8 | - | Purchase 1-2 fresh months = next clean quarantine | required to finally judge anything from D-2/D-3 and to extend G2-4's record | J purchase | QUEUED |
-| D-9 | - | Small parked items (see BACKLOG.md: re-entry after stop, regime-M7, role-flip v2, 3C/3D P&L, trade_key, M4C-180) |individually small | - | QUEUED |
+GROUPS OF RECORD (track 1's backbone; from A3/A4):
+G1 | G2 (squeeze+news, 62) MINED - produced G2-1..5, validated arc |
+G3 (squeeze quiet, 151) QUEUED = D-5 | G4 | G5 | G6 - G1/G4/G5/G6
+UNMINED (incl. the oil-Wednesday pattern noted at A4).
+
+| id | track | group | what | why (evidence) | needs | status |
+|---|---|---|---|---|---|---|
+| D-1 | 2 | - | Extras decomposition: which of OUR trades earn, what earners share | extras carried the OOS P&L (+141/+155); never studied; zero knobs | 4-month corpus | QUEUED |
+| D-2 | 2 | - | Flow-agreement entry gate (30s aggressor flow with the trade) | only thread repeating in all 3 samples | D-1 read; D-8 to judge finally | QUEUED |
+| D-3 | 2 | - | Level-aware entries incl. fade-at-level family | level kit validated in G2-4 exits; fade long-parked | D-1 helpful | QUEUED |
+| D-4 | 2 | - | G2-4 live port (Pine v6 / TradingView + Python levels; project pine docs) | sole VALIDATED system | nothing | QUEUED |
+| D-5 | 1 | G3 | G3 cycle: 151 quiet-squeeze trades, measurement-first | largest unmined group | nothing | QUEUED |
+| D-6 | 1+2 | G2/G3 | Deep book round: event-level MBP-10 (which-signal flow thread; exit remainder; G3 features; fade features) | per-second book exhausted; drive holds 3.3G windowed | drive connected | QUEUED |
+| D-7 | 2 | - | Lane regime complementarity (first-break vs retest by condition) | 2 observations only | more G2-4 months | QUEUED (parked) |
+| D-8 | - | - | Purchase 1-2 fresh months = next clean quarantine | required to finally judge D-2/D-3 and extend G2-4's record | J purchase | QUEUED |
+| D-9 | mixed | - | Small parked items: re-entry after stop; regime-conditioned M7; role-flip levels v2; 3m/5m bar anatomy; 3C/3D traded P&L; unique trade_key; M4C-180 revisit; M11 WRB-projection variant | individually small (BACKLOG.md holds detail) | - | QUEUED |
+| D-10 | 1 | G2 | tier20 candidate shapes (engagement prior / tier-based size split) | T-EN112 finding now SPLIT OOS (T-VL04) - open question | more months before any shape is testable | QUEUED (parked) |
+| D-11 | 1 | all | Edge-coverage expansion: his UNMATCHED entries (12/62 training, 3/14 OOS sit near none of our edges; REMAINDER_LEDGER) | hard ceiling on catch everywhere | anatomy of the unmatched | QUEUED |
+| D-12 | 1 | G1,G4-G6 | Remaining groups of record after G3 | unmined behavior | after D-5 | QUEUED |
+| D-13 | 2 | - | Scale-outs vs single exits (he scales; we model single) | old simplification note; matters at size | - | QUEUED |
 J aims; the chosen item moves to IN PROGRESS in the same commit its
-spec is written.
+spec is written. This table is the complete register: BACKLOG.md
+holds detail for D-9 only, the thread ledger, and nothing else new.
 
 ### GOAL REFINEMENT (J, 2026-11-26)
 "Discretionary" means he has internalized a series of consistent
