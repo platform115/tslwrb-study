@@ -222,3 +222,13 @@ overshoot 0.12pt -> pb0.75 "retest" instantly satisfied on 94.5% of crosses;
 pb0.25 on 68.6%): hypothesis only weakly tested. A true retest needs a minimum
 excursion beyond the edge before the pullback counts (RT v2 = new spec, J's
 call vs training freeze). G2-3 stands. Untested grid: excursion-gated retest.
+
+## RT2 ROUND — EXCURSION-GATED RETEST (T-EN107, 2026-11-26; training months pooled)
+Gate: price must extend >= X beyond the edge, pull back to within pb, then re-break (stop e+1.25d, TTL 300s). Else exact G2-3.
+| cell | trades | per-trade | net (22-02/25-10) | caught/62 | extras net | verdict |
+|---|---|---|---|---|---|---|
+| X1.0 pb0.25 | 383 | +0.60 | +228.4 (+137.5/+90.9) | 34 | +157.1 | no |
+| X1.0 pb0.75 | 439 | +0.52 | +228.4 (+114.0/+114.4) | 37 | +171.5 | no |
+| X2.0 pb0.25 | 300 | +0.80 | +240.8 (+165.2/+75.5) | 32 | +162.9 | no |
+| X2.0 pb0.75 | 342 | +0.52 | +176.4 (+153.1/+23.2) | 38 | +151.0 | no |
+REJECTED as replacement (catch structurally capped: Part A shows he retest-takes only 32/50 matched entries, first-takes 17). First entry-side lever to move per-trade quality (+0.80 best vs +0.49). Untested grid: two-lane (first-break + retest) = combo, awaiting J.
