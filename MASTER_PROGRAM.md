@@ -359,12 +359,20 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-16 | - | - | ~~imb10 third monetization shape (book-conditioned stall)~~ | priced as a losing bet by T-MG21's negative mechanism | - | RETIRED at entry |
 | D-17 | 2 | - | Pine track restart: stage 2 + fire vectors (HALTED pending settled entry rules - now settled by G2-4) + owed stage-1 session-stats vectors | BACKLOG 5a; unblocked by validation | folds into D-4 execution | QUEUED |
 
+| D-18 | 2 | - | Stage-1 session-stats GOLDEN VECTORS owed by the research side to the Pine thread (per-session date, bar count, range, mean TR, C(day)) - deliverable NOW, unaffected by the 2A halt | pine-open-questions.md: "STILL DUE AND UNAFFECTED" | nothing | QUEUED |
+| D-19 | 1 | - | VTR - his second system: definition hunt (2 corpus rows) | BACKLOG 1d, open since the M1 era | corpus search | QUEUED |
+| D-20 | 1 | - | Key-KME-Zone system: generated zone list unsolved (stated-price clusters = validation set) | BACKLOG 1c | - | QUEUED |
+| D-21 | 1 | all | His-levels closer look (BACKLOG 4a-4d): full-month day maps, per-object-class behavior, KME vs quiet regimes, emphasis tiers | descriptive series, partly absorbed by MDL work, rest open | - | QUEUED |
+| D-22 | 2 | - | ETH scope: everything built is RTH-only; ETH-specific management (BACKLOG 2c) and ETH entries untested | known hole | - | QUEUED |
+| D-23 | 2 | - | Python runner / VPS deployment thread (separate conversation; python-runner-handoff.md) | needed for D-4's level detector live | - | QUEUED |
+
 OPEN DECISIONS (addressed to J, not work items; append-only too):
 | id | decision | since | status |
 |---|---|---|---|
 | Q-1 | R-1 two-tier evidence amendment (screening on 1m/60mo vs confirmation on per-second) | 2026-11-24 | AWAITING J |
 | Q-2 | Move CURRENT_STATE.md + _edits to archive/ with stale banner | 2026-11-24 | AWAITING J |
 | Q-3 | G2-1 / G2-2 disposition: both TRAINING-ONLY under the OLD engine; re-base on fill-time, or retire as superseded by G2-4? | 2026-11-26 | AWAITING J |
+| Q-4 | Strategy 2A disposition: its entry rules were invalidated (T-EN99 lookahead) and halted; rebuild them, or supersede with G2-4 as the entry feeding the already-built Pine stage-1 infrastructure? | 2026-11-18 halt / surfaced 2026-11-26 | AWAITING J |
 
 J aims; the chosen item moves to IN PROGRESS in the same commit its
 spec is written. This register is complete as of 2026-11-26 22:10

@@ -87,6 +87,9 @@ STAGE 5 — ARCHIVE (kept, not current; do not plan from these)
 6. ASSETS.md before touching any data
 
 ## COVERAGE CHECK (mechanical, part of R-8)
+`python3 scripts/roadmap_audit.py` sweeps the governance docs and the
+registry for open-item language and checks D-/Q- numbering - every hit
+must map to a roadmap id. Run it at every R-8 pass.
 `python3 scripts/gen_assets_inventory.py` also prints every .md file in
 the repo that this map does not mention by name or by covered group.
 A non-empty list fails the completeness pass.
