@@ -308,6 +308,31 @@ FREEZE. G3 cycle after.
 Standing: fees ~0 for J's account (J, 2026-11-25) - cost caveats out of
 the model by instruction; execution realism still priced at B4.
 
+### THE TWO TRACKS (named plainly; the old Track A/B step labels are
+retired to the change log - these are the program's goal tracks)
+TRACK 1 - REPLICATE HIM: find his patterns and copy them. Its currency
+is catch rate and per-trade parity. Holdings so far: his dual entry
+mode (first-take + retest-take, measured), his exit clock, his
+level-targeting, his exit-into-liquidity signature (described, not yet
+monetized), the tier20 calendar branch of his decision tree, 50%
+out-of-sample catch.
+TRACK 2 - STANDALONE SYSTEMS: things that earn on their own, usable
+across strategies. Its currency is out-of-sample P&L. Holdings so far:
+G2-4 (VALIDATED - the sole deployable), G2-3 and G2-5 (DORMANT),
+M7 management, the multi-day level detector, the fill-time engine,
+the mechanism-primary testing standard.
+Every finding files under one track; a track-1 discovery can graduate
+into a track-2 component (the retest lane did exactly this).
+
+### STANDING NEXT DIRECTIONS (J, 2026-11-26: "don't forget these")
+After validation step 3, the three open directions, J aims:
+1. Make G2-4 runnable (live port: Pine v6 / TradingView + the Python
+   side for the level detector).
+2. G3 cycle (his 151 quiet-squeeze trades; measurement-first).
+3. Deep book round (event-level MBP-10 from the drive; feeds
+   which-signal, exits, and G3).
+This block stays until all three are done or J retires one.
+
 ### GOAL REFINEMENT (J, 2026-11-26)
 "Discretionary" means he has internalized a series of consistent
 patterns. Two modes follow: (1) DISCOVER AND REPLICATE those patterns -
