@@ -67,6 +67,15 @@ There are exactly EIGHT. No R-9 without J's sign-off.
 A1 coverage matrix | A2 measurement table | A3 grouping | A4 ranking
 B0 pick target | B1 anatomy | B2 entry rule | B3 paired management | B4 unit test | B5 quarantined validation
 
+## STRATEGY STATUS VOCABULARY (closed list - no other status words)
+Every strategy is exactly one of: TRAINING-ONLY (no out-of-sample test
+yet) | VALIDATED (passed its frozen out-of-sample lines) | DORMANT
+(OOS-profitable but its claim failed or it is dominated; kept, not
+deployed) | DEAD (failed outright; never revisited).
+Current: G2-1 TRAINING-ONLY (B5-passed on 2024-11 under old engine) |
+G2-2 TRAINING-ONLY | G2-3 DORMANT (earns OOS; replication claim
+failed; dominated by G2-4) | G2-4 VALIDATED | G2-5 DORMANT.
+
 ## DESIGNATION DISCIPLINE (added 2026-11-24, J: "these designations sprawl too easily")
 1. The COMPLETE list of designation families is this file's table of
    contents. A designation not findable here is a naming bug - report it.
@@ -110,4 +119,4 @@ specs. Future validated pairs: G<group>-<n>.
 | G2-4 | Strategy 4A-v2 d1.25 two-lane (first-break + retest X1.0 pb0.75) x M7 | OUT-OF-SAMPLE PASS (T-VL02): +158.1 (+118.8/+39.4), all mode-2 lines - the program's first validated track-2 strategy |
 | M12 | M7 + imb10 gate at the stall exit | TESTED-REJECTED (T-MG21: mechanism-negative) |
 | M13 | M7 + book-conditioned extension of the 480s cap | TESTED-STRUCTURALLY-EMPTY (T-MG22: 1/607 trades reach the cap) |
-| G2-5 | G2-3 with cadence cap N=1 per news window | OUT-OF-SAMPLE FAIL (T-VL03): per-trade +0.39 < +0.60 bar (training +0.90 was mostly fit) - DEAD per VALIDATION_PLAN rule |
+| G2-5 | G2-3 with cadence cap N=1 per news window | DORMANT (J, 2026-11-26): OOS-profitable (+38.9, both months positive, lowest maxDD) but its quality claim failed (+0.39 < +0.60) and it is dominated by G2-4 - not deployed, kept on record |
