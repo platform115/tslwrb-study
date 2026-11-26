@@ -263,6 +263,9 @@ purchased validation months; those months arbitrate.
 | N=3 | 262 | +0.55 | +144.8 (+62.4/+82.4) | 30 | +93.1 | no |
 | N=2 | 184 | +0.70 | +128.5 (+44.5/+84.0) | 25 | +68.5 | no |
 | N=1 | 98 | +0.90 | +88.0 (+41.8/+46.2) | 14 | +28.1 | no |
-ALL REJECTED. Monotone quality gradient (never reaches +0.98); later fills per
-window carry ~2/3 of net; his sparseness is selection, not earliness. Entry-side
-pre-freeze program COMPLETE (retest line + cadence closed).
+ALL REJECTED as replacement. Monotone quality gradient (never reaches +0.98);
+later fills per window carry ~2/3 of net; his sparseness is selection, not
+earliness. Entry-side pre-freeze program COMPLETE (retest line + cadence closed).
+POST-GATE (J, 2026-11-26): N=1 cell REGISTERED as G2-5, the high-contract-size
+quality variant (+0.90/trade) - saved for validation testing beside G2-3/G2-4,
+not adopted.
