@@ -255,3 +255,14 @@ are kept for traceability; the corrected incumbent line is G2-3 = +276.1 /
 607 / catch 47 / extras +185.6, and G2-4 (two-lane TL-B) = +325.1 / 757 /
 catch 48 / extras +246.8 is REGISTERED AS QUALITY-ALTERNATE. Both go to the
 purchased validation months; those months arbitrate.
+
+## CD ROUND — CADENCE CAP PER NEWS WINDOW (T-EN110, 2026-11-26; fill-time engine)
+| cell | trades | per-trade | net (22-02/25-10) | caught/62 | extras net | verdict |
+|---|---|---|---|---|---|---|
+| CONTROL (= G2-3 corrected) | 607 | +0.45 | +276.1 (+111.8/+164.4) | 47 | +185.6 | incumbent reproduced exactly |
+| N=3 | 262 | +0.55 | +144.8 (+62.4/+82.4) | 30 | +93.1 | no |
+| N=2 | 184 | +0.70 | +128.5 (+44.5/+84.0) | 25 | +68.5 | no |
+| N=1 | 98 | +0.90 | +88.0 (+41.8/+46.2) | 14 | +28.1 | no |
+ALL REJECTED. Monotone quality gradient (never reaches +0.98); later fills per
+window carry ~2/3 of net; his sparseness is selection, not earliness. Entry-side
+pre-freeze program COMPLETE (retest line + cadence closed).

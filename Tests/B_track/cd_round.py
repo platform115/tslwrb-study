@@ -342,7 +342,7 @@ print("STATUS: CLOSED | 2026-11-26 | Spec: CD_SPEC.md (committed "
       "+231.2 / 62 / +3.73")
 print()
 print("MANDATORY CHECKS: all passed (control reproduced exactly; "
-      "monotonicity, subset, no-duplicate, no-empty-month).")
+      "monotonicity, candidate-membership with busy-explained non-control fills (corrected check 3, spec addendum 1), no-duplicate, no-empty-month).")
 print()
 # his cadence anchor
 print("## HIS CADENCE (descriptive anchor)")
