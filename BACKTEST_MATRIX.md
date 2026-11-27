@@ -449,3 +449,31 @@ price is the binding constraint. Possible R3 (J gates): scratch-on-
 bounce for flagged trades (exit predicted-dead trades on the next
 retrace toward the level at ~-0.25/-0.5, a documented scratch-exit
 mechanic) - the only shape that changes the arithmetic.
+
+## T-MG28 — M8: FAMILY-EDGE CAPTURE TARGETS (2026-11-27)
+Spec: Tests/D29_m8/M8_SPEC.md (frozen first; D_min=2.0 frozen from
+F-28's brake zone, range 0.25/1.0/3.0 reported). Controls exact on all
+four baselines. Mechanism-primary, per line.
+
+G2 LINE — ADOPT-AS-CANDIDATE (all frozen lines pass):
+| cell | trades | per-trade | pooled | twin delta | months>=0 |
+|---|---|---|---|---|---|
+| G2-4 x M7 (baseline) | 2126 | +0.27 | +565.9 | - | - |
+| G2-4 x M8 D=2.0 | 2400 | +0.34 | +824.8 | +143.6 | 5/6 |
+| G2-6 x M7 (baseline) | 6252 | +0.27 | +1659.0 | - | - |
+| G2-6 x M8 D=2.0 | 8383 | +0.32 | +2670.0 | +165.2 | 4/6 |
+Why: M7's spike-capture armed only when a multi-day level sat <=8 pts
+ahead - often absent; family edges supply a target >=2 pts ahead almost
+always, converting stall/cap exits into peak-0.75 captures. Sensitivity
+is a plateau and MONOTONE UP in D_min (D=3.0 twin +188.2, 6/6 months) -
+reported, not adopted (verdict stays on the frozen cell; no post-hoc
+switch). Busy-freed volume (+115/+846 net) reported SEPARATELY and
+excluded from the verdict per T-MG21 law. All six months are training
+for M8's claim; judge = D-8.
+
+S5 LINE — REJECTED (wash): RWY-M8 twin -3.9, full cell +154.2 vs
++157.1. The RWY organism already selects for a reachable family edge,
+so M8 merely swaps +4.21 captures for earlier +2.48 ones, offset by
+fewer stops. M8 helps where targets were SPARSE, not where selection
+guaranteed one - the mirror image of F-29, and evidence the mechanism
+is understood rather than curve-fit.
