@@ -97,6 +97,7 @@ failed; dominated by G2-4) | G2-4 VALIDATED | G2-5 DORMANT.
 
 ## VALIDATED PAIRS (compact aliases, J-approved)
 | alias | full designation | status |
+| F-n | STANDING FINDING n (MASTER_PROGRAM findings register; append-only; must shape future strategy design) | family registered 2026-11-27 |
 | D-n | ROADMAP direction item n (MASTER_PROGRAM roadmap table; append-only register of open work directions) | family registered 2026-11-26 |
 | Q-n | OPEN DECISION n addressed to J (same roadmap block) | family registered 2026-11-26 |
 |---|---|---|

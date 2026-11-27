@@ -324,6 +324,17 @@ the mechanism-primary testing standard.
 Every finding files under one track; a track-1 discovery can graduate
 into a track-2 component (the retest lane did exactly this).
 
+### STANDING FINDINGS REGISTER (append-only, like the roadmap;
+F-ids; these must shape every future entry/management design - J,
+2026-11-27: "make sure it stays important")
+| id | finding | source | force |
+|---|---|---|---|
+| F-1 | TAIL CONCENTRATION: top 10% of trades = 169% of pooled net, top quartile = 263%; half of trades win but the tail IS the business. Any "surgical" strategy design starts from this fact. | T-XD01, 4 months | program-shaping |
+| F-2 | ENERGY IS ONE FACTOR, measured by rv30 (last-30-min movement): AUC 0.647 alone, all other energy features (vol5/react5/range5/vol30/tier20) add +0.000-0.001 beyond it. Dead tape = stall bleed. | T-XD01 + factor check | gate input |
+| F-3 | LEVELS ARE THE ENGINE: earners sit in level-dense territory (room ahead 4.5 vs 6.0) and spike-capture exits made +679 of +483 pooled net; stalls breakeven; stops -345. | T-XD01 anatomy | gate + strategy input |
+| F-4 | WINNERS DON'T BREATHE: earner median MAE 0.12 vs rest 1.12; earners fill fast (80s vs 109s). Management implication: early-adverse exit could shrink the stop bill. | T-XD01 | management input |
+| F-5 | NEGATIVES THAT STAND: signed flow at entry is NULL for our earners (the 3-sample flow thread is about HIM, not our P&L - D-2 premise weakened); lane is null (two-lane union vindicated). | T-XD01 | guard |
+
 ### ROADMAP (the ONE register of open directions; v2 after J's completeness audit)
 Rules: (1) every open direction lives here as a D-number - an idea
 not on this list does not get worked or pitched; a new idea enters as
@@ -354,6 +365,8 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-11 | 1 | all | Edge-coverage expansion: his UNMATCHED entries (12/62 training, 3/14 OOS sit near none of our edges; REMAINDER_LEDGER) | hard ceiling on catch everywhere | anatomy of the unmatched | QUEUED |
 | D-12 | 1 | G1,G4-G6 | Remaining groups of record after G3 | unmined behavior | after D-5 | QUEUED |
 | D-13 | 2 | - | Scale-outs vs single exits (he scales; we model single) | old simplification note; matters at size | - | QUEUED |
+| D-24 | 2 | - | M14 management round: early-adverse exit + energy-conditioned handling (from F-4/F-2; stops cost -345) | earner MAE 0.12 vs rest 1.12 | mechanism-primary verdict per R-9 | QUEUED |
+| D-25 | 2 | - | SURGICAL standalone strategy: entries designed from the F-1..F-4 profile (level-approach in active tape) - J's "more surgical trade entry/management at a later point" | the earner profile | D-3 gate must first prove the profile selects prospectively; judged on D-8 months | QUEUED |
 | D-14 | 1+2 | - | Cross-market lane (ES vs NQ/bonds/DX at his moments) | named at in-data exhaustion as the lane beside the book; never registered | data purchase | QUEUED |
 | D-15 | 2 | - | Full-month converter certification (old scripts, overnight on J's Mac) | one-day cert passed 99.999%; full month = belt+braces | J's Mac overnight | QUEUED (optional) |
 | D-16 | - | - | ~~imb10 third monetization shape (book-conditioned stall)~~ | priced as a losing bet by T-MG21's negative mechanism | - | RETIRED at entry |
