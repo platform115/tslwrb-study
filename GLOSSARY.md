@@ -51,7 +51,7 @@ single-trade case-study mode). A1..A4, B0..B5 = their steps.
 R-1..R-7 = the standing rules in MASTER_PROGRAM.md.
 
 ## STANDING RULES (R-series) — MASTER_PROGRAM.md is the full text
-There are exactly ELEVEN. No R-12 without J's sign-off.
+There are exactly TWELVE. No R-13 without J's sign-off.
 | id | plain meaning |
 |---|---|
 | R-1 | Lookahead prevention: the truncation harness applies to every script, mechanically |
@@ -65,6 +65,7 @@ There are exactly ELEVEN. No R-12 without J's sign-off.
 | R-9 | Prove the tool: engines reproduce certified controls exactly before any report is read; management verdicts are mechanism-primary |
 | R-10 | Remainders get anatomies before being called ceilings |
 | R-11 | Months-spend gate: every spec declares which months it spends and why no hold-out, before freezing; J gates the spend |
+| R-12 | Findings sweep: every spec lists each standing F-finding as APPLIED or NOT-APPLICABLE before freezing; retroactive misses trigger follow-up rounds |
 
 ## TRACK STEPS (MASTER_PROGRAM)
 A1 coverage matrix | A2 measurement table | A3 grouping | A4 ranking
@@ -131,5 +132,6 @@ specs. Future validated pairs: G<group>-<n>.
 | Strategy 5W (alias S1-ANY) | Strategy 5 with the 3s signal ablated - enters every touch | TRAINING-ONLY, Tier-R. Two measurements on record: covered touches (T-SR01: 422/+216.5, +0.51) and FULL RTH (T-SR02/03: 750/+472.1, +0.63 - the program's per-trade leader; the coverage restriction was hiding quality). T-SR03 anatomy: the +0.63 is flat across all flow/calendar/level lenses (null); upgrade path = Part B 3s book read. Trade tables banked in Tests/D30_s5mf/ |
 | S5-MF | Strategy 5 with the touch universe widened from multi-day density levels to family edges (resolver SQZ/GAP/SHD/REA + WRB bodies + prior-day H/L/C; raw W20 band excluded - moving boundary). Part A = ANY arm only | TRAINING-ONLY, Tier-R (T-SR02: 4369/+1985.6, +0.45/trade, both months positive, worst -2.00; volume not quality - LVL-ANY full-RTH leads per-trade at +0.63). Part B (3s ACTIVE arm) awaits device extraction |
 | 5W-RWY | Strategy 5W full-RTH gated by the RUNWAY selector: admit a touch only when the nearest family edge ahead of the would-be entry (F-23/24 vocabulary) is 2.0-8.0 pts away - room to run to a real target | TRAINING-ONLY, Tier-R (T-SR05: 102/+157.1, +1.54/trade, 63% win, stops 31%, months +79/+78; plateau across bands; the program's per-trade leader). Selection channel disclosed; judge = D-8 stage 2 |
+| M8 | M7's machinery with spike-capture targets widened from multi-day levels to the family-edge vocabulary (F-23..26); S5-line variant targets the edge the runway selector points to | NAMED (J, 2026-11-27); build = D-29; untested |
 | Tier-P / Tier-R | Deployment tiers: Tier-P = Pine-portable (price + public calendar only; G2-4 x M7). Tier-R = Python-runner + depth feed (Rithmic L2 live / Databento MBP-10 historical; Strategy 5 line, F-17/F-21 machinery). Book dependencies never enter Tier-P | families registered 2026-11-27 |
 | G2-5 | G2-3 with cadence cap N=1 per news window | DORMANT (J, 2026-11-26): OOS-profitable (+38.9, both months positive, lowest maxDD) but its quality claim failed (+0.39 < +0.60) and it is dominated by G2-4 - not deployed, kept on record |

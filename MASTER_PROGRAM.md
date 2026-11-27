@@ -56,6 +56,12 @@ R-11 MONTHS-SPEND GATE (J confirmed 2026-11-27): every new-claim spec
     which months the run will newly spend, and whether any could
     instead be held out - with the hold-out taken by default unless
     the spec argues otherwise. J gates the spend, not just the spec.
+R-12 FINDINGS SWEEP (J confirmed 2026-11-27): every new spec (entry,
+    management, or selector) must contain a FINDINGS-SWEEP section
+    before freezing: each standing F-finding is listed as APPLIED
+    (how) or NOT-APPLICABLE (why). A finding spotted missing
+    retroactively triggers a follow-up round, as F-23..26's omission
+    from T-SR03 did. Added to the R-8 pre-present checklist.
 
 ## DATA CONVENTION
 Training months: 2025-10, 2022-02. Validation months: 2021-09 (one
@@ -425,7 +431,7 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-27 | 1+2 | - | SENSITIVITY AUDIT of arbitrary load-bearing constants (TTL 300, dedupe 300, give-back 0.75, arm floor 0.5, stop upward, cap 480, Wseq 600, OFI window 30s, T-BK03 outcome thresholds): perturb +-50% one at a time, flag knife-edges, change nothing - robustness check, NOT optimization (F-11-compatible) | J's ranges directive | R-9 controls | DONE (T-SA01: no knife-edges; dedupe flagged SENSITIVE; F-20) |
 | D-28 | 2 | - | ENTRY-SIDE BOOK LENSES never examined: (a) book dynamics AT THE FILL moment (the live decision second - all prior tests measured at cross/pre-approach), (b) the touch reaction at levels (first seconds of book meeting level, T-BK03's stated open lens). Scoped as D-25 design input per F-18 | J's entry-focus audit | drive data banked | DONE (T-BK04: touch-reaction discriminator found at 3s - F-21; D-25 foundation complete) |
 
-| D-29 | 2 | - | Multi-family capture targets for M7 (gap/shadow edges beside multi-day levels as spike-capture targets) | F-23/24/25; the capture side is the only management family that ever won; WRB-family entries earned +0.38 in T-EN115, and his exits target the next level at ~1.61x (F-7) | mechanism-primary per R-9; R-11 months-spend section | QUEUED (MID priority - bumped per J after T-EN115) |
+| D-29 | 2 | - | BUILD M8: the capture-side management with F-23..26 built in - M7's machinery with spike-capture targets widened from multi-day levels to the family-edge vocabulary (named M8 per J, 2026-11-27). S5-line variant: target THE edge the runway points to (coherent with 5W-RWY's admit rule) | F-23/24/25/26 + F-7 (1.61x targeting) + F-28/29 (edges brake and feed runs) | mechanism-primary per R-9; R-11 + R-12 sections | QUEUED (MID) |
 | D-30 | 2 | - | S5-MF: Strategy 5's touch universe widened to family edges | F-24/F-21/F-22 | Part A (ANY arm, container-only) + Part B (3s ACTIVE arm, device extraction; addendum must pick a moment restriction - 45,454 moments is 36x prior volume) | PART A DONE (T-SR02: all lines pass; S5-MF TRAINING-ONLY; F-26). PART B QUEUED on device availability |
 | D-31 | 2 | - | 5W full-RTH anatomy: six-lens decomposition + frozen promotion rule (can +0.63 get surgical from 1s-visible data?) | T-SR02's sleeper observation (selection disclosed in spec) | BH q=0.10, both-months, promotion rule frozen pre-look | DONE (T-SR03: NULL - zero qualifiers; F-27; upgrade path = Part B book read) |
 | D-32 | 2 | - | Structural selectors for the surgical line (F-7/F-23..26 vocabulary: runway, confluence, backstop, range position) + the runway selector run constructively | J's push: T-SR03 had not incorporated F-23..26; exit anatomy showed stops are the whole deficit | frozen promotion rule; constructive re-run per T-MG21 lesson | DONE (T-SR04 FINDING + T-SR05 ALL LINES PASS: 5W-RWY TRAINING-ONLY; F-28/F-29) |
@@ -491,3 +497,4 @@ the program (precision over volume, benchmarked against him).
 - 2026-11-27: T-SR03 closed on a clean null. 5W full-RTH is flat across every 1s-visible lens (F-27); capture exits carry the book; surgical upgrade deferred to D-30 Part B (3s book read). D-31 registered and closed same-day. Trade tables for S1-ANY/5W-full/S5-MF banked as parquets.
 - 2026-11-27: D-32 closed end-to-end in one session: T-SR04 structural lenses (F-28: room-to-structure monotone) -> T-SR05 constructive test (F-29: 5W-RWY all lines pass, +1.54/trade, TRAINING-ONLY - the program's per-trade leader and first working selection gate). D-33 registered (loss-side management + S5 constants ranges). J's F-23..26-incorporation push directly produced the breakthrough.
 - 2026-11-27 (post-audit): T-SR05 integrity audit on J's challenge: month-balanced (49/53 trades, +1.61/+1.48), NOT tail-driven (median trade +2.12, top-decile 46% of net vs the program's usual ~190%), no busy-reshuffle artifact (92/102 trades identical to baseline, 0 same-fill-pnl-drift, 10 cleanly busy-freed), 28 days traded with best day 17% of net and 5 negative days. OWED under R-1: a formal truncation-harness pass on the runway feature code (knowability currently rests on comp-gating + the T-EN115 minute-alignment check, not the mechanical harness) - attached to D-33 preconditions.
+- 2026-11-27: R-12 (findings sweep) confirmed by J and landed. M8 named (D-29's content): capture targets -> family edges; S5-line variant targets the runway edge. Device confirmed available for compute (no large downloads) -> D-30 Part B unblocked via moment-targeted extraction.
