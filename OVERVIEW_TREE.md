@@ -11,7 +11,7 @@ For any number -> BACKTEST_MATRIX. For any test -> the registry
       G2-x strategy arc; OOS catch 50% (7/14)
 - G3  squeeze, quiet (151)               — QUEUED (D-5)
 - G1, G4, G5, G6 (incl. oil-Wednesday)   — UNMINED (D-12)
-### What is KNOWN about him (earned findings, with their tests)
+### What is KNOWN about him (summary - canonical home is the F-register in MASTER_PROGRAM)
 - Entries are DUAL-MODE: first-take + retest-take, both profitable
   (T-EN107) -> graduated into G2-4's lane 2
 - Window choice: tier20 calendar branch SPLIT out of sample

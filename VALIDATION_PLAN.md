@@ -88,3 +88,12 @@ PLAN FULLY EXECUTED 2026-11-26. What "spent" means, precisely (J):
 6. tier20 candidate shapes measured descriptively (no adoption).
 No parameter may change after the first strategy number is computed.
 Anything failing here dies here.
+
+## STANDING POLICY — DORMANT STRATEGIES RIDE ALONG (J, 2026-11-27)
+Every registered strategy (VALIDATED and DORMANT alike) is scored,
+unchanged, on each future quarantine month beside the active one.
+Dormant strategies are preserved exactly for this: if accumulating
+out-of-sample months show a dormant one leading, it is revived by J's
+decision. DEAD strategies are not re-run. This keeps "worked overall,
+may need refinement" strategies alive without carrying mediocrity:
+the DORMANT/DEAD line is the filter.

@@ -324,9 +324,10 @@ the mechanism-primary testing standard.
 Every finding files under one track; a track-1 discovery can graduate
 into a track-2 component (the retest lane did exactly this).
 
-### STANDING FINDINGS REGISTER (append-only, like the roadmap;
-F-ids; these must shape every future entry/management design - J,
-2026-11-27: "make sure it stays important")
+### STANDING FINDINGS REGISTER (append-only; F-ids; THE single home
+for earned findings - OVERVIEW_TREE summarizes and points here; every
+future spec cites the F-ids it builds on or contradicts. Backfilled
+2026-11-27 from the full test history at J's challenge.)
 | id | finding | source | force |
 |---|---|---|---|
 | F-1 | TAIL CONCENTRATION: top 10% of trades = 169% of pooled net, top quartile = 263%; half of trades win but the tail IS the business. Any "surgical" strategy design starts from this fact. | T-XD01, 4 months | program-shaping |
@@ -334,6 +335,14 @@ F-ids; these must shape every future entry/management design - J,
 | F-3 | LEVELS ARE THE ENGINE: earners sit in level-dense territory (room ahead 4.5 vs 6.0) and spike-capture exits made +679 of +483 pooled net; stalls breakeven; stops -345. | T-XD01 anatomy | gate + strategy input |
 | F-4 | WINNERS DON'T BREATHE: earner median MAE 0.12 vs rest 1.12; earners fill fast (80s vs 109s). Management implication: early-adverse exit could shrink the stop bill. | T-XD01 | management input |
 | F-5 | NEGATIVES THAT STAND: signed flow at entry is NULL for our earners (the 3-sample flow thread is about HIM, not our P&L - D-2 premise weakened); lane is null (two-lane union vindicated). | T-XD01 | guard |
+| F-6 | HE IS DUAL-MODE at entry: first-takes AND retest-takes, both profitable - no single timing rule copies him. | T-EN107 | became G2-4's lane 2 |
+| F-7 | HIS EXITS = DURATION CLOCK first (t alone carries 0.805 of 0.814 AUC) + partial LEVEL-TARGETING (1.61x null: ~1 in 7 exits at our computed levels). | M10/M11 (T-MG17/18) | M7's design basis |
+| F-8 | EXIT-INTO-LIQUIDITY: deep-book imbalance tilts toward his side at his exits, surviving duration AND profit controls - true description of him; BOTH rule monetizations failed on our fills. | T-MG19/20 vs 21/22 | description, not a rule |
+| F-9 | HIS SPARSENESS IS SELECTION, NOT EARLINESS: capping to first fills per window catches almost none of his trades; later fills carry ~2/3 of our net. | T-EN110 | guard vs naive caps |
+| F-10 | FLOW-WITH-THE-TRADE at his taken crosses: the only which-signal thread repeating in all 3 samples; never clears single-month bars. | T-EN109/111, T-VL04 | track-1 lead (D-6) |
+| F-11 | THE SHRINKAGE GRADIENT: OOS performance shrank roughly with stacked tuned knobs (~50% per-trade); measured-behavior components transferred, grid winners didn't. | T-VL01..03 | design law |
+| F-12 | COVERAGE CEILING: 12/62 + 3/14 of his entries match no edge of ours - catch is capped until edge families expand. | T-EN107/T-VL01 | D-11's basis |
+| F-13 | THE CONTROL-ARM LAW: three engine/spec defects were caught only by exact-reproduction gates and mechanism accounting, never by inspection. | T-EN108, T-MG21, T-EN110 | why R-9 exists |
 
 ### ROADMAP (the ONE register of open directions; v2 after J's completeness audit)
 Rules: (1) every open direction lives here as a D-number - an idea
