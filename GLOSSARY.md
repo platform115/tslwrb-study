@@ -51,7 +51,7 @@ single-trade case-study mode). A1..A4, B0..B5 = their steps.
 R-1..R-7 = the standing rules in MASTER_PROGRAM.md.
 
 ## STANDING RULES (R-series) — MASTER_PROGRAM.md is the full text
-There are exactly EIGHT. No R-9 without J's sign-off.
+There are exactly ELEVEN. No R-12 without J's sign-off.
 | id | plain meaning |
 |---|---|
 | R-1 | Lookahead prevention: the truncation harness applies to every script, mechanically |
@@ -62,6 +62,9 @@ There are exactly EIGHT. No R-9 without J's sign-off.
 | R-6 | Docs stay current: status headers, change logs, the living docs updated the same turn |
 | R-7 | Results display: every entry test shown per RESULTS_DISPLAY_STANDARD.md |
 | R-8 | Completeness pass: deliverables are diffed against ASSETS.md and the program doc mechanically, never from memory |
+| R-9 | Prove the tool: engines reproduce certified controls exactly before any report is read; management verdicts are mechanism-primary |
+| R-10 | Remainders get anatomies before being called ceilings |
+| R-11 | Months-spend gate: every spec declares which months it spends and why no hold-out, before freezing; J gates the spend |
 
 ## TRACK STEPS (MASTER_PROGRAM)
 A1 coverage matrix | A2 measurement table | A3 grouping | A4 ranking

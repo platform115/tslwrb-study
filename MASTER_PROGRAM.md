@@ -40,6 +40,22 @@ R-6 DOC DISCIPLINE: every process uses the six-field template (Purpose /
 R-7 RESULTS DISPLAY: all entry testing reports per
     RESULTS_DISPLAY_STANDARD.md; the BACKTEST_MATRIX is updated in the
     same commit as any run.
+R-9 PROVE THE TOOL (text landed 2026-11-27; rule in force since
+    T-MG21/T-EN108, F-13): no report is read until the engine that
+    produced it reproduces its certified control numbers exactly, in
+    the same run. Management verdicts are mechanism-primary
+    (twin-matched deltas), never cell-total. Patches are verified
+    applied before results are trusted.
+R-10 REMAINDERS GET ANATOMIES (J's avoid-this-mistake instruction,
+    T-EN114): an unexplained remainder (unmatched trades, a residual
+    gap) is a clue, not a ceiling - it receives a case-by-case anatomy
+    before any claim that it is irreducible.
+R-11 MONTHS-SPEND GATE (J confirmed 2026-11-27): every new-claim spec
+    must contain a MONTHS-SPEND section before freezing: which months
+    the claim's design has already seen (and through what channel),
+    which months the run will newly spend, and whether any could
+    instead be held out - with the hold-out taken by default unless
+    the spec argues otherwise. J gates the spend, not just the spec.
 
 ## DATA CONVENTION
 Training months: 2025-10, 2022-02. Validation months: 2021-09 (one
@@ -380,7 +396,7 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-5 | 1 | G3 | G3 cycle: 151 quiet-squeeze trades, measurement-first | largest unmined group | nothing | QUEUED |
 | D-6 | 1+2 | G2/G3 | Deep book round: event-level MBP-10 (which-signal flow thread; exit remainder; G3 features; fade features) | per-second book exhausted; drive holds 3.3G windowed | drive connected | FULLY DONE (T-BK02 F-17; T-BK03 F-19 + complete G3 bank + 1,541-approach universe). Drive no longer required - all extractions banked in repo |
 | D-7 | 2 | - | Lane regime complementarity (first-break vs retest by condition) | 2 observations only | more G2-4 months | QUEUED (parked) |
-| D-8 | - | - | Purchase 1-2 fresh months = next clean quarantine | required to finally judge D-2/D-3 and extend G2-4's record | J purchase | QUEUED |
+| D-8 | - | - | Purchase 1-2 fresh months = next clean quarantine (now judges: G2-6, Strategy 5/5W, D-29/D-30 results, dormant ride-alongs) | the single validation event for everything TRAINING-ONLY | J purchase; TWO-STAGE option: stage 1 flow-only (1s+tbbo, small download) judges the whole Tier-P line; stage 2 MBP-10 depth (large download) judges the Tier-R line later. Months must be his-journal-covered so catch stays measurable | DEFERRED (J, 2026-11-27: download constraint); spec can be written before purchase |
 | D-9 | mixed | - | Small parked items: re-entry after stop; regime-conditioned M7; role-flip levels v2; 3m/5m bar anatomy; 3C/3D traded P&L; unique trade_key; M4C-180 revisit; M11 WRB-projection variant | individually small (BACKLOG.md holds detail) | - | QUEUED |
 | D-10 | 1 | G2 | tier20 candidate shapes (engagement prior / tier-based size split) | T-EN112 finding now SPLIT OOS (T-VL04) - open question | more months before any shape is testable | QUEUED (parked) |
 | D-11 | 1 | all | Edge-coverage expansion: his UNMATCHED entries | hard ceiling on catch | anatomy + spec'd strategy | DONE (T-EN114 anatomy -> T-EN115 G2-6 REGISTERED TRAINING-ONLY: catch 59/62, +1659.0/six months, per-trade held at +0.27; F-23/F-25; judge = D-8) |
@@ -405,7 +421,8 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-27 | 1+2 | - | SENSITIVITY AUDIT of arbitrary load-bearing constants (TTL 300, dedupe 300, give-back 0.75, arm floor 0.5, stop upward, cap 480, Wseq 600, OFI window 30s, T-BK03 outcome thresholds): perturb +-50% one at a time, flag knife-edges, change nothing - robustness check, NOT optimization (F-11-compatible) | J's ranges directive | R-9 controls | DONE (T-SA01: no knife-edges; dedupe flagged SENSITIVE; F-20) |
 | D-28 | 2 | - | ENTRY-SIDE BOOK LENSES never examined: (a) book dynamics AT THE FILL moment (the live decision second - all prior tests measured at cross/pre-approach), (b) the touch reaction at levels (first seconds of book meeting level, T-BK03's stated open lens). Scoped as D-25 design input per F-18 | J's entry-focus audit | drive data banked | DONE (T-BK04: touch-reaction discriminator found at 3s - F-21; D-25 foundation complete) |
 
-| D-29 | 2 | - | Multi-family capture targets for M7 (gap/shadow edges beside multi-day levels as spike-capture targets) | F-23/24; the capture side is the only management family that ever won | mechanism-primary per R-9 | QUEUED (low priority) |
+| D-29 | 2 | - | Multi-family capture targets for M7 (gap/shadow edges beside multi-day levels as spike-capture targets) | F-23/24/25; the capture side is the only management family that ever won; WRB-family entries earned +0.38 in T-EN115, and his exits target the next level at ~1.61x (F-7) | mechanism-primary per R-9; R-11 months-spend section | QUEUED (MID priority - bumped per J after T-EN115) |
+| D-30 | 2 | - | S5-MF: Strategy 5's touch universe widened from multi-day density levels to the full family-edge vocabulary (GAP/SHD/REA/SQZ/WRB/prior-day), same 3s ACTIVE read and exits | F-24 (grammar lives on all families) + F-21/F-22 (the 3s read is ours); the surgical +0.60-per-trade direction J prefers | own spec; Tier-R; runnable NOW on banked depth months (2022-02, 2025-10); R-11 section mandatory | QUEUED (registered per J, 2026-11-27) |
 
 OPEN DECISIONS (addressed to J, not work items; append-only too):
 | id | decision | since | status |
@@ -462,3 +479,4 @@ the program (precision over volume, benchmarked against him).
   evidence-at-review replaces numeric gates except R-1/R-5; single-trade
   case-study mode added to B0).
 - 2026-11-27: T-EN115 closed. G2-6 (4A-v3 multi-family x M7) run on all six months under R-9 control (both certified pairs exact). All five frozen verdict lines pass -> G2-6 REGISTERED TRAINING-ONLY, Tier-P. F-25 filed. D-11 closed end-to-end. Judge = D-8 purchased months.
+- 2026-11-27: R-11 confirmed by J and landed; R-9/R-10 full text landed in STANDING RULES (was referenced-only - doc-sync defect found and fixed). D-29 bumped to MID priority. D-30 (S5-MF) registered. D-8 marked DEFERRED with the two-stage purchase option. GLOSSARY R-series table synced (8 -> 11).
