@@ -246,7 +246,7 @@ for mo, nxt, tag in JOBS:
             ki = int(np.searchsorted(g_bt + 60, t, "right")) - 1
             if ki >= 0 and np.isfinite(blo[ki]):
                 E += [("W20", blo[ki]), ("W20", bhi[ki])]
-            if tag == "full":
+            if tag in ("full", "quiet"):
                 E += tail_edges(sd0, t, di)
             px, prev = mids[jj], mids[jj - 1]
             for fam, e in E:

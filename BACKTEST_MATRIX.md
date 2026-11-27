@@ -496,3 +496,27 @@ name M9; A plateau 1.5-2.0, A=1.5 mid-plateau) is J's gate. Practical
 bonus: M9 needs no resolver in the exit path - trivially Pine-portable.
 Caveat: A=1.5 is the best of a 3-value tested range on training months
 (disclosed; the 1.5-2.0 plateau and D-8 are the defenses).
+
+## T-EN116 — G3-1: THE QUIET-MARKET CYCLE (2026-11-27)
+Spec: Tests/D5_quiet/G31_SPEC.md (frozen first). Dual R-9 controls
+exact. NEAR-MISS logged: the first quiet generation silently ran the
+v2 trigger (a tag-guard kept the tail families out) - caught by the
+per-family table, NOT by the controls, which only covered the
+news-window path; fixed and regenerated. Lesson: controls must cover
+every NEW branch, not just the inherited one.
+
+| cell | trades | per-trade | pooled | catch-G3 | extras |
+|---|---|---|---|---|---|
+| G2-6 (news windows, ref) | 6252 | +0.27 | +1659.0 | 5/151 | +1638.8 |
+| G3-1 x M7 | 19008 | +0.19 | +3689.4 | 150/151 | +3262.4 |
+| G3-1 x M9 (pre-registered secondary) | 23941 | +0.24 | +5727.8 | 150/151 | +5241.1 |
+
+CATCH 150/151: his quiet-market grammar IS our vocabulary, confirmed
+at the trade level - Track 1's quiet gap closed in training. All six
+months strongly positive (worst +357). VERDICT: PARTIAL on the M7
+cell - per-trade +0.19 vs the +0.20 flag line, and PDY toxic-flagged
+(108 trades, -25.6, 4/6 months). The M9 secondary cell passes every
+line (+0.24) but promoting it is J's call (cell choice after results).
+SHD/WRB/GAP carry the quiet book; SQZ/W20 (the news-window champions)
+are nearly irrelevant quietly (+0.09) - regime-dependence of families
+on record. ~158 trades/day pooled - an all-day machine, stated.
