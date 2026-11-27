@@ -406,3 +406,20 @@ flow/calendar/grid gate failed (F-14, F-27). At one tick of round-trip
 friction the edge is ~+1.29 - robust where +0.27-class strategies are
 not. Caveats: band chosen after seeing T-SR04's gradient on these same
 months; n=102; F-11 expects a per-trade haircut on fresh months.
+
+## T-SR07 — FAILED-BREAK EXIT: REJECTED (2026-11-27)
+Spec: Tests/D32_structsel/FB_SPEC.md (frozen first; verdict value
+x=0.25 frozen for a stated mechanical reason; x range 0/0.25/0.5
+reported). Controls exact. Mechanism-primary.
+Result: the reclaim exit LOSES money at every threshold on both
+universes (RWY x=0.25: mechanism delta -32.9 pooled, negative both
+months; full cell +125.6 < +157.1 baseline) even though it rescues
+every stop (stop-count 32 -> 0). Why: rescued stops save only 0.75-1.25
+pts each, while the winners it clips cost several points each - these
+touch entries ROUTINELY dip back through the level before running (the
+retest is part of the pattern, consistent with F-6's retest grammar).
+Monotone in x: the deeper the reclaim threshold, the less the harm -
+the structural stop at L-1.25 is at or inside the efficient depth.
+Verdict: REJECTED. Loss-size improvement on this line must come from
+not entering (selection: Part B's book read), not from earlier exits
+on the price path alone.
