@@ -64,3 +64,19 @@ build). T-xx = test ledger IDs. R-1..R-8 = working rules.
   explains his exit timing (the single biggest gap left: on the same
   trades he makes +3.73 per trade, we make +0.45, mostly because he
   holds winners longer when it is right to).
+
+
+## 2026-11-27 AFTERNOON — NO JARGON
+- We now know where our money comes from (one coherent profile:
+  moving markets, near computed levels, collected by the level-snap
+  exit) and that it CANNOT be captured by filtering entries - three
+  different filter designs all threw away profitable trades.
+- Four careful attempts to improve the exit rules all failed or
+  proved empty; the surprising summary is that our simple management
+  is already as good as its inputs allow. J's instinct ("cut trades
+  that won't run") turned out to already BE one of its rules.
+- Still open on exits: one standard statistical method never tried
+  (change-point detection) and the full-depth order-book data (being
+  opened now - the deep-book round).
+- Nothing was lost: every finding has an F-number, every open idea a
+  D-number, in MASTER_PROGRAM.

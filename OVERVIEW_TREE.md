@@ -52,8 +52,9 @@ GLOSSARY: TRAINING-ONLY / VALIDATED / DORMANT / DEAD)
 ### Management components
 - M7 (SHIPPED) = stop -3.75 + stall-60 + time-cap 480 + spike-
   capture armed when a computed multi-day level sits within 8 pts
-- Superseded/rejected ledger: M0-M6 (matrix), M12 stall-gate
-  (REJECTED T-MG21), M13 clock-extension (EMPTY T-MG22)
+- Superseded/rejected ledger: M0-M6 (matrix), M12 (T-MG21), M13
+  (T-MG22), M14a-d campaign (T-MG23..26: rejected/immaterial - F-16:
+  M7 at the frontier of tried families; untested family -> D-26)
 ### Infrastructure (proven kit both tracks stand on)
 - Fill-time single-position engine (standard since T-EN108)
 - Multi-day level detector v3 (density-peak; T-IM50/51)
