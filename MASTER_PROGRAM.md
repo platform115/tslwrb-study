@@ -335,6 +335,7 @@ future spec cites the F-ids it builds on or contradicts. Backfilled
 | F-3 | LEVELS ARE THE ENGINE: earners sit in level-dense territory (room ahead 4.5 vs 6.0) and spike-capture exits made +679 of +483 pooled net; stalls breakeven; stops -345. | T-XD01 anatomy | gate + strategy input |
 | F-4 | WINNERS DON'T BREATHE: earner median MAE 0.12 vs rest 1.12; earners fill fast (80s vs 109s). Management implication: early-adverse exit could shrink the stop bill. | T-XD01 | management input |
 | F-5 | NEGATIVES THAT STAND: signed flow at entry is NULL for our earners (the 3-sample flow thread is about HIM, not our P&L - D-2 premise weakened); lane is null (two-lane union vindicated). | T-XD01 | guard |
+| F-14 | OUR EDGE RESISTS SUBSETTING (3 independent designs agree: feature selection/SEL, cap selection/G2-5 OOS, principled gates/T-EN113): every entry-time selection raises per-trade but discards net-positive trades - the tail lives on both sides of every condition. Earn broadly, manage well. | T-EN113 + G2-5 + SEL | design law |
 | F-6 | HE IS DUAL-MODE at entry: first-takes AND retest-takes, both profitable - no single timing rule copies him. | T-EN107 | became G2-4's lane 2 |
 | F-7 | HIS EXITS = DURATION CLOCK first (t alone carries 0.805 of 0.814 AUC) + partial LEVEL-TARGETING (1.61x null: ~1 in 7 exits at our computed levels). | M10/M11 (T-MG17/18) | M7's design basis |
 | F-8 | EXIT-INTO-LIQUIDITY: deep-book imbalance tilts toward his side at his exits, surviving duration AND profit controls - true description of him; BOTH rule monetizations failed on our fills. | T-MG19/20 vs 21/22 | description, not a rule |
@@ -363,7 +364,7 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 |---|---|---|---|---|---|---|
 | D-1 | 2 | - | Extras decomposition: which of OUR trades earn, what earners share | extras carried the OOS P&L (+141/+155); never studied; zero knobs | 4-month corpus | DONE (T-XD01: 14-finding coherent earner profile; feeds D-3-style gate spec; D-2 flow premise weakened) |
 | D-2 | 2 | - | Flow-agreement entry gate (30s aggressor flow with the trade) | only thread repeating in all 3 samples | D-1 read; D-8 to judge finally | QUEUED |
-| D-3 | 2 | - | Level-aware entries incl. fade-at-level family | level kit validated in G2-4 exits; fade long-parked | D-1 helpful | IN PROGRESS (part 1 = gated G2-4 / G2-6 candidate, spec Tests/D1_extras/G26_SPEC.md, T-EN113; fade family remains queued for D-25) |
+| D-3 | 2 | - | Level-aware entries incl. fade-at-level family | level kit validated in G2-4 exits; fade long-parked | D-1 helpful | part 1 DONE (T-EN113: gates FAIL the frozen line - removed trades net-positive; F-14). Fade/new-entry-type family remains QUEUED under D-25 |
 | D-4 | 2 | - | G2-4 live port (Pine v6 / TradingView + Python levels; project pine docs) | sole VALIDATED system | nothing | QUEUED |
 | D-5 | 1 | G3 | G3 cycle: 151 quiet-squeeze trades, measurement-first | largest unmined group | nothing | QUEUED |
 | D-6 | 1+2 | G2/G3 | Deep book round: event-level MBP-10 (which-signal flow thread; exit remainder; G3 features; fade features) | per-second book exhausted; drive holds 3.3G windowed | drive connected | QUEUED |
@@ -375,7 +376,7 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-12 | 1 | G1,G4-G6 | Remaining groups of record after G3 | unmined behavior | after D-5 | QUEUED |
 | D-13 | 2 | - | Scale-outs vs single exits (he scales; we model single) | old simplification note; matters at size | - | QUEUED |
 | D-24 | 2 | - | M14 management round: early-adverse exit + energy-conditioned handling (from F-4/F-2; stops cost -345) | earner MAE 0.12 vs rest 1.12 | mechanism-primary verdict per R-9 | QUEUED |
-| D-25 | 2 | - | SURGICAL standalone strategy: entries designed from the F-1..F-4 profile (level-approach in active tape) - J's "more surgical trade entry/management at a later point" | the earner profile | D-3 gate must first prove the profile selects prospectively; judged on D-8 months | QUEUED |
+| D-25 | 2 | - | SURGICAL standalone strategy: entries designed from the F-1..F-4 profile (level-approach in active tape) - J's "more surgical trade entry/management at a later point" | the earner profile | REVISED by T-EN113/F-14: selection half weakened; surviving premise = NEW ENTRY TYPES (fade-at-level, level-approach - a different trade universe, not a subset) | QUEUED |
 | D-14 | 1+2 | - | Cross-market lane (ES vs NQ/bonds/DX at his moments) | named at in-data exhaustion as the lane beside the book; never registered | data purchase | QUEUED |
 | D-15 | 2 | - | Full-month converter certification (old scripts, overnight on J's Mac) | one-day cert passed 99.999%; full month = belt+braces | J's Mac overnight | QUEUED (optional) |
 | D-16 | - | - | ~~imb10 third monetization shape (book-conditioned stall)~~ | priced as a losing bet by T-MG21's negative mechanism | - | RETIRED at entry |
