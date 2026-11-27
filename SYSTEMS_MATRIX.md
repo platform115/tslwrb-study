@@ -80,14 +80,14 @@ the control number, not the filename, is the proof of identity.
 | EN-02 | Tests/D11_unmatched/g26_round.py :: tail_edges | T-EN115; quiet-span variant: Tests/D5_quiet/g31_round.py (engine set-equal control) |
 | EN-03 | Tests/D30_s5mf/s5mf_round.py :: BUILDER A | reproduces T-BK03 1541 approaches / 1263 touches key-for-key |
 | EN-04 | Tests/D30_s5mf/s5mf_round.py :: BUILDER B | mf_touch_moments.csv (45,454) banked |
-| EN-05 | historical - see T-EN106..110 registry rows | fill-time corrections certified at T-EN108 |
-| EN-06 | historical - old-engine era, Q-3 pending | B5 quarantine records |
+| EN-05 | Tests/B_track/b5_validation.py :: edges_at | reproduced G2-3's numbers at T-VL01; fill-time corrections T-EN108 |
+| EN-06 | Tests/B_track/b2_entry_rule.py :: edges_at | B5 quarantine records (old engine; Q-3 pending) |
 | FL-WIN | Tests/D11_unmatched/g26_round.py :: evm window loop | T-EN115 |
 | FL-QT | Tests/D5_quiet/g31_round.py :: day_spans | T-EN116 (engine control + G2-6 sim control) |
 | FL-ALL | no code (absence of a time filter) | - |
 | FL-RWY | Tests/D32_structsel/rwy_round.py :: runway | T-SR05 controls; volume-line form: Tests/D5_quiet/g3rwy_round.py :: run_cell2 |
 | FL-3S | Tests/D25_surgical/s1_round.py :: churn3 | T-SR01 (universe reconciled 693) |
-| FL-CAD | historical - cadence round (T-EN110) | G2-5 record |
+| FL-CAD | Tests/B_track/cd_round.py :: cadence | T-EN110; G2-5 record |
 | MP-7 | Tests/P5_trade_management/m15_round.py :: def m7tag | the certified pair numbers, reproduced by every copy |
 | MP-8 | Tests/D29_m8/m8g2_round.py :: run_cell_m8 dmin | T-MG28 controls |
 | MP-9 | Tests/D29_m8/m8ab_round.py :: def m7_var | T-MG29 control + the G2-7/G2-10 cells |

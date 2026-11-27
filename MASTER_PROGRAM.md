@@ -304,6 +304,16 @@ BACKTEST_MATRIX, RESULTS_DISPLAY_STANDARD, GLOSSARY, registry -> the
 reporting and naming layer (R-3, R-7).
 
 ## PROPOSED CLAUDE.md ADDITIONS (per project Rule 5: J reviews + commits)
+PROPOSED 2026-11-27 (the cross-session forcing function - CLAUDE.md
+is auto-read at every session start, so this survives compaction and
+new sessions without relying on memory):
+  "Before presenting or committing any registry-affecting result,
+  run: python3 scripts/preflight.py - it must PASS. Every new
+  system, component, or management lands in SYSTEMS_MATRIX.md with
+  a formula and an implementation anchor in the same commit; every
+  new runner's docstring names the certified source it derives from
+  and reproduces that source's numbers (R-9) before any look."
+
 - "Read MASTER_PROGRAM.md before working; its standing rules R-1..R-7
   bind every session."
 - "No method without a METHODS REGISTER entry; no name without a
@@ -530,3 +540,4 @@ the program (precision over volume, benchmarked against him).
 - 2026-11-27: T-EN117 closed - the runway selector generalizes (F-35: ~2x per-trade on all four universes, band carried frozen). G3-2-RWY passes all lines -> QUALITY-VARIANT, J gates naming (proposed G3-3). D-5b DONE.
 - 2026-11-27: per J's record-all: G3-3 (G3-2+RWY), G3-4 (G3-1+RWY), G2-11 (G2-6+RWY) minted TRAINING-ONLY. RWYLAW_TABLE appendix added (by-month breakdown of all four runway pairs). Fill-vs-cross gating quantified: median delay 99s - exact live replication possible in the Python runner (per-second order pull), Pine approximates at bar granularity; limitation restated accurately.
 - 2026-11-27: TAXONOMY BUILD (J-approved Option A+B): SYSTEMS_MATRIX.md created - 16 components (EN-01..06, FL-WIN/QT/ALL/RWY/3S/CAD, MP-7..10), 19 systems as formulas, industry terms locked, M10 minted (the S5 organism). taxonomy_audit.py wired into R-8; audit PASS. Nothing renamed - formulas are additive; legacy names canonical forever.
+- 2026-11-27: historical anchors upgraded to live files (b5_validation/b2_entry_rule/cd_round - nothing was actually lost; all era runners are committed code). scripts/preflight.py created as THE single pre-present command (taxonomy hard-fail + advisories); it immediately caught two docs missing from DOCUMENT_MAP. CLAUDE.md addition proposed per Rule 5 (J commits).

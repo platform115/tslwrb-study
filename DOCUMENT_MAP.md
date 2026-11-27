@@ -100,3 +100,6 @@ A non-empty list fails the completeness pass.
   the same commit.
 - v1.0 2026-11-24: created (J's request: place all documents in the
   end-to-end process).
+| SYSTEMS_MATRIX.md | the wiring authority: component registers, system formulas, implementation anchors; audited by taxonomy_audit.py | LIVING |
+| Tests/D5_quiet/RWYLAW_TABLE.md | by-month appendix for the runway law (T-EN117) | CLOSED |
+
