@@ -52,4 +52,6 @@ Assets read by NONE are either freshly built or candidates nobody has used — b
 | Tests/D30_s5mf/trades_5w_fullrth.parquet | 750 | month, tt, tf, d, pnl, exit, level, mins_rel, hr, score, first, speed60, vol10r, fill_delay + lens buckets | lvlr_round.py |
 | Tests/D30_s5mf/trades_s5mf.parquet | 4369 | month, tf, d, pnl, exit, tt, level, fam | lvlr_round.py |
 | Tests/D30_s5mf/mf_touch_moments.csv | 45454 | month, t, side, level, fam | s5mf_round.py (Part B input) |
+| Tests/D32_structsel/trades_5w_struct.parquet | 750 | trades + structural features (s1 room-to-level, s2 room-to-famedge, s3 confluence, s4 range-pos, s5 backstop) | ssel_round.py |
+| Tests/D32_structsel/trades_5w_rwy.parquet | 102 | month, tf, d, pnl, exit, tt, level | rwy_round.py |
 

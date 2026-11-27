@@ -372,3 +372,37 @@ consistent with T-BK04 (the discriminator lives in the book and decays
 within seconds). Banked assets: trades_s1any_covered.parquet,
 trades_5w_fullrth.parquet (with lens features), trades_s5mf.parquet,
 mf_touch_moments.csv.
+
+## T-SR04 — STRUCTURAL SELECTORS ON THE SURGICAL LINE (2026-11-27)
+Spec: Tests/D32_structsel/SSEL_SPEC.md (frozen first). Control: banked
+750/+472.1 reproduced. Five structural lenses (F-7/F-23..26 vocabulary).
+ONE FINDING (BH q=0.10, both months): S2 room-to-family-edge-ahead is
+monotone — edge within 2 pts ahead (647 trades, 86%) +0.53; runway 2-4
+(61) +1.49; runway 4-8 (17) +2.51; no edge ahead (25) -0.22. Supporting
+same-direction gradients (non-FINDING): room-to-level 2-4 best (+0.73,
+capture 45%); backstop 2-6 behind +0.76 (p=0.057); range-extension
+trades worst (+0.37). Promotion correctly refused (top-cell n=17) ->
+constructive strategy test T-SR05. Banked: trades_5w_struct.parquet.
+
+## T-SR05 — THE RUNWAY SELECTOR AS A STRATEGY: 5W-RWY (2026-11-27)
+Spec: Tests/D32_structsel/RWY_SPEC.md (frozen first; band [2,8] frozen,
+selection channel disclosed). Controls exact (1541/1263; 422/+216.5;
+750/+472.1). Admit a touch only when the nearest family edge ahead of
+the would-be entry is 2.0-8.0 pts away.
+
+| cell | trades | win | per-trade | pooled | by month | stop% | capture% |
+|---|---|---|---|---|---|---|---|
+| 5W full-RTH baseline | 750 | 47% | +0.63 | +472.1 | +195/+278 | 47% | 32% |
+| RWY[2,8] FROZEN | 102 | 63% | +1.54 | +157.1 | +79/+78 | 31% | 45% |
+| sensitivity [1.5,8]/[2,6]/[2,10]/[3,8] | 183/94/105/50 | 57-76% | +1.20/+1.53/+1.52/+2.03 | - | - | 37/32/32/18% | 43-56% |
+
+ALL frozen lines PASS -> 5W-RWY REGISTERED TRAINING-ONLY, Tier-R.
+Plateau confirmed (no knife-edge; per-trade rises monotonically with
+required runway - a volume/quality dial, NOT to be optimized further per
+F-20 discipline). This is the program's per-trade leader (+1.54, 2.4x
+G2-4's line) and the first selection gate that ever worked - it is
+mechanism-linked (capture needs a reachable target), where every
+flow/calendar/grid gate failed (F-14, F-27). At one tick of round-trip
+friction the edge is ~+1.29 - robust where +0.27-class strategies are
+not. Caveats: band chosen after seeing T-SR04's gradient on these same
+months; n=102; F-11 expects a per-trade haircut on fresh months.
