@@ -68,3 +68,27 @@ M12/M13/M15 rejected, M14a-d campaign outcomes.
 | S5-MF | EN-04 x FL-ALL x MP-10 | R | TRAINING-ONLY | 4369/+1985.6 at +0.45 | D-8 stage 2 |
 PRE-SPLIT LEGACY (no formulas; predate the component split): the
 Strategy 1 / 2A / 3A-3D / 4A generation - see GLOSSARY.
+
+## IMPLEMENTATION ANCHORS (component -> canonical code + proof)
+The LINEAGE CONVENTION: every runner COPIES its machinery from the
+canonical source named here (declared in its docstring) and must
+reproduce that source's certified numbers (R-9) before any look -
+the control number, not the filename, is the proof of identity.
+| id | canonical source (file :: anchor) | certified proof |
+|---|---|---|
+| EN-01 | Tests/D11_unmatched/g26_round.py :: cand_{tag}_ | reproduces 757/+325.1 and 760/+158.1 (T-EN115 control) |
+| EN-02 | Tests/D11_unmatched/g26_round.py :: tail_edges | T-EN115; quiet-span variant: Tests/D5_quiet/g31_round.py (engine set-equal control) |
+| EN-03 | Tests/D30_s5mf/s5mf_round.py :: BUILDER A | reproduces T-BK03 1541 approaches / 1263 touches key-for-key |
+| EN-04 | Tests/D30_s5mf/s5mf_round.py :: BUILDER B | mf_touch_moments.csv (45,454) banked |
+| EN-05 | historical - see T-EN106..110 registry rows | fill-time corrections certified at T-EN108 |
+| EN-06 | historical - old-engine era, Q-3 pending | B5 quarantine records |
+| FL-WIN | Tests/D11_unmatched/g26_round.py :: evm window loop | T-EN115 |
+| FL-QT | Tests/D5_quiet/g31_round.py :: day_spans | T-EN116 (engine control + G2-6 sim control) |
+| FL-ALL | no code (absence of a time filter) | - |
+| FL-RWY | Tests/D32_structsel/rwy_round.py :: runway | T-SR05 controls; volume-line form: Tests/D5_quiet/g3rwy_round.py :: run_cell2 |
+| FL-3S | Tests/D25_surgical/s1_round.py :: churn3 | T-SR01 (universe reconciled 693) |
+| FL-CAD | historical - cadence round (T-EN110) | G2-5 record |
+| MP-7 | Tests/P5_trade_management/m15_round.py :: def m7tag | the certified pair numbers, reproduced by every copy |
+| MP-8 | Tests/D29_m8/m8g2_round.py :: run_cell_m8 dmin | T-MG28 controls |
+| MP-9 | Tests/D29_m8/m8ab_round.py :: def m7_var | T-MG29 control + the G2-7/G2-10 cells |
+| MP-10 | Tests/D25_surgical/s1_round.py :: def sim | 422/+216.5 (S1-ANY), reproduced by every copy since |

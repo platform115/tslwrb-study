@@ -16,8 +16,11 @@ errs, warns = [], []
 def table_rows(text, header_start):
     ix = text.index(header_start)
     seg = text[ix:]
+    lines = seg.splitlines()[1:]
+    while lines and not lines[0].startswith("|"):
+        lines.pop(0)
     rows = []
-    for ln in seg.splitlines()[1:]:
+    for ln in lines:
         first = ln.strip("|").split("|")[0].strip()
         if first in ("id", "system") or ln.startswith("|---"):
             continue
@@ -75,6 +78,27 @@ for rid in reg:
 # MP-10 must exist as M10 in GLOSSARY
 if "| M10 " not in gl and "M10 " not in gl:
     errs.append("M10 (MP-10 alias) not found in GLOSSARY")
+
+# implementation anchors: file exists and contains its anchor token
+import os
+for r in table_rows(mx, "## IMPLEMENTATION ANCHORS"):
+    rid, src = r[0], r[1]
+    if rid not in reg:
+        errs.append(f"anchor row '{rid}' not a registered component")
+    if "::" in src:
+        fp, tok = [x.strip() for x in src.split("::", 1)]
+        tok = tok.split("(")[0].strip()
+        if not os.path.exists(fp):
+            errs.append(f"{rid}: anchor file missing: {fp}")
+        else:
+            body = open(fp).read()
+            probe = tok.replace("def ", "def ").split()[-1]                 if tok.startswith("def ") else tok.split()[0]
+            if probe not in body:
+                errs.append(f"{rid}: anchor token '{probe}' not in {fp}")
+anchored = set(r[0] for r in table_rows(mx, "## IMPLEMENTATION ANCHORS"))
+for rid in reg:
+    if rid not in anchored:
+        errs.append(f"component {rid} has no implementation anchor row")
 
 for w in warns:
     print(f"WARN: {w}")
