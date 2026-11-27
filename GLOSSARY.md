@@ -51,7 +51,7 @@ single-trade case-study mode). A1..A4, B0..B5 = their steps.
 R-1..R-7 = the standing rules in MASTER_PROGRAM.md.
 
 ## STANDING RULES (R-series) — MASTER_PROGRAM.md is the full text
-There are exactly TWELVE. No R-13 without J's sign-off.
+There are exactly THIRTEEN. No R-14 without J's sign-off.
 | id | plain meaning |
 |---|---|
 | R-1 | Lookahead prevention: the truncation harness applies to every script, mechanically |
@@ -66,6 +66,7 @@ There are exactly TWELVE. No R-13 without J's sign-off.
 | R-10 | Remainders get anatomies before being called ceilings |
 | R-11 | Months-spend gate: every spec declares which months it spends and why no hold-out, before freezing; J gates the spend |
 | R-12 | Findings sweep: every spec lists each standing F-finding as APPLIED or NOT-APPLICABLE before freezing; retroactive misses trigger follow-up rounds |
+| R-13 | Failure autopsy: ANY entry, entry component, selector, or exit management that fails on brand-new data gets a mechanism-vs-parameter-transfer (adapter) autopsy before any DEAD verdict |
 
 ## TRACK STEPS (MASTER_PROGRAM)
 A1 coverage matrix | A2 measurement table | A3 grouping | A4 ranking
@@ -128,6 +129,8 @@ specs. Future validated pairs: G<group>-<n>.
 | G2-6 | Strategy 4A-v3 d1.25 two-lane x M7 | TRAINING-ONLY, Tier-P (T-EN115, all six months, R-9 control exact): 6252/+1659.0, per-trade +0.27 = G2-4's, catch 59/62 (the F-23 ceiling reached), extras +1556.8, all months positive, no toxic family. Families chosen after seeing the unmatched entries, so ALL six months are training; judge = D-8 purchase |
 | G2-7 | Strategy 4A-v2 d1.25 two-lane x M9 (constant trail-arm) | TRAINING-ONLY, Tier-P (re-based per J 2026-11-27 after T-MG29): on six months 2370/+858.1, per-trade +0.36, twin +173.4 vs M7 (5/6). The parsimony champion. Judge = D-8 stage 1 |
 | G2-8 | Strategy 4A-v3 d1.25 two-lane x M8 (structure-armed trail: levels + family edges >=2 ahead) | TRAINING-ONLY, Tier-P (J, 2026-11-27: structure-armed exits deliberately KEPT on one combo - levels' information is not surrendered to a constant without a fresh-months verdict): 8383/+2670.0, twin +165.2 (4/6). Judge = D-8 stage 1, head-to-head vs G2-7's constant arm |
+| G2-9 | Strategy 4A-v2 d1.25 two-lane x M8 (structure-armed) | TRAINING-ONLY, Tier-P (controlled-pair completion, J 2026-11-27): 2400/+824.8, per-trade +0.34, twin +143.6 (5/6). G2-7's twin - identical in every way except the arm rule |
+| G2-10 | Strategy 4A-v3 d1.25 two-lane x M9 (constant arm) | TRAINING-ONLY, Tier-P (controlled-pair completion, J 2026-11-27): 8153/+2644.0, per-trade +0.32, twin +139.5 vs M7 (4/6). G2-8's twin - identical except the arm rule |
 | M12 | M7 + imb10 gate at the stall exit | TESTED-REJECTED (T-MG21: mechanism-negative) |
 | M13 | M7 + book-conditioned extension of the 480s cap | TESTED-STRUCTURALLY-EMPTY (T-MG22: 1/607 trades reach the cap) |
 | Strategy 5 (alias S-1) | Surgical level-break: touch -> 3s ACTIVE book read -> break entry at L+0.75, stop L-1.25, flow-fade/level-capture exits. Named into the existing Strategy-N family (J, 2026-11-27: no new families without need) | TRAINING-ONLY, Tier-R (T-SR01: +119.6/198, +0.60/trade, worst -2.00; in-sample; judge = future depth months) |

@@ -62,6 +62,13 @@ R-12 FINDINGS SWEEP (J confirmed 2026-11-27): every new spec (entry,
     (how) or NOT-APPLICABLE (why). A finding spotted missing
     retroactively triggers a follow-up round, as F-23..26's omission
     from T-SR03 did. Added to the R-8 pre-present checklist.
+R-13 FAILURE AUTOPSY (J directed 2026-11-27, generalizing his D-8
+    adapter flag): whenever ANY entry strategy, entry component,
+    selector, or exit management fails on brand-new data, the
+    autopsy must separate MECHANISM failure from PARAMETER-TRANSFER
+    failure (a mis-calibrated constant is an adapter problem, not a
+    dead mechanism). R-10 applies before any DEAD verdict;
+    recalibration proposals go to J.
 
 ## DATA CONVENTION
 Training months: 2025-10, 2022-02. Validation months: 2021-09 (one
@@ -511,3 +518,4 @@ the program (precision over volume, benchmarked against him).
 - 2026-11-27: T-MG29 closed - J's simplicity challenge vindicated. Fixed trail-arm A=1.5 reproduces M8's entire gain with one constant (F-33 corrects F-32's mechanism story; G2-line numbers unaffected). Proposed M9 (trail-arm management, resolver-free, Pine-trivial); J gates naming + re-basing G2-7/G2-8.
 - 2026-11-27: M9 minted per J (trail-arm A=1.5). G2-7/G2-8 re-basing explained to J, awaiting his go; rows unchanged until then.
 - 2026-11-27: per J - G2-7 re-based to M9 (constant arm), G2-8 deliberately KEPT on M8 (structure-armed) so D-8 judges constant-vs-structure head-to-head on fresh months; M8 un-superseded, carried by G2-8. J's adapter flag registered on D-8: fresh-month failures get mechanism-vs-calibration autopsies before any DEAD verdict. Exit-side levels remain live in: G2-4xM7 (VALIDATED, level-armed capture), the whole S5 line (level-targeted capture = the P&L engine, T-SR03), and G2-8 (M8). Only G2-7 runs the pure constant.
+- 2026-11-27: J's controlled-pair directive: the constant-vs-structure exit question now rides on two IDENTICAL-but-for-the-arm pairs - (G2-7 v2xM9 vs G2-9 v2xM8) and (G2-10 v3xM9 vs G2-8 v3xM8); missing cell run (v3xM9: 8153/+2644.0, twin +139.5, 4/6). R-13 (failure autopsy everywhere) landed. All four combos TRAINING-ONLY to D-8 stage 1.
