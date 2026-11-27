@@ -34,3 +34,13 @@ likely to hold), explicitly allowed to inform the D-25 spec since
 D-25's final judgment is on future months + future depth (D-8).
 His-tagged approaches summarized beside (which outcomes he trades).
 Extractor: certified T-BK02 lineage (same feats code). Registry: T-BK03.
+
+## ADDENDUM 1 (2026-11-27, before any analysis - caught by base rates)
+The outcome definition was flawed: price enters the 2.0 zone already
+~2 pts from the level, so "reverses >= 1.5 from the level" could
+fire instantly -> 96% HOLD. Corrected (frozen): an approach must
+TOUCH the level (|mid - L| <= 0.5) before HOLD can count; HOLD =
+after the touch, mid reverses >= 1.5 from L with max penetration
+< 1.0; BREAK unchanged (>= 1.5 beyond, before or after touch);
+never touches within 600s -> NO_TEST (excluded, counted). No
+analysis had been run on the flawed labels.
