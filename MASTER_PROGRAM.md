@@ -396,6 +396,9 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 
 | D-26 | 2 | - | Sequential-statistics exit family on 1s data: CUSUM / change-point detection on the trade's own path as the stall's statistical upgrade (textbook methods: Page 1954 CUSUM; Bayesian online change-point, Adams & MacKay 2007) | J's deeper-standardized-methods push; F-16's untested family | mechanism-primary per R-9 | QUEUED |
 
+| D-27 | 1+2 | - | SENSITIVITY AUDIT of arbitrary load-bearing constants (TTL 300, dedupe 300, give-back 0.75, arm floor 0.5, stop upward, cap 480, Wseq 600, OFI window 30s, T-BK03 outcome thresholds): perturb +-50% one at a time, flag knife-edges, change nothing - robustness check, NOT optimization (F-11-compatible) | J's ranges directive; never-ranged constants identified 2026-11-27 | R-9 controls | QUEUED |
+| D-28 | 2 | - | ENTRY-SIDE BOOK LENSES never examined: (a) book dynamics AT THE FILL moment (the live decision second - all prior tests measured at cross/pre-approach), (b) the touch reaction at levels (first seconds of book meeting level, T-BK03's stated open lens). Scoped as D-25 design input per F-18 | J's entry-focus audit | drive data banked (OFI series + universes) | QUEUED |
+
 OPEN DECISIONS (addressed to J, not work items; append-only too):
 | id | decision | since | status |
 |---|---|---|---|
