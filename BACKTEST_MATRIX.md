@@ -308,3 +308,22 @@ nearly flat (+6.8) - the retest lane earned where first-break-only thinned.
 Engines retro-controlled before the look: v1 -> 607/+276.1, v2 -> 757/+325.1,
 v3 -> 98/+88.0, all exact. G2-5's quality edge was mostly training-fit
 (+0.90 -> +0.39); dies per the plan's rule. G2-4 remains the sole OOS PASS.
+
+## T-EN115 — G2-6: MULTI-FAMILY EDGES (4A-v3) x M7, SIX MONTHS (2026-11-27)
+Spec: Tests/D11_unmatched/G26_SPEC.md (frozen first). R-9 control exact:
+restricted-family engine reproduced 757/+325.1 AND 760/+158.1 before the look.
+All six months are TRAINING for this claim (families chosen after seeing the
+12 unmatched entries) — judge = D-8 purchased months.
+
+| cell | trades | per-trade | pooled | by month (21-09/22-02/23-05/24-05/24-11/25-10) | catch/62 | extras |
+|---|---|---|---|---|---|---|
+| CONTROL (G2-4) | 2126 | +0.27 | +565.9 | +59/+138/+119/+39/+24/+188 | 48 | +487.5 |
+| G2-6 | 6252 | +0.27 | +1659.0 | +173/+324/+372/+219/+231/+340 | 59 | +1556.8 |
+
+Per-family (shared busy clock — attribution = which source fired first, NOT
+additive value): GAP 2174/+470.2, SHD 1885/+491.0, WRB 1480/+565.9,
+SQZ 379/+34.0, W20 184/+54.5, REA 106/+27.0, PDY 44/+16.4. No family TOXIC
+(none negative in >=4/6 months). Frozen verdict: ALL FIVE LINES PASS ->
+REGISTER TRAINING-ONLY. Note: same per-trade (+0.27) at 3x the volume —
+G2-6 widens the book and closes the catch gap (59/62 = exactly the F-23
+ceiling); it does not raise per-trade quality.
