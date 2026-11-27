@@ -352,3 +352,23 @@ Part B (MF-ACTIVE, the F-21 3s read) needs device-side extraction at the
 new touch moments: 45,454 moments is ~36x the prior extraction volume,
 so the Part B addendum must choose a restriction (e.g., traded-touch
 subset or stratified sample) before any extraction runs.
+
+## T-SR03 — 5W FULL-RTH ANATOMY: CAN THE +0.63 GET SURGICAL? (2026-11-27)
+Spec: Tests/D30_s5mf/LVLR_SPEC.md (frozen first; promotion rule frozen
+before the look). Controls exact (builder 1541/1263; S1-ANY 422/+216.5;
+5W full-RTH 750/+472.1). Six lenses, BH-FDR q=0.10, both-months required.
+
+RESULT: ZERO qualifiers - the reportable null. No live-computable flow,
+calendar, or level-state lens separates the +0.63 at FINDING level.
+Directional (non-FINDING) facts: quiet>45min +0.70 vs news-window +0.49
+vs burst +0.32 (both months same direction - F-24 flavor); LOW pre-touch
+10s volume is the best single cell (+0.83, p=0.114, BH fail); first
+touch of a level today +0.74 vs repeat +0.60 (months disagree). Exit
+anatomy (F-3 echo): capture exits carry the book - +973.2 on 237 trades
+(+4.11 each) vs stops -706.0; flow-fade only +148.2 on 149.
+Conclusion on record: the surgical upgrade is NOT in 1s flow or
+calendar structure; it waits on the 3s BOOK read (Part B / F-21),
+consistent with T-BK04 (the discriminator lives in the book and decays
+within seconds). Banked assets: trades_s1any_covered.parquet,
+trades_5w_fullrth.parquet (with lens features), trades_s5mf.parquet,
+mf_touch_moments.csv.

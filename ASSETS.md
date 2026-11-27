@@ -48,3 +48,8 @@ against THIS list, never against memory.
 | remainder_820.txt | - | (text) | p6_11_parser_v3.py |
 
 Assets read by NONE are either freshly built or candidates nobody has used — both deserve a look.
+| Tests/D30_s5mf/trades_s1any_covered.parquet | 422 | month, tf, d, pnl, exit, tt, level, fam | lvlr_round.py |
+| Tests/D30_s5mf/trades_5w_fullrth.parquet | 750 | month, tt, tf, d, pnl, exit, level, mins_rel, hr, score, first, speed60, vol10r, fill_delay + lens buckets | lvlr_round.py |
+| Tests/D30_s5mf/trades_s5mf.parquet | 4369 | month, tf, d, pnl, exit, tt, level, fam | lvlr_round.py |
+| Tests/D30_s5mf/mf_touch_moments.csv | 45454 | month, t, side, level, fam | s5mf_round.py (Part B input) |
+
