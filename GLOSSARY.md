@@ -44,6 +44,16 @@ D1/D2 shadow definitions | C1/C2/C3 conjunction conditions | Q dial set
 ALIASES retired by naming v2: ER-SIG -> Strategy 3C, ER-WIDE -> 3D,
 S-A/B/C -> 3A/3B/3C, M1-S90 -> M1A, V1/U -> 3C/3D (oldest).
 
+## TAXONOMY (added 2026-11-27, J-approved)
+SYSTEMS_MATRIX.md is the wiring authority: component registers (EN-
+entries, FL- filters, MP- management plans) and every system as a
+formula. Industry terms locked (Tharp/Kaufman/Davey): setup, entry
+signal, entry technique, filter, trade management plan, trading
+system. "Strategy" is retired as a component word (alias use only).
+Legacy names stay canonical; formulas are additive. Mechanical check:
+scripts/taxonomy_audit.py, part of the R-8 pass - no new system row
+lands without a matrix formula.
+
 ## MASTER PROGRAM names (added 2026-11-24, same-commit rule R-3)
 Track A = the map (breadth: measurement table + taxonomy + ranking).
 Track B = the build (depth: one target to reliable; group mode or
@@ -144,5 +154,6 @@ specs. Future validated pairs: G<group>-<n>.
 | 5W-RWY | Strategy 5W full-RTH gated by the RUNWAY selector: admit a touch only when the nearest family edge ahead of the would-be entry (F-23/24 vocabulary) is 2.0-8.0 pts away - room to run to a real target | TRAINING-ONLY, Tier-R (T-SR05: 102/+157.1, +1.54/trade, 63% win, stops 31%, months +79/+78; plateau across bands; the program's per-trade leader). Selection channel disclosed; judge = D-8 stage 2 |
 | M8 | M7 with trail-arming targets widened to family edges >=2.0 ahead (structure-armed) | KEPT per J (2026-11-27) as the structure-armed exit variant, carried by G2-8 into D-8 against M9's constant arm. T-MG29/F-33: on training months the constant matches it - fresh months decide |
 | M9 | Trail-arm management: the trail arms once the trade reaches +1.5 (A=1.5, mid of the tested 1.5-2.0 plateau, range-picked on training - disclosed); exit peak-0.75; stop -3.75, stall-60, cap-480 unchanged from M7. No targets, no resolver - one constant, Pine-trivial | MINTED (J, 2026-11-27; T-MG29, F-33): twin +173.4 vs M7 on G2-4, 5/6 months. TRAINING-ONLY; judge = D-8 |
+| M10 | The surgical trade management plan (alias: the S5 exit organism; MP-10 in SYSTEMS_MATRIX): stop L-1.25*d, level-capture (arm when peak within 1.0 of the next multi-day level, exit peak-0.75), flow-fade (from 60s, every 30s, trailing-30s OFI10 signed < 0), hard cap 900s | MINTED (J taxonomy build, 2026-11-27) - the management half of the Strategy 5 line since T-SR01; TRAINING-ONLY with its systems |
 | Tier-P / Tier-R | Deployment tiers: Tier-P = Pine-portable (price + public calendar only; G2-4 x M7). Tier-R = Python-runner + depth feed (Rithmic L2 live / Databento MBP-10 historical; Strategy 5 line, F-17/F-21 machinery). Book dependencies never enter Tier-P | families registered 2026-11-27 |
 | G2-5 | G2-3 with cadence cap N=1 per news window | DORMANT (J, 2026-11-26): OOS-profitable (+38.9, both months positive, lowest maxDD) but its quality claim failed (+0.39 < +0.60) and it is dominated by G2-4 - not deployed, kept on record |

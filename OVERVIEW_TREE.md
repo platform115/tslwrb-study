@@ -1,7 +1,7 @@
 # OVERVIEW_TREE — THE WHOLE PROGRAM, STATUS-FIRST
 STATUS: LIVING | v3.0 | 2026-11-27 (J's full-list directive: one
-liner per item, status on the left). Names -> GLOSSARY. Numbers ->
-BACKTEST_MATRIX. Tests -> T-ids. Open work -> roadmap D-/Q- ids.
+liner per item, status on the left). Names -> GLOSSARY. WIRING (what
+is made of what) -> SYSTEMS_MATRIX.md. Numbers -> BACKTEST_MATRIX. Tests -> T-ids. Open work -> roadmap D-/Q- ids.
 
 ## GOAL TRACKS
 | status | item | one-liner |

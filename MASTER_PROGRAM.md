@@ -91,6 +91,10 @@ v1.0; his-labels source missing until v1.3) were recall-instead-of-census
 failures. Recall does not improve with effort; procedure replaces it.
 
 
+### R-8 ADDITION (2026-11-27): scripts/taxonomy_audit.py runs in the
+### mechanical pass - SYSTEMS_MATRIX formulas, registers and GLOSSARY
+### must match bidirectionally before any registry commit.
+
 ### R-8 EXTENSION — THE PRE-PRESENT CHECKLIST (2026-11-26; each line
 ### is a documented miss J had to catch, never hypothetical)
 Run mechanically on every deliverable BEFORE it reaches J:
@@ -525,3 +529,4 @@ the program (precision over volume, benchmarked against him).
 - 2026-11-27: J's verdict on T-EN116: record ALL - G3-1 (xM7) and G3-2 (xM9) both minted TRAINING-ONLY for testing and modification. Next per J's precision push: the frozen RWY selector carried onto the volume lines (T-EN117).
 - 2026-11-27: T-EN117 closed - the runway selector generalizes (F-35: ~2x per-trade on all four universes, band carried frozen). G3-2-RWY passes all lines -> QUALITY-VARIANT, J gates naming (proposed G3-3). D-5b DONE.
 - 2026-11-27: per J's record-all: G3-3 (G3-2+RWY), G3-4 (G3-1+RWY), G2-11 (G2-6+RWY) minted TRAINING-ONLY. RWYLAW_TABLE appendix added (by-month breakdown of all four runway pairs). Fill-vs-cross gating quantified: median delay 99s - exact live replication possible in the Python runner (per-second order pull), Pine approximates at bar granularity; limitation restated accurately.
+- 2026-11-27: TAXONOMY BUILD (J-approved Option A+B): SYSTEMS_MATRIX.md created - 16 components (EN-01..06, FL-WIN/QT/ALL/RWY/3S/CAD, MP-7..10), 19 systems as formulas, industry terms locked, M10 minted (the S5 organism). taxonomy_audit.py wired into R-8; audit PASS. Nothing renamed - formulas are additive; legacy names canonical forever.
