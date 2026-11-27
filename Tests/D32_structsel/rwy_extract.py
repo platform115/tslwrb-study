@@ -232,7 +232,7 @@ while True:
     if not jobs:
         print("ALL DAYS DONE")
         break
-    if el > 15:
+    if el > 10:
         break
     mo, day = jobs[0]
     raw = os.path.join(RAW[mo], f"glbx-mdp3-{day}.mbp-10.dbn.zst")
@@ -241,10 +241,24 @@ while True:
         json.dump(st, open(STATE, "w"))
         print(f"{mo}:{day} RAW MISSING - skipped")
         continue
-    DBNStore.from_file(raw).to_parquet(tmp)
+    mark = os.path.join(OUTD, "rwy_tmp_ok.json")
+    reuse = False
+    if os.path.exists(mark):
+        try:
+            mk = json.load(open(mark))
+            if mk.get("mo") == mo and mk.get("day") == day:
+                pq.ParquetFile(tmp)   # footer check
+                reuse = True
+        except Exception:
+            reuse = False
+    if not reuse:
+        json.dump({}, open(mark, "w"))
+        DBNStore.from_file(raw).to_parquet(tmp)
+        json.dump({"mo": mo, "day": day}, open(mark, "w"))
     st["pending"] = [mo, day]
     json.dump(st, open(STATE, "w"))
-    print(f"{mo}:{day} decoded", flush=True)
+    print(f"{mo}:{day} decoded" + (" (reused)" if reuse else ""),
+          flush=True)
 rem = len([1 for mo in RAW
            for day in sorted(M[M.month == mo].day.unique())
            if f"{mo}:{day}" not in st["done"]])
