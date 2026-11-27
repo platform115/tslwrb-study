@@ -477,3 +477,22 @@ so M8 merely swaps +4.21 captures for earlier +2.48 ones, offset by
 fewer stops. M8 helps where targets were SPARSE, not where selection
 guaranteed one - the mirror image of F-29, and evidence the mechanism
 is understood rather than curve-fit.
+
+## T-MG29 — ABLATION: M7'S DIALS vs M8 — J'S CHALLENGE VINDICATED (2026-11-27)
+Spec: Tests/D29_m8/M8AB_SPEC.md (frozen first). Control exact. The
+full dial table is in M8AB_REPORT.md. Decisive rows (twin vs M7):
+- M8 D=2.0: +143.6 (5/6)
+- fixed-trail A=1.5 (arm when peak>=1.5, exit peak-0.75, NOTHING
+  else changed): +173.4 (5/6), per-trade +0.36, pooled +858.1
+- fixed-trail A=2.0: +154.4 (5/6) - a plateau with A=1.5; A=1.0 worse
+- arm-window widening (12/16/inf): +5.8 only - distant levels set the
+  arm too high to matter; stall lengthening: negative.
+RE-EXPLANATION (supersedes F-32's story): M8's gain was never the
+family-edge vocabulary - it was ARMING THE TRAIL MORE OFTEN AND LOWER.
+Family edges >=2 ahead implied arm ~1.25-2.0; a flat A=1.5 does the
+same with one constant. Per the frozen parsimony verdict the simpler
+dial wins; re-basing G2-7/G2-8 on the trail-arm management (proposed
+name M9; A plateau 1.5-2.0, A=1.5 mid-plateau) is J's gate. Practical
+bonus: M9 needs no resolver in the exit path - trivially Pine-portable.
+Caveat: A=1.5 is the best of a 3-value tested range on training months
+(disclosed; the 1.5-2.0 plateau and D-8 are the defenses).
