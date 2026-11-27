@@ -423,3 +423,29 @@ the structural stop at L-1.25 is at or inside the efficient depth.
 Verdict: REJECTED. Loss-size improvement on this line must come from
 not entering (selection: Part B's book read), not from earlier exits
 on the price path alone.
+
+## T-SR08 — RECLAIM ANATOMY + FLOW-CONDITIONED EXIT (2026-11-27)
+Spec: Tests/D32_structsel/RA_SPEC.md (frozen first). Controls exact
+(incl. T-SR07 degenerate re-derivation 104/+125.6). TWO parts:
+RULE (flow-conditioned reclaim exit): REJECTED - RWY mechanism -18.9
+(2 rescued, 7 killed); and the lens shows why: in RWY, flow AGAINST
+the position at the reclaim marked trades that mostly RECOVERED (4%
+stop-rate, n=25) - the opposite of the rule's premise (small n, not a
+FINDING, but fatal to the rule).
+ANATOMY (5W, 657 reclaimed trades): TWO FINDINGs (BH p~0, both months)
+- the dips that die ARE distinguishable:
+- TIME: fast reclaims die (median stopped reclaim at 22s; <=19s bucket
+  77% stop, mean -0.84); slow reclaims recover (median 114s; slow
+  bucket 24% stop, mean +1.81). RWY same direction (59%/18%).
+- PRIOR MFE: reached >=1.0 before dipping -> 42% stop, +0.77; never
+  reached 0.5 -> 72% stop, -0.81. RWY same direction.
+THE BREAKEVEN ARITHMETIC (why no -1.00 exit rule can profit anyway):
+exiting at the -1.00 reclaim saves 1.0 pt on stops but forfeits ~+2
+on recoverers -> breakeven needs >75% stop-rate in the exited cell;
+the worst identifiable cell (fast AND low-MFE) runs 70% (mean final
+-0.75, still better than -1.00). Even the best differentiators do not
+clear the bar AT THAT EXIT PRICE. Differentiation exists; the exit
+price is the binding constraint. Possible R3 (J gates): scratch-on-
+bounce for flagged trades (exit predicted-dead trades on the next
+retrace toward the level at ~-0.25/-0.5, a documented scratch-exit
+mechanic) - the only shape that changes the arithmetic.
