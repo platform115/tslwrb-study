@@ -113,6 +113,7 @@ def feats_multi(df, sdn, t_end):
 
 st = json.load(open(STATE)) if os.path.exists(STATE) \
     else {"done": []}
+st.setdefault("pending", None)
 jobs = []
 for mo in RAW:
     for day in sorted(M[M.month == mo].day.unique()):
@@ -158,38 +159,32 @@ if mode == "cert":
     print("CERT", "PASS" if bad == 0 else "FAIL")
     sys.exit(0 if bad == 0 else 1)
 
-# mode == run
+# mode == run — phase machine: decode | extract, one day at a time
 try:
     from databento import DBNStore
 except Exception as e:
     print("databento import failed:", e); sys.exit(1)
 FID = {mo: front_id(mo) for mo in RAW}
 tmp = os.path.join(OUTD, "rwy_tmp_day.parquet")
-ndone = 0
-for mo, day in jobs:
-    if time.time() - T0 > BUDGET:
-        break
-    raw = os.path.join(
-        RAW[mo], f"glbx-mdp3-{day}.mbp-10.dbn.zst")
-    if not os.path.exists(raw):
-        st["done"].append(f"{mo}:{day}")
-        print(f"{mo}:{day} RAW MISSING - skipped")
-        continue
-    DBNStore.from_file(raw).to_parquet(tmp)
+
+def do_extract(mo, day):
     mm = M[(M.month == mo) & (M.day == day)]
     bufs = {int(r.mid_id): [] for r in mm.itertuples()}
-    t_lo = int(mm.t.min()) - 36
-    t_hi = int(mm.t.max()) + 1
     pf = pq.ParquetFile(tmp)
     have = set(pf.schema_arrow.names)
     cols = [c for c in COLS if c in have]
-    for g in range(pf.metadata.num_row_groups):
-        b = pf.read_row_group(g, columns=cols).to_pandas()
-        ts = b.ts_event.astype("int64").to_numpy() // 10**9
-        if ts[-1] < t_lo:
+    md = pf.metadata
+    names = [md.row_group(0).column(c).path_in_schema
+             for c in range(md.row_group(0).num_columns)]
+    ci = names.index("ts_event")
+    wins = [(int(r.t) - 35, int(r.t)) for r in mm.itertuples()]
+    for g in range(md.num_row_groups):
+        stat = md.row_group(g).column(ci).statistics
+        g0 = int(pd.Timestamp(stat.min).value // 10**9)
+        g1 = int(pd.Timestamp(stat.max).value // 10**9)
+        if not any(w0 <= g1 and w1 >= g0 for w0, w1 in wins):
             continue
-        if ts[0] > t_hi:
-            break
+        b = pf.read_row_group(g, columns=cols).to_pandas()
         b = b[b.instrument_id.to_numpy() == FID[mo]]
         if not len(b):
             continue
@@ -208,8 +203,8 @@ for mo, day in jobs:
                    rwy=float(r.rwy))
         if parts:
             df = pd.concat(parts, ignore_index=True)
-            for c in ["price"] + [f"{s}_px_{i:02d}"
-                                  for s in ("bid", "ask")
+            for c in ["price"] + [f"{s_}_px_{i:02d}"
+                                  for s_ in ("bid", "ask")
                                   for i in range(10)]:
                 df[c] = pxfix(df[c].to_numpy())
             f_ = feats_multi(df, int(r.side), int(r.t))
@@ -218,9 +213,39 @@ for mo, day in jobs:
         rows.append(row)
     pd.DataFrame(rows).to_parquet(
         os.path.join(PARTS, f"{mo}_{day}.parquet"), index=False)
-    st["done"].append(f"{mo}:{day}")
+
+while True:
+    el = time.time() - T0
+    if st["pending"]:
+        mo, day = st["pending"]
+        if el > 110:
+            break
+        do_extract(mo, day)
+        st["done"].append(f"{mo}:{day}")
+        st["pending"] = None
+        json.dump(st, open(STATE, "w"))
+        print(f"{mo}:{day} extracted", flush=True)
+        continue
+    jobs = [(mo, day) for mo in RAW
+            for day in sorted(M[M.month == mo].day.unique())
+            if f"{mo}:{day}" not in st["done"]]
+    if not jobs:
+        print("ALL DAYS DONE")
+        break
+    if el > 15:
+        break
+    mo, day = jobs[0]
+    raw = os.path.join(RAW[mo], f"glbx-mdp3-{day}.mbp-10.dbn.zst")
+    if not os.path.exists(raw):
+        st["done"].append(f"{mo}:{day}")
+        json.dump(st, open(STATE, "w"))
+        print(f"{mo}:{day} RAW MISSING - skipped")
+        continue
+    DBNStore.from_file(raw).to_parquet(tmp)
+    st["pending"] = [mo, day]
     json.dump(st, open(STATE, "w"))
-    ndone += 1
-    print(f"{mo}:{day} done ({len(mm)} moments)", flush=True)
-print(f"this call: {ndone} days; remaining "
-      f"{len(jobs) - ndone}")
+    print(f"{mo}:{day} decoded", flush=True)
+rem = len([1 for mo in RAW
+           for day in sorted(M[M.month == mo].day.unique())
+           if f"{mo}:{day}" not in st["done"]])
+print(f"remaining days: {rem}; pending: {st['pending']}")
