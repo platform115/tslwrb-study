@@ -520,3 +520,25 @@ line (+0.24) but promoting it is J's call (cell choice after results).
 SHD/WRB/GAP carry the quiet book; SQZ/W20 (the news-window champions)
 are nearly irrelevant quietly (+0.09) - regime-dependence of families
 on record. ~158 trades/day pooled - an all-day machine, stated.
+
+## T-EN117 — THE RWY SELECTOR ON THE VOLUME LINES (2026-11-27)
+Spec: Tests/D5_quiet/RWYV_SPEC.md (frozen first; band [2,8] carried
+frozen from T-SR05, not re-fit). Controls exact on all three baselines.
+
+| cell | trades | per-trade | pooled | catch-G3 |
+|---|---|---|---|---|
+| G3-2 baseline | 23941 | +0.24 | +5727.8 | 150/151 |
+| G3-2-RWY[2,8] | 3843 | +0.51 | +1944.4 | 88/151 |
+| G3-1-RWY[2,8] | 3159 | +0.38 | +1186.4 | 82/151 |
+| G2-6-RWY[2,8] | 1212 | +0.52 | +627.2 | 1/151 |
+
+ALL frozen lines pass on the verdict cell -> QUALITY-VARIANT, J gates
+naming. THE PATTERN (third universe, same factor): the runway gate
+roughly DOUBLES per-trade wherever it is applied - surgical line
++0.63->+1.54, G3-2 +0.24->+0.51, G2-6 +0.27->+0.52, G3-1 +0.19->+0.38.
+Catch trade-off on record: 150->88 of his quiet entries (selection
+serves Track 2 at Track 1's expense - both numbers kept). Every family
+positive in the gated set (PDY's toxicity vanishes under the gate).
+~32 trades/day instead of ~158 - an operable cadence. Sensitivity:
+[1.5,8] dilutes (+0.42), [2,10] identical - the lower bound does the
+work, consistent with F-28's brake-zone story.
