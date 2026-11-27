@@ -369,7 +369,7 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-3 | 2 | - | Level-aware entries incl. fade-at-level family | level kit validated in G2-4 exits; fade long-parked | D-1 helpful | part 1 DONE (T-EN113: gates FAIL the frozen line - removed trades net-positive; F-14). Fade/new-entry-type family remains QUEUED under D-25 |
 | D-4 | 2 | - | G2-4 live port (Pine v6 / TradingView + Python levels; project pine docs) | sole VALIDATED system | nothing | QUEUED |
 | D-5 | 1 | G3 | G3 cycle: 151 quiet-squeeze trades, measurement-first | largest unmined group | nothing | QUEUED |
-| D-6 | 1+2 | G2/G3 | Deep book round: event-level MBP-10 (which-signal flow thread; exit remainder; G3 features; fade features) | per-second book exhausted; drive holds 3.3G windowed | drive connected | QUEUED |
+| D-6 | 1+2 | G2/G3 | Deep book round: event-level MBP-10 (which-signal flow thread; exit remainder; G3 features; fade features) | per-second book exhausted; drive holds 3.3G windowed | drive connected | IN PROGRESS (spec Tests/D6_deepbook/DB_SPEC.md, T-BK02; Q1 exits + Q2 crosses; G3/fade deferred) |
 | D-7 | 2 | - | Lane regime complementarity (first-break vs retest by condition) | 2 observations only | more G2-4 months | QUEUED (parked) |
 | D-8 | - | - | Purchase 1-2 fresh months = next clean quarantine | required to finally judge D-2/D-3 and extend G2-4's record | J purchase | QUEUED |
 | D-9 | mixed | - | Small parked items: re-entry after stop; regime-conditioned M7; role-flip levels v2; 3m/5m bar anatomy; 3C/3D traded P&L; unique trade_key; M4C-180 revisit; M11 WRB-projection variant | individually small (BACKLOG.md holds detail) | - | QUEUED |
