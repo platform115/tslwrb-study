@@ -321,6 +321,8 @@ def run_cell(tag):
 
 CTRL = run_cell("ctrl")
 G26 = run_cell("full")
+CTRL.to_parquet(f"{PARTS}/trades_ctrl.parquet", index=False)
+G26.to_parquet(f"{PARTS}/trades_full.parquet", index=False)
 
 # R-9 control
 fails = []
