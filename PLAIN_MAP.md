@@ -80,3 +80,24 @@ build). T-xx = test ledger IDs. R-1..R-8 = working rules.
   opened now - the deep-book round).
 - Nothing was lost: every finding has an F-number, every open idea a
   D-number, in MASTER_PROGRAM.
+
+
+## 2026-11-27 LATE AFTERNOON — NO JARGON
+- A big day. We found where our money comes from, proved it cannot
+  be captured by filtering entries, proved our simple exit rules are
+  already at their limit, and then found the two signals that
+  finally matter: (1) when a price level is touched, THREE SECONDS
+  of order-book behavior tilt the break-or-bounce coin (55% vs 40%);
+  (2) he holds winners while deep order flow keeps pushing his way.
+- From those we DESIGNED a new strategy (Strategy 5): enter at
+  touched levels when the book confirms, stop safely behind the
+  level, ride the flow. First test: twice the per-trade quality of
+  our validated strategy, smallest worst-loss ever (-2.00). Caveat
+  in bold: tested on the same data the signals came from - fresh
+  depth data must judge it before it is believed.
+- Surprise: HE does not use the 3-second signal (his picks ignore
+  it). This new edge is OURS. How he picks his trades is still
+  unknown - that hunt stays open.
+- Two ways a strategy can run live: "Pine tier" (price only, runs on
+  TradingView - our validated G2-4) and "runner tier" (needs the
+  depth feed - the new Strategy 5 line).

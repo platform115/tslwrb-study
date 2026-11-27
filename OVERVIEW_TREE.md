@@ -29,9 +29,17 @@ system), D-20 (Key-KME zones), D-21 (levels studies)
 
 ## TRACK 2 — STANDALONE SYSTEMS
 ### Strategies (= one ENTRY x one MANAGEMENT; status words from
-GLOSSARY: TRAINING-ONLY / VALIDATED / DORMANT / DEAD)
-- G2-4 = [4A-v2 two-lane entry] x [M7]      VALIDATED (T-VL02:
-        +158.1 OOS, both months) <- THE deployable
+GLOSSARY: TRAINING-ONLY / VALIDATED / DORMANT / DEAD; every strategy
+also carries a DEPLOYMENT TIER - Tier-P = Pine-portable, price+
+calendar only; Tier-R = runner + depth feed. Tiers are HOW a
+strategy runs live, orthogonal to its status.)
+- G2-4 = [4A-v2 two-lane entry] x [M7]      VALIDATED, Tier-P
+        (T-VL02: +158.1 OOS, both months) <- THE deployable
+- Strategy 5 (S-1) = [level-touch + 3s book read] x [flow-fade +
+        level-capture]                      TRAINING-ONLY, Tier-R
+        (T-SR01; the first DESIGNED strategy; in-sample)
+- Strategy 5W = Strategy 5, signal ablated  TRAINING-ONLY, Tier-R
+        (saved per J: more total, less quality)
 - G2-3 = [4A-v2 entry] x [M7]               DORMANT (earns OOS,
         dominated; T-VL01)
 - G2-5 = G2-3 + one-per-window cap          DORMANT (quality claim
