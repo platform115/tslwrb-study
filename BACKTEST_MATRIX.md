@@ -327,3 +327,28 @@ SQZ 379/+34.0, W20 184/+54.5, REA 106/+27.0, PDY 44/+16.4. No family TOXIC
 REGISTER TRAINING-ONLY. Note: same per-trade (+0.27) at 3x the volume —
 G2-6 widens the book and closes the catch gap (59/62 = exactly the F-23
 ceiling); it does not raise per-trade quality.
+
+## T-SR02 — S5-MF PART A: FAMILY-EDGE TOUCH UNIVERSE, ANY ARM (2026-11-27)
+Spec: Tests/D30_s5mf/S5MF_SPEC.md (frozen first, R-11 section included).
+R-9 dual controls exact: builder reproduced T-BK03 (1541 approaches /
+1263 mb touches, key-for-key) and S1-ANY (422/+216.5). Depth months
+(2022-02 + 2025-10); TRAINING-ONLY cap by construction.
+
+| cell | touches | trades | per-trade | pooled | by month | worst |
+|---|---|---|---|---|---|---|
+| S1-ANY control (693 covered) | 693 | 422 | +0.51 | +216.5 | +134/+82 | -2.00 |
+| LVL-ANY (full RTH) | 1264 | 750 | +0.63 | +472.1 | +195/+278 | -2.00 |
+| MF-ANY (family edges) | 45454 | 4369 | +0.45 | +1985.6 | +1031/+955 | -2.00 |
+
+All five frozen lines PASS -> S5-MF REGISTERED TRAINING-ONLY. Two
+secondary facts, stated plainly: (1) LVL-ANY full-RTH at +0.63 beats the
+covered-only S1-ANY (+0.51) - the incumbent universe UNRESTRICTED is the
+per-trade quality leader of the surgical line so far, before any 3s
+filter; (2) the family widening adds ~6x trades and ~4x pooled P&L at
+DILUTED per-trade (+0.45 < +0.63) - volume, not quality, exactly as in
+T-EN115. GAP+SHD again dominate (3051 trades, +1515.5 of +1985.6).
+PDY tiny and negative (26, -2.8) - watch, not toxic by the frozen rule.
+Part B (MF-ACTIVE, the F-21 3s read) needs device-side extraction at the
+new touch moments: 45,454 moments is ~36x the prior extraction volume,
+so the Part B addendum must choose a restriction (e.g., traded-touch
+subset or stratified sample) before any extraction runs.
