@@ -101,3 +101,20 @@ build). T-xx = test ledger IDs. R-1..R-8 = working rules.
 - Two ways a strategy can run live: "Pine tier" (price only, runs on
   TradingView - our validated G2-4) and "runner tier" (needs the
   depth feed - the new Strategy 5 line).
+
+## 2026-11-27 — Where structure is used, in plain words (the exit-arming story)
+The known levels and edge families earn their keep in three places:
+picking WHERE to enter (G2-6's wider trigger), picking WHICH touches
+to take (the runway rule - only enter when there is 2-8 points of
+clear road to the next structure), and, on the surgical line, telling
+the exit WHERE the run should end (the capture exit that makes all of
+that line's money). What today's test showed is narrower: on the
+news-window combo line, using structure to decide WHEN TO START
+TRAILING a winner works no better than a fixed rule ("start trailing
+once +1.5 points up") - because structure is often too far away to
+arm in time. So: G2-7 tries the simple constant, G2-8 keeps the
+structure-armed version, G2-4 (the validated one) keeps its original
+level-armed exits, and the surgical line keeps level-targeted
+captures everywhere. Fresh purchased months decide between them. If
+something fails there, we first check whether the mechanism died or
+just a dial needs re-fitting to the new regime (J's adapter rule).
