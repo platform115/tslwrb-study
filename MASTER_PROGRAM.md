@@ -404,6 +404,8 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 | D-27 | 1+2 | - | SENSITIVITY AUDIT of arbitrary load-bearing constants (TTL 300, dedupe 300, give-back 0.75, arm floor 0.5, stop upward, cap 480, Wseq 600, OFI window 30s, T-BK03 outcome thresholds): perturb +-50% one at a time, flag knife-edges, change nothing - robustness check, NOT optimization (F-11-compatible) | J's ranges directive | R-9 controls | DONE (T-SA01: no knife-edges; dedupe flagged SENSITIVE; F-20) |
 | D-28 | 2 | - | ENTRY-SIDE BOOK LENSES never examined: (a) book dynamics AT THE FILL moment (the live decision second - all prior tests measured at cross/pre-approach), (b) the touch reaction at levels (first seconds of book meeting level, T-BK03's stated open lens). Scoped as D-25 design input per F-18 | J's entry-focus audit | drive data banked | DONE (T-BK04: touch-reaction discriminator found at 3s - F-21; D-25 foundation complete) |
 
+| D-29 | 2 | - | Multi-family capture targets for M7 (gap/shadow edges beside multi-day levels as spike-capture targets) | F-23/24; the capture side is the only management family that ever won | mechanism-primary per R-9 | QUEUED (low priority) |
+
 OPEN DECISIONS (addressed to J, not work items; append-only too):
 | id | decision | since | status |
 |---|---|---|---|
