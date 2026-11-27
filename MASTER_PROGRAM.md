@@ -341,7 +341,7 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 
 | id | track | group | what | why (evidence) | needs | status |
 |---|---|---|---|---|---|---|
-| D-1 | 2 | - | Extras decomposition: which of OUR trades earn, what earners share | extras carried the OOS P&L (+141/+155); never studied; zero knobs | 4-month corpus | IN PROGRESS (spec Tests/D1_extras/XD_SPEC.md, T-XD01) |
+| D-1 | 2 | - | Extras decomposition: which of OUR trades earn, what earners share | extras carried the OOS P&L (+141/+155); never studied; zero knobs | 4-month corpus | DONE (T-XD01: 14-finding coherent earner profile; feeds D-3-style gate spec; D-2 flow premise weakened) |
 | D-2 | 2 | - | Flow-agreement entry gate (30s aggressor flow with the trade) | only thread repeating in all 3 samples | D-1 read; D-8 to judge finally | QUEUED |
 | D-3 | 2 | - | Level-aware entries incl. fade-at-level family | level kit validated in G2-4 exits; fade long-parked | D-1 helpful | QUEUED |
 | D-4 | 2 | - | G2-4 live port (Pine v6 / TradingView + Python levels; project pine docs) | sole VALIDATED system | nothing | QUEUED |
