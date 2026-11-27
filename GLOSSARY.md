@@ -122,4 +122,5 @@ specs. Future validated pairs: G<group>-<n>.
 | G2-4 | Strategy 4A-v2 d1.25 two-lane (first-break + retest X1.0 pb0.75) x M7 | OUT-OF-SAMPLE PASS (T-VL02): +158.1 (+118.8/+39.4), all mode-2 lines - the program's first validated track-2 strategy |
 | M12 | M7 + imb10 gate at the stall exit | TESTED-REJECTED (T-MG21: mechanism-negative) |
 | M13 | M7 + book-conditioned extension of the 480s cap | TESTED-STRUCTURALLY-EMPTY (T-MG22: 1/607 trades reach the cap) |
+| S-1 | Surgical level-break: touch -> 3s ACTIVE book read -> break entry at L+0.75, stop L-1.25, flow-fade/level-capture exits | designed from F-17/18/19/21; spec Tests/D25_surgical/S1_SPEC.md |
 | G2-5 | G2-3 with cadence cap N=1 per news window | DORMANT (J, 2026-11-26): OOS-profitable (+38.9, both months positive, lowest maxDD) but its quality claim failed (+0.39 < +0.60) and it is dominated by G2-4 - not deployed, kept on record |
