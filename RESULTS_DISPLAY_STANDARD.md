@@ -55,3 +55,10 @@ regime variance (the runway law's 2021-09 weakness was invisible
 until J demanded the month table). Pooled-only presentation of a
 headline claim is a display violation.
 
+
+## ADDENDUM (2026-11-28): D-8 JUDGMENT STEPS
+D-8 judgment steps report in the REPORT CARD shape frozen in
+Tests/D8_judgment/D8_SPEC.md (n, net, per-trade, win rate, profit
+factor, max drawdown, longest losing streak, top-3-day concentration,
+month split, catch where applicable), with the R-9 control stated.
+This standard's Block A/B shape remains the rule for entry TESTS.

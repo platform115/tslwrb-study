@@ -152,3 +152,18 @@ its advertised doubling had been the flaw. It still helps (about
 judge. Lesson on record: a claim is untested until the machine has
 tested it.
 
+
+## WHERE THINGS STAND NOW (2026-11-28 - supersedes the narrative above where they differ)
+- The earlier "one-shot verdict" on 2023-05/2024-05 happened: the
+  main carried strategy (now named G2-4) passed and was re-confirmed
+  after a timing-defect fix.
+- Two NEW months were bought (May 2022, March 2026), processed with
+  the certified converter (March 2026 needed roll-aware handling -
+  first contract-roll month we own), and are being judged RIGHT NOW
+  under a frozen plan (D8_SPEC): one look, no tuning, J gives every
+  verdict, one system at a time.
+- First result: G2-4 made money in both new months (+277 total over
+  796 trades), strongest in the most recent regime. J has declared
+  it READY TO CODE INTO PINE when he chooses.
+- Still to come in this look: the other 14 saved systems, then (with
+  the big depth data) the surgical line.

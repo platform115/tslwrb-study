@@ -38,7 +38,7 @@ same commit.
 | Tier-R (Strategy 5 line; EN-03/04, FL-3S, MP-10) | + mbp-10 full month (processed to book_per_sec + OFI10 by the certified pipeline) | D-8 STAGE 2 |
 | Catch metrics (Track 1) | his archive slice for the month (already held, free) | both stages |
 
-## D-8 PURCHASE RECOMMENDATION (J gates; nothing bought yet)
+## D-8 PURCHASE RECOMMENDATION (EXECUTED 2026-11-28 - both recommended months bought; kept as the selection-reasoning record)
 Selection criteria: (1) high his-activity so catch is measurable;
 (2) regime independence from owned months; (3) era spread incl. the
 most current regime. His-activity density (wrb-tagged minutes) from
