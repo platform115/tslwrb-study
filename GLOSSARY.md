@@ -163,3 +163,5 @@ specs. Future validated pairs: G<group>-<n>.
 | daily breakdown report | Per-month day-by-day table printed with every D-8 report card: trades, day P/L, wins, full stops, running P/L | named by J 2026-11-28 (the what-it-felt-like view); part of the D-8 reporting shape |
 | PORT-READY | J's verdict tag on a VALIDATED system cleared for the D-4 Pine port (not a status - the closed status vocabulary is unchanged) | first used 2026-11-28 (G2-4, G2-6) |
 | ex-roll | A number recomputed excluding trades on roll SESSIONS (F-40: the certified convention keeps them; D-8 cards show both) | named at F-40, 2026-11-28 |
+| forward-parallel check | The ongoing Pine-vs-engine health check: the Pine paper strategy and the research engine run the SAME fresh days independently; trade lists are compared after the fact; divergence is information, never patched | named in the D-4 hybrid decision (J, 2026-11-28) |
+| overlap vectors | Structure vectors minted for sessions inside BOTH the research corpus and TradingView's reachable history (Apr-May 2026), replacing the unreachable October vectors for S2/S3 only | d4_vectors_s23.py, October control byte-identical |

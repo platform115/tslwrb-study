@@ -168,3 +168,8 @@ tested it.
   Pine when he chooses.
 - Still to come in this look: the other 14 saved systems, then (with
   the big depth data) the surgical line.
+- The Pine port of the main strategy is underway in a separate
+  conversation, built stage by stage against exact expected
+  outputs. The first two stages passed perfectly, and
+  TradingView's 1-minute data matched ours bar for bar on the
+  tested days. (2026-11-28)
