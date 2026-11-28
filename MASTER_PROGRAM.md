@@ -78,6 +78,13 @@ R-13 FAILURE AUTOPSY (J directed 2026-11-27, generalizing his D-8
     failure (a mis-calibrated constant is an adapter problem, not a
     dead mechanism). R-10 applies before any DEAD verdict;
     recalibration proposals go to J.
+R-14 VECTOR/FEED RUNS (J approved 2026-11-28): generation runs that
+    mint no claims and spend no months (golden vectors, paste-in
+    feeds, expected-echo files) need no frozen spec, but MUST carry
+    (a) a stated control that reproduces a certified artifact
+    before producing anything new, and (b) a change-log line. A
+    run that would mint a claim or read an outcome is a test and
+    falls back under Rule 2 / R-5.
 
 ## DATA CONVENTION
 Training months: 2025-10, 2022-02. Validation months: 2021-09 (one
@@ -562,8 +569,10 @@ the program (precision over volume, benchmarked against him).
 - 2026-11-28: DOC-SYNC SWEEP (J's governance double-check): three drifts found and fixed (VALIDATION_PLAN missing the two-stage D-8 + R-13; RESULTS_DISPLAY_STANDARD missing the month-level rule; PLAIN_MAP missing the quiet/runway/taxonomy story). FOURTH finding, the serious one: ASSETS.md is a GENERATED file and had silently clobbered hand-appended banked-artifact rows during a preflight regeneration - fixed structurally: the generator now scans Tests/** itself (nothing hand-maintained left in ASSETS.md). OVERVIEW_TREE's systems section is now GENERATED from SYSTEMS_MATRIX (gen_overview_systems.py) with a HARD preflight sync check - hand drift there is no longer possible.
 - 2026-11-28: DATA_LEDGER.md created per J (anti-burn ledger): per-month holdings x designation, tier validation needs, and the D-8 purchase recommendation (2022-05 + 2026-03, stage-1 tbbo+bbo-1s, stage-2 mbp-10; alternates 2022-03/2025-03). Grounded in his-archive activity density, not guesswork. J gates the purchase.
 
-## THE GOVERNANCE SWEEP PROMPT (canonical copy, v2.0, 2026-11-28)
+## THE GOVERNANCE SWEEP PROMPT (canonical copy, v2.1, 2026-11-28)
 J pastes this periodically; this copy is the versioned original.
+(v2.1: step 2 gains the new-doc clause; new step 8 HANDOFFS;
+verdict renumbered to 9.)
 ---
 GOVERNANCE SWEEP. All hats on. Work through every step, show one
 line of evidence each, fix what is mechanical, bring judgment calls
@@ -573,7 +582,9 @@ to me. Do not start new research in this sweep.
 2. REGISTRIES: every system/component/management born since the
    last sweep has, in the same commit: GLOSSARY row, SYSTEMS_MATRIX
    formula + implementation anchor, BACKTEST_MATRIX entry, roadmap
-   D-id, change-log line. Name any that do not.
+   D-id, change-log line. Every NEW DOC has a DOCUMENT_MAP row and
+   a status word. Every vector/feed run since the last sweep shows
+   its R-14 control line. Name any that do not.
 3. DATA DISCIPLINE: DATA_LEDGER designations match reality (no
    month used beyond its designation; every spec since last sweep
    has R-11 and R-12 sections). Name violations.
@@ -590,7 +601,13 @@ to me. Do not start new research in this sweep.
 7. LANGUAGE: confirm closed vocabularies only (status words, R-ids,
    component ids); flag any new informal term that needs a GLOSSARY
    row or retirement.
-8. VERDICT: one line - CLEAN or N issues (listed, each tagged
+8. HANDOFFS: for each live handoff (D4_HANDOFF_LOG.md and any
+   successor): tracker current (every stage event and issue since
+   the last sweep logged, with who found it); artifact versions
+   agree on both sides (spec/constants status lines vs what the
+   consumer holds); no consumer question left unanswered; lessons
+   appended when a stage closed. Name gaps.
+9. VERDICT: one line - CLEAN or N issues (listed, each tagged
    FIXED / PROPOSED-TO-J). Then stop.
 ---
 - 2026-11-28: T-RH01 R-1 HARNESS FAIL on FL-RWY - 14/240 mismatches, both directions; poison arm proves sensitivity. 5W-RWY, G2-11, G3-3, G3-4 and F-35 under INTEGRITY-HOLD pending anatomy (R-10). Preliminary signature: month-global resolver construction (future-dependent object selection behind honest-looking comp stamps). Scope may extend to EN-02 triggers - anatomy decides. THE HARNESS DEBT WAS REAL: reasoning said clean, the mechanical gate said otherwise.
@@ -617,3 +634,4 @@ to me. Do not start new research in this sweep.
 - 2026-11-28: D-4 PORT PROGRESS: S1 PASSED in TradingView (echo exact; three independent cross-checks incl. the 73-rows->65-windows dedupe reconciliation; spec hardened to v1.1 with three previously unwritten engine conventions now codified: 15:00 window gate, retest carry-over, same-second dedupe). Q2 answered: TV 1s history ~1 month -> HYBRID verification decided (J): S2/S3 on 1m vs the October vectors now; a ~3-day recent-data sliver purchased AT the S4 gate for 1s-fidelity S4-S6 vectors; forward-parallel unchanged. S2 underway: the Pine side independently re-implemented the W20 band rule in Python and reproduced all 3 vector sessions 1380/1380 from the committed bars before any TradingView run.
 - 2026-11-28: D-4 PORT: S2 PASSED - 4,140/4,140 rows exact on the three overlap sessions (strict tolerance met); TradingView 1m bars = research bars exactly on those days (structure-level feed divergence zero); Pine band code proven against spec 2a. S3 (squeeze edges) next, same vector files.
 - 2026-11-28: J paused the Pine build after S2 sign-off. D4_HANDOFF_LOG.md opened per J (stage tracker, 11-issue log, 6 lessons for the next handoff). Roadmap statuses trued: D-4 IN PROGRESS, D-17 folded in, D-18 delivered-in-richer-shape (closure at S7). GLOSSARY: forward-parallel check + overlap vectors rows.
+- 2026-11-28: R-14 landed (J approved: vector/feed runs = control + log line, no frozen spec; claim-minting runs stay under Rule 2/R-5). Sweep prompt v2.1: new-doc clause in step 2, new step 8 HANDOFFS, verdict renumbered to 9.
