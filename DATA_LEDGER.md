@@ -11,18 +11,25 @@ sections in specs are the per-claim spend records; this is the map.
 | his archive (chat_activity + zone refs etc.) | 2021-05 .. 2026-06 | catch metrics, his-side studies |
 | es_roll_calendar | corpus | roll-day exclusion (Rule: roll days excluded) |
 
-## PER-MONTH HOLDINGS AND DESIGNATION
-| month | 1s flow | tbbo raw | MBP-10 raw | processed depth | his audit | designation TODAY |
-|---|---|---|---|---|---|---|
-| 2021-09 | YES (container) | drive | drive | no | YES (a2) | SPENT - training for all current claims |
-| 2022-02 | YES | drive | drive | book+OFI10+windowed | YES | SPENT - training (depth months pair) |
-| 2023-05 | YES | drive | NO | top-of-book only | NO (no his audit) | SPENT - was G2-4's validation pair (T-VL02); results seen -> training-equivalent for all new claims |
-| 2024-05 | YES | drive | NO | top-of-book only | NO | SPENT - same as 2023-05 |
-| 2024-11 | YES | drive | drive | no | YES | SPENT - training |
-| 2025-10 | YES | drive | drive | book+OFI10+windowed | YES | SPENT - training (depth months pair) |
-THE BOTTOM LINE: NOTHING in-corpus is clean. Every registered claim's
-judge is a FUTURE purchase (D-8). Any run on these months is training-
-side by definition and must say so in its R-11 section.
+## PER-MONTH REFERENCE TABLE (J's tracking table - the one to check first)
+| month | bbo-1s | tbbo | mbp-10 | processed | his audit | designation | what has been tested / judged there |
+|---|---|---|---|---|---|---|---|
+| 2021-09 | drive | drive | drive (raw) | 1s flow | YES | SPENT (training) | training for every current claim; his-entry audits |
+| 2022-02 | drive | drive | drive (raw) | 1s flow + book + OFI10 | YES | SPENT (training) | depth-pair: every surgical-line claim (T-SR01..08, T-SA02) + combo training + deep-book studies |
+| 2023-05 | drive | drive | NO | 1s flow + top-of-book | NO | SPENT (validation used) | JUDGED G2-3/G2-4/G2-5 out-of-sample (T-VL01/T-VL02 - G2-4's validation pair); training-equivalent since |
+| 2024-05 | drive | drive | NO | 1s flow + top-of-book | NO | SPENT (validation used) | same pair as 2023-05 |
+| 2024-11 | drive | drive | drive (raw) | 1s flow | YES | SPENT (training) | training; his-entry audits |
+| 2025-10 | drive | drive | drive (raw) | 1s flow + book + OFI10 | YES | SPENT (training) | depth-pair twin of 2022-02 |
+| **2022-05** | **drive (new)** | **drive (new)** | **drive (new)** | none yet | archive ready (1273 wrb) | **QUARANTINED** | NOTHING - reserved for the D-8 frozen judgments (stages 1+2) |
+| **2026-03** | **drive (new)** | **drive (new)** | **drive (new)** | none yet | archive ready (816 wrb) | **QUARANTINED** | NOTHING - reserved for the D-8 frozen judgments; the most-current-regime month |
+QUARANTINE RULES: (1) no script touches a QUARANTINED month except
+the frozen D-8 judgment spec (J gates it) and the pre-judgment
+processing pipeline (convert + cert, which reads no outcomes);
+(2) the catch-by-group peek at unmined groups (G1/G4/G5) is an
+EXPLICIT POST-JUDGMENT GATE - J decides whether to spend these
+months' future G4/G5-validation usefulness (decided 2026-11-28);
+(3) every judgment result updates the "tested there" column in the
+same commit.
 
 ## WHAT EACH TIER'S VALIDATION NEEDS
 | line | needs per fresh month | judges |
@@ -58,4 +65,9 @@ check for the month; his-archive slice extract for catch prep.
 - 2026-11-28: F-36 stamp fix + T-RH02 re-mint. Designations unchanged (all
   six months remain SPENT). D-8 purchase UNBLOCKED from the program
   side - awaiting J's go on the recommended months.
+- 2026-11-28: PURCHASE LANDED - 2022-05 + 2026-03 on the drive, all three
+  products (tbbo, bbo-1s, mbp-10; 27 day-files each; zips verified).
+  Both months QUARANTINED. Next pipeline steps (outcome-blind):
+  unzip, one-day converter cert per month, per-second flow build,
+  his-slice extraction, then the frozen D-8 judgment spec to J.
 
