@@ -542,3 +542,19 @@ positive in the gated set (PDY's toxicity vanishes under the gate).
 ~32 trades/day instead of ~158 - an operable cadence. Sensitivity:
 [1.5,8] dilutes (+0.42), [2,10] identical - the lower bound does the
 work, consistent with F-28's brake-zone story.
+
+## T-RH01 — R-1 HARNESS ON FL-RWY: **FAIL** (2026-11-28)
+Spec: Tests/D32_structsel/RH_SPEC.md (frozen first). 14/240 production
+comparisons mismatch (listed in RH_REPORT.md); poison arm 28/60
+(harness proven sensitive). VERDICT PER SPEC: FL-RWY systems FROZEN
+PENDING ANATOMY (R-10): 5W-RWY, G2-11, G3-3, G3-4 and the F-35 law
+carry an INTEGRITY-HOLD note until the anatomy closes.
+PRELIMINARY READ (facts, not yet the anatomy): mismatches run BOTH
+directions (production saw edges a truncated build lacks, and vice
+versa), the signature of MONTH-GLOBAL RESOLVER CONSTRUCTION - comp
+timestamps gate when an object claims to be knowable, but object
+construction/selection (swing confirmation, best-per-key replacement,
+band episodes) can depend on later bars. If confirmed, comp-gating is
+NOT sufficient for live knowability, and the scope question extends
+beyond FL-RWY to the EN-02 trigger edges themselves (same machinery) -
+to be settled by the anatomy, not assumed.

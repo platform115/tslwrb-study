@@ -576,4 +576,4 @@ to me. Do not start new research in this sweep.
 8. VERDICT: one line - CLEAN or N issues (listed, each tagged
    FIXED / PROPOSED-TO-J). Then stop.
 ---
-
+- 2026-11-28: T-RH01 R-1 HARNESS FAIL on FL-RWY - 14/240 mismatches, both directions; poison arm proves sensitivity. 5W-RWY, G2-11, G3-3, G3-4 and F-35 under INTEGRITY-HOLD pending anatomy (R-10). Preliminary signature: month-global resolver construction (future-dependent object selection behind honest-looking comp stamps). Scope may extend to EN-02 triggers - anatomy decides. THE HARNESS DEBT WAS REAL: reasoning said clean, the mechanical gate said otherwise.
