@@ -67,8 +67,8 @@ STAGE 4 — AGGREGATION (read when choosing what to do next)
                              open queues. Updated at phase closes.
 
 STAGE 5 — ARCHIVE (kept, not current; do not plan from these)
-  CURRENT_STATE.md ......... STALE (July-2026 MBP-10 era). Pending the
-  CURRENT_STATE_edits.md ... parked doc-cleanup J approved exploring:
+  archive/CURRENT_STATE.md ......... STALE (July-2026 MBP-10 era). Pending the
+  archive/CURRENT_STATE_edits.md ... parked doc-cleanup J approved exploring:
                              proposal is to move both under archive/ with
                              a stale banner. Awaiting J go.
   Tests/01..07 (pre-P4 era)  earlier program's specs/reports; superseded

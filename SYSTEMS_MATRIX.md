@@ -47,8 +47,8 @@ M12/M13/M15 rejected, M14a-d campaign outcomes.
 ## SYSTEMS
 | system | formula | tier | status | headline (training unless noted) | judge |
 |---|---|---|---|---|---|
-| G2-1 | EN-06 x FL-WIN x MP-7 | P | TRAINING-ONLY | legacy engine; B5-passed 2024-11 | Q-3 pending |
-| G2-2 | EN-06 x FL-WIN x MP-7 | P | TRAINING-ONLY | legacy engine | Q-3 pending |
+| G2-1 | EN-06 x FL-WIN x MP-7 | P | DORMANT | retired-as-superseded (Q-3, J) | record only |
+| G2-2 | EN-06 x FL-WIN x MP-7 | P | DORMANT | retired-as-superseded (Q-3, J) | record only |
 | G2-3 | EN-05 x FL-WIN x MP-7 | P | DORMANT | OOS +144.4 but claim failed; dominated | kept on record |
 | G2-4 | EN-01 x FL-WIN x MP-7 | P | VALIDATED | OOS PASS +158.0 re-minted (T-RH02) - the D-4 port target | done (extend at D-8) |
 | G2-5 | EN-05 x FL-WIN x FL-CAD x MP-7 | P | DORMANT | OOS +38.9; dominated | kept on record |
@@ -65,6 +65,7 @@ M12/M13/M15 rejected, M14a-d campaign outcomes.
 | Strategy 5 | EN-03 x FL-ALL x FL-3S x MP-10 | R | TRAINING-ONLY | 198/+119.6 at +0.60 (covered-touch scope) | D-8 stage 2 |
 | Strategy 5W | EN-03 x FL-ALL x MP-10 | R | TRAINING-ONLY | covered 422/+216.5; full-RTH 750/+472.1 at +0.63 | D-8 stage 2 |
 | 5W-RWY | EN-03 x FL-ALL x FL-RWY x MP-10 | R | TRAINING-ONLY | 109/+101.6 at +0.93 - per-trade leader (F-37) | D-8 stage 2 |
+| 5W-RWY-3S | EN-03 x FL-ALL x FL-RWY x FL-3S x MP-10 | R | TRAINING-ONLY | 58/+79.9 at +1.38 - per-trade leader (T-SR06) | D-8 stage 2 |
 | S5-MF | EN-04 x FL-ALL x MP-10 | R | TRAINING-ONLY | 4396/+2026.5 at +0.46 | D-8 stage 2 |
 PRE-SPLIT LEGACY (no formulas; predate the component split): the
 Strategy 1 / 2A / 3A-3D / 4A generation - see GLOSSARY.

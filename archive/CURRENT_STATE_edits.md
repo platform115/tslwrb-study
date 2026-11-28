@@ -1,3 +1,5 @@
+> STALE - ARCHIVED 2026-11-28 (Q-2, J). Superseded by MASTER_PROGRAM / OVERVIEW_TREE / SYSTEMS_MATRIX.
+
 # CURRENT_STATE.md — edit list (apply these; general env/defs only, no per-test detail)
 
 ## REPLACE the "What was already tested" line

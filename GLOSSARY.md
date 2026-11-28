@@ -116,7 +116,7 @@ failed; dominated by G2-4) | G2-4 VALIDATED | G2-5 DORMANT.
 | D-n | ROADMAP direction item n (MASTER_PROGRAM roadmap table; append-only register of open work directions) | family registered 2026-11-26 |
 | Q-n | OPEN DECISION n addressed to J (same roadmap block) | family registered 2026-11-26 |
 |---|---|---|
-| G2-1 | Strategy 4A d1.25 x M3A (squeeze-break entry, 5-45min post-release, unfiltered, displacement 1.25; stall-60 management) | VALIDATED (T-BS05 training, T-BS06 quarantine PASS) |
+| G2-1 | Strategy 4A x old engine x M7 | DORMANT (Q-3 decided, J 2026-11-28): retired as superseded by the fill-time G2-4 lineage; kept on record, not re-based |
 Convention: alias used alongside the long form, never replacing it in
 specs. Future validated pairs: G<group>-<n>.
 
@@ -130,7 +130,7 @@ specs. Future validated pairs: G<group>-<n>.
 | M5B | speed gate: fast move -> spike-capture; slow -> M3A patience | in test (T-MG11) |
 
 | M7 | level-snap management: M3A backstops (stall-60, stop 3.75, time 480) + spike-capture arming when price reaches a COMPUTED multi-day level within 8 pts of entry (MDL v3 detector) | ADOPTED on training (T-MG14) |
-| G2-2 | Strategy 4A d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits fresh pre-committed validation month |
+| G2-2 | Strategy 4A d1.25 x M7 (old engine) | DORMANT (Q-3 decided, J 2026-11-28): retired as superseded by G2-4; kept on record |
 
 | Strategy 4A-v2 | 4A with the band set widened: squeeze cells W10/W30 q0.67 PLUS W20 q0.8, one deduped trigger stream | adopted on training (T-EN104) |
 | G2-3 | Strategy 4A-v2 d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits the purchased months (2023-05, 2024-05). Corrected numbers under the fill-time engine (standard since T-EN108): +276.1 / 607 / catch 47 / extras +185.6. OUT-OF-SAMPLE (T-VL01): +144.4 (+137.6/+6.8), catch 50%; RE-REGISTERED AS TRACK-2 SYSTEM (J) - standalone earner, not a replication claim |
@@ -152,6 +152,7 @@ specs. Future validated pairs: G<group>-<n>.
 | Strategy 5W (alias S1-ANY) | Strategy 5 with the 3s signal ablated - enters every touch | TRAINING-ONLY, Tier-R. Two measurements on record: covered touches (T-SR01: 422/+216.5, +0.51) and FULL RTH (T-SR02/03: 750/+472.1, +0.63 - the program's per-trade leader; the coverage restriction was hiding quality). T-SR03 anatomy: the +0.63 is flat across all flow/calendar/level lenses (null); upgrade path = Part B 3s book read. Trade tables banked in Tests/D30_s5mf/ |
 | S5-MF | Strategy 5 touch universe widened to family edges | TRAINING-ONLY, Tier-R (re-minted T-RH02): 4396/+2026.5 at +0.46, both months positive. Judge = D-8 stage 2 |
 | 5W-RWY | Strategy 5W full-RTH gated by RUNWAY [2,8] | TRAINING-ONLY, Tier-R (re-minted T-RH02 after F-36: 109/+101.6 at +0.93, 51% win, stops 42%, months +49/+52; was +1.54 pre-fix - F-37). Still the per-trade leader. Judge = D-8 stage 2 |
+| 5W-RWY-3S | 5W-RWY with the 3s book read stacked on top (FL-3S: churn3 >= T2 OR sweep at the touch) | TRAINING-ONLY, Tier-R (T-SR06, J-registered 2026-11-28): 58/+79.9 at +1.38/trade, months +39/+40, stops 43% - the program's per-trade leader; small n stated. Judge = D-8 stage 2 |
 | M8 | M7 with trail-arming targets widened to family edges >=2.0 ahead (structure-armed) | KEPT per J (2026-11-27) as the structure-armed exit variant, carried by G2-8 into D-8 against M9's constant arm. T-MG29/F-33: on training months the constant matches it - fresh months decide |
 | M9 | Trail-arm management: the trail arms once the trade reaches +1.5 (A=1.5, mid of the tested 1.5-2.0 plateau, range-picked on training - disclosed); exit peak-0.75; stop -3.75, stall-60, cap-480 unchanged from M7. No targets, no resolver - one constant, Pine-trivial | MINTED (J, 2026-11-27; T-MG29, F-33): twin +173.4 vs M7 on G2-4, 5/6 months. TRAINING-ONLY; judge = D-8 |
 | M10 | The surgical trade management plan (alias: the S5 exit organism; MP-10 in SYSTEMS_MATRIX): stop L-1.25*d, level-capture (arm when peak within 1.0 of the next multi-day level, exit peak-0.75), flow-fade (from 60s, every 30s, trailing-30s OFI10 signed < 0), hard cap 900s | MINTED (J taxonomy build, 2026-11-27) - the management half of the Strategy 5 line since T-SR01; TRAINING-ONLY with its systems |

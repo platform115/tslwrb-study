@@ -1,3 +1,5 @@
+> STALE - ARCHIVED 2026-11-28 (Q-2, J). Superseded by MASTER_PROGRAM / OVERVIEW_TREE / SYSTEMS_MATRIX.
+
 ## **CURRENT MODE**
 
 **This conversation is about EXPLORATION, not validation** If we find a sign that MBP-10 data shows promise of detecting a timing area where selling/holding/something else is a good move, we will validate it later in a different chat on different data. Do not focus on sample size etc.

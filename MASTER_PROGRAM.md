@@ -62,6 +62,11 @@ R-12 FINDINGS SWEEP (J confirmed 2026-11-27): every new spec (entry,
     (how) or NOT-APPLICABLE (why). A finding spotted missing
     retroactively triggers a follow-up round, as F-23..26's omission
     from T-SR03 did. Added to the R-8 pre-present checklist.
+R-1a TWO-TIER EVIDENCE (Q-1, J approved 2026-11-28): screening
+    claims may run on 1m bars across the 60-month corpus; any claim
+    that advances to registration or a frozen verdict must be
+    confirmed on per-second data. The truncation harness enforces
+    both tiers.
 R-13 FAILURE AUTOPSY (J directed 2026-11-27, generalizing his D-8
     adapter flag): whenever ANY entry strategy, entry component,
     selector, or exit management fails on brand-new data, the
@@ -470,10 +475,10 @@ UNMINED (incl. the oil-Wednesday pattern noted at A4).
 OPEN DECISIONS (addressed to J, not work items; append-only too):
 | id | decision | since | status |
 |---|---|---|---|
-| Q-1 | R-1 two-tier evidence amendment (screening on 1m/60mo vs confirmation on per-second) | 2026-11-24 | AWAITING J |
-| Q-2 | Move CURRENT_STATE.md + _edits to archive/ with stale banner | 2026-11-24 | AWAITING J |
-| Q-3 | G2-1 / G2-2 disposition: both TRAINING-ONLY under the OLD engine; re-base on fill-time, or retire as superseded by G2-4? | 2026-11-26 | AWAITING J |
-| Q-4 | Strategy 2A disposition: its entry rules were invalidated (T-EN99 lookahead) and halted; rebuild them, or supersede with G2-4 as the entry feeding the already-built Pine stage-1 infrastructure? | 2026-11-18 halt / surfaced 2026-11-26 | AWAITING J |
+| Q-1 | R-1 two-tier evidence amendment (screening on 1m/60mo vs confirmation on per-second) | 2026-11-24 | DECIDED YES (J, 2026-11-28) - amendment landed in STANDING RULES |
+| Q-2 | Move CURRENT_STATE.md + _edits to archive/ with stale banner | 2026-11-24 | DECIDED YES (J, 2026-11-28) - archived with stale banner |
+| Q-3 | G2-1 / G2-2 disposition: both TRAINING-ONLY under the OLD engine; re-base on fill-time, or retire as superseded by G2-4? | 2026-11-26 | DECIDED (J, 2026-11-28): retire as superseded - G2-1/G2-2 DORMANT |
+| Q-4 | Strategy 2A disposition: its entry rules were invalidated (T-EN99 lookahead) and halted; rebuild them, or supersede with G2-4 as the entry feeding the already-built Pine stage-1 infrastructure? | 2026-11-18 halt / surfaced 2026-11-26 | DECIDED (J, 2026-11-28): supersede - G2-4 feeds the Pine stage-1 kit (D-4) |
 
 J aims; the chosen item moves to IN PROGRESS in the same commit its
 spec is written. This register is complete as of 2026-11-26 22:10
@@ -585,3 +590,4 @@ to me. Do not start new research in this sweep.
 - 2026-11-28: T-SR07-v2/T-SR08-v2 re-checks: both loss-side rejections and F-31's findings SURVIVE on the corrected universe. DATA_LEDGER event log + PLAIN_MAP plain-words account added. Queue continues: Part B extraction resuming on the drive (J pre-authorized).
 - 2026-11-28: D-30 PART B EXTRACTION COMPLETE (35/35 days, device; J pre-authorized drive access). Concat 1,264 moments; OVERLAP CERT bit-exact (0 mismatches, 691 moments x 4 features) - raw path == certified windowed path. rwy_features.parquet banked + checksummed. T-SR06 cells next; RWY-cell verdict line is stale post-F-36 (facts to J).
 - 2026-11-28: T-SR06 closed - Part B complete end-to-end. The 3s read does NOT generalize to the full touch universe (+0.58 vs +0.63) but STACKS on RWY (+0.93 -> +1.38 on 58 trades, balanced months). Registration = J's gate. D-30 fully closed.
+- 2026-11-28: J's decisions executed: 5W-RWY-3S REGISTERED (T-SR06 stack, +1.38/58, Tier-R TRAINING-ONLY); Q-1 R-1a landed; Q-2 CURRENT_STATE docs archived; Q-3 G2-1/G2-2 DORMANT (superseded); Q-4 Strategy 2A SUPERSEDED by G2-4 for the Pine plan. Q register cleared. Clarification logged: G3-3's 'drop' = the stamp-fix re-measure (+1944->+1412), not a status change - it remains TRAINING-ONLY and a refinement candidate.
