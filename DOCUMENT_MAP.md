@@ -104,4 +104,6 @@ A non-empty list fails the completeness pass.
 | Tests/D5_quiet/RWYLAW_TABLE.md | by-month appendix for the runway law (T-EN117) | CLOSED |
 | CLAUDE.md | session boot instructions: read order, preflight rule, lineage convention | LIVING |
 | DATA_LEDGER.md | the anti-burn ledger: per-month holdings, spend designations, and the D-8 purchase plan | LIVING |
+| Tests/D32_structsel/RWY_REMINT.md | 5W-RWY re-mint under fixed stamps (T-RH02) | CLOSED |
+| Tests/D30_s5mf/S5MF_REMINT.md | S5-MF re-mint under fixed stamps (T-RH02) | CLOSED |
 
