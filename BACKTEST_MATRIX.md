@@ -575,3 +575,25 @@ on fixed stamps - including G2-4's validation numbers (EN-01 reads
 SQZ via the same path). NOT affected: EN-03's touch universe, multi-
 day levels, MP-7/9/10 mechanics, OFI exits - 5W/Strategy 5 numbers
 stand. Integrity-holds REMAIN until the re-mint lands.
+
+## T-RH02 — THE RE-MINT: ALL BASELINES UNDER FIXED STAMPS (2026-11-28)
+Full table: Tests/D29_m8/REMINT_REPORT.md (+ RWY_REMINT.md,
+S5MF_REMINT.md). Engines verbatim; old asserts stale by design.
+SURVIVORS (deltas within noise or improved): G2-4 2064/+569.4, OOS
+pair +158.0 vs +158.1 - THE VALIDATION STANDS (catch 48->47/62);
+G2-6 +1667.1, catch 59/62 unchanged; G3-1 +3767.8 and G3-2 +5973.1,
+catch 150/151 unchanged; S5-MF +2026.5 (+0.46); the M9-vs-M8 pairs
+now favor M9 in BOTH (786.0 vs 754.5; 2698.9 vs 2539.9) - the
+constant-arm conclusion strengthens.
+CASUALTIES (the early-sight edges were feeding the RUNWAY filter):
+5W-RWY +1.54 -> +0.93/trade (109 trades; its frozen +1.00 line now
+FAILS); G3-3 +0.51 -> +0.36; G3-4 +0.38 -> +0.24; G2-11 +627.2 ->
++350.8 (+0.28/trade, i.e. NO lift over G2-6's +0.27). Mechanism:
+just-born structures sit near price, so the old gate often measured
+runway to edges visible <=59s early - admits clustered at structure-
+formation moments and the "2x law" was partly the defect. The real
+corrected effect: ~1.5x on the surgical line (0.63->0.93; [3,8]
+band +1.36 at 52 trades), ~1.2-1.5x quiet, ~nil on the news line.
+F-35 is SUPERSEDED (see F-37). Proposed verdicts to J: refresh all
+baselines; keep 5W-RWY/G3-3/G3-4 TRAINING-ONLY at corrected numbers;
+G2-11 to DORMANT (no lift); holds lift on J's confirmation.
