@@ -1,5 +1,5 @@
 # D4_CONSTANTS — EVERY NUMBER IN G2-4 (THE ONLY AUTHORITY ON VALUES)
-STATUS: v1.0 FROZEN FOR HANDOFF | 2026-11-28
+STATUS: v1.1 FROZEN FOR HANDOFF | 2026-11-28 (v1.1: gate rows corrected - GATE_START/GATE_END/HALT replace RTH rows)
 Pine code must reference these names; no number may exist only in
 code. Certified source: the T-RH02 baseline machinery
 (g26_remint_gen.py / remint_sims.py lineage), reproduced exactly by

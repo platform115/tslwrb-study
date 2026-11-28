@@ -103,6 +103,13 @@ constant.
   E + 2700s) (5 to 45 minutes after the release).
 - The window is used only if its start passes the WINDOW GATE
   (section 1).
+- IDENTICAL-TIMESTAMP DEDUPE (v1.1, from the S1 count
+  reconciliation): two releases at the SAME second are ONE window -
+  the engine iterates unique event seconds (October 2025: 108
+  calendar rows -> 94 unique seconds -> 65 gate-passing windows;
+  the row-level count 73 includes 8 duplicate rows). Windows from
+  different seconds that OVERLAP both run; the signal lockout (4a)
+  governs any double-detection across them.
 - The CROSS (4a) must occur inside an entry window. Everything the
   cross starts then runs on its OWN clock, past the window end if
   need be: the entry order's 300s life, the retest watch's 600s,
