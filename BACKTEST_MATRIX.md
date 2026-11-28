@@ -689,3 +689,17 @@ structure exclusion only; 2021-09's roll trades sit inside the
 training baseline the control reproduces). Ex-roll: 2026-03
 443/+216.4; pooled 777/+265.9. Both shown; J owns the convention
 question post-look.
+
+## T-VL07 — D-8 STEP 2: G2-6 ON THE D-8 MONTHS (2026-11-28)
+R-9 control exact (6267/+1667.1; months; catch 58/61 post-fix).
+| scope | n | net | per-trade | win% | PF | maxDD | catch |
+|---|---|---|---|---|---|---|---|
+| 2022-05 | 1163 | +635.8 | +0.55 | 52% | 1.46 | 41.2 | 30/39 |
+| 2026-03 | 1212 | +510.6 | +0.42 | 51% | 1.35 | 42.5 | 21/21 |
+| pooled | 2375 | +1146.4 | +0.48 | 51% | 1.40 | 42.5 | 51/60 |
+Ex-roll (F-40): 2026-03 1161/+519.5; pooled 2324/+1155.2.
+Per-trade ABOVE training both months (no haircut); breadth good
+(top3 30% pooled); EN-02 strong in the 2022 bear month where EN-01
+was weak (+0.55 vs +0.15) - pair steps 3-6 test that properly.
+J VERDICT (2026-11-28): PORT-READY for the D-4 Pine port.
+G2-6 TRAINING-ONLY -> VALIDATED.

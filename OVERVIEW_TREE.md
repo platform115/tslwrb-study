@@ -17,9 +17,9 @@ Numbers -> BACKTEST_MATRIX. Open work -> D-/Q- ids below.
 | status | system | formula | headline | judge |
 |---|---|---|---|---|
 | VALIDATED | G2-4 | EN-01 x FL-WIN x MP-7 | OOS 4/4 months positive: +158.0 (T-VL02) + +276.8 (T-VL05, D-8 step 1). J 2026-11-28: PORT-READY | D-4 Pine port when J ready |
+| VALIDATED | G2-6 | EN-02 x FL-WIN x MP-7 | D-8 PASS (T-VL07): 2375/+1146.4 at +0.48 (above training +0.27), catch 51/60. J 2026-11-28: PORT-READY | D-4 Pine port when J ready |
 | TRAINING-ONLY | G2-10 | EN-02 x FL-WIN x MP-9 | 8191/+2698.9, M9 pair-B | D-8 stage 1 |
 | TRAINING-ONLY | G2-11 | EN-02 x FL-WIN x FL-RWY x MP-7 | 1235/+350.8 at +0.28 (kept per J) | D-8 stage 1 |
-| TRAINING-ONLY | G2-6 | EN-02 x FL-WIN x MP-7 | 6267/+1667.1, catch 58/61 (T-RH03) | D-8 stage 1 |
 | TRAINING-ONLY | G2-7 | EN-01 x FL-WIN x MP-9 | 2301/+786.0, M9 pair-A | D-8 stage 1 |
 | TRAINING-ONLY | G2-8 | EN-02 x FL-WIN x MP-8 | 8329/+2539.9, M8 pair-B twin | D-8 stage 1 |
 | TRAINING-ONLY | G2-9 | EN-01 x FL-WIN x MP-8 | 2317/+754.5, M8 pair-A twin | D-8 stage 1 |
