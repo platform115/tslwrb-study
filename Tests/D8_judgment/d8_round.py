@@ -37,6 +37,11 @@ b = pd.read_parquet("Data/inputs/es_1m_front.parquet")
 b = b.sort_values("ts_event").reset_index(drop=True)
 b["sd"] = b.session_date.astype(str)
 days_all = sorted(b[~b.is_roll_day].sd.unique())
+# ROLL SESSIONS (session-level: any flagged bar marks the session;
+# the per-bar flag is mixed on roll days - F-40). Used to exclude
+# TRADES; day indexing stays as certified.
+ROLL_SDS = set(b.groupby("sd").is_roll_day.max()
+                .loc[lambda s: s].index)
 day_ix = {d: i for i, d in enumerate(days_all)}
 closes = b[~b.is_roll_day].groupby("sd").close.last(
     ).reindex(days_all).to_numpy()
@@ -160,6 +165,13 @@ def run_ctrl(months, parts_dir):
             seen.add(dk)
             lvl = r.e + DISP * r.d
             di = day_ix.get(r.sd)
+            # F-40: trades on roll SESSIONS are KEPT here - the
+            # certified convention (bar-level structure exclusion
+            # only; 2021-09's roll trades are inside every certified
+            # baseline). Ex-roll subtotals are REPORTED; J decides
+            # the convention question post-look.
+            if di is None:
+                continue
             if r.tf < busy:
                 continue
             jf = int(r.jf)

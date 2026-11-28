@@ -681,3 +681,11 @@ expected by chance - UNINFORMATIVE. J verdict: data-limited null,
 closed; powered variants = D-35 (vs verified entry prices), D-36
 (resolve mention-time structure prices), both after D-8. Confirms
 D-20's sparse-stated-price note from a second angle.
+
+## T-VL05 AMENDMENT (2026-11-28; F-40) — roll-session trades
+The step-1 card's 2026-03 number INCLUDES 19 trades on the roll
+sessions (03-16/17, +10.9), per the certified convention (bar-level
+structure exclusion only; 2021-09's roll trades sit inside the
+training baseline the control reproduces). Ex-roll: 2026-03
+443/+216.4; pooled 777/+265.9. Both shown; J owns the convention
+question post-look.

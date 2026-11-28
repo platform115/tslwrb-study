@@ -125,3 +125,4 @@ check for the month; his-archive slice extract for catch prep.
   globex session -> a 49.5 instrument jump that lives entirely
   inside the EXCLUDED roll session; feature builds must exclude by
   SESSION DATE (standing rule), not UTC day.
+- 2026-11-28 CORRECTION (F-40): earlier entries saying 20260316 is "excluded from analysis" were wrong for TRADES - the certified engines exclude roll-flagged BARS from structure inputs but never excluded trades by session (2021-09's roll trades are in every certified baseline). D-8 reports now show as-certified and ex-roll numbers side by side; J decides the convention after the look.

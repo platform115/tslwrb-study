@@ -289,26 +289,31 @@ def build_month(mo, nxt, tag, parts_dir):
     return True
 
 
-# ---------- PHASE 2: R-9 control (rebuild 2023-05 ctrl, must match) ----------
-ctrl_part = f"{PARTS}/cand_ctrl_{CTRL_MONTH[0]}.parquet"
-if not os.path.exists(ctrl_part + ".ok"):
-    build_month(CTRL_MONTH[0], CTRL_MONTH[1], "ctrl", PARTS)
-    new = pd.read_parquet(ctrl_part)
-    cert = pd.read_parquet(f"{CERT}/cand_ctrl_{CTRL_MONTH[0]}.parquet")
+# ---------- PHASE 2: R-9 controls (rebuild 2023-05, must match) ----------
+# (extended 2026-11-28 at J's G2-6 go: the "full" tag joins with the
+# same row-identical control before its new-month parts are built)
+for tag in ("ctrl", "full"):
+    part = f"{PARTS}/cand_{tag}_{CTRL_MONTH[0]}.parquet"
+    if os.path.exists(part + ".ok"):
+        continue
+    build_month(CTRL_MONTH[0], CTRL_MONTH[1], tag, PARTS)
+    new = pd.read_parquet(part)
+    cert = pd.read_parquet(f"{CERT}/cand_{tag}_{CTRL_MONTH[0]}.parquet")
     if not new.reset_index(drop=True).equals(
             cert.reset_index(drop=True)):
         print("# D8 PREP ABORTED — R-9 CONTROL FAILED: rebuilt "
-              f"cand_ctrl_{CTRL_MONTH[0]} != certified part "
+              f"cand_{tag}_{CTRL_MONTH[0]} != certified part "
               f"({len(new)} vs {len(cert)} rows)")
         sys.exit(1)
-    open(ctrl_part + ".ok", "w").write("match\n")
-    print(f"R-9 CONTROL PASS: cand_ctrl_{CTRL_MONTH[0]} rebuilt "
+    open(part + ".ok", "w").write("match\n")
+    print(f"R-9 CONTROL PASS: cand_{tag}_{CTRL_MONTH[0]} rebuilt "
           f"identical ({len(new)} rows)", flush=True)
 
 # ---------- PHASE 3: new-month parts ----------
-for mo, nxt in MONTHS_NEW.items():
-    if build_month(mo, nxt, "ctrl", PARTS):
-        if time.time() - T0 > BUDGET:
-            print("CONTINUE (rerun to finish)")
-            sys.exit(0)
+for tag in ("ctrl", "full"):
+    for mo, nxt in MONTHS_NEW.items():
+        if build_month(mo, nxt, tag, PARTS):
+            if time.time() - T0 > BUDGET:
+                print("CONTINUE (rerun to finish)")
+                sys.exit(0)
 print("D8 PREP 0a DONE")
