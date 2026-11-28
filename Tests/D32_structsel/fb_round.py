@@ -6,6 +6,12 @@ verbatim from the certified rwy_round lineage; the FB variant adds
 one exit check per the spec.
 RUN: python3 Tests/D32_structsel/fb_round.py > Tests/D32_structsel/FB_REPORT.md
 """
+# STALE-LINEAGE NOTE (2026-11-28, F-36/T-RH02): this CLOSED round
+# ran on pre-stamp-fix baselines; its hardcoded R-9 asserts are
+# stale by design. Re-running requires re-pointing them to the
+# T-RH02 baselines. Its registered conclusions are annotated in
+# BACKTEST_MATRIX.
+
 import sys
 import numpy as np
 import pandas as pd

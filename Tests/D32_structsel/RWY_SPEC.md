@@ -39,3 +39,9 @@ REGISTER "5W-RWY" TRAINING-ONLY requires ALL on RWY[2,8]:
 sensitivity table must show the band is a plateau, not a knife-edge
 (F-20 discipline) - a lone-band result is reported as fragile
 regardless of (a)-(f). Registry: T-SR05.
+
+## POST-F-36 CORRECTION NOTE (2026-11-28)
+This spec's knowability reasoning predates the stamp defect found
+by T-RH01 (rea_zz/sqz comps were one bar early). Fixed at source;
+all numbers re-minted at T-RH02 (see BACKTEST_MATRIX and the
+REMINT_REPORT). The frozen design itself is unchanged.

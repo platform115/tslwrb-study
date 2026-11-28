@@ -51,3 +51,9 @@ REGISTER G3-1 TRAINING-ONLY requires ALL: (a) controls exact;
 is lower-energy per F-2 - this line forces the discussion either
 way per R-4); (f) no unflagged toxic family. Partial -> facts to
 J, J decides. Registry: T-EN116.
+
+## POST-F-36 CORRECTION NOTE (2026-11-28)
+This spec's knowability reasoning predates the stamp defect found
+by T-RH01 (rea_zz/sqz comps were one bar early). Fixed at source;
+all numbers re-minted at T-RH02 (see BACKTEST_MATRIX and the
+REMINT_REPORT). The frozen design itself is unchanged.

@@ -38,3 +38,9 @@ the simpler dial wins on parsimony and M8 is re-explained as a
 dial effect - G2-7/G2-8 would then be re-based on the simpler
 management (J gates). Either way the full dial table goes on
 record. Registry: T-MG29.
+
+## POST-F-36 CORRECTION NOTE (2026-11-28)
+This spec's knowability reasoning predates the stamp defect found
+by T-RH01 (rea_zz/sqz comps were one bar early). Fixed at source;
+all numbers re-minted at T-RH02 (see BACKTEST_MATRIX and the
+REMINT_REPORT). The frozen design itself is unchanged.

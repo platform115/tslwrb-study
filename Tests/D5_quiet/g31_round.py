@@ -453,7 +453,7 @@ def run_cell(tag, A=None):
     return pd.DataFrame(out)
 
 G26 = run_cell("full")
-if not (len(G26) == 6252 and abs(G26.pnl.sum() - 1659.0) < 0.1):
+if not (len(G26) == 6267 and abs(G26.pnl.sum() - 1667.1) < 0.1):
     print(f"# G31 ABORTED — SIM CONTROL {len(G26)}/"
           f"{G26.pnl.sum():+.1f}")
     sys.exit(1)

@@ -42,3 +42,9 @@ REGISTER AS QUALITY-VARIANT requires ALL: (a) controls exact;
 (b) per-trade >= +0.45 (~2x parent; forces the discussion per R-4);
 (c) pooled n >= 500; (d) all six months > 0; (e) no unflagged toxic
 family. Partial -> facts to J. Registry: T-EN117.
+
+## POST-F-36 CORRECTION NOTE (2026-11-28)
+This spec's knowability reasoning predates the stamp defect found
+by T-RH01 (rea_zz/sqz comps were one bar early). Fixed at source;
+all numbers re-minted at T-RH02 (see BACKTEST_MATRIX and the
+REMINT_REPORT). The frozen design itself is unchanged.

@@ -326,8 +326,8 @@ G26.to_parquet(f"{PARTS}/trades_full.parquet", index=False)
 
 # R-9 control
 fails = []
-for pair, (n_e, p_e) in {("2022-02", "2025-10"): (757, 325.1),
-                         ("2023-05", "2024-05"): (760, 158.1)}.items():
+for pair, (n_e, p_e) in {("2022-02", "2025-10"): (736, 343.4),
+                         ("2023-05", "2024-05"): (739, 158.0)}.items():
     sub = CTRL[CTRL.month.isin(pair)]
     if not (len(sub) == n_e and abs(sub.pnl.sum() - p_e) < 0.1):
         fails.append(f"CONTROL {pair}: {len(sub)}/"

@@ -56,3 +56,9 @@ ADOPT-AS-CANDIDATE on a line requires ALL there:
   full cell > +157.1; worst trade >= -2.1.
 Each line judged alone (M8 may fit one organism and not the other).
 Partial -> facts to J. Registry: T-MG28 (management family).
+
+## POST-F-36 CORRECTION NOTE (2026-11-28)
+This spec's knowability reasoning predates the stamp defect found
+by T-RH01 (rea_zz/sqz comps were one bar early). Fixed at source;
+all numbers re-minted at T-RH02 (see BACKTEST_MATRIX and the
+REMINT_REPORT). The frozen design itself is unchanged.

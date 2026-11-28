@@ -41,3 +41,9 @@ printed beside); extras net >= 0; no month negative by more than 10
 pts; per-family table free of unflagged toxicity. Partial outcomes
 (e.g. catch up, net down) -> REGISTER AS CATCH-VARIANT, J decides.
 Registry: T-EN115.
+
+## POST-F-36 CORRECTION NOTE (2026-11-28)
+This spec's knowability reasoning predates the stamp defect found
+by T-RH01 (rea_zz/sqz comps were one bar early). Fixed at source;
+all numbers re-minted at T-RH02 (see BACKTEST_MATRIX and the
+REMINT_REPORT). The frozen design itself is unchanged.

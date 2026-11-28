@@ -6,6 +6,12 @@ certified g26_round (T-EN115); the ONLY change is the time windows
 (quiet RTH spans instead of news windows). Resume-safe parts.
 RUN: python3 Tests/D5_quiet/g31_round.py   (repeat until REPORT)
 """
+# STALE-LINEAGE NOTE (2026-11-28, F-36/T-RH02): this CLOSED round
+# ran on pre-stamp-fix baselines; its hardcoded R-9 asserts are
+# stale by design. Re-running requires re-pointing them to the
+# T-RH02 baselines. Its registered conclusions are annotated in
+# BACKTEST_MATRIX.
+
 import os, sys, time
 import numpy as np
 import pandas as pd

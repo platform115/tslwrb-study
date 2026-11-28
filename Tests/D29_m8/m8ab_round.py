@@ -5,6 +5,12 @@ challenge). Spec: M8AB_SPEC.md (frozen first). Engine verbatim from
 m8g2_round (T-MG28).
 RUN: python3 Tests/D29_m8/m8ab_round.py > Tests/D29_m8/M8AB_REPORT.md
 """
+# STALE-LINEAGE NOTE (2026-11-28, F-36/T-RH02): this CLOSED round
+# ran on pre-stamp-fix baselines; its hardcoded R-9 asserts are
+# stale by design. Re-running requires re-pointing them to the
+# T-RH02 baselines. Its registered conclusions are annotated in
+# BACKTEST_MATRIX.
+
 import os, sys, time
 import numpy as np
 import pandas as pd

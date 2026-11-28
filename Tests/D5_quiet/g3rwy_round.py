@@ -337,13 +337,13 @@ def run_cell2(tag, A=None, band=None):
 
 fails = []
 B32 = run_cell2("quiet", A=1.5)
-if not (len(B32) == 23941 and abs(B32.pnl.sum() - 5727.8) < 0.1):
+if not (len(B32) == 24017 and abs(B32.pnl.sum() - 5973.1) < 0.1):
     fails.append(f"G3-2 base {len(B32)}/{B32.pnl.sum():+.1f}")
 B31 = run_cell2("quiet")
-if not (len(B31) == 19008 and abs(B31.pnl.sum() - 3689.4) < 0.1):
+if not (len(B31) == 19015 and abs(B31.pnl.sum() - 3767.8) < 0.1):
     fails.append(f"G3-1 base {len(B31)}/{B31.pnl.sum():+.1f}")
 B26 = run_cell2("full")
-if not (len(B26) == 6252 and abs(B26.pnl.sum() - 1659.0) < 0.1):
+if not (len(B26) == 6267 and abs(B26.pnl.sum() - 1667.1) < 0.1):
     fails.append(f"G2-6 base {len(B26)}/{B26.pnl.sum():+.1f}")
 if fails:
     print("# RWYV ABORTED — R-9 FAILED")

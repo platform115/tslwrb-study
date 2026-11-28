@@ -47,3 +47,9 @@ Monotone gradient + FINDING + pooled n >= 150 + per-trade >= +0.85
 follow-up specs, J gates. Null -> the structural surface is also
 flat and selection moves wholly to Part B's book read. Registry:
 T-SR04.
+
+## POST-F-36 CORRECTION NOTE (2026-11-28)
+This spec's knowability reasoning predates the stamp defect found
+by T-RH01 (rea_zz/sqz comps were one bar early). Fixed at source;
+all numbers re-minted at T-RH02 (see BACKTEST_MATRIX and the
+REMINT_REPORT). The frozen design itself is unchanged.
