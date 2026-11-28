@@ -162,8 +162,9 @@ tested it.
   first contract-roll month we own), and are being judged RIGHT NOW
   under a frozen plan (D8_SPEC): one look, no tuning, J gives every
   verdict, one system at a time.
-- First result: G2-4 made money in both new months (+277 total over
-  796 trades), strongest in the most recent regime. J has declared
-  it READY TO CODE INTO PINE when he chooses.
+- First results: G2-4 made money in both new months (+277 over 796
+  trades) and G2-6 did even better (+1,146 over 2,375 trades, above
+  its training quality). J has declared BOTH ready to code into
+  Pine when he chooses.
 - Still to come in this look: the other 14 saved systems, then (with
   the big depth data) the surgical line.

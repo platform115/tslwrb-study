@@ -9,7 +9,7 @@ Numbers -> BACKTEST_MATRIX. Open work -> D-/Q- ids below.
 | ACTIVE | Track 1 - replicate him | entries solved in training: catch 59/62 (windows) + 150/151 (quiet), intact through the F-36 stamp fix |
 | ACTIVE | Track 2 - standalone systems | G2-4 VALIDATED (re-minted, stands); per-trade leader 5W-RWY +0.93; RWY+3s stack +1.38 awaiting J |
 | LIVE | Governance | Rules R-1..R-13; Findings F-1..F-37; preflight gate; all baselines re-minted post-F-36 (T-RH02) |
-| UNDERWAY | The judge | D-8 RUNNING on 2022-05 + 2026-03 (spec FROZEN, Tests/D8_judgment/D8_SPEC.md): step 0 done, step 1 G2-4 PORT-READY per J; next 1b + G2-6 |
+| UNDERWAY | The judge | D-8 RUNNING on 2022-05 + 2026-03 (spec FROZEN): steps 0-2 done - G2-4 + G2-6 both PORT-READY (T-VL05/07), 1b data-limited null (T-VL06); next step 3 (G2-7, pair A) |
 
 ## TRADING SYSTEMS (generated from SYSTEMS_MATRIX - do not hand-edit)
 <!-- AUTOGEN:SYSTEMS (gen_overview_systems.py) -->

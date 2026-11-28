@@ -134,9 +134,9 @@ specs. Future validated pairs: G<group>-<n>.
 
 | Strategy 4A-v2 | 4A with the band set widened: squeeze cells W10/W30 q0.67 PLUS W20 q0.8, one deduped trigger stream | adopted on training (T-EN104) |
 | G2-3 | Strategy 4A-v2 d1.25 x M7 | TRAINING-VALIDATED ONLY - awaits the purchased months (2023-05, 2024-05). Corrected numbers under the fill-time engine (standard since T-EN108): +276.1 / 607 / catch 47 / extras +185.6. OUT-OF-SAMPLE (T-VL01): +144.4 (+137.6/+6.8), catch 50%; RE-REGISTERED AS TRACK-2 SYSTEM (J) - standalone earner, not a replication claim |
-| G2-4 | Strategy 4A-v2 d1.25 two-lane (first-break + retest X1.0 pb0.75) x M7 | VALIDATED - re-minted under fixed stamps (T-RH02): training 2064/+569.4, OOS pair +158.0 (was +158.1) - the validation stands; catch 47/62. The D-4 port target |
+| G2-4 | Strategy 4A-v2 d1.25 two-lane (first-break + retest X1.0 pb0.75) x M7 | VALIDATED, J: PORT-READY (2026-11-28) - OOS 4/4 months positive: +158.0 (T-VL02) + +276.8 (T-VL05, D-8); catch 46/61 post-fix (T-RH03). The D-4 port target |
 | Strategy 4A-v3 | 4A-v2 with trigger edge-sources widened from {SQZ, W20} to the full price-computable vocabulary: + GAP, SHD, REA (resolver), 5m/15m WRB body edges, prior-day RTH H/L/C. Dedupe key unchanged - stacked structures dedupe together | adopted on training (T-EN115) |
-| G2-6 | Strategy 4A-v3 d1.25 two-lane x M7 | TRAINING-ONLY, Tier-P (re-minted T-RH02): 6267/+1667.1, per-trade +0.27, catch 59/62. Judge = D-8 |
+| G2-6 | Strategy 4A-v3 d1.25 two-lane x M7 | VALIDATED, J: PORT-READY (2026-11-28, T-VL07) - D-8 PASS 2375/+1146.4 at +0.48 (above training +0.27), catch 51/60; training 6267/+1667.1, catch 58/61 post-fix |
 | G2-7 | Strategy 4A-v2 d1.25 two-lane x M9 (constant trail-arm) | TRAINING-ONLY, Tier-P (re-minted T-RH02): 2301/+786.0, per-trade +0.34. Controlled-pair A. Judge = D-8 stage 1 |
 | G2-8 | Strategy 4A-v3 d1.25 two-lane x M8 (structure-armed) | TRAINING-ONLY, Tier-P (re-minted T-RH02): 8329/+2539.9, per-trade +0.30. Pair-B twin; M9 ahead post-fix. Judge = D-8 stage 1 |
 | G2-9 | Strategy 4A-v2 d1.25 two-lane x M8 (structure-armed) | TRAINING-ONLY, Tier-P (re-minted T-RH02): 2317/+754.5, per-trade +0.33. Pair-A twin; M9 ahead post-fix. Judge = D-8 stage 1 |
@@ -161,3 +161,5 @@ specs. Future validated pairs: G<group>-<n>.
 | report card | The fixed per-system report shape of the D-8 judgment (D8_SPEC): n, net, per-trade, win rate, profit factor, max drawdown (points, 1 contract), longest losing streak, top-3-day concentration, month split, catch where applicable | convention frozen in D8_SPEC (J, 2026-11-28); every D-8 step reports this shape |
 | blind level lists | The MDL level lists for the D-8 months generated from market structure only (lf lineage: s4 objects + WRB bodies + prior-day marks) and COMMITTED before any comparison against his stated zones; judged at step 1b | pre-registered 2026-11-28 (d8_prep.py); the blind-prediction arm of Track 1 |
 | daily breakdown report | Per-month day-by-day table printed with every D-8 report card: trades, day P/L, wins, full stops, running P/L | named by J 2026-11-28 (the what-it-felt-like view); part of the D-8 reporting shape |
+| PORT-READY | J's verdict tag on a VALIDATED system cleared for the D-4 Pine port (not a status - the closed status vocabulary is unchanged) | first used 2026-11-28 (G2-4, G2-6) |
+| ex-roll | A number recomputed excluding trades on roll SESSIONS (F-40: the certified convention keeps them; D-8 cards show both) | named at F-40, 2026-11-28 |
