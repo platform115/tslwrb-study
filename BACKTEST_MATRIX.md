@@ -626,3 +626,22 @@ stale baseline; vs the corrected +0.93 the stack is clearly above.
 FACTS TO J: registration shape (e.g. 5W-RWY-3S as a Tier-R candidate
 at 58 trades/+1.38) is his gate; n is small and the F-11 haircut
 applies twice over.
+
+## T-SA02 — S5-LINE + LEVEL-DETECTOR CONSTANTS RANGES (2026-11-28)
+Spec: Tests/D33_r4/CR_SPEC.md (frozen first, R-12a component map).
+Center controls exact (builder 1541/1264; sim 750/+472.1). 31 cells,
+15 dials, one at a time. NOTHING adopted (T-SA01 law).
+HEADLINE: NO KNIFE-EDGES - every one of the 31 cells is profitable
+in BOTH months. 11/15 dials ROBUST, 4 SENSITIVE:
+- offset (entry distance): farther entries lose edge (+1.00 -> +388.4)
+- level-spacing, lvl-tolerance, lvl-window: ALL universe-defining
+  dials - they change HOW MANY situations exist (spacing-300: 1027
+  trades/+613.8 at ~same per-trade) or level quality (window 45/75
+  both drop per-trade to ~+0.45 - the 60-day window is load-bearing).
+PATTERN (F-38): every trade-management dial is FLAT; sensitivity
+lives ONLY in the dials that define the universe - same shape as
+F-20's dedupe-300 on the combo line. lvl-kill is inert in range.
+AFTER-D-8 list (recorded, NOT adopted): touch-0.75 (+0.73/trade),
+spacing-300 (+613.8 pooled). D-8 reading key per R-13: a fresh-month
+failure tracing to offset/spacing/tolerance/window = adapter
+candidate; tracing to any flat dial = mechanism question.
