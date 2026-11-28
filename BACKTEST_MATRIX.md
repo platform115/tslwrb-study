@@ -605,3 +605,24 @@ still mechanism-negative (-24.6 twin, both months), flow-conditioned
 reclaim still negative (-18.4), and F-31's two FINDINGs reproduce
 (time-to-reclaim and prior-MFE at BH p~0, both-direction). F-30/F-31
 stand unmodified. Reports: FB_REPORT_v2.md, RA_REPORT_v2.md.
+
+## T-SR06 — PART B: THE 3s BOOK READ, FULL UNIVERSE + RWY STACK (2026-11-28)
+Spec: PARTB_SPEC.md (frozen first). Extraction cert bit-exact (691x4,
+0 mismatch); coverage 1264/1264 (the old pipeline had 693); controls
+exact incl. the post-F-36 RWY baseline; T2 carried frozen.
+| cell | n | per-trade | pooled | months |
+|---|---|---|---|---|
+| 5W-ANY | 750 | +0.63 | +472.1 | +195/+278 |
+| 5W-ACTIVE | 365 | +0.58 | +213.4 | +70/+144 |
+| RWY-ANY | 109 | +0.93 | +101.6 | +49/+52 |
+| RWY-ACTIVE | 58 | +1.38 | +79.9 | +39/+40 |
+TWO RESULTS: (1) on the FULL universe the 3s read FAILS its line
+(+0.58 < +0.63) - T-SR01's covered-693 lift does not generalize; the
+book read alone is not a selector. (2) STACKED ON RWY it adds +0.45/
+trade (+0.93 -> +1.38, months balanced) - structure gate and book
+read select COMPLEMENTARY information (the spec's redundancy question
+answered: not redundant). The pre-F-36 frozen line (+1.54) fails on a
+stale baseline; vs the corrected +0.93 the stack is clearly above.
+FACTS TO J: registration shape (e.g. 5W-RWY-3S as a Tier-R candidate
+at 58 trades/+1.38) is his gate; n is small and the F-11 haircut
+applies twice over.
