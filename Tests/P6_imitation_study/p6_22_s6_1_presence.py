@@ -4,7 +4,9 @@ p6_22_s6_1_presence.py — S6.1: STRUCTURE PRESENCE AT HIS ENTRIES. (T-IM29.)
 ===============================================================================
 For each of his first entries in 2025-10: the resolver state at the ENTRY
 SECOND (anchor = per-second mid, 1-second mandate; structures from bars
-completed by that second — harness-passed in S6.0). Null: for each entry,
+completed by that second — harness-passed in S6.0; STAMP FIX 2026-11-28
+(T-RH01): rea_zz and sqz comps moved from closing-bar OPEN to CLOSE,
+removing a bounded <=59s early-visibility defect). Null: for each entry,
 20 ambient seconds drawn from OTHER sessions of the month within +/-30 min
 of the entry's time of day (session type matched).
 
@@ -81,11 +83,11 @@ class Resolver:
                 if mode >= 0:
                     if hh[i] > ext: ext = hh[i]
                     if ext - ll[i] >= rev:
-                        out.append(dict(side="high", px=ext, comp=gts[i])); mode = -1; ext_l = ll[i]
+                        out.append(dict(side="high", px=ext, comp=gts[i] + np.timedelta64(60, "s"))); mode = -1; ext_l = ll[i]
                 if mode <= 0:
                     if ll[i] < ext_l: ext_l = ll[i]
                     if hh[i] - ext_l >= rev:
-                        out.append(dict(side="low", px=ext_l, comp=gts[i])); mode = 1; ext = hh[i]
+                        out.append(dict(side="low", px=ext_l, comp=gts[i] + np.timedelta64(60, "s"))); mode = 1; ext = hh[i]
         elif fam.startswith("sqz"):
             W = 10 if fam == "sqz10" else 30
             eps, hh, ll = episodes_c2(g, W, 0.67)
@@ -94,7 +96,7 @@ class Resolver:
                 if e + 1 >= len(gts): continue
                 a0 = max(0, a - W + 1)
                 out.append(dict(lo=float(ll[a0:e+1].min()), hi=float(hh[a0:e+1].max()),
-                                comp=gts[e + 1]))
+                                comp=gts[e + 1] + np.timedelta64(60, "s")))
         self.cache[key] = out
         return out
 

@@ -92,7 +92,11 @@ def edges_trunc(mo, sd0, t, di):
     bm_t = b[(b.ts_event >= f"{mo}-01") & (b.ts_event < nxt)
              & (b.tsec + 60 <= t)].reset_index(drop=True)
     R_t = Resolver(bm_t, zr)
-    wrb_t = build_wrb(bm_t[~bm_t.is_roll_day])
+    # WRB truncation: production parity needs the session's FULL bar
+    # set (incl. overnight prefix), truncated at t - only sd0 matters
+    # for the comparison (v1's month-frame cut was a harness artifact)
+    wrb_t = build_wrb(b[(~b.is_roll_day) & (b.sd == sd0)
+                        & (b.tsec + 60 <= t)])
     # prior-day aggregates from sessions strictly before t's session
     bprior = b[(~b.is_roll_day) & (b.sd < sd0)
                & b.session.eq("RTH")]

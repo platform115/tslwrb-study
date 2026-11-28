@@ -558,3 +558,20 @@ band episodes) can depend on later bars. If confirmed, comp-gating is
 NOT sufficient for live knowability, and the scope question extends
 beyond FL-RWY to the EN-02 trigger edges themselves (same machinery) -
 to be settled by the anatomy, not assumed.
+
+## T-RH01 ANATOMY + FIX (2026-11-28) — amends the FAIL entry above
+ALL 14 mismatches explained: 2 = harness-side artifact (WRB truncated
+at the month frame, losing the session's overnight prefix - fixed in
+harness v3); 12 = ONE production defect class: rea_zz pivots and sqz
+episodes stamped their birth at the closing bar's OPEN instead of its
+CLOSE - every such structure visible up to 59s early. gap/shd/rea_sw
+families clean (0/240). FIX: comps moved to bar close in p6_22
+(+60s), one commit. HARNESS v3 ON FIXED CODE: 0/240 production-vs-
+truncated mismatches, poison arm 28/60 - the fixed path is R-1 CLEAN.
+IMPACT (first measurement): 10/150 sampled touch runway values change
+under fixed stamps (6.7%). CONSEQUENCE: every resolver-fed baseline
+(all G2-x, G3-x, RWY cells, M8, S5-MF) is STALE and must be re-minted
+on fixed stamps - including G2-4's validation numbers (EN-01 reads
+SQZ via the same path). NOT affected: EN-03's touch universe, multi-
+day levels, MP-7/9/10 mechanics, OFI exits - 5W/Strategy 5 numbers
+stand. Integrity-holds REMAIN until the re-mint lands.
