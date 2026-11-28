@@ -659,3 +659,15 @@ other 16); 91/334 full stops; worst day 05-19 (-30.2, 12 stops).
 2026-03 (most-current regime): strong on every line.
 J VERDICT (2026-11-28): G2-4 is PORT-READY for the D-4 Pine port.
 Best-days concentration flagged -> D-34 (Track 2, after D-8).
+
+## T-RH03 — HIS-SIDE LABEL RE-MINT UNDER FIXED STAMPS (2026-11-28; F-39)
+a2_features' labels predate F-36; J approved the re-mint at the D-8
+step-1 gate. Labels re-derived post-fix (control pinned: 307 fresh,
+exactly 5 ctx flips, 0 np_ flips) and banked
+(Data/inputs/his_groups_postfix.parquet). All six catch-carrying
+systems re-simulated; R-9 exact on every cell (n, net, AND pre-fix
+catch) before the new numbers were read. References of record now:
+G2 group n=61, G3 n=149; G2-4 46/61, G2-6 58/61, G3-1 148/149,
+G3-2 148/149, G3-3 88/149, G3-4 81/149. Catch rates essentially
+unchanged (the predicted ~1-2% label noise). Training months only -
+no quarantined data touched (R-11: nothing new spent).
