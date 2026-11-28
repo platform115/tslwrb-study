@@ -21,7 +21,8 @@
   numbers (R-9 control) before any result is read. Abort on any
   control miss.
 - Specs are frozen and committed BEFORE runs (Rule 2 / R-5), with
-  R-11 MONTHS-SPEND and R-12 FINDINGS-SWEEP sections.
+  R-11 MONTHS-SPEND, R-12 FINDINGS-SWEEP, and R-12a COMPONENT MAP
+  sections.
 - Raw data is never modified (Rule 1). Uncertainty is flagged to J,
   never resolved silently (R-3). Verdict wording: facts to J at
   every gate; J decides adoptions, namings, and track calls.

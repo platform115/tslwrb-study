@@ -67,6 +67,10 @@ R-1a TWO-TIER EVIDENCE (Q-1, J approved 2026-11-28): screening
     that advances to registration or a frozen verdict must be
     confirmed on per-second data. The truncation harness enforces
     both tiers.
+R-12a COMPONENT MAP (J directed 2026-11-28): every spec includes a
+    COMPONENT MAP table - component | what it is | its dials/inputs
+    touched by this test - so each test states exactly which parts
+    of which systems it touches, before freezing.
 R-13 FAILURE AUTOPSY (J directed 2026-11-27, generalizing his D-8
     adapter flag): whenever ANY entry strategy, entry component,
     selector, or exit management fails on brand-new data, the
@@ -592,3 +596,4 @@ to me. Do not start new research in this sweep.
 - 2026-11-28: T-SR06 closed - Part B complete end-to-end. The 3s read does NOT generalize to the full touch universe (+0.58 vs +0.63) but STACKS on RWY (+0.93 -> +1.38 on 58 trades, balanced months). Registration = J's gate. D-30 fully closed.
 - 2026-11-28: J's decisions executed: 5W-RWY-3S REGISTERED (T-SR06 stack, +1.38/58, Tier-R TRAINING-ONLY); Q-1 R-1a landed; Q-2 CURRENT_STATE docs archived; Q-3 G2-1/G2-2 DORMANT (superseded); Q-4 Strategy 2A SUPERSEDED by G2-4 for the Pine plan. Q register cleared. Clarification logged: G3-3's 'drop' = the stamp-fix re-measure (+1944->+1412), not a status change - it remains TRAINING-ONLY and a refinement candidate.
 - 2026-11-28: PROCESS SLIP logged: the Q-decisions commit landed while preflight was RED (taxonomy regex didn't know 5W-RWY-3S) because my shell pipeline masked the exit code. Fixed next commit (regex + this note). Standing discipline: preflight runs as its own command in gating positions, never piped. The gate itself worked - the slip was in how I invoked it.
+- 2026-11-28: R-12a landed per J (component map mandatory in every spec). T-SA02 (D-33 R4) spec next: S5-line + shared-level-detector constants ranges; T-SA01 verified NOT to have covered the level detector - its dials join this round; T-SA01's ROBUST/SENSITIVE/KNIFE-EDGE convention reused verbatim.
