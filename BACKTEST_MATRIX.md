@@ -671,3 +671,13 @@ G2 group n=61, G3 n=149; G2-4 46/61, G2-6 58/61, G3-1 148/149,
 G3-2 148/149, G3-3 88/149, G3-4 81/149. Catch rates essentially
 unchanged (the predicted ~1-2% label noise). Training months only -
 no quarantined data touched (R-11: nothing new spent).
+
+## T-VL06 — D-8 STEP 1b: BLIND LEVEL PREDICTION (2026-11-28)
+Lists committed before comparison (d8_prep 0a; recomputation control
+PASS). Target too thin: his archive carries typed prices on only
+10+2 ES zone refs in the D-8 months (vs 171+138 mentions); training
+months equally thin (0-3). Result 0/12 hits at TOL 2.0 vs ~2.2
+expected by chance - UNINFORMATIVE. J verdict: data-limited null,
+closed; powered variants = D-35 (vs verified entry prices), D-36
+(resolve mention-time structure prices), both after D-8. Confirms
+D-20's sparse-stated-price note from a second angle.

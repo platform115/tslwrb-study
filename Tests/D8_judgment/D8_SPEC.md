@@ -79,6 +79,21 @@ month split is a coin flip - read their reports on per-trade
 quality (reference: half the training per-trade, the F-11
 haircut allowance), with the month split shown for context.
 
+## J AMENDMENTS (2026-11-28, at the 1b gate - reporting only, no
+line or dial moved)
+1. Every step ALSO outputs the DAILY BREAKDOWN REPORT: per month, a
+   day-by-day table (trades, day P/L, wins, full stops, running
+   P/L) - the "what it felt like" view.
+2. Every report card carries HIS reference rows: his verified
+   trades in the month (all, and the system's group) - n, net
+   points, per-trade. CAVEAT stated once: his P&L is per HIS
+   scaling and holds; ours is 1-contract fill-time - context, not
+   like-for-like comparison.
+3. Step 1b CLOSED as a data-limited null (12 typed-price refs,
+   0 hits vs ~2 chance; T-VL06). Variants queued with governance:
+   D-35 (blind levels vs his verified entry prices), D-36 (resolve
+   price-less zone mentions to structure prices) - both AFTER D-8.
+
 ## REPORT CARD (every system, every step - one fixed shape)
 Per month and pooled, always beside the training reference row:
 - n trades, net points, per-trade mean (expectancy)
