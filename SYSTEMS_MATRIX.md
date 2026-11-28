@@ -50,22 +50,22 @@ M12/M13/M15 rejected, M14a-d campaign outcomes.
 | G2-1 | EN-06 x FL-WIN x MP-7 | P | TRAINING-ONLY | legacy engine; B5-passed 2024-11 | Q-3 pending |
 | G2-2 | EN-06 x FL-WIN x MP-7 | P | TRAINING-ONLY | legacy engine | Q-3 pending |
 | G2-3 | EN-05 x FL-WIN x MP-7 | P | DORMANT | OOS +144.4 but claim failed; dominated | kept on record |
-| G2-4 | EN-01 x FL-WIN x MP-7 | P | VALIDATED | OOS PASS +158.1 - the D-4 port target | done (extend at D-8) |
+| G2-4 | EN-01 x FL-WIN x MP-7 | P | VALIDATED | OOS PASS +158.0 re-minted (T-RH02) - the D-4 port target | done (extend at D-8) |
 | G2-5 | EN-05 x FL-WIN x FL-CAD x MP-7 | P | DORMANT | OOS +38.9; dominated | kept on record |
-| G2-6 | EN-02 x FL-WIN x MP-7 | P | TRAINING-ONLY | 6252/+1659.0, catch 59/62 | D-8 stage 1 |
-| G2-7 | EN-01 x FL-WIN x MP-9 | P | TRAINING-ONLY | 2370/+858.1, twin +173.4 | D-8 stage 1 |
-| G2-8 | EN-02 x FL-WIN x MP-8 | P | TRAINING-ONLY | 8383/+2670.0, twin +165.2 | D-8 stage 1 |
-| G2-9 | EN-01 x FL-WIN x MP-8 | P | TRAINING-ONLY | 2400/+824.8, twin +143.6 | D-8 stage 1 |
-| G2-10 | EN-02 x FL-WIN x MP-9 | P | TRAINING-ONLY | 8153/+2644.0, twin +139.5 | D-8 stage 1 |
-| G2-11 | EN-02 x FL-WIN x FL-RWY x MP-7 | P | TRAINING-ONLY | 1212/+627.2 at +0.52 | D-8 stage 1 |
-| G3-1 | EN-02 x FL-QT x MP-7 | P | TRAINING-ONLY | 19008/+3689.4, catch 150/151 | D-8 stage 1 |
-| G3-2 | EN-02 x FL-QT x MP-9 | P | TRAINING-ONLY | 23941/+5727.8 at +0.24 | D-8 stage 1 |
-| G3-3 | EN-02 x FL-QT x FL-RWY x MP-9 | P | TRAINING-ONLY | 3843/+1944.4 at +0.51 | D-8 stage 1 |
-| G3-4 | EN-02 x FL-QT x FL-RWY x MP-7 | P | TRAINING-ONLY | 3159/+1186.4 at +0.38 | D-8 stage 1 |
+| G2-6 | EN-02 x FL-WIN x MP-7 | P | TRAINING-ONLY | 6267/+1667.1, catch 59/62 | D-8 stage 1 |
+| G2-7 | EN-01 x FL-WIN x MP-9 | P | TRAINING-ONLY | 2301/+786.0, M9 pair-A | D-8 stage 1 |
+| G2-8 | EN-02 x FL-WIN x MP-8 | P | TRAINING-ONLY | 8329/+2539.9, M8 pair-B twin | D-8 stage 1 |
+| G2-9 | EN-01 x FL-WIN x MP-8 | P | TRAINING-ONLY | 2317/+754.5, M8 pair-A twin | D-8 stage 1 |
+| G2-10 | EN-02 x FL-WIN x MP-9 | P | TRAINING-ONLY | 8191/+2698.9, M9 pair-B | D-8 stage 1 |
+| G2-11 | EN-02 x FL-WIN x FL-RWY x MP-7 | P | TRAINING-ONLY | 1235/+350.8 at +0.28 (kept per J) | D-8 stage 1 |
+| G3-1 | EN-02 x FL-QT x MP-7 | P | TRAINING-ONLY | 19015/+3767.8, catch 150/151 | D-8 stage 1 |
+| G3-2 | EN-02 x FL-QT x MP-9 | P | TRAINING-ONLY | 24017/+5973.1 at +0.25 | D-8 stage 1 |
+| G3-3 | EN-02 x FL-QT x FL-RWY x MP-9 | P | TRAINING-ONLY | 3924/+1411.9 at +0.36 | D-8 stage 1 |
+| G3-4 | EN-02 x FL-QT x FL-RWY x MP-7 | P | TRAINING-ONLY | 3236/+765.5 at +0.24 (kept per J) | D-8 stage 1 |
 | Strategy 5 | EN-03 x FL-ALL x FL-3S x MP-10 | R | TRAINING-ONLY | 198/+119.6 at +0.60 (covered-touch scope) | D-8 stage 2 |
 | Strategy 5W | EN-03 x FL-ALL x MP-10 | R | TRAINING-ONLY | covered 422/+216.5; full-RTH 750/+472.1 at +0.63 | D-8 stage 2 |
-| 5W-RWY | EN-03 x FL-ALL x FL-RWY x MP-10 | R | TRAINING-ONLY | 102/+157.1 at +1.54 - per-trade leader | D-8 stage 2 |
-| S5-MF | EN-04 x FL-ALL x MP-10 | R | TRAINING-ONLY | 4369/+1985.6 at +0.45 | D-8 stage 2 |
+| 5W-RWY | EN-03 x FL-ALL x FL-RWY x MP-10 | R | TRAINING-ONLY | 109/+101.6 at +0.93 - per-trade leader (F-37) | D-8 stage 2 |
+| S5-MF | EN-04 x FL-ALL x MP-10 | R | TRAINING-ONLY | 4396/+2026.5 at +0.46 | D-8 stage 2 |
 PRE-SPLIT LEGACY (no formulas; predate the component split): the
 Strategy 1 / 2A / 3A-3D / 4A generation - see GLOSSARY.
 

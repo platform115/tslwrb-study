@@ -56,51 +56,51 @@ against THIS list, never against memory.
 | Tests/06_trade_flow_exhaustion_CANDIDATE/06-10_whg_fill/whg_5m_2025-10.parquet | 6,324 | ts_event, symbol, instrument_id, open, high, low, close, volume, is_roll_day, session, session_date, is_wrb, ... | NONE |
 | Tests/06_trade_flow_exhaustion_CANDIDATE/06-4_relabel/behavioral_relabel_2025-10.parquet | 92 | uid, side, first_entry_utc, last_exit_utc, group, realized_pnl, is_loser, failure_tag, hold, pt1_open_el | build_behavioral_relabel.py, reorganize_06.py |
 | Tests/06_trade_flow_exhaustion_CANDIDATE/wrb_1m.parquet | 106,003 | ts_event, session_date, symbol, timeframe, open, high, low, close, volume, body_size, prior_body_max, direction, ... | book_points_against_trade.py, buggy.py, build_behavioral_relabel.py, build_whg_series.py, continuous_outcome.py, describe_window_sparsity.py, efficiency_ratio.py, exit_reversal.py, exit_velocity.py, fav_net_vel_confirm.py, favorable_aggression_all_winners_included.py, favorable_aggression_cut_time_matched.py, favorable_aggression_matched_time.py, forward_battery.py, forward_sweep.py, gap_traverse_distribution.py, give_back.py, impact.py, intensity.py, m11_study.py, m4_round.py, m4b_followup.py, mae_reproduction_engine.py, mdl_build.py, p4_0_scoping.py, p4_10_direction.py, p4_12_variants_search.py, p4_22_profit_test.py, p4_28_profit_v7.py, p4_2_entry_context.py, p4_35_selection_alignment.py, p4_36_mode_discovery.py, p4_3_confluence_news.py, p4_3b_signal_table.py, p4_5a_taken_anatomy.py, p4_6_template.py, p4_9b_score_v3.py, probe_whg_arrival.py, queue_imbalance_slope.py, range_expansion.py, refill_resiliency.py, reorganize_06.py, reorganize_stall_vs_reach.py, s1_baseline_velocity.py, s2_directional_velocity.py, s3_time_to_ticks.py, s3b_atr5_variant.py, s4_speed_profile.py, s4b_boundary_sweep.py, s6_impulse_grind.py, s6b_burst_timing.py, sign_persistence.py, sign_persistence_dfa.py, speed_leads_robustness.py, stagnation.py, structure_family.py, test_06-6_mae_reproduction.py, test_07a_impact.py, test_07b_impact.py, test_08_bar_compression.py, test_behavioral_baseline.py, test_combined_ladder.py, test_combined_union.py, test_gap_capture_v2.py, test_pnl_magnitude.py, test_range_compression.py, test_signal_redundancy.py, test_vwap_baseline.py, test_vwap_rolling_sweep.py, test_vwap_sigma_bands.py, test_vwap_z_vs_s1.py, test_vx_level_entry.py, test_whg_fill_hazard.py, test_wrb_progress_A.py, test_wrb_progress_A_trunccheck.py, test_wrb_progress_B_hazard.py, trade_flow_confirmation.py, trade_flow_exhaustion.py, trade_flow_exhaustion_round2.py, variance_ratio.py, velocity_acceleration.py, velocity_ratio_confirm.py, velocity_ratio_sweep.py, wrb_fade_backtest.py |
-| Tests/D11_unmatched/parts/cand_ctrl_2021-09.parquet | 627 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_ctrl_2022-02.parquet | 1,071 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_ctrl_2023-05.parquet | 958 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_ctrl_2024-05.parquet | 1,055 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_ctrl_2024-11.parquet | 988 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_ctrl_2025-10.parquet | 1,198 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_full_2021-09.parquet | 7,196 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_full_2022-02.parquet | 13,587 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_full_2023-05.parquet | 9,920 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_full_2024-05.parquet | 9,645 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_full_2024-11.parquet | 10,456 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/cand_full_2025-10.parquet | 15,256 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts/trades_ctrl.parquet | 2,126 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
-| Tests/D11_unmatched/parts/trades_full.parquet | 6,252 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
-| Tests/D11_unmatched/parts_v2/cand_ctrl_2021-09.parquet | 594 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_ctrl_2022-02.parquet | 1,033 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_ctrl_2023-05.parquet | 938 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_ctrl_2024-05.parquet | 1,025 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_ctrl_2024-11.parquet | 978 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_ctrl_2025-10.parquet | 1,177 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_full_2021-09.parquet | 7,278 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_full_2022-02.parquet | 13,942 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_full_2023-05.parquet | 9,954 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_full_2024-05.parquet | 9,722 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_full_2024-11.parquet | 10,493 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/cand_full_2025-10.parquet | 15,366 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D11_unmatched/parts_v2/trades_ctrl.parquet | 2,064 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
-| Tests/D11_unmatched/parts_v2/trades_full.parquet | 6,267 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
+| Tests/D11_unmatched/parts/cand_ctrl_2021-09.parquet | 594 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_ctrl_2022-02.parquet | 1,033 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_ctrl_2023-05.parquet | 938 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_ctrl_2024-05.parquet | 1,025 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_ctrl_2024-11.parquet | 978 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_ctrl_2025-10.parquet | 1,177 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_full_2021-09.parquet | 7,278 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_full_2022-02.parquet | 13,942 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_full_2023-05.parquet | 9,954 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_full_2024-05.parquet | 9,722 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_full_2024-11.parquet | 10,493 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/cand_full_2025-10.parquet | 15,366 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts/trades_ctrl.parquet | 2,064 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
+| Tests/D11_unmatched/parts/trades_full.parquet | 6,267 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
+| Tests/D11_unmatched/parts_oldstamps/cand_ctrl_2021-09.parquet | 627 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_ctrl_2022-02.parquet | 1,071 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_ctrl_2023-05.parquet | 958 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_ctrl_2024-05.parquet | 1,055 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_ctrl_2024-11.parquet | 988 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_ctrl_2025-10.parquet | 1,198 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_full_2021-09.parquet | 7,196 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_full_2022-02.parquet | 13,587 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_full_2023-05.parquet | 9,920 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_full_2024-05.parquet | 9,645 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_full_2024-11.parquet | 10,456 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/cand_full_2025-10.parquet | 15,256 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D11_unmatched/parts_oldstamps/trades_ctrl.parquet | 2,126 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
+| Tests/D11_unmatched/parts_oldstamps/trades_full.parquet | 6,252 | month, tf, d, pnl, fam | g26_remint_gen.py, g26_round.py |
 | Tests/D30_s5mf/trades_5w_fullrth.parquet | 750 | month, tt, tf, d, pnl, exit, level, mins_rel, hr, score, first, speed60, ... | lvlr_round.py, ssel_round.py |
 | Tests/D30_s5mf/trades_s1any_covered.parquet | 422 | month, tf, d, pnl, exit, tt, level, fam | lvlr_round.py |
 | Tests/D30_s5mf/trades_s5mf.parquet | 4,369 | month, tf, d, pnl, exit, tt, level, fam | lvlr_round.py |
 | Tests/D32_structsel/trades_5w_rwy.parquet | 109 | month, tf, d, pnl, exit, fam | rwy_round.py |
 | Tests/D32_structsel/trades_5w_struct.parquet | 750 | month, tt, tf, d, pnl, exit, level, mins_rel, hr, score, first, speed60, ... | ssel_round.py |
-| Tests/D5_quiet/parts/cand_quiet_2021-09.parquet | 17,761 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts/cand_quiet_2022-02.parquet | 39,217 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts/cand_quiet_2023-05.parquet | 23,481 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts/cand_quiet_2024-05.parquet | 20,238 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts/cand_quiet_2024-11.parquet | 23,341 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts/cand_quiet_2025-10.parquet | 33,778 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts_v2/cand_quiet_2021-09.parquet | 17,845 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts_v2/cand_quiet_2022-02.parquet | 39,961 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts_v2/cand_quiet_2023-05.parquet | 23,553 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts_v2/cand_quiet_2024-05.parquet | 20,285 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts_v2/cand_quiet_2024-11.parquet | 23,379 | sd, tf, d, e, jf, fam | NONE |
-| Tests/D5_quiet/parts_v2/cand_quiet_2025-10.parquet | 34,004 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts/cand_quiet_2021-09.parquet | 17,845 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts/cand_quiet_2022-02.parquet | 39,961 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts/cand_quiet_2023-05.parquet | 23,553 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts/cand_quiet_2024-05.parquet | 20,285 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts/cand_quiet_2024-11.parquet | 23,379 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts/cand_quiet_2025-10.parquet | 34,004 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts_oldstamps/cand_quiet_2021-09.parquet | 17,761 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts_oldstamps/cand_quiet_2022-02.parquet | 39,217 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts_oldstamps/cand_quiet_2023-05.parquet | 23,481 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts_oldstamps/cand_quiet_2024-05.parquet | 20,238 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts_oldstamps/cand_quiet_2024-11.parquet | 23,341 | sd, tf, d, e, jf, fam | NONE |
+| Tests/D5_quiet/parts_oldstamps/cand_quiet_2025-10.parquet | 33,778 | sd, tf, d, e, jf, fam | NONE |
 | Tests/P4_entry_determination/p4_2_entry_context.parquet | 313 | month, uid, side, entry, price, wrb_same_min, wrb_same_dist_tk, wrb_any_min, wrb_any_dist_tk, z1m_status, z1m_fill, z1m_dist_tk, ... | p4_10_direction.py, p4_11_search.py, p4_12_variants_search.py, p4_17_chat_alignment.py, p4_19_v6_freeze.py, p4_20_validation.py, p4_22_profit_test.py, p4_23_profit_v2.py, p4_24_profit_v3.py, p4_25_profit_v4.py, p4_26_profit_v5.py, p4_27_profit_v6.py, p4_28_profit_v7.py, p4_29_selection.py, p4_2_entry_context.py, p4_2b_zone_mtf.py, p4_30_profit_v8.py, p4_31_profit_v9.py, p4_32_his_entries_v9_exits.py, p4_33_losscuts.py, p4_34_flowtraction.py, p4_35_selection_alignment.py, p4_36_mode_discovery.py, p4_37_fade_mode.py, p4_38_group_stats.py, p4_39_modeB_gate.py, p4_3_confluence_news.py, p4_3b_signal_table.py, p4_41_profit_v10.py, p4_42_v10_oos.py, p4_43_exit_sharpen.py, p4_44_v11_oos.py, p4_45_v11_breakdown.py, p4_46_doublefail.py, p4_47_his_behavior_doublefail.py, p4_49_sec_engine.py, p4_4_probes.py, p4_50_his_overlap.py, p4_51_kme_levels.py, p4_52_return_tests.py, p4_53_anchor_sweep.py, p4_54_unexplained_autopsy.py, p4_55_level_entry.py, p4_56_entry_second.py, p4_57_trigger_catch.py, p4_58_entry_census.py, p4_59_selection.py, p4_5a_taken_anatomy.py, p4_60_drawing_board.py, p4_61_hot_detectors.py, p4_62_selection_on_fires.py, p4_63_d4_frontier.py, p4_64_oos_gates.py, p4_65_all_detectors_pnl.py, p4_66_context_ablation.py, p4_67_trigger_grid.py, p4_68_adaptive.py, p4_69_adaptation_plan.py, p4_6_template.py, p4_70_derive_window.py, p4_72_validation_run.py, p4_73_thrust_window.py, p4_74_derive_thrust_window.py, p4_75_rolling_window.py, p4_76_validation_batch2.py, p4_77_cooldown.py, p4_78_gap_cooldown.py, p4_79_derive_gap.py, p4_7_trailing_flow.py, p4_80_validation_batch3.py, p4_81_session_window.py, p4_82_eth_test.py, p4_83_signal_reaudit.py, p4_84_shares.py, p4_85_burst_share_derivation.py, p4_86_atr_lane_adapt.py, p4_88_atr_memory.py, p4_89_cn_adaptive.py, p4_90_intraday_memory.py, p4_91_trail_pct.py, p4_92_thrust_lookahead_audit.py, p4_93_strategy1_audit.py, p4_9_refine.py, p4_9b_score_v3.py, p5_10_stall_stack_dials.py, p5_11_m1_eth.py, p5_12_m1_validation.py, p5_13_mg1_dissection.py, p5_14_mg2_candidates.py, p5_15_mg2b.py, p5_16_mg3_validation.py, p5_17_mg3b_adaptive.py, p5_18_mg3c_intraday_adapter.py, p5_19_mg3d_stop_adapter.py, p5_1_excursion_anatomy.py, p5_2_deoverlap_anatomy.py, p5_3_level_hypothesis.py, p5_4_wrb_pt_anatomy.py, p5_5_candidate_sims.py, p5_6_burst_silence_discrim.py, p5_7_silence_exit_sim.py, p5_8_adaptive_and_stall.py, p5_9_stall_derivation_redundancy.py, p6_1_entry_typology.py, p6_22_s6_1_presence.py, p6_23_s6_2_interaction.py, p6_24_s6_3_selectors.py, p6_25_s6_4_accounting.py, p6_26_s6_5_conjunction.py, p6_27_s6_6_signal_gate.py, p6_28_s6_7_v2_and_union.py, p6_29_selector_validation.py, p6_2_precision_check.py, p6_30_m1_momentum_char.py, p6_31_m2_momentum_grid.py, p6_32_posthoc_conjunction.py, p6_3_t1_separators.py, p7_2_strategy1_m1.py, truncation_harness.py |
 | Tests/01_Favorable_Agression_All_Winners/favorable_aggression_matched_time_results.csv | 82 | uid,group,side,is_entry_bar_pt1,n_trades,signed_delta,price_change,favorable_aggression | favorable_aggression_matched_time.py |
 | Tests/01_Favorable_Agression_All_Winners/favorable_aggression_results.csv | 92 | uid,group,side,is_entry_bar_pt1,n_trades,signed_delta,price_change,favorable_aggression | favorable_aggression_all_winners_included.py |
