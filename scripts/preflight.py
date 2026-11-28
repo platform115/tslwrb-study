@@ -10,6 +10,10 @@ print("== taxonomy_audit (hard) ==")
 r = subprocess.run([sys.executable, "scripts/taxonomy_audit.py"])
 if r.returncode != 0:
     fail = True
+print("== overview-systems sync (hard) ==")
+r = subprocess.run([sys.executable, "scripts/gen_overview_systems.py"])
+if r.returncode != 0:
+    fail = True
 print("== roadmap_audit (advisory) ==")
 subprocess.run([sys.executable, "scripts/roadmap_audit.py"])
 print("== assets inventory (advisory) ==")

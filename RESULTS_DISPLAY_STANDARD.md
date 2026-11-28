@@ -46,3 +46,12 @@ B:
 | worst single trade (MAE) | - (not yet computed) | - (not yet computed) |
 Footer: entry gate harness-passed (T-IM28); per-trade MAE added to the
 standard going forward - earlier tests show "-" until recomputed.
+
+## ADDITION 2026-11-28 (J's RWYLAW catch, 2026-11-27): MONTH-LEVEL DISPLAY
+Every headline claim (a system registration, a law, a selector or
+management verdict) must show its per-month breakdown - n, net,
+per-trade per month - not only pooled numbers. Pooled means hide
+regime variance (the runway law's 2021-09 weakness was invisible
+until J demanded the month table). Pooled-only presentation of a
+headline claim is a display violation.
+

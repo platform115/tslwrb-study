@@ -48,6 +48,31 @@ def main():
         rd = readers(os.path.splitext(name)[0])
         lines.append(f"| {name} | - | (text) | "
                      f"{', '.join(rd) if rd else 'NONE'} |")
+    lines += ["", "## BANKED TEST ARTIFACTS (Tests/**, generated scan)",
+              "| artifact | rows | cols | read by |", "|---|---|---|---|"]
+    tfiles = sorted(glob.glob("Tests/**/*.parquet", recursive=True)) \
+        + sorted(glob.glob("Tests/**/*.csv", recursive=True))
+    for f in tfiles:
+        rel = f
+        name = os.path.basename(f)
+        if f.endswith(".parquet"):
+            try:
+                import pyarrow.parquet as pq
+                md = pq.ParquetFile(f)
+                n = md.metadata.num_rows
+                cols = ", ".join(md.schema_arrow.names[:12]) + (
+                    ", ..." if len(md.schema_arrow.names) > 12 else "")
+            except Exception as e:
+                cols, n = f"UNREADABLE: {e}", -1
+        else:
+            try:
+                n = sum(1 for _ in open(f)) - 1
+                cols = open(f).readline().strip()[:90]
+            except Exception as e:
+                cols, n = f"UNREADABLE: {e}", -1
+        rd = readers(os.path.splitext(name)[0])
+        lines.append(f"| {rel} | {n:,} | {cols} | "
+                     f"{', '.join(rd) if rd else 'NONE'} |")
     lines += ["", "Assets read by NONE are either freshly built or "
               "candidates nobody has used — both deserve a look.", ""]
     with open(OUT, "w") as fh:

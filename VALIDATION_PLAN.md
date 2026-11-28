@@ -97,3 +97,21 @@ out-of-sample months show a dormant one leading, it is revived by J's
 decision. DEAD strategies are not re-run. This keeps "worked overall,
 may need refinement" strategies alive without carrying mediocrity:
 the DORMANT/DEAD line is the filter.
+
+## ADDENDUM 2026-11-28 — THE D-8 JUDGMENT AS IT NOW STANDS (doc-sync sweep)
+- TWO-STAGE purchase (J, 2026-11-27): stage 1 = flow-only months
+  (1s + tbbo, small download) judges the ENTIRE Tier-P line - all
+  G2-x and G3-x TRAINING-ONLY systems plus the dormant ride-alongs.
+  Stage 2 = MBP-10 depth for the same months judges the Tier-R
+  surgical line (Strategy 5/5W, 5W-RWY, S5-MF, M10 components).
+- Months must be covered by his journal or catch is unmeasurable
+  there (standalone P&L only).
+- R-13 FAILURE AUTOPSY applies to every claim judged here: a fresh-
+  month failure gets a mechanism-vs-parameter-transfer (adapter)
+  autopsy before any DEAD verdict.
+- The judgment queue is the TRAINING-ONLY set in OVERVIEW_TREE /
+  SYSTEMS_MATRIX (15 systems at this writing + the controlled arm
+  pairs G2-7/9 and G2-10/8 head-to-head, constant vs structure).
+- Spent-per-claim rule unchanged; R-11 MONTHS-SPEND sections in
+  every spec remain the spend ledger.
+

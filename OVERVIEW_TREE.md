@@ -11,30 +11,15 @@ Numbers -> BACKTEST_MATRIX. Open work -> D-/Q- ids below.
 | LIVE | Governance | Rules R-1..R-13; Findings F-1..F-35; preflight.py gate; CLAUDE.md boots every session |
 | DEFERRED | The judge | D-8 fresh-months purchase (two-stage: flow then depth) - every TRAINING-ONLY claim waits on it |
 
-## TRADING SYSTEMS (formula = entry x filters x management; SYSTEMS_MATRIX.md)
+## TRADING SYSTEMS (generated from SYSTEMS_MATRIX - do not hand-edit)
+<!-- AUTOGEN:SYSTEMS (gen_overview_systems.py) -->
 ### Combo line (Tier-P, Pine-portable)
-| status | system | formula | headline |
-|---|---|---|---|
-| VALIDATED | G2-4 | EN-01 x FL-WIN x MP-7 | OOS PASS +158.1 - the D-4 port target |
-| TRAINING-ONLY | G2-6 | EN-02 x FL-WIN x MP-7 | catch 59/62; 6252/+1659.0 |
-| TRAINING-ONLY | G2-7 | EN-01 x FL-WIN x MP-9 | +858.1; constant-arm pair-A |
-| TRAINING-ONLY | G2-9 | EN-01 x FL-WIN x MP-8 | +824.8; structure-arm pair-A twin |
-| TRAINING-ONLY | G2-10 | EN-02 x FL-WIN x MP-9 | +2644.0; constant-arm pair-B |
-| TRAINING-ONLY | G2-8 | EN-02 x FL-WIN x MP-8 | +2670.0; structure-arm pair-B twin |
-| TRAINING-ONLY | G2-11 | EN-02 x FL-WIN x FL-RWY x MP-7 | +627.2 at +0.52 |
-| TRAINING-ONLY | G3-1 | EN-02 x FL-QT x MP-7 | catch 150/151; +3689.4 |
-| TRAINING-ONLY | G3-2 | EN-02 x FL-QT x MP-9 | +5727.8 at +0.24 |
-| TRAINING-ONLY | G3-3 | EN-02 x FL-QT x FL-RWY x MP-9 | +1944.4 at +0.51 - quiet quality variant |
-| TRAINING-ONLY | G3-4 | EN-02 x FL-QT x FL-RWY x MP-7 | +1186.4 at +0.38 |
-| DORMANT | G2-3, G2-5 | EN-05 era | OOS-profitable, dominated; ride along at D-8 |
-| Q-3 PENDING | G2-1, G2-2 | EN-06 era | legacy engine; recommend retire-as-superseded |
+| status | system | formula | headline | judge |
+|---|---|---|---|---|
 ### Surgical line (Tier-R, depth feed)
-| status | system | formula | headline |
-|---|---|---|---|
-| TRAINING-ONLY | 5W-RWY | EN-03 x FL-ALL x FL-RWY x MP-10 | +1.54/trade on 102 - THE per-trade leader |
-| TRAINING-ONLY | Strategy 5 | EN-03 x FL-ALL x FL-3S x MP-10 | +0.60/trade on 198 (covered scope) |
-| TRAINING-ONLY | Strategy 5W | EN-03 x FL-ALL x MP-10 | full-RTH 750/+472.1 at +0.63 |
-| TRAINING-ONLY | S5-MF | EN-04 x FL-ALL x MP-10 | 4369/+1985.6 at +0.45 |
+| status | system | formula | headline | judge |
+|---|---|---|---|---|
+<!-- AUTOGEN:END -->
 
 ## COMPONENTS (registers in SYSTEMS_MATRIX; anchors audited)
 | status | register | contents |

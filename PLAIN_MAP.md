@@ -118,3 +118,24 @@ level-armed exits, and the surgical line keeps level-targeted
 captures everywhere. Fresh purchased months decide between them. If
 something fails there, we first check whether the mechanism died or
 just a dial needs re-fitting to the new regime (J's adapter rule).
+
+## 2026-11-28 — The quiet unlock, the runway law, and the filing system
+Three things happened late on 2026-11-27, in plain words. FIRST: we
+pointed the same entry machinery at the quiet market (more than 45
+minutes after any scheduled news - a clock rule, fully knowable
+live) and it walked into 150 of his 151 quiet trades. Combined with
+the news-window result, his ENTRIES are now essentially solved in
+training; what's left of him is which days he acts and how he holds.
+SECOND: the "runway" rule - only take a trade when there are 2 to 8
+points of clear road to the next structure - roughly DOUBLES profit
+per trade on every strategy line we applied it to (four of four).
+One frozen rule, never re-tuned. Its cost: it skips many of his
+trades, so catch falls - precision and imitation pull apart, and we
+keep both versions of each system. THIRD: everything got a filing
+system - entries, filters, and trade-management plans are numbered
+parts (EN-, FL-, MP-), every system is a formula of parts, every
+part points to the exact script that defines it, and a script
+checks the whole web on every commit. Nothing was renamed; the old
+names are aliases forever. All of it still awaits the real judge:
+fresh purchased months (D-8).
+
