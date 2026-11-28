@@ -17,12 +17,17 @@ def matrix_systems():
     while lines and not lines[0].startswith("|"):
         lines.pop(0)
     for ln in lines:
+        if ln.startswith("|---"):
+            continue
         if not ln.startswith("| "):
             break
         c = [x.strip() for x in ln.strip("|").split("|")]
-        if c[0] in ("system",) or ln.startswith("|---"):
+        if c[0] in ("system",):
             continue
         rows.append(c)   # system, formula, tier, status, headline, judge
+    # SAFETY (added after the empty-table escape 2026-11-28): a
+    # parse that returns no rows is a defect, never valid output.
+    assert rows, "matrix_systems parsed ZERO rows - parser broken"
     return rows
 
 def render(rows):

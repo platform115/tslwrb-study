@@ -16,9 +16,29 @@ Numbers -> BACKTEST_MATRIX. Open work -> D-/Q- ids below.
 ### Combo line (Tier-P, Pine-portable)
 | status | system | formula | headline | judge |
 |---|---|---|---|---|
+| VALIDATED | G2-4 | EN-01 x FL-WIN x MP-7 | OOS PASS +158.0 re-minted (T-RH02) - the D-4 port target | done (extend at D-8) |
+| TRAINING-ONLY | G2-10 | EN-02 x FL-WIN x MP-9 | 8191/+2698.9, M9 pair-B | D-8 stage 1 |
+| TRAINING-ONLY | G2-11 | EN-02 x FL-WIN x FL-RWY x MP-7 | 1235/+350.8 at +0.28 (kept per J) | D-8 stage 1 |
+| TRAINING-ONLY | G2-6 | EN-02 x FL-WIN x MP-7 | 6267/+1667.1, catch 59/62 | D-8 stage 1 |
+| TRAINING-ONLY | G2-7 | EN-01 x FL-WIN x MP-9 | 2301/+786.0, M9 pair-A | D-8 stage 1 |
+| TRAINING-ONLY | G2-8 | EN-02 x FL-WIN x MP-8 | 8329/+2539.9, M8 pair-B twin | D-8 stage 1 |
+| TRAINING-ONLY | G2-9 | EN-01 x FL-WIN x MP-8 | 2317/+754.5, M8 pair-A twin | D-8 stage 1 |
+| TRAINING-ONLY | G3-1 | EN-02 x FL-QT x MP-7 | 19015/+3767.8, catch 150/151 | D-8 stage 1 |
+| TRAINING-ONLY | G3-2 | EN-02 x FL-QT x MP-9 | 24017/+5973.1 at +0.25 | D-8 stage 1 |
+| TRAINING-ONLY | G3-3 | EN-02 x FL-QT x FL-RWY x MP-9 | 3924/+1411.9 at +0.36 | D-8 stage 1 |
+| TRAINING-ONLY | G3-4 | EN-02 x FL-QT x FL-RWY x MP-7 | 3236/+765.5 at +0.24 (kept per J) | D-8 stage 1 |
+| DORMANT | G2-1 | EN-06 x FL-WIN x MP-7 | retired-as-superseded (Q-3, J) | record only |
+| DORMANT | G2-2 | EN-06 x FL-WIN x MP-7 | retired-as-superseded (Q-3, J) | record only |
+| DORMANT | G2-3 | EN-05 x FL-WIN x MP-7 | OOS +144.4 but claim failed; dominated | kept on record |
+| DORMANT | G2-5 | EN-05 x FL-WIN x FL-CAD x MP-7 | OOS +38.9; dominated | kept on record |
 ### Surgical line (Tier-R, depth feed)
 | status | system | formula | headline | judge |
 |---|---|---|---|---|
+| TRAINING-ONLY | 5W-RWY | EN-03 x FL-ALL x FL-RWY x MP-10 | 109/+101.6 at +0.93 - per-trade leader (F-37) | D-8 stage 2 |
+| TRAINING-ONLY | 5W-RWY-3S | EN-03 x FL-ALL x FL-RWY x FL-3S x MP-10 | 58/+79.9 at +1.38 - per-trade leader (T-SR06) | D-8 stage 2 |
+| TRAINING-ONLY | S5-MF | EN-04 x FL-ALL x MP-10 | 4396/+2026.5 at +0.46 | D-8 stage 2 |
+| TRAINING-ONLY | Strategy 5 | EN-03 x FL-ALL x FL-3S x MP-10 | 198/+119.6 at +0.60 (covered-touch scope) | D-8 stage 2 |
+| TRAINING-ONLY | Strategy 5W | EN-03 x FL-ALL x MP-10 | covered 422/+216.5; full-RTH 750/+472.1 at +0.63 | D-8 stage 2 |
 <!-- AUTOGEN:END -->
 
 ## COMPONENTS (registers in SYSTEMS_MATRIX; anchors audited)
