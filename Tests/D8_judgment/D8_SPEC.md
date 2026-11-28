@@ -1,8 +1,7 @@
 # D8_SPEC — THE FROZEN JUDGMENT ON 2022-05 + 2026-03
-STATUS: **DRAFT-FOR-J — NOT FROZEN. NO RUN MAY START.** | 2026-11-28
-Freezing requires: J settles the DECISION POINTS below, the file is
-committed with this status changed to FROZEN, preflight PASS. Then
-runs begin and no line may move (Rule 2 / R-5).
+STATUS: **FROZEN (J's go, 2026-11-28 13:52 MYT).** No line moves.
+EXECUTION SCOPE THIS SITTING (J): steps 0a/0b/0c + step 1 (G2-4)
+ONLY, then STOP for review with J.
 
 Plain purpose: every TRAINING-ONLY claim gets judged ONCE, together,
 on the two quarantined months. One look. Anything failing a frozen
