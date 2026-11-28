@@ -545,3 +545,35 @@ the program (precision over volume, benchmarked against him).
 - 2026-11-28: DOC-SYNC SWEEP (J's governance double-check): three drifts found and fixed (VALIDATION_PLAN missing the two-stage D-8 + R-13; RESULTS_DISPLAY_STANDARD missing the month-level rule; PLAIN_MAP missing the quiet/runway/taxonomy story). FOURTH finding, the serious one: ASSETS.md is a GENERATED file and had silently clobbered hand-appended banked-artifact rows during a preflight regeneration - fixed structurally: the generator now scans Tests/** itself (nothing hand-maintained left in ASSETS.md). OVERVIEW_TREE's systems section is now GENERATED from SYSTEMS_MATRIX (gen_overview_systems.py) with a HARD preflight sync check - hand drift there is no longer possible.
 - 2026-11-28: DATA_LEDGER.md created per J (anti-burn ledger): per-month holdings x designation, tier validation needs, and the D-8 purchase recommendation (2022-05 + 2026-03, stage-1 tbbo+bbo-1s, stage-2 mbp-10; alternates 2022-03/2025-03). Grounded in his-archive activity density, not guesswork. J gates the purchase.
 
+## THE GOVERNANCE SWEEP PROMPT (canonical copy, v2.0, 2026-11-28)
+J pastes this periodically; this copy is the versioned original.
+---
+GOVERNANCE SWEEP. All hats on. Work through every step, show one
+line of evidence each, fix what is mechanical, bring judgment calls
+to me. Do not start new research in this sweep.
+1. MECHANICAL: run python3 scripts/preflight.py - must PASS
+   (taxonomy, overview-systems sync, doc coverage). Paste the tail.
+2. REGISTRIES: every system/component/management born since the
+   last sweep has, in the same commit: GLOSSARY row, SYSTEMS_MATRIX
+   formula + implementation anchor, BACKTEST_MATRIX entry, roadmap
+   D-id, change-log line. Name any that do not.
+3. DATA DISCIPLINE: DATA_LEDGER designations match reality (no
+   month used beyond its designation; every spec since last sweep
+   has R-11 and R-12 sections). Name violations.
+4. DRIFT: diff the story across MASTER_PROGRAM / OVERVIEW_TREE /
+   PLAIN_MAP / VALIDATION_PLAN - any contradiction, stale status,
+   or missing recent event. Check the generated docs regenerated
+   cleanly (ASSETS, tree systems).
+5. DEBTS: list everything OWED (R-1 harness passes, D-18 vectors,
+   Part B state, pending Q-decisions) with age. Nothing silently
+   dropped.
+6. RESULTS HYGIENE: spot-check the two most recent reports against
+   RESULTS_DISPLAY_STANDARD (month-level breakdowns present;
+   mechanism-primary verdicts; controls stated).
+7. LANGUAGE: confirm closed vocabularies only (status words, R-ids,
+   component ids); flag any new informal term that needs a GLOSSARY
+   row or retirement.
+8. VERDICT: one line - CLEAN or N issues (listed, each tagged
+   FIXED / PROPOSED-TO-J). Then stop.
+---
+
