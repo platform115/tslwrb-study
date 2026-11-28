@@ -140,6 +140,7 @@ against THIS list, never against memory.
 | Tests/D6_deepbook/moments_q2.csv | 53 | month,t,side,ep,taken | db_extract.py, db_moments.py |
 | Tests/D8_judgment/blind_levels_2022-05.csv | 375 | session_date,level | NONE |
 | Tests/D8_judgment/blind_levels_2026-03.csv | 373 | session_date,level | NONE |
+| Tests/D8_judgment/g24_trades_2022-05.csv | 334 | entry time (CT),side,trade P/L,running P/L,drop from peak,losing streak,full stop (-3.75) | NONE |
 | Tests/P4_entry_determination/kme_event_impact.csv | 100 | cls,n,median_tk,mean_tk,x_baseline,ranked,tier | kme_tier_ranking.py, p4_2_entry_context.py, p4_3_confluence_news.py |
 | Tests/P4_entry_determination/kme_tiers.csv | 94 | cls,tier | build_kme_calendar.py, kme_tier_ranking.py |
 | Tests/P4_entry_determination/p4_10_direction.csv | 313 | month,side,mom_5,mom_15,mom_30,mom_60,last_bar,flow_5m,vwap20,svwap,react_dir,react_pos | p4_10_direction.py, p4_9_refine.py |

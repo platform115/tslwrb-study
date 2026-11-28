@@ -645,3 +645,17 @@ AFTER-D-8 list (recorded, NOT adopted): touch-0.75 (+0.73/trade),
 spacing-300 (+613.8 pooled). D-8 reading key per R-13: a fresh-month
 failure tracing to offset/spacing/tolerance/window = adapter
 candidate; tracing to any flat dial = mechanism question.
+
+## T-VL05 — G2-4 ON THE D-8 MONTHS (2026-11-28; D-8 step 1, spec FROZEN first)
+R-9 control exact (2064/+569.4, months match, catch 47/62) before any
+new number. REPORT-ONLY per the frozen spec; J gives verdicts.
+| scope | n | net | per-trade | win% | PF | maxDD | catch (post-fix denom) |
+|---|---|---|---|---|---|---|---|
+| 2022-05 | 334 | +49.5 | +0.15 | 46% | 1.11 | 71.8 | 22/39 |
+| 2026-03 | 462 | +227.2 | +0.49 | 51% | 1.44 | 28.4 | 18/21 |
+| pooled | 796 | +276.8 | +0.35 | 49% | 1.28 | 80.8 | 40/60 |
+2022-05 texture: profit concentrated in 3 days (+79.6 vs -30.1 for the
+other 16); 91/334 full stops; worst day 05-19 (-30.2, 12 stops).
+2026-03 (most-current regime): strong on every line.
+J VERDICT (2026-11-28): G2-4 is PORT-READY for the D-4 Pine port.
+Best-days concentration flagged -> D-34 (Track 2, after D-8).

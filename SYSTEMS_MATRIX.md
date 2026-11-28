@@ -50,7 +50,7 @@ M12/M13/M15 rejected, M14a-d campaign outcomes.
 | G2-1 | EN-06 x FL-WIN x MP-7 | P | DORMANT | retired-as-superseded (Q-3, J) | record only |
 | G2-2 | EN-06 x FL-WIN x MP-7 | P | DORMANT | retired-as-superseded (Q-3, J) | record only |
 | G2-3 | EN-05 x FL-WIN x MP-7 | P | DORMANT | OOS +144.4 but claim failed; dominated | kept on record |
-| G2-4 | EN-01 x FL-WIN x MP-7 | P | VALIDATED | OOS PASS +158.0 re-minted (T-RH02) - the D-4 port target | done (extend at D-8) |
+| G2-4 | EN-01 x FL-WIN x MP-7 | P | VALIDATED | OOS 4/4 months positive: +158.0 (T-VL02) + +276.8 (T-VL05, D-8 step 1). J 2026-11-28: PORT-READY | D-4 Pine port when J ready |
 | G2-5 | EN-05 x FL-WIN x FL-CAD x MP-7 | P | DORMANT | OOS +38.9; dominated | kept on record |
 | G2-6 | EN-02 x FL-WIN x MP-7 | P | TRAINING-ONLY | 6267/+1667.1, catch 59/62 | D-8 stage 1 |
 | G2-7 | EN-01 x FL-WIN x MP-9 | P | TRAINING-ONLY | 2301/+786.0, M9 pair-A | D-8 stage 1 |

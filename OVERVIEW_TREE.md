@@ -9,14 +9,14 @@ Numbers -> BACKTEST_MATRIX. Open work -> D-/Q- ids below.
 | ACTIVE | Track 1 - replicate him | entries solved in training: catch 59/62 (windows) + 150/151 (quiet), intact through the F-36 stamp fix |
 | ACTIVE | Track 2 - standalone systems | G2-4 VALIDATED (re-minted, stands); per-trade leader 5W-RWY +0.93; RWY+3s stack +1.38 awaiting J |
 | LIVE | Governance | Rules R-1..R-13; Findings F-1..F-37; preflight gate; all baselines re-minted post-F-36 (T-RH02) |
-| READY | The judge | D-8 purchase UNBLOCKED - recommendation in DATA_LEDGER (2022-05 + 2026-03), awaiting J's go |
+| UNDERWAY | The judge | D-8 RUNNING on 2022-05 + 2026-03 (spec FROZEN, Tests/D8_judgment/D8_SPEC.md): step 0 done, step 1 G2-4 PORT-READY per J; next 1b + G2-6 |
 
 ## TRADING SYSTEMS (generated from SYSTEMS_MATRIX - do not hand-edit)
 <!-- AUTOGEN:SYSTEMS (gen_overview_systems.py) -->
 ### Combo line (Tier-P, Pine-portable)
 | status | system | formula | headline | judge |
 |---|---|---|---|---|
-| VALIDATED | G2-4 | EN-01 x FL-WIN x MP-7 | OOS PASS +158.0 re-minted (T-RH02) - the D-4 port target | done (extend at D-8) |
+| VALIDATED | G2-4 | EN-01 x FL-WIN x MP-7 | OOS 4/4 months positive: +158.0 (T-VL02) + +276.8 (T-VL05, D-8 step 1). J 2026-11-28: PORT-READY | D-4 Pine port when J ready |
 | TRAINING-ONLY | G2-10 | EN-02 x FL-WIN x MP-9 | 8191/+2698.9, M9 pair-B | D-8 stage 1 |
 | TRAINING-ONLY | G2-11 | EN-02 x FL-WIN x FL-RWY x MP-7 | 1235/+350.8 at +0.28 (kept per J) | D-8 stage 1 |
 | TRAINING-ONLY | G2-6 | EN-02 x FL-WIN x MP-7 | 6267/+1667.1, catch 59/62 | D-8 stage 1 |
