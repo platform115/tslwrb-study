@@ -110,3 +110,18 @@ check for the month; his-archive slice extract for catch prep.
   - PROCESSING COMPLETE. Next: the frozen D-8 judgment spec (J
     co-drafts; nothing judged until it is frozen and committed).
 
+- 2026-11-28: POST-PROCESSING SOLIDITY SWEEP (J requested, after the
+  error-heavy conversion run). All checks pass, both months: unique
+  sorted secs; non-negative volumes; mids inside era ranges (no
+  spread prices anywhere); low-sec days are exactly the Sundays;
+  20220530 low weekday = Memorial Day short session. INDEPENDENT
+  cross-check: per-day flow volume vs es_1m_front bar volume
+  (different pipeline) - median ratio 0.9999/1.0000, no day off
+  >3%, worst days all Sundays; the 2026-03 roll day is NOT an
+  outlier, so both pipelines made the same front switch.
+  book_top schema identical to prior months (sec/bid0/ask0 sizes,
+  no non-positive, no dups). KNOWN QUIRK ON RECORD: the front id
+  switches at UTC midnight into 20260316, inside the Sunday-evening
+  globex session -> a 49.5 instrument jump that lives entirely
+  inside the EXCLUDED roll session; feature builds must exclude by
+  SESSION DATE (standing rule), not UTC day.
