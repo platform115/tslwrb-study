@@ -1,5 +1,7 @@
 # D4_PORT_SPEC — G2-4 FOR PINE v6 (THE RULE BOOK)
-STATUS: v1.0 FROZEN FOR HANDOFF | 2026-11-28 | Owner: research side
+STATUS: v1.1 FROZEN FOR HANDOFF | 2026-11-28 (v1.1: S1-gate
+answers Q1-Q8 - RTH gate corrected to 15:00, session end, retest
+carry-over, structure-CSV semantics) | Owner: research side
 (tslwrb-study). Changes only by amendment here, never verbally.
 System: G2-4 = EN-01 x FL-WIN x MP-7 (VALIDATED; J: PORT-READY).
 Out-of-sample record: 4/4 fresh months positive (+158.0 then +276.8).
@@ -28,13 +30,24 @@ ASK J. Never fill a gap with an assumption.
 ## 1. TIME AND SESSIONS
 - All session logic is CT (America/Chicago), CME convention.
 - A SESSION runs from the globex open (17:00 CT) to the next day's
-  15:15 CT close and is named by its RTH date (overnight bars
-  belong to the NEXT day's session).
+  16:00 CT trading halt and is named by its regular-hours date
+  (overnight bars belong to the NEXT day's session). Bars exist
+  17:00 through 15:59 opens.
 - All structure state (bands, squeeze episodes) RESETS at session
   start (17:00 CT) and builds from the session's own 1m bars,
-  overnight included.
-- Entries happen only inside event windows (section 3), which must
-  start during RTH (08:30-15:15 CT).
+  overnight included, through 15:59.
+- THE WINDOW GATE (corrected v1.1; this is the certified engine's
+  actual behavior): an event window is used only if its START
+  second falls in [08:30:00, 15:00:00) CT - the engine's RTH bar
+  label, which ends at the 14:59 bar. 15:00-16:00 CT is a separate
+  label (the overlap hour) and is NEVER window-eligible. Start at
+  exactly 08:30:00 = used; at exactly 15:00:00 = not used.
+- Once a window is open, detection runs for the window's full span
+  even where it crosses 15:00. Orders, fills and open positions
+  always run to their natural completion on their own clocks
+  (section 5); nothing is force-closed at 15:00. If the 16:00 halt
+  arrives with a position open, it exits on the last available
+  second (reason "end"; none occur in the vector sessions).
 
 ## 2. STRUCTURE (computed from the session's 1m bars)
 Knowability rule for everything in this section: a 1m bar's values
@@ -88,10 +101,14 @@ constant.
 - Input: the week's scheduled economic-release times (section 6).
 - For each event at time E: the ENTRY WINDOW is [E + 300s,
   E + 2700s) (5 to 45 minutes after the release).
-- The window is used only if its start falls inside RTH.
-- All signal detection (section 4) runs ONLY on seconds inside an
-  entry window. Management (section 5) continues outside windows
-  once a trade is on.
+- The window is used only if its start passes the WINDOW GATE
+  (section 1).
+- The CROSS (4a) must occur inside an entry window. Everything the
+  cross starts then runs on its OWN clock, past the window end if
+  need be: the entry order's 300s life, the retest watch's 600s,
+  the retest order's 300s life, and all fills. (v1.1: this is the
+  certified behavior - the vectors contain retest orders and fills
+  after window end; every first cross is inside a window.)
 
 ## 4. ENTRY (EN-01) — SIGNALS AND ORDERS
 Evaluated each 1s bar inside an entry window, against every edge e
@@ -177,3 +194,24 @@ The build is DONE when it reproduces the golden vectors
 (D4_GOLDEN_VECTORS/) within the stated tolerances, stage by stage,
 per D4_HANDOFF_PROMPT.md. A mismatch is REPORTED with diagnosis -
 never resolved by nudging a rule or constant.
+
+## 10. VECTOR FILE SEMANTICS (v1.1, answers S1-Q6)
+- Our 1m bar timestamp (and v_structure bar_ct) is the bar's OPEN
+  time. Bar close = open + 60s.
+- v_structure columns w20_lo/w20_hi on row i: the band as computed
+  AT bar i (from bars <= i), BEFORE the availability lag. The
+  values become usable at close(i) + 60s = open(i) + 120s.
+- v_structure columns sqz10_*/sqz30_* on row i: the most recent
+  episode KNOWABLE at open(i) + 120s - the lag is already applied.
+- First w20 value appears at the 30th bar of the session (17:29
+  open): 20 bars for the range plus 10 prior range values for the
+  median.
+
+## 11. SYMBOL (v1.1, answers S1-Q1)
+- The vector sessions (October 2025) run on the front contract
+  ESZ2025 for the entire month (no roll inside October). ES1! with
+  back-adjustment OFF is identical for these dates - either works;
+  the header states which was used.
+- Forward paper: use the current front-month contract chart, not
+  ES1!, across roll weeks - TradingView's continuous switch date
+  is not our volume-roll date.

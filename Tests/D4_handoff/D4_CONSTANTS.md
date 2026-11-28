@@ -21,8 +21,9 @@ the D-8 runners (T-VL05).
 |---|---|---|
 | WINDOW_START_S | 300 | window opens this many seconds after a release (spec 3) |
 | WINDOW_END_S | 2700 | window closes this many seconds after a release (3) |
-| RTH_START_CT | 08:30 | window must start inside RTH (1, 3) |
-| RTH_END_CT | 15:15 | session close (1) |
+| GATE_START_CT | 08:30:00 | window-start gate opens, inclusive (spec 1) |
+| GATE_END_CT | 15:00:00 | window-start gate closes, exclusive (spec 1; v1.1 correction - was wrongly 15:15) |
+| HALT_CT | 16:00 | trading halt; open positions exit on last second, reason "end" (1) |
 | SESSION_OPEN_CT | 17:00 | structure reset, previous evening (1) |
 
 ## Structure (spec 2)
