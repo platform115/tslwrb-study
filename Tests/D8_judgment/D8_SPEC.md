@@ -33,9 +33,12 @@ Engine: fill-time, no costs, roll days excluded, frozen dials per
 SYSTEMS_MATRIX anchors. EVERY headline reported with its month
 split (standing rule).
 
-Judged systems and PROPOSED pass lines (training headline beside):
+Judged systems and REFERENCE LINES (J 2026-11-28: everything is
+REPORT, NOT GATING - the reference line is the pre-written
+expectation each report is read against; the verdict at every
+step is J's):
 
-| # | system | training | n exp. | PROPOSED PASS line |
+| # | system | training | n exp. | reference line (report only) |
 |---|---|---|---|---|
 | 1 | G2-6 | 6267/+1667.1, catch 59/62 | ~2100 | pooled>0 AND both months>0 AND catch>=60% of his squeeze+news entries |
 | 2 | G2-7 (M9, pair A) | 2301/+786.0 | ~770 | pooled>0 AND both months>0 |
@@ -64,7 +67,7 @@ J's one-thing-at-a-time standing rule). First: unzip + process
 mbp-10 by the certified pipeline (book_per_sec + OFI10), cert per
 month, THEN judge:
 
-| # | system | training | n exp. | PROPOSED PASS line |
+| # | system | training | n exp. | reference line (report only) |
 |---|---|---|---|---|
 | 11 | Strategy 5 | 198/+119.6 at +0.60 | ~66 | pooled>0 AND per-trade>=+0.30 (month split reported) |
 | 12 | Strategy 5W | 750/+472.1 at +0.63 | ~250 | pooled>0 AND both months>0 |
@@ -72,13 +75,13 @@ month, THEN judge:
 | 14 | 5W-RWY | 109/+101.6 at +0.93 | ~36 | pooled>0 AND per-trade>=+0.45 (month split reported) |
 | 15 | 5W-RWY-3S | 58/+79.9 at +1.38 | ~19 | pooled>0 AND per-trade>=+0.70 (month split reported) |
 
-Low-n logic (systems 11/14/15): at n~20-70 per two months, a
-month-positivity gate is a coin flip, so their claim (per-trade
-quality) is judged at HALF the training per-trade (the F-11
-haircut allowance); month split is reported, not gated.
+Low-n note (systems 11/14/15): at n~20-70 per two months a
+month split is a coin flip - read their reports on per-trade
+quality (reference: half the training per-trade, the F-11
+haircut allowance), with the month split shown for context.
 
 ## R-13 — FAILURE AUTOPSY (mandatory before any DEAD verdict)
-Any FAIL gets the adapter autopsy keyed on T-SA02's sensitive
+Any system J reads as failed gets the adapter autopsy keyed on T-SA02's sensitive
 four (offset, level-spacing, lvl-tolerance, lvl-window): re-run
 the failed system with each sensitive dial swept one at a time
 (T-SA02 grid, no new values). Mechanism-dead = fails everywhere;
@@ -128,16 +131,16 @@ roll-gap rule (20260316 excluded).
 | MP-10 | surgical management | frozen |
 | level detector (shared) | universe for touches | frozen (the sensitive four at anchor values) |
 
-## DECISION POINTS FOR J (settle before freeze)
-1. The numeric pass lines above — accept / amend per system.
-2. Catch gates on G2-6 and G3-1 at 60% (G2-3 precedent): gate or
-   report-only? (G2-3 FAILED on exactly this line while its
-   financials passed — gating repeats that standard; report-only
-   makes these months pure P&L judges.)
-3. Low-n per-trade lines at HALF training (11/14/15): accept the
-   50% haircut allowance, or set other numbers?
-4. Step order within stage 1: one system at a time reviewed with
-   you (G2-3 precedent), or all 10 computed then reviewed
-   together? (One look either way — no tuning between steps.)
-5. Stage 2 start: auto after stage-1 review, or a separate go?
-6. Data-quality note (2026-03 mid cert) — acknowledge at freeze.
+## DECISION POINTS (J, 2026-11-28)
+1. DECIDED: no gates anywhere. All lines are REFERENCE LINES;
+   every result is a report; J gives the verdict at each step.
+2. DECIDED: catch on G2-6/G3-1 reported against the 60%
+   reference, not gated.
+3. DECIDED: low-n systems reported on per-trade vs the half-of-
+   training reference, month split shown, nothing gated.
+4. DECIDED: one step at a time, reviewed with J (step list in
+   D8_STEPS below / spec section). No dial changes, no re-runs
+   between steps - the one-look rule holds.
+5. OPEN: stage-2 go is a separate J decision at the stage-1 wrap.
+6. OPEN: data-quality note (2026-03 mid cert) - J acknowledges at
+   freeze.
