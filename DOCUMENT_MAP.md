@@ -103,3 +103,5 @@ A non-empty list fails the completeness pass.
 | SYSTEMS_MATRIX.md | the wiring authority: component registers, system formulas, implementation anchors; audited by taxonomy_audit.py | LIVING |
 | Tests/D5_quiet/RWYLAW_TABLE.md | by-month appendix for the runway law (T-EN117) | CLOSED |
 | CLAUDE.md | session boot instructions: read order, preflight rule, lineage convention | LIVING |
+| DATA_LEDGER.md | the anti-burn ledger: per-month holdings, spend designations, and the D-8 purchase plan | LIVING |
+
