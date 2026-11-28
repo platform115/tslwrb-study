@@ -70,7 +70,7 @@ STAGE 5 — ARCHIVE (kept, not current; do not plan from these)
   archive/CURRENT_STATE.md ......... STALE (July-2026 MBP-10 era). Pending the
   archive/CURRENT_STATE_edits.md ... parked doc-cleanup J approved exploring:
                              proposal is to move both under archive/ with
-                             a stale banner. Awaiting J go.
+                             a stale banner. DONE (Q-2, J, 2026-11-28).
   Tests/01..07 (pre-P4 era)  earlier program's specs/reports; superseded
                              by the P4-P7 line but kept for traceability.
   Tests/P4 STRATEGY_SPEC_v1..v9  superseded spec versions (v10 is the

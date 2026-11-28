@@ -58,8 +58,8 @@ for r in table_rows(mx, "## SYSTEMS"):
         errs.append(f"{name}: tier '{tier}' not P/R")
 
 # GLOSSARY system rows (patterns = the complete system namespace)
-pat = re.compile(r"^\| (G2-\d+|G3-\d+|Strategy 5W|Strategy 5|5W-RWY|"
-                 r"S5-MF) ", re.M)
+pat = re.compile(r"^\| (G2-\d+|G3-\d+|Strategy 5W|Strategy 5|"
+                 r"5W-RWY-3S|5W-RWY|S5-MF) ", re.M)
 gl_sys = set(m.group(1) for m in pat.finditer(gl))
 mx_sys = set(systems)
 for s in sorted(gl_sys - mx_sys):
