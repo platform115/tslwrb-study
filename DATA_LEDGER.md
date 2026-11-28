@@ -53,3 +53,9 @@ archive, roll calendar (all span both recommended months).
 PRE-PURCHASE CHECKS (run before paying): converter cert on one day
 of the new tbbo (sell-side 'A' convention); front-contract volume
 check for the month; his-archive slice extract for catch prep.
+
+## EVENT LOG
+- 2026-11-28: F-36 stamp fix + T-RH02 re-mint. Designations unchanged (all
+  six months remain SPENT). D-8 purchase UNBLOCKED from the program
+  side - awaiting J's go on the recommended months.
+

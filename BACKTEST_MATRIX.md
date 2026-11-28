@@ -597,3 +597,11 @@ band +1.36 at 52 trades), ~1.2-1.5x quiet, ~nil on the news line.
 F-35 is SUPERSEDED (see F-37). Proposed verdicts to J: refresh all
 baselines; keep 5W-RWY/G3-3/G3-4 TRAINING-ONLY at corrected numbers;
 G2-11 to DORMANT (no lift); holds lift on J's confirmation.
+
+## T-SR07-v2 / T-SR08-v2 — LOSS-SIDE RE-CHECKS ON THE CORRECTED UNIVERSE (2026-11-28)
+Re-pointed v2 runners (controls: 750/+472.1 and the new 109/+101.6
+exact). Both conclusions SURVIVE the stamp fix: failed-break exit
+still mechanism-negative (-24.6 twin, both months), flow-conditioned
+reclaim still negative (-18.4), and F-31's two FINDINGs reproduce
+(time-to-reclaim and prior-MFE at BH p~0, both-direction). F-30/F-31
+stand unmodified. Reports: FB_REPORT_v2.md, RA_REPORT_v2.md.

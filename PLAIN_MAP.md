@@ -139,3 +139,16 @@ checks the whole web on every commit. Nothing was renamed; the old
 names are aliases forever. All of it still awaits the real judge:
 fresh purchased months (D-8).
 
+## 2026-11-28 — The 60-second flaw, found and fixed
+The lookahead gate (cut the data at a moment, recompute, demand the
+same answer) caught a real flaw: two structure types announced
+themselves up to 59 seconds before the price bar that defines them
+had finished. Fixed the same morning; every number was recomputed.
+What held: the validated system (to the decimal), every catch
+result, the quiet lines, the simple-trail conclusion, both loss-side
+rejections. What shrank: the runway rule's benefit - roughly half of
+its advertised doubling had been the flaw. It still helps (about
+1.5x on the surgical line) and stays frozen for the fresh-months
+judge. Lesson on record: a claim is untested until the machine has
+tested it.
+
