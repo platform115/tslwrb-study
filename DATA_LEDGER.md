@@ -20,8 +20,8 @@ sections in specs are the per-claim spend records; this is the map.
 | 2024-05 | drive | drive | NO | 1s flow + top-of-book | NO | SPENT (validation used) | same pair as 2023-05 |
 | 2024-11 | drive | drive | drive (raw) | 1s flow | YES | SPENT (training) | training; his-entry audits |
 | 2025-10 | drive | drive | drive (raw) | 1s flow + book + OFI10 | YES | SPENT (training) | depth-pair twin of 2022-02 |
-| **2022-05** | **drive (new)** | **drive (new)** | **drive (new)** | 1s flow + top-of-book (certified) | archive ready (1273 wrb) | **QUARANTINED** | NOTHING - reserved for the D-8 frozen judgments (stages 1+2) |
-| **2026-03** | **drive (new)** | **drive (new)** | **drive (new)** | 1s flow + top-of-book (certified; ROLL MONTH - see log) | archive ready (816 wrb) | **QUARANTINED** | NOTHING - reserved for the D-8 frozen judgments; the most-current-regime month |
+| **2022-05** | **drive (new)** | **drive (new)** | **drive (new)** | 1s flow + top-of-book (certified) | archive ready (1273 wrb) | **QUARANTINED (D-8 underway)** | D-8 step 1: G2-4 reported (334/+49.5, catch 22/39) - J verdict pending |
+| **2026-03** | **drive (new)** | **drive (new)** | **drive (new)** | 1s flow + top-of-book (certified; ROLL MONTH - see log) | archive ready (816 wrb) | **QUARANTINED (D-8 underway)** | D-8 step 1: G2-4 reported (462/+227.2, catch 18/21) - J verdict pending |
 QUARANTINE RULES: (1) no script touches a QUARANTINED month except
 the frozen D-8 judgment spec (J gates it) and the pre-judgment
 processing pipeline (convert + cert, which reads no outcomes);
