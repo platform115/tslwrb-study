@@ -80,6 +80,63 @@ month split is a coin flip - read their reports on per-trade
 quality (reference: half the training per-trade, the F-11
 haircut allowance), with the month split shown for context.
 
+## REPORT CARD (every system, every step - one fixed shape)
+Per month and pooled, always beside the training reference row:
+- n trades, net points, per-trade mean (expectancy)
+- win rate, profit factor (gross wins / gross losses)
+- max drawdown in points (1-contract trade-sequence equity; no
+  sizing/costs per standing instruction)
+- longest losing streak
+- concentration: share of net from the top 3 days (is the profit
+  real breadth or two lucky days?)
+- catch vs the 60% reference - G2-6 and G3-1 only
+Purpose: the verdict J gives at each step is "would this produce
+profit without too much drawdown, as a codeable system" (the
+program's end goal) - not only "did it imitate him". Catch serves
+Track 1; the rest of the card serves Track 2.
+
+## NO-LOOKAHEAD GUARDS (all mechanical)
+- Every entry/filter component carries an R-1 truncation-harness
+  certification (0/240 post-F-36); the same certified scripts run
+  UNCHANGED on the new months.
+- Step 0c re-runs the harness on a sample of new-month days before
+  any system report - certification becomes month-specific.
+- Group classification of his episodes conditions only on
+  information available at each entry's moment (A3 recipes,
+  post-F-36 stamps).
+- Blind level lists (1b) are generated and committed BEFORE his
+  zone references for these months are read.
+
+## D8_STEPS (J walks every step; one at a time; no changes between)
+- 0a. Feature build: WRB/bands/levels/squeeze/pivots/runway/news
+  for both months (session-date roll exclusion). Blind MDL level
+  lists generated and committed here.
+- 0b. Group-classify his 206+137 episodes (frozen recipes). ONLY
+  G2/G3 labels are read/reported; unmined-group labels stay
+  unread (J's preserve decision).
+- 0c. R-1 truncation-harness spot-check on sampled new-month days.
+  Abort to J on any mismatch.
+- 1. G2-4 ride-along (known quantity = pipeline sanity; extends
+  its OOS record 2 -> 4 months).
+- 1b. Blind level prediction: frozen MDL lists vs his 184+151
+  stated zone prices; hit rate at frozen tolerance, training
+  months as reference.
+- 2. G2-6 (squeeze+news core, M7) + catch.
+- 3. G2-7 (M9, pair A). 4. G2-9 (M8, pair A) + head-to-head.
+- 5. G2-10 (M9, pair B). 6. G2-8 (M8, pair B) + head-to-head.
+- 7. G2-11 (+runway) + surcharge readout vs G2-6.
+- 8. G3-1 (quiet core, M7) + catch.
+- 9. G3-2 (M9). 10. G3-3 (+runway, M9) + surcharge vs G3-2.
+- 11. G3-4 (+runway, M7) + readout vs G3-3/G3-1.
+- 12. Dormant ride-alongs G2-1/2/3/5, one combined report.
+- 13. STAGE-1 WRAP: full table, pair verdicts, runway question.
+  J calls survivors, R-13 autopsies, and the stage-2 go.
+- 14. mbp-10 unzip + certified processing (book + OFI10) + cert.
+- 15. Strategy 5W. 16. S5-MF. 17. Strategy 5. 18. 5W-RWY.
+- 19. 5W-RWY-3S. 20. After-D-8 descriptives (touch-0.75,
+  spacing-300). 21. Close-out: ledger tested-there, QUARANTINED
+  -> SPENT, autopsies, final verdict sheet.
+
 ## R-13 — FAILURE AUTOPSY (mandatory before any DEAD verdict)
 Any system J reads as failed gets the adapter autopsy keyed on T-SA02's sensitive
 four (offset, level-spacing, lvl-tolerance, lvl-window): re-run
