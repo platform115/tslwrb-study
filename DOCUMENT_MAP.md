@@ -107,3 +107,9 @@ A non-empty list fails the completeness pass.
 | Tests/D32_structsel/RWY_REMINT.md | 5W-RWY re-mint under fixed stamps (T-RH02) | CLOSED |
 | Tests/D30_s5mf/S5MF_REMINT.md | S5-MF re-mint under fixed stamps (T-RH02) | CLOSED |
 
+| Tests/D4_handoff/D4_PORT_SPEC.md | G2-4 Pine port rule book (v1.1) - the only authority on port rules | LIVING (amendment-only) |
+| Tests/D4_handoff/D4_CONSTANTS.md | every G2-4 number, named - the only authority on port values | LIVING (amendment-only) |
+| Tests/D4_handoff/D4_README.md | handoff package manifest + J's baked-in decisions | LIVING |
+| Tests/D4_handoff/D4_HANDOFF_PROMPT.md | the prompt that runs the Pine conversation's stage-gated build | CLOSED (v1 delivered) |
+| Tests/D4_handoff/D4_HANDOFF_LOG.md | Pine handoff tracker: stage gates, issue log, lessons for the next handoff | LIVING |
+| Tests/D8_judgment/D8_SPEC.md | the FROZEN D-8 judgment spec (report-only, reference lines, step list) | FROZEN |
